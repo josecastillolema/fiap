@@ -1,4 +1,4 @@
-# Aplicações para os curso de pós-graduação da FIAP:
+# Aplicações para os curso de pós-graduação da FIAP
 
  - Arquitetura de soluções (ASO)
    * Arquitetura de Storage/DataCenter/Virtualização e Microcontainers 
