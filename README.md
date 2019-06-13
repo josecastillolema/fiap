@@ -1,13 +1,19 @@
 # Aplicações para os curso de pós-graduação da FIAP
 
  - MBA em Arquitetura de Soluções (ASO)
-   * Arquitetura de Storage / DataCenter / Virtualização e Microcontainers 
- - MBA em Blockchain Development & Technologies (BLC)
-   * DevOps & Cloud Oriented Architecture
- - MBA em Cloud Computing (CLD)
+   * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
+ - MBA em *Big Data / Data Science* (BDT)
+   * Internet das Coisas
+ - MBA em *Blockchain Development & Technologies* (BLC)
+   * *DevOps & Cloud Oriented Architecture*
+ - MBA em *Cloud Computing* (CLD)
    * Implementação OpenStack
- - MBA em Mobile Development (MOB)
-   * DevOps & Cloud Oriented Architecture
+ - MBA em *Mobile Development* (MOB)
+   * *DevOps & Cloud Oriented Architecture*
+ - MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)
+   * Arquitetura *Windows Azure Services*
+ - MBA em Full Stack Developer - *Microservices*, *Cloud* e IoT (SCJ)
+   * *Cloud Development*
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
 Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei *pull requests* :smile:.

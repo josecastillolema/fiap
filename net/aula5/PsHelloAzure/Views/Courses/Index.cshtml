@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h2>All Courses</h2>
+
+@if(Model.Any())
+{
+    <table class="table">
+        @foreach(var course in Model)
+        {
+            <tr>
+                <td>@course.Title</td>
+                <td>@course.Id</td>
+                <td>
+                    <table class="table table-condensed">
+                        @foreach(var module in course.Modules)
+                        {
+                            <tr>
+                                <td>@module.Title</td>
+                                <td>
+                                    <table class="table table-condensed">
+                                        @foreach(var clip in module.Clips)
+                                        {
+                                            <tr>
+                                                <td>@clip.Name</td>
+                                                <td>@(clip.Length)m</td>
+                                            </tr>
+
+                                        }
+                                    </table>                                
+                                </td>
+                            </tr>
+
+                        }
+                    </table>
+                </td>
+            </tr>
+
+        }
+    </table>
+}
+else
+{
+    <div>No courses to display</div>
+    <form asp-action="Insert">
+        <input type="submit" 
+               class="btn btn-primary" 
+               value="Insert Sample Courses" />
+    </form>
+}
+

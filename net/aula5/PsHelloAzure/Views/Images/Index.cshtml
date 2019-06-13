@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Upload an Image</h2>
+
+<form method="post" enctype="multipart/form-data" asp-action="Upload">
+    <input type="file" name="image" />
+    <hr />
+    <input class="btn btn-primary" type="submit" value="Go!" />
+</form>

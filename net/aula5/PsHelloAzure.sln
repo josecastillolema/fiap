@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PsHelloAzure", "PsHelloAzure\PsHelloAzure.csproj", "{D2BF5A45-8456-4351-B5A4-D305078C775B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2BF5A45-8456-4351-B5A4-D305078C775B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2BF5A45-8456-4351-B5A4-D305078C775B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2BF5A45-8456-4351-B5A4-D305078C775B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2BF5A45-8456-4351-B5A4-D305078C775B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB67FBEC-EE33-4987-A0AB-52935546CC74}
+	EndGlobalSection
+EndGlobal
