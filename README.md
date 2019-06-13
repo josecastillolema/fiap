@@ -12,7 +12,7 @@
    * *DevOps & Cloud Oriented Architecture*
  - [MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)](https://github.com/josecastillolema/fiap/tree/master/net)
    * Arquitetura *Windows Azure Services*
- - [MBA em Full Stack Developer - *Microservices*, *Cloud* e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
+ - [MBA em *Full Stack Developer* - *Microservices*, *Cloud* e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
    * *Cloud Development*
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
