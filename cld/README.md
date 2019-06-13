@@ -1,4 +1,4 @@
-# MBA em Cloud Computing (CLD)
+# MBA em *Cloud Computing* (CLD)
 
 ## Implementação OpenStack 
 
