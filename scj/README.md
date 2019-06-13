@@ -1,5 +1,8 @@
 # MBA em *Full Stack Developer* - *Microservices*, *Cloud* e IoT (SCJ)
 
+## Arquitetura e Desenvolvimento Java com IoT
+## Arquitetura e Desenvolvimento Java de Alta Disponibilidade para *Cloud Computing*
+## Arquitetura e Infraestrutura de *Cloud Computing* e Internet das Coisas
 ## *Cloud Development*
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
