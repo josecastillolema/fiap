@@ -1,4 +1,4 @@
-# Blockchain Development & Technologies (BLC)
+# MBA em Blockchain Development & Technologies (BLC)
 
 ## DevOps & Cloud Oriented Architecture
 
