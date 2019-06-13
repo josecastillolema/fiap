@@ -1,4 +1,4 @@
-# MBA em Big Data / Data Science (BDT)
+# MBA em *Big Data / Data Science* (BDT)
 
 ## Internet das Coisas
 
