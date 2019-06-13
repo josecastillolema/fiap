@@ -7,4 +7,4 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
 
 Para saber mais sobre o curso, acesse o site de MBA da FIAP em https://www.fiap.com.br/mba/mba-em-arquitetura-de-solucoes/.
 
-![FIAP MBA](img/arq-solucoes.png)
+![FIAP MBA](../img/arq-solucoes.png)
