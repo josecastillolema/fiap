@@ -1,7 +1,7 @@
 # Aplicações para os curso de pós-graduação da FIAP
 
  - MBA em Arquitetura de Soluções (ASO)
-   * Arquitetura de Storage/DataCenter/Virtualização e Microcontainers 
+   * Arquitetura de Storage / DataCenter / Virtualização e Microcontainers 
  - MBA em Blockchain Development & Technologies (BLC)
    * DevOps & Cloud Oriented Architecture
  - MBA em Cloud Computing (CLD)
