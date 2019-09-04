@@ -9,6 +9,8 @@
  - [MBA em *Cloud Computing* (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
    * Implementação de *Cloud*
    * Implementação OpenStack
+ - [MBA em *Artificial Intelligence & Machine Learning* (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
+   * Princípios de Robótica e IoT
  - [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
    * *DevOps & Cloud Oriented Architecture*
    * Segurança para Aplicações Móveis para Internet das Coisas e *Cloud Computing*
