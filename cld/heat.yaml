@@ -1,6 +1,6 @@
 heat_template_version: 2016-04-08
 
-description: Servidor para FIAP 16CLD!
+description: Servidor para FIAP CLD!
 
 parameters:
   flavor:
