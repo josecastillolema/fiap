@@ -24,7 +24,7 @@ parameters:
     default: 10.0.1.200
   public_network:
     type: string
-    description: Rede pública
+    description: Rede publica
     constraints:
     - custom_constraint: neutron.network
 
@@ -73,4 +73,4 @@ outputs:
         params:
           IP_ADDRESS: { get_attr: [ floating_ip, floating_ip_address ] }
     description: >
-      Esta URL é a URL "externa" que pode ser usada para acessar o servidor WEB.
+      Esta URL e a URL "externa" que pode ser usada para acessar o servidor WEB.
