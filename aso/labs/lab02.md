@@ -10,7 +10,7 @@ On the other hand, Mininet has shown itself as a great tool for agile network/SD
 On top of that, mini-nfv supports [Jinja2](http://jinja.pocoo.org/docs/2.10/), a full featured and designer-friendly template engine for Python, with an integrated sandboxed execution environment. This way, developers can easily automate the scale-out of vNF deployments and NFV orquestration graphs within the TOSCA templates.
 
 1. Obtencão da imagem
- ```
+  ```
 ubuntu@ip-172-31-47-198:~$ docker pull mysql
 Using default tag: latest
 latest: Pulling from library/mysql
@@ -29,7 +29,7 @@ b5c43b8c2879: Pull complete
 Digest: sha256:b69d0b62d02ee1eba8c7aeb32eba1bb678b6cfa4ccfb211a5d7931c7755dc4a8
 Status: Downloaded newer image for mysql:latest
 docker.io/library/mysql:latest
- ```
+  ```
 
 2.
 ```
