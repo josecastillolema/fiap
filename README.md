@@ -1,4 +1,4 @@
-# Aplicações para os curso de pós-graduação da FIAP
+# Aplicações para os cursos de pós-graduação da FIAP
 
  - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/tree/master/aso)
    * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
