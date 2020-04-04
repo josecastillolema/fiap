@@ -80,3 +80,78 @@ ubuntu@ip-172-31-47-198:~$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
 66696bdd281f        mysql               "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        3306/tcp, 33060/tcp   funny_yonath
 ```
+
+```
+ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -pfiap123
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
+```
+
+```
+ubuntu@ip-172-31-47-198:~$ docker stop 66696bdd281f
+66696bdd281f
+```
+
+```
+ubuntu@ip-172-31-47-198:~$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+38e202140601        mysql               "docker-entrypoint.s…"   11 seconds ago      Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   awesome_greider
+```
+
+```
+ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+```
+
+```
+ubuntu@ip-172-31-47-198:~$ docker volume ls
+DRIVER              VOLUME NAME
+local               96dcaa0b62f31fb6fd7fb39bab5572bb41fdeeba91ce0335655b804921f8a50d
+local               36215fd20550c98a176bc4fa95fb7b2aa77c340a67ba94191c65aa7293466520
+local               a619add11d1f81891d44e2fb7cb4206a91454ab8460c15bb1f957a1e737615fb
+local               voldb
+```
+
+```
+ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database jose;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jose               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+```
