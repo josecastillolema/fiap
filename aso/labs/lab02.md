@@ -8,9 +8,8 @@ In the OpenStack world, Tacker is the project implementing a generic VNFM and NF
 On the other hand, Mininet has shown itself as a great tool for agile network/SDN/NFV experimentation. The goal of mini-nfv is to alleviate the developers’ tedious task of setting up a whole service chaining environment and let them focus on their own work (e.g., developing a particular VNF, prototyping, implementing an orchestration algorithm or a customized traffic steering).
 
 On top of that, mini-nfv supports [Jinja2](http://jinja.pocoo.org/docs/2.10/), a full featured and designer-friendly template engine for Python, with an integrated sandboxed execution environment. This way, developers can easily automate the scale-out of vNF deployments and NFV orquestration graphs within the TOSCA templates.
-1. Teste
-2. Teste2
 
+1. Obtencão da imagem
 ```
 ubuntu@ip-172-31-47-198:~$ docker pull mysql
 Using default tag: latest
@@ -32,6 +31,7 @@ Status: Downloaded newer image for mysql:latest
 docker.io/library/mysql:latest
 ```
 
+2.
 ```
 ubuntu@ip-172-31-47-198:~$ sudo apt install mysql-client -y
 Reading package lists... Done
