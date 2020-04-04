@@ -1,10 +1,10 @@
 # Aplicações para os cursos de pós-graduação da FIAP
 
  - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/tree/master/aso)
-   * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers* 2019.1/2019.2/2019.3/2019.4 (16h)
-   * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud) 2019.1/2019.2 (16h)
+   * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
+   * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
  - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
-   * Fast Data & Microservices 2019.1/2019.2 (20h)
+   * Fast Data & Microservices 2019.1/2019.2
    * Internet das Coisas
    * Microservicos
  - [MBA em *Blockchain Development & Technologies* (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
