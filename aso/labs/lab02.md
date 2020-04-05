@@ -11,7 +11,7 @@ Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
 
 1. **[T1]** Obtencão da imagem
     ```
-    **$ docker pull mysql**
+    $ docker pull mysql
     Using default tag: latest
     latest: Pulling from library/mysql
     c499e6d256d6: Pull complete 
