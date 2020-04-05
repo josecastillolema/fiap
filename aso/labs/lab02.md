@@ -1,9 +1,8 @@
 # Lab 2 - Docker (continuação)
-Mini-nfv is a framework for NFV Orchestration with a general purpose VNF Manager to deploy and operate Virtual Network Functions (VNFs) and Network Services on Mininet. It is based on ETSI MANO Architectural Framework.
 
 Rodando mysql server
 --------------
-Usaremos o container mysql para aprender alguns conceitos de Docker (variables de entorno, mapeamento de portas e persistencia de dados). Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
+Usaremos o container `mysql` para aprender alguns conceitos de Docker (variables de entorno, mapeamento de portas e persistencia de dados). Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
 
 1. [**T1**] Obtencão da imagem
     ```
