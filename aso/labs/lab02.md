@@ -297,11 +297,11 @@ Alguns parametros do cliente *mysql*:
     ```
 
 15. **[T2]** Confirmar que o volume persiste mesmo depois do término do container:
-   ```
-   $ docker volume ls
-   DRIVER              VOLUME NAME
-   local               voldb
-   ```
+    ```
+    $ docker volume ls
+    DRIVER              VOLUME NAME
+    local               voldb
+    ```
 
 16. **[T1]** Executar novamente o container, para conferir que os dados foram persistidos:
     ```
