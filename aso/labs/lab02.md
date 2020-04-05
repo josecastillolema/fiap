@@ -3,9 +3,9 @@ Mini-nfv is a framework for NFV Orchestration with a general purpose VNF Manager
 
 Rodando mysql server
 --------------
-Usaremos o container mysql para aprender alguns conceitos de Docker (variables de entorno, mapeamento de portas e persistencia de dados). Para isso, vamos precisar de trabalhar com dois terminais abertos.
+Usaremos o container mysql para aprender alguns conceitos de Docker (variables de entorno, mapeamento de portas e persistencia de dados). Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
 
-1. [Terminal 1] Obtencão da imagem
+1. [**T1**] Obtencão da imagem
     ```
     ubuntu@ip-172-31-47-198:~$ docker pull mysql
     Using default tag: latest
