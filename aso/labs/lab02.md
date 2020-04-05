@@ -86,7 +86,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
 
 4. **[T2]** Conseguimos rodar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do *mysql*:
     ```
-    ubuntu@ip-172-31-47-198:~$ sudo apt install mysql-client -y
+    $ sudo apt install mysql-client -y
     Reading package lists... Done
     Building dependency tree       
     Reading state information... Done
@@ -135,14 +135,14 @@ Alguns parametros do cliente *mysql*:
     - Usuario via `-u`
     - Senha via `-p`. A senha tem que ser digitadas **sem espacos** depois do parametro.
     ```
-    ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -pfiap
+    $ mysql -h 127.0.0.1 -u root -pfiap
     mysql: [Warning] Using a password on the command line interface can be insecure.
     ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
     ```
 
 6. **[T2]** Listemos o container em execucao para entender a falta de conectividade. A porta 3306 do container (a padrao do *mysql*) nao esta mapeada a nenhuma porta do host.
     ```
-    ubuntu@ip-172-31-47-198:~$ docker ps
+    $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
     66696bdd281f        mysql               "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        3306/tcp, 33060/tcp   funny_yonath
     ```
@@ -150,13 +150,13 @@ Alguns parametros do cliente *mysql*:
 7. **[T2]** Parar o container:
 
     ```
-    ubuntu@ip-172-31-47-198:~$ docker stop 66696bdd281f
+    $ docker stop 66696bdd281f
     66696bdd281f
     ```
 
-8. **[T1]** Vamos adicionar ao nosso comando `docker run` o parametro `-p` responsavel pelo mapeamento de portas. Recebe um argumento do tipo x:y, a onde x é a porta do lado do host e y a porta do lado do container.
+8. **[T1]** Vamos adicionar ao nosso comando `docker run` o parametro `-p` responsavel pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, a onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container.
    ```
-   ubuntu@ip-172-31-47-198:~$ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 mysql
+   $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 mysql
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -195,14 +195,14 @@ Alguns parametros do cliente *mysql*:
 
 10. **[T2]** Confirmar o mapeamento de portas:
    ```
-   ubuntu@ip-172-31-47-198:~$ docker ps
+   $ docker ps
    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
    38e202140601        mysql               "docker-entrypoint.s…"   11 seconds ago      Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   awesome_greider
    ```
 
 10. **[T2]** Tentar novamente o acesso o banco de dados:
     ```
-    ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -pfiap 
+    $ mysql -h 127.0.0.1 -u root -pfiap 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 8
     Server version: 8.0.19 MySQL Community Server - GPL
@@ -221,7 +221,7 @@ Alguns parametros do cliente *mysql*:
 
 11. **[T2]** Parar o container:
     ```
-    ubuntu@ip-172-31-47-198:~$ docker stop 38e202140601
+    $ docker stop 38e202140601
     38e202140601
     ```
 
@@ -319,7 +319,7 @@ Alguns parametros do cliente *mysql*:
 
 17. **[T1]** Acessar o banco e confirmar que o database criado foi persistido:
     ```
-    ubuntu@ip-172-31-47-198:~$ mysql -h 127.0.0.1 -u root -p
+    $ mysql -h 127.0.0.1 -u root -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 8
