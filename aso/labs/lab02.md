@@ -84,7 +84,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     2020-04-05T12:51:14.783305Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-4. **[T2]** Conseguimos rodar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o mysql client:
+4. **[T2]** Conseguimos rodar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do *mysql*:
     ```
     ubuntu@ip-172-31-47-198:~$ sudo apt install mysql-client -y
     Reading package lists... Done
