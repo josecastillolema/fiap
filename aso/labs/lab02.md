@@ -225,7 +225,7 @@ Alguns parametros do cliente *mysql*:
     38e202140601
     ```
 
-12. **[T1]** Conseguimos acessar o banco. Porem, containers sao efemeros. Qualquer dado criado no banco sera perdido apos a finalizacao do container. Para conseguir persistencia de dados, vamos adicionar ao nosso comando `docker run` o parametro `-v`. Recebe um argumento do tipo x:y, a onde x e o nome do volume e y a pasta a onde esse volume vai ser mapeado dentro do container.
+12. **[T1]** Conseguimos acessar o banco. Porem, containers sao efemeros. Qualquer dado criado no banco sera perdido apos a finalizacao do container. Para conseguir persistencia de dados, vamos adicionar ao nosso comando `docker run` o parametro `-v`. Recebe um argumento do tipo ***x:y***, a onde ***x*** e o nome do volume e ***y*** a pasta a onde esse volume vai ser mapeado dentro do container.
     ```
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
