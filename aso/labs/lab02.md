@@ -41,10 +41,10 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
 	      You need to specify one of MYSQL_ROOT_PASSWORD, MYSQL_ALLOW_EMPTY_PASSWORD and MYSQL_RANDOM_ROOT_PASSWORD
    ```
 
-3. **[T1]** Como mostra a mensagem de erro anterior, não e possível rodar o container mysql sem configurar alguma das seguintes opções em relação à autenticacao:
-    - Uma senha para o usuario root do banco via `MYSQL_ROOT_PASSWORD`
-    - Permitir uma senha de root vazia via `MYSQL_ALLOW_EMPTY_PASSWORD`
-    - Criar uma senha de root aleatoria via `MYSQL_RANDOM_ROOT_PASSWORD`
+3. **[T1]** Como mostra a mensagem de erro anterior, não e possível rodar o container `mysql` sem configurar alguma das seguintes opções em relação à autenticacao:
+    - Uma senha para o usuario *root* do banco via `MYSQL_ROOT_PASSWORD`
+    - Permitir uma senha de *root* vazia via `MYSQL_ALLOW_EMPTY_PASSWORD`
+    - Criar uma senha de *root* aleatoria via `MYSQL_RANDOM_ROOT_PASSWORD`
     Vamos optar pela primeira opcao. Para passar variabeis de entorno ao container usaremos a opcao `-e`. E importante colocar todos os parametros opcionais do comando `docker run` **antes** do nome da imagem:
     ```
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap mysql
