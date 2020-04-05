@@ -130,7 +130,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     ```
 
 5. **[T2]** Tentemos acessar ao banco.
-Alguns parametros do cliente mysql:
+Alguns parametros do cliente *mysql*:
     - Hostname do banco via `-h`
     - Usuario via `-u`
     - Senha via `-p`. A senha tem que ser digitadas **sem espacos** depois do parametro.
