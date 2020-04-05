@@ -5,7 +5,7 @@ Rodando mysql server
 Usaremos o container `mysql` para aprender alguns conceitos de Docker:
  - variables de entorno
  - mapeamento de portas
- - persistencia de dados). 
+ - persistencia de dados. 
  
 Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
 
