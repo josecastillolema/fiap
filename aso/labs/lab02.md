@@ -2,7 +2,7 @@
 
 Executando mysql server
 --------------
-Usaremos o container `mysql` para aprender alguns conceitos de Docker:
+Usaremos o container `mysql` para aprender alguns conceitos importantes do Docker:
  - variáveis de entorno: `docker run -e`
  - mapeamento de portas: `docker run -p`
  - persistência de dados: `docker run -v`
