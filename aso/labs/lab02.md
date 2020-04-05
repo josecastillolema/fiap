@@ -7,7 +7,7 @@ Usaremos o container `mysql` para aprender alguns conceitos de Docker:
  - mapeamento de portas
  - persistencia de dados 
  
-Para isso, vamos precisar de trabalhar com dois terminais abertos (T1 e T2).
+Vamos trabalhar com dois terminais abertos (T1 e T2).
 
 1. **[T1]** Obtencão da imagem
     ```
