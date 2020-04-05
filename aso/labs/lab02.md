@@ -131,7 +131,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
 
 5. **[T2]** Tentemos acessar ao banco.
 Alguns parametros do cliente *mysql*:
-    - Hostname do banco via `-h`
+    - *Hostname* do banco via `-h`
     - Usuario via `-u`
     - Senha via `-p`. A senha tem que ser digitadas **sem espacos** depois do parametro.
     ```
@@ -140,7 +140,7 @@ Alguns parametros do cliente *mysql*:
     ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
     ```
 
-6. **[T2]** Listemos o container em execucao para entender a falta de conectividade. A porta 3306 do container (a padrao do mysql) nao esta mapeada a nenhuma porta do host.
+6. **[T2]** Listemos o container em execucao para entender a falta de conectividade. A porta 3306 do container (a padrao do *mysql*) nao esta mapeada a nenhuma porta do host.
     ```
     ubuntu@ip-172-31-47-198:~$ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
