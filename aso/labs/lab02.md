@@ -193,12 +193,12 @@ Alguns parametros do cliente *mysql*:
    2020-04-05T13:05:07.005006Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
    ```
 
-10. **[T2]** Conferir o mapeamento de portas:
-   ```
-   $ docker ps
-   CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
-   38e202140601        mysql               "docker-entrypoint.s…"   11 seconds ago      Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   awesome_greider
-   ```
+9. **[T2]** Conferir o mapeamento de portas:
+    ```
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
+    38e202140601        mysql               "docker-entrypoint.s…"   11 seconds ago      Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   awesome_greider
+    ```
 
 10. **[T2]** Tentar novamente o acesso ao banco de dados:
     ```
