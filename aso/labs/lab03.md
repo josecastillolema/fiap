@@ -239,7 +239,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     Processing triggers for libc-bin (2.27-3ubuntu1) ...
     ```
 
-2. **[T1]** Navegar ate a pasta ***/fiap/aso/compose*** de este repositorio:
+2. **[T1]** Navegar ate a pasta ***/fiap/aso/compose*** de este repositorio *git*:
     ```
     $ cd fiap/aso/compose/
     $ pwd
