@@ -250,7 +250,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
 
     ```
 
-3. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yml***. Em sao definidos dois serviços:
+3. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yml***. São definidos dois serviços:
     - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*
     - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistencia de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno
     ```
