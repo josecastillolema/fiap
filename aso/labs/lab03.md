@@ -1,11 +1,12 @@
 # Lab 3 - Docker Compose
 
-Executando mysql server
+Executando servicos
 --------------
-Usaremos o container `mysql` para aprender alguns conceitos importantes do Docker:
- - variáveis de entorno: `docker run -e`
- - mapeamento de portas: `docker run -p`
- - persistência de dados: `docker run -v`
+Docker Compose permite definir servicos (que a sua vez são formados por containers) e a comunicação entre os mesmos. Essa comunicaçao é implementada via DNS nos containers. Alem disso, no arquivo de configuracao do Docker Compose (docker-compose.yml), e possivel definir:
+ - variáveis de entorno: comando `environment`
+ - mapeamento de portas: comando `ports`
+ - persistência de dados: comando `volumes`
+ - dependências entre os serviços: comandos `links` e `depends on`
  
 Vamos trabalhar com dois terminais abertos (T1 e T2).
 
@@ -411,7 +412,17 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     mysql_1  | 2020-04-08T19:53:17.291602Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-5. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo ***docker-compose.yml***.
+5. **[T1]** (Opcional) O comando anterior pode ser executado com a opçao **-d**. De esta forma os containers sao executados no background, e nao seria necessario usar dois terminais. Porém, temos menos visibilidade no que esta acontecendo nos containers:
+    ```
+    $ docker-compose up -d
+    Creating network "compose_default" with the default driver
+    Creating compose_mysql_1 ... 
+    Creating compose_mysql_1 ... done
+    Creating compose_api_1 ... 
+    Creating compose_api_1 ... done
+    ```
+
+6. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo ***docker-compose.yml***.
     ```
     $ cd fiap/aso/compose/
     $ pwd
@@ -423,7 +434,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     compose_mysql_1   docker-entrypoint.sh mysqld   Up      0.0.0.0:3306->3306/tcp, 33060/tcp
     ```
 
-6. **[T2]** Confirmar que os containers foram criados corretamente:
+7. **[T2]** Confirmar que os containers foram criados corretamente:
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS                               NAMES
@@ -431,19 +442,19 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     349228f10355        compose_mysql       "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes                  0.0.0.0:3306->3306/tcp, 33060/tcp   compose_mysql_1
     ```  
 
-7. **[T2]** Testar a API:
+8. **[T2]** Testar a API:
     ``` 
     $ curl localhost:4000
     Benvido a API FIAP!
     ``` 
 
-8. **[T2]** Testar a conexão da API com o banco de dados:
+9. **[T2]** Testar a conexão da API com o banco de dados:
     ``` 
     $ curl localhost:4000/getDados
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
-9. Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no paso 6:
+10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no paso 6:
     ``` 
     $ docker exec 6d7277694bc3 ping -c 3 mysql
     PING mysql (172.18.0.2) 56(84) bytes of data.
@@ -456,7 +467,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     rtt min/avg/max/mdev = 0.070/0.071/0.073/0.009 ms
     ```
 
-10. Remover os serviços (e os containers):
+11. **[T2]** Remover os serviços (e os containers):
     ```
     $ docker-compose down
     Stopping compose_api_1   ... done
