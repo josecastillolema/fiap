@@ -2,7 +2,7 @@
 
 Executando servicos
 --------------
-Docker Compose permite definir servicos (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Alem disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possivel definir:
+Docker Compose permite definir serviços (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Além disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possível definir:
  - variáveis de entorno: comando `environment`
  - mapeamento de portas: comando `ports`
  - persistência de dados: comando `volumes`
@@ -252,7 +252,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
 
 3. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yml***. São definidos dois serviços:
     - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*
-    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistencia de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno
+    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno
     ```
     $ cat docker-compose.yml 
     version: '2'
@@ -412,7 +412,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     mysql_1  | 2020-04-08T19:53:17.291602Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-5. **[T1]** (Opcional) O comando anterior pode ser executado com a opçao **-d**. De esta forma os containers são executados no *background*, e não sera necessário usar dois terminais. Porém, temos menos visibilidade no que esta acontecendo nos containers:
+5. **[T1]** (Opcional) O comando anterior pode ser executado com a opção **-d**. De esta forma os containers são executados no *background*, e não será necessário usar dois terminais. Porém, temos menos visibilidade no que está acontecendo nos containers:
     ```
     $ docker-compose up -d
     Creating network "compose_default" with the default driver
@@ -454,7 +454,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
-10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no paso 6:
+10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no passo 6:
     ``` 
     $ docker exec 6d7277694bc3 ping -c 3 mysql
     PING mysql (172.18.0.2) 56(84) bytes of data.
