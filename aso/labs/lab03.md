@@ -250,8 +250,8 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     ```
 
 3. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yml***. Em sao definidos dois serviços:
-    - **api**: a API escrita em Python, que tem dependencia (consulta) o serviço *mysql*
-    - **mysql**: o servidor mysql, com mapeamento de portas (porta 3306), persistencia de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno.
+    - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*
+    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistencia de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno
     ```
     $ cat docker-compose.yml 
     version: '2'
@@ -411,7 +411,7 @@ Vamos trabalhar com dois terminais abertos (T1 e T2).
     mysql_1  | 2020-04-08T19:53:17.291602Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-5. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contem o arquivo ***docker-compose.yml***.
+5. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo ***docker-compose.yml***.
     ```
     $ cd fiap/aso/compose/
     $ pwd
