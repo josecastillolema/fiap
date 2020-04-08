@@ -3,10 +3,10 @@
 Executando servicos
 --------------
 Docker Compose permite definir serviços (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Além disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possível definir:
- - variáveis de entorno: comando `environment`
- - mapeamento de portas: comando `ports`
- - persistência de dados: comando `volumes`
- - dependências entre os serviços: comandos `links` e `depends on`
+ - **variáveis de entorno**: comando `environment`
+ - **mapeamento de portas**: comando `ports`
+ - **persistência de dados**: comando `volumes`
+ - **dependências entre os serviços**: comandos `links` e `depends on`
  
 Vamos trabalhar com dois terminais abertos (T1 e T2).
 
