@@ -2,7 +2,7 @@
 
 Executando servicos
 --------------
-Docker Compose permite definir servicos (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Alem disso, no arquivo de configuracao do Docker Compose (docker-compose.yml), e possivel definir:
+Docker Compose permite definir servicos (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Alem disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possivel definir:
  - variáveis de entorno: comando `environment`
  - mapeamento de portas: comando `ports`
  - persistência de dados: comando `volumes`
