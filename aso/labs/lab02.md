@@ -45,6 +45,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     - Uma senha para o usuario *root* do banco via `MYSQL_ROOT_PASSWORD`
     - Permitir uma senha de *root* vazia via `MYSQL_ALLOW_EMPTY_PASSWORD`
     - Criar uma senha de *root* aleatória via `MYSQL_RANDOM_ROOT_PASSWORD`
+
     Vamos optar pela primeira opção. Para passar variáveis de entorno ao container usaremos a opção `-e`. É importante colocar todos os parâmetros opcionais do comando `docker run` **antes** do nome da imagem:
     ```
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap mysql
