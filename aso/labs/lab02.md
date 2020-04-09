@@ -7,7 +7,7 @@ Usaremos o container `mysql` para aprender alguns conceitos importantes do Docke
  - **mapeamento de portas**: `docker run -p`
  - **persistência de dados**: `docker run -v`
  
-Vamos trabalhar com dois terminais abertos (T1 e T2).
+Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Obtenção da imagem
     ```
