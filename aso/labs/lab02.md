@@ -31,7 +31,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     docker.io/library/mysql:latest
     ```
 
-2. **[T1]** Primeira tentativa executando o *mysql server*
+2. **[T1]** Primeira tentativa executando o *MySQL server*
    ```
    $ docker run mysql
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
