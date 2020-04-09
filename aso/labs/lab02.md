@@ -134,7 +134,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 Alguns parametros do cliente *mysql*:
     - *Hostname* do banco via `-h`
     - Usuario via `-u`
-    - Senha via `-p`. A senha tem que ser digitadas **sem espacos** depois do parametro.
+    - Senha via `-p`. A senha tem que ser digitada **sem espacos** depois do parametro.
     ```
     $ mysql -h 127.0.0.1 -u root -pfiap
     mysql: [Warning] Using a password on the command line interface can be insecure.
