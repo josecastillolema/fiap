@@ -141,7 +141,7 @@ Alguns parametros do cliente *mysql*:
     ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
     ```
 
-6. **[T2]** Listar o container em execução para entender a falta de conectividade. A porta 3306 do container (a padrão do *mysql*) não está mapeada a nenhuma porta do *host*.
+6. **[T2]** Listar o container em execução para entender a falta de conectividade. A coluna `PORTS` mostra que a porta 3306 do container (a padrão do *mysql*) não está mapeada a nenhuma porta do *host*.
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
