@@ -8,7 +8,7 @@ Docker Compose permite definir serviços (que a sua vez são formados por contai
  - **persistência de dados**: comando `volumes`
  - **dependências entre os serviços**: comandos `links` e `depends on`
  
-Vamos trabalhar com dois terminais abertos (T1 e T2).
+Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Instalação do Docker Compose:
     ```
