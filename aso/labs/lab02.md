@@ -2,7 +2,7 @@
 
 Executando mysql server
 --------------
-Usaremos o container `mysql` para aprender alguns conceitos importantes do Docker:
+Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do Docker:
  - **variáveis de entorno**: `docker run -e`
  - **mapeamento de portas**: `docker run -p`
  - **persistência de dados**: `docker run -v`
@@ -31,7 +31,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     docker.io/library/mysql:latest
     ```
 
-2. **[T1]** Primeira tentativa executando o *MySQL server*
+2. **[T1]** Primeira tentativa executando o servidor MySQL
    ```
    $ docker run mysql
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -85,7 +85,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     2020-04-05T12:51:14.783305Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do *mysql*:
+4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
     ```
     $ sudo apt install mysql-client -y
     Reading package lists... Done
@@ -131,7 +131,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 5. **[T2]** Tentemos acessar ao banco.
-Alguns parametros do cliente *mysql*:
+
+    Alguns parametros do cliente MySQL:
     - *Hostname* do banco via `-h`
     - Usuario via `-u`
     - Senha via `-p`. A senha tem que ser digitada **sem espacos** depois do parametro.
@@ -141,7 +142,7 @@ Alguns parametros do cliente *mysql*:
     ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
     ```
 
-6. **[T2]** Listar o container em execução para entender a falta de conectividade. A coluna `PORTS` mostra que a porta 3306 do container (a padrão do *mysql*) não está mapeada a nenhuma porta do *host*.
+6. **[T2]** Listar o container em execução para entender a falta de conectividade. A coluna `PORTS` mostra que a porta 3306 do container (a padrão do MySQL) não está mapeada a nenhuma porta do *host*.
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
@@ -226,7 +227,9 @@ Alguns parametros do cliente *mysql*:
     38e202140601
     ```
 
-12. **[T1]** Conseguimos acessar ao banco. Porem, containers são efêmeros. Qualquer dado criado no banco será perdido após o termino do container. Para conseguir persistência de dados, vamos adicionar ao comando `docker run` o parâmetro `-v`. Recebe um argumento do tipo ***x:y***, a onde ***x*** é o nome do volume e ***y*** a pasta a onde esse volume será mapeado dentro do container.
+12. **[T1]** Conseguimos acessar ao banco. Porem, containers são efêmeros. Qualquer dado criado no banco será perdido após o termino do container.
+
+    Para conseguir persistência de dados, vamos adicionar ao comando `docker run` o parâmetro `-v`. Recebe um argumento do tipo ***x:y***, a onde ***x*** é o nome do volume e ***y*** a pasta a onde esse volume será mapeado dentro do container.
     ```
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
