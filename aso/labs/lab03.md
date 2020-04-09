@@ -412,7 +412,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     mysql_1  | 2020-04-08T19:53:17.291602Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-5. **[T1]** (Opcional) O comando anterior pode ser executado com a opção **-d**. De esta forma os containers são executados no *background*, e não será necessário usar dois terminais. Porém, temos menos visibilidade no que está acontecendo nos containers:
+5. **[T1]** (Opcional / Alternativa ao passo 4) O comando anterior pode ser executado com a opção **-d**. De esta forma os containers são executados no *background*, e não será necessário usar dois terminais. Porém, temos menos visibilidade no que está acontecendo nos containers:
     ```
     $ docker-compose up -d
     Creating network "compose_default" with the default driver
