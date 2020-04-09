@@ -3,13 +3,13 @@
 Orquestrando containers
 --------------
 Docker Swarm permite orquestrar containers em um cluster formado por vários servidores. De esta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
- - **tolerancia a falhas**: se um dos servidores do cluster cair, o container automaticamente sera iniciado em outro servidor do cluster
- - **alta disponibilidade**: varias réplicas de cada container podem ser executadas em varios servidores do cluster
- - **escalabilidade**: o numero de réplicas de cada container pode ser aumentado a qualquer momento em funcao da demanda
+ - **tolerância a falhas**: se um dos servidores do cluster cair, o container automaticamente será iniciado em outro servidor do cluster
+ - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
+ - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
  
  Vamos trabalhar com duas máquinas virtuais (T1 e T2).
 
-1. **[T1]** Inicializaçao do ***manager***:
+1. **[T1]** Inicialização do ***manager***:
     ```
     $ docker swarm init
     Swarm initialized: current node (1y4bix4oby6nq2jxx5ft4rhd0) is now a manager.
@@ -21,13 +21,13 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
     ```
  
-2. **[T2]** Na segunda maquina virtual, inicializaçao do ***worker***:
+2. **[T2]** Na segunda maquina virtual, inicialização do ***worker***:
     ```
     $ docker swarm join --token SWMTKN-1-5it2k13vtptja3tl2xpgjywr856a4r7siuve20r2ev9h98gfrj-498uqdu6x8o74b816orz6s5gn 172.31.47.198:2377
     This node joined a swarm as a worker.
     ```
 
-3. **[T1]** Listar os servidores que fazem parte do cluster Docker Swarm desde o manager:
+3. **[T1]** Listar os servidores que fazem parte do cluster Docker Swarm desde o *manager*:
     ```
     $ docker node ls
     ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -35,7 +35,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     1y4bix4oby6nq2jxx5ft4rhd0 *   ip-172-31-47-198    Ready               Active              Leader              19.03.6
     ```
     
-4. **[T2]** Desde o worker nao e possivel executar nenhum comando do Docker Swarm, p.ex.:
+4. **[T2]** Desde o *worker* não é possível executar nenhum comando do Docker Swarm, p.ex.:
     ```
     $ docker node ls
     Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
@@ -51,8 +51,8 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     ```
 
 6. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yaml***. São definidos dois serviços:
-    - **api**: a API escrita em Python, que tem dependência (consulta) o serviço mysql, com **3 réplicas**
-    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta /var/lib/mysql) e algumas variáveis de entorno, com *1 réplica*
+    - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*, com **3 réplicas**
+    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno, com **1 réplica**
     ```
     $ cat docker-compose.yaml 
     version: '3'
@@ -97,7 +97,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
       db-data:
     ```
 
-7. **[T1]** Criar o stack definido no arquivo ***docker-compose.yml***:
+7. **[T1]** Criar o *stack* definido no arquivo ***docker-compose.yml***:
     ```
     $ docker stack deploy -c docker-compose.yaml stackFiap
     Creating network stackFiap_default
@@ -112,7 +112,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     stackFiap           2                   Swarm
     ```
 
-9. **[T1]** Conferir que os servicos foram criados corretamente:
+9. **[T1]** Conferir que os serviços foram criados corretamente:
     ```
     $ docker service ls
     ID                  NAME                MODE                REPLICAS            IMAGE                           PORTS
@@ -120,7 +120,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     tmns8lwyrb9f        stackFiap_mysql     replicated          1/1                 josecastillolema/mysql:latest   *:3306->3306/tcp
     ```
 
-10. **[T1]** Conferir quais containers foram criados na primeira maquina virtual (em este caso o banco de dados e uma instancia da API):
+10. **[T1]** Conferir quais containers foram criados na primeira máquina virtual (em este caso o banco de dados e uma instancia da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                   PORTS                 NAMES
@@ -128,7 +128,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     2239ae187e86        josecastillolema/api:latest     "./api.py"               2 minutes ago       Up 2 minutes (healthy)   5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-11. **[T2]** Conferir quais containers foram criados na segunda maquina virtual (em este caso duas instancias da API):
+11. **[T2]** Conferir quais containers foram criados na segunda máquina virtual (em este caso duas instancias da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS                   PORTS               NAMES
@@ -178,7 +178,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     verify: Service converged 
     ```
 
-15. **[T1]** Vamos desligar o worker (servidor **T2**). Antes disso, conferir os containers que estao rodando no *manager* (neste caso, o banco de dados e 4 replicas da API):
+15. **[T1]** Vamos desligar o *worker* (servidor **T2**). Antes disso, conferir os containers que estão rodando no *manager* (neste caso, o banco de dados e 4 replicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                    PORTS                 NAMES
@@ -196,7 +196,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     Connection to ec2-3-85-40-189.compute-1.amazonaws.com closed.
     ```
     
-17. **[T1]** Apos uns instantes, confirmar que o worker aparece como ***down***:
+17. **[T1]** Apos uns instantes, confirmar que o *worker* aparece como ***down***:
     ```
     $ docker node ls
     ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -204,7 +204,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     1y4bix4oby6nq2jxx5ft4rhd0 *   ip-172-31-47-198    Ready               Active              Leader              19.03.6
     ```
 
-18. **[T1]** Confirmar que os containers que estavam rodando no worker (servidor **T2**), foram recriados no manager (neste caso, 4 replicas da API):
+18. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 replicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED              STATUS                        PORTS                 NAMES
