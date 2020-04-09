@@ -131,6 +131,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 5. **[T2]** Tentemos acessar ao banco.
+
     Alguns parametros do cliente MySQL:
     - *Hostname* do banco via `-h`
     - Usuario via `-u`
