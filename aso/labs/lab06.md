@@ -1,10 +1,10 @@
 # Lab 6 - Kompose
 
-Kompose permite importar templates do Docker Swarm no Kubernetes.
+Kompose permite importar *templates* do Docker Swarm no Kubernetes.
  
 1. Instalação do Kompose
 
-    a. Obtencao do executavel:
+    a. Obtenção do executável:
     ```
     $ curl -L https://github.com/kubernetes/kompose/releases/download/v1.17.0/kompose-linux-amd64 -o kompose
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -12,16 +12,16 @@ Kompose permite importar templates do Docker Swarm no Kubernetes.
     100   630  100   630    0     0   3500      0 --:--:-- --:--:-- --:--:--  3519
     100 50.0M  100 50.0M    0     0  31.3M      0  0:00:01  0:00:01 --:--:-- 37.8M
     ```
-    b. Ajuste de permissao de escrita:
+    b. Ajuste da permissão de escrita:
     ```
     $ chmod +x kompose
     ```
-    c. Mover o executavel para a pasta correspondente:
+    c. Mover o executável para a pasta correspondente:
     ```
     $ sudo mv ./kompose /usr/local/bin/
     ```
 
-2. Navegar ate a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
+2. Navegar até a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
     ```
     $ cd fiap/aso/swarm/v1
     $ pwd
