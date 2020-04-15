@@ -127,7 +127,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     ```
 11. **[T1]** Testar a conexão da API com o banco de dados:
     ```
-    $ curl localhost:4000/getDados
+    $ curl localhost:3000/getDados
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
