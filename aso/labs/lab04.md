@@ -41,7 +41,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
     ```
     
-5. **[T1]** Navegar ate a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
+5. **[T1]** Navegar até a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
     ```
     $ cd fiap/aso/swarm/v1
     $ pwd
