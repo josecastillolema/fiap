@@ -119,8 +119,19 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     vlh0cjv5nd65        stackFiap_api       replicated          3/3                 josecastillolema/api:latest     *:3000->5000/tcp
     tmns8lwyrb9f        stackFiap_mysql     replicated          1/1                 josecastillolema/mysql:latest   *:3306->3306/tcp
     ```
+    
+10. **[T1]** Testar a API:
+    ```
+    $ curl localhost:3000
+    Benvido a API FIAP!
+    ```
+11. **[T1]** Testar a conexão da API com o banco de dados:
+    ```
+    $ curl localhost:4000/getDados
+    [{"id": 1234, "name": "Jose Castillo Lema"}]
+    ```
 
-10. **[T1]** Conferir quais containers foram criados na primeira máquina virtual (em este caso o banco de dados e uma instancia da API):
+12. **[T1]** Conferir quais containers foram criados na primeira máquina virtual (em este caso o banco de dados e uma instancia da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                   PORTS                 NAMES
@@ -128,7 +139,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     2239ae187e86        josecastillolema/api:latest     "./api.py"               2 minutes ago       Up 2 minutes (healthy)   5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-11. **[T2]** Conferir quais containers foram criados na segunda máquina virtual (em este caso duas instancias da API):
+13. **[T2]** Conferir quais containers foram criados na segunda máquina virtual (em este caso duas instancias da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS                   PORTS               NAMES
@@ -136,7 +147,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     3201f87fc015        josecastillolema/api:latest   "./api.py"          2 minutes ago       Up 2 minutes (healthy)   5000/tcp            stackFiap_api.2.rt2zby2s1s8igdzysd3gbmv9w
     ```
 
-12. **[T1]** Aumentar o numero de replicas da API (***scale out***):
+14. **[T1]** Aumentar o numero de replicas da API (***scale out***):
     ```
     $ docker service scale stackFiap_api=10
     stackFiap_api scaled to 10
@@ -154,7 +165,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     verify: Service converged
     ```
 
-13. **[T1]** Confirmar o novo numero de replicas:
+15. **[T1]** Confirmar o novo numero de replicas:
     ```
     $ docker service ls
     ID                  NAME                MODE                REPLICAS            IMAGE                           PORTS
@@ -162,7 +173,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     tmns8lwyrb9f        stackFiap_mysql     replicated          1/1                 josecastillolema/mysql:latest   *:3306->3306/tcp
     ```
 
-14. **[T1]** Diminuir o numero de replicas da API (***scale in***):
+16. **[T1]** Diminuir o numero de replicas da API (***scale in***):
     ```
     $ docker service scale stackFiap_api=8
     stackFiap_api scaled to 8
@@ -178,7 +189,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     verify: Service converged 
     ```
 
-15. **[T1]** Vamos desligar o *worker* (servidor **T2**). Antes disso, conferir os containers que estão rodando no *manager* (neste caso, o banco de dados e 4 replicas da API):
+17. **[T1]** Vamos desligar o *worker* (servidor **T2**). Antes disso, conferir os containers que estão rodando no *manager* (neste caso, o banco de dados e 4 replicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                    PORTS                 NAMES
@@ -189,14 +200,14 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     2239ae187e86        josecastillolema/api:latest     "./api.py"               11 minutes ago      Up 11 minutes (healthy)   5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-16. **[T2]** Desligar o *worker*:
+18. **[T2]** Desligar o *worker*:
     ```
     $ sudo shutdown -h now
     Connection to ec2-3-85-40-189.compute-1.amazonaws.com closed by remote host.
     Connection to ec2-3-85-40-189.compute-1.amazonaws.com closed.
     ```
     
-17. **[T1]** Apos uns instantes, confirmar que o *worker* aparece como ***down***:
+19. **[T1]** Apos uns instantes, confirmar que o *worker* aparece como ***down***:
     ```
     $ docker node ls
     ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -204,7 +215,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     1y4bix4oby6nq2jxx5ft4rhd0 *   ip-172-31-47-198    Ready               Active              Leader              19.03.6
     ```
 
-18. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 replicas da API):
+20. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 replicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED              STATUS                        PORTS                 NAMES
@@ -219,7 +230,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     2239ae187e86        josecastillolema/api:latest     "./api.py"               15 minutes ago       Up 15 minutes (healthy)       5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-19. **[T1]** Remover o *stack*:
+21. **[T1]** Remover o *stack*:
     ```
     $ docker stack rm stackFiap
     Removing service stackFiap_api
