@@ -1,4 +1,4 @@
-# Lab 3 - Docker Swarm
+# Lab 4 - Docker Swarm
 
 Orquestrando containers
 --------------
