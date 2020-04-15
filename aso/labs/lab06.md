@@ -25,7 +25,7 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
     ```
     $ cd fiap/aso/swarm/v1
     $ pwd
-    /home/ubuntu/fiap/swarm/v1
+    /home/ubuntu/fiap/aso/swarm/v1
     $ ls
     docker-compose.yaml
     ```
@@ -56,4 +56,14 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
     ```
     $ curl 10.152.183.40:3000
     Benvido a API FIAP!
+    ```
+6. Remover o *stack*:
+    ```
+    $ kompose down
+    INFO Deleting application in "default" namespace  
+    INFO Successfully deleted Service: api            
+    INFO Successfully deleted Service: mysql          
+    INFO Successfully deleted Pod: api                
+    INFO Successfully deleted Pod: mysql              
+    INFO Successfully deleted PersistentVolumeClaim: db-data 
     ```
