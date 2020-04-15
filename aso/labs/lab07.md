@@ -12,14 +12,13 @@ Existem vários recursos dentro de um cluster Kubernetes:
      - número de réplicas
 
  
-1. Inicialização do ***manager***:
+1. Navegar até a pasta ***/fiap/aso/kubernetes*** de este repositório *git*:
     ```
-    $ docker swarm init
-    Swarm initialized: current node (1y4bix4oby6nq2jxx5ft4rhd0) is now a manager.
-
-    To add a worker to this swarm, run the following command:
-
-        docker swarm join --token SWMTKN-1-5it2k13vtptja3tl2xpgjywr856a4r7siuve20r2ev9h98gfrj-498uqdu6x8o74b816orz6s5gn 172.31.47.198:2377
-
-    To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+    $ cd fiap/aso/kubernetes
+    $ pwd
+    /home/ubuntu/fiap/aso/kubernetes
+    $ ls
+    api-deployment.yaml  api-service.yaml  mysql-deployment.yaml  mysql-pv.yaml  mysql-service.yaml
     ```
+    
+2. 
