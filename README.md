@@ -6,7 +6,7 @@
  - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
    * Fast Data & Microservices 2019.1/2019.2
    * Internet das Coisas
-   * Microservicos
+   * Microserviços
  - [MBA em *Blockchain Development & Technologies* (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
    * *DevOps & Cloud Oriented Architecture*
  - [MBA em *Cloud Computing* (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
