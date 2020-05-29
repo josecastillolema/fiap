@@ -1,6 +1,6 @@
 ## Arquitetura de *Storage* / *DataCenter* / Virtualização e Microcontainers
 
-Cada projeto se refere a aulas e/ou roteiros executados em sala de aula. Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei pull requests 😄.
+Cada projeto se refere a aulas e/ou roteiros executados em sala de aula. Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei *pull requests* 😄.
 
  - [Lab 2: Docker (continuação)](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/lab02-docker-2.md)
  - [Lab 3: Docker Compose](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/lab03-docker-compose.md)
