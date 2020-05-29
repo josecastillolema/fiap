@@ -2,7 +2,7 @@
 
  - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/tree/master/aso)
    * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
-   * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
+   * Arquitetura em *MultiCloud* (AWS / GCP / Azure / IBM Cloud)
  - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
    * *Cloud Computing*
    * Fast Data & Microservices
@@ -11,7 +11,7 @@
  - [MBA em *Blockchain Development & Technologies* (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
    * *DevOps & Cloud Oriented Architecture*
  - [MBA em *Cloud Computing* (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
-   * BootCamp OpenStack
+   * *BootCamp* OpenStack
    * Implementação de *Cloud*
    * Implementação OpenStack
  - [MBA em *Artificial Intelligence & Machine Learning* (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
