@@ -1,4 +1,4 @@
-# Lab 2 - Docker (continuação)
+# Lab 2 - Docker - continuação
 
 Executando mysql server
 --------------
