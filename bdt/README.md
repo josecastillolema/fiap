@@ -2,7 +2,7 @@
 
 ## *Cloud Computing*
 ## *Fast Data* & *Microservices*
-## Internet das Coisas
+## [Internet das Coisas](https://github.com/josecastillolema/fiap/tree/master/bdt/iot)
 ## Microserviços
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
