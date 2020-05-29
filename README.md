@@ -4,7 +4,8 @@
    * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
    * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
  - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
-   * Fast Data & Microservices 2019.1/2019.2
+   * *Cloud Computing*
+   * Fast Data & Microservices
    * Internet das Coisas
    * Microserviços
  - [MBA em *Blockchain Development & Technologies* (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
