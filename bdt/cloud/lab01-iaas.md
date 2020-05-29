@@ -1,4 +1,4 @@
-# Lab 2 - Docker (continuação)
+# Lab 1 - AWS EC2
 
 Executando mysql server
 --------------
