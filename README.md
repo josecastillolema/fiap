@@ -28,6 +28,6 @@
    * *Cloud Development*
    * Desenvolvimento de aplicações usando *Cloud Computing*
 
-Para saber mais sobre os cursos, acesse o site de MBA da FIAP em https://www.fiap.com.br/mba/.
+Para saber mais sobre os cursos, acesse o *site* de MBA da FIAP em https://www.fiap.com.br/mba/.
 
 ![FIAP MBA](img/20181011_fiap_mba_shareDefault.png)
