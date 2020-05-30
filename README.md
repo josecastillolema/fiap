@@ -1,6 +1,6 @@
 # Aplicações para os cursos de pós-graduação da FIAP
 
- - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/tree/master/aso)
+ - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
    * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
    * Arquitetura em *MultiCloud* (AWS / GCP / Azure / IBM Cloud)
  - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
