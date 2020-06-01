@@ -1,6 +1,6 @@
 # Lab 1 - AWS EC2
 
-Executando mysql server
+Criando a instancia
 --------------
 Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do Docker:
  - **variáveis de entorno**: `docker run -e`
