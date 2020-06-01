@@ -6,7 +6,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
  - ***security groups***
  - **[cloud-init](https://cloud-init.io/)**
  
-1. Acessar o serviço EC2:
+1. Acessar o serviço **EC2**:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
@@ -18,13 +18,13 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 4. Escolher o ***flavor*** `t2.micro`:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-3.png)
 
-5. Usaremos um *script* de *`cloud-init`* para customizar a instância:
+5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-5.png)
    
-7. Criaçao da chave para poder acessar a instância via SSH de forma segura:
+7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
    <img src="https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-6.png" width="465" height="342">
 
 8. Validar a criacao da instância:
