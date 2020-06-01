@@ -25,7 +25,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-5.png)
    
 7. Criaçao da chave para poder acessar a instância via SSH de forma segura:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-6.png){ width=50% }
+   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-6.png =100x20)
 
 8. Validar a criacao da instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-7.png)
