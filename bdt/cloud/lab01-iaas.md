@@ -6,29 +6,8 @@ Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do 
  - **mapeamento de portas**: `docker run -p`
  - **persistência de dados**: `docker run -v`
  
-Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
-
-1. **[T1]** Obtenção da imagem
-    ```
-    $ docker pull mysql
-    Using default tag: latest
-    latest: Pulling from library/mysql
-    c499e6d256d6: Pull complete 
-    22c4cdf4ea75: Pull complete 
-    6ff5091a5a30: Pull complete 
-    2fd3d1af9403: Pull complete 
-    0d9d26127d1d: Pull complete 
-    54a67d4e7579: Pull complete 
-    fe989230d866: Pull complete 
-    3a808704d40c: Pull complete 
-    826517d07519: Pull complete 
-    69cd125db928: Pull complete 
-    b5c43b8c2879: Pull complete 
-    1811572b5ea5: Pull complete 
-    Digest: sha256:b69d0b62d02ee1eba8c7aeb32eba1bb678b6cfa4ccfb211a5d7931c7755dc4a8
-    Status: Downloaded newer image for mysql:latest
-    docker.io/library/mysql:latest
-    ```
+1. Acessar o serviço EC2:
+   ![Screenshot of the VNF xterm](https://github.com/josecastillolema/fiap/blob/master/doc/img/ec2-0.png)
 
 2. **[T1]** Primeira tentativa executando o servidor MySQL
    ```
@@ -83,6 +62,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     2020-04-05T12:51:14.668536Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.19'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
     2020-04-05T12:51:14.783305Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
+    
+## Accessando à instancia
 
 4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
     ```
