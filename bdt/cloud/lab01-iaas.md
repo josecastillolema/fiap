@@ -7,7 +7,7 @@ Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do 
  - **persistência de dados**: `docker run -v`
  
 1. Acessar o serviço EC2:
-   ![Screenshot of the VNF xterm](https://github.com/josecastillolema/fiap/blob/master/doc/img/ec2-0.png)
+   ![Screenshot of the VNF xterm](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
 
 2. **[T1]** Primeira tentativa executando o servidor MySQL
    ```
