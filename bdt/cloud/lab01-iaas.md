@@ -19,7 +19,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-3.png)
 
 5. Usaremos um *script* de `cloud-init` para customizar a instância:
-   <img src="https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png" width="1225" height="1058">
+   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-5.png)
