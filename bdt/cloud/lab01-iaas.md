@@ -38,14 +38,12 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 10. Em um terminal local:
     ```
     $ chmod 400 fiap.pem
-    
-    $ $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
+    $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
 
        __|  __|_  )
        _|  (     /   Amazon Linux 2 AMI
       ___|\___|___|
 
     https://aws.amazon.com/amazon-linux-2/
-    ```
     ```
 
