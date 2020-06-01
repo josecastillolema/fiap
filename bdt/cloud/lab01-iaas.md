@@ -32,20 +32,20 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 
 ## Accessando à instancia
 
-9. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
+9. Seguiremos as próprias indicações do EC2:
+   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-8.png)
+   
+10. Em um terminal local:
     ```
-    $ sudo apt install mysql-client -y
-    Reading package lists... Done
-    Building dependency tree          
-    Preparing to unpack .../mysql-client_5.7.29-0ubuntu0.18.04.1_all.deb ...
-    Unpacking mysql-client (5.7.29-0ubuntu0.18.04.1) ...
-    Setting up mysql-common (5.8+1.0.4) ...
-    update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
-    Setting up libaio1:amd64 (0.3.110-5ubuntu0.1) ...
-    Setting up mysql-client-core-5.7 (5.7.29-0ubuntu0.18.04.1) ...
-    Setting up mysql-client-5.7 (5.7.29-0ubuntu0.18.04.1) ...
-    Setting up mysql-client (5.7.29-0ubuntu0.18.04.1) ...
-    Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
-    Processing triggers for libc-bin (2.27-3ubuntu1) ...
+    $ chmod 400 fiap.pem
+    
+    $ $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+    https://aws.amazon.com/amazon-linux-2/
+    ```
     ```
 
