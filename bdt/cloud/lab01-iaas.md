@@ -7,17 +7,11 @@ Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do 
  - **persistência de dados**: `docker run -v`
  
 1. Acessar o serviço EC2:
-   ![Screenshot of the VNF xterm](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
+   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
 
-2. **[T1]** Primeira tentativa executando o servidor MySQL
-   ```
-   $ docker run mysql
-   2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
-   2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-   2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
-   2020-04-05 12:45:11+00:00 [ERROR] [Entrypoint]: Database is uninitialized and password option is not specified
-	      You need to specify one of MYSQL_ROOT_PASSWORD, MYSQL_ALLOW_EMPTY_PASSWORD and MYSQL_RANDOM_ROOT_PASSWORD
-   ```
+2. Lançar o assistente de criaçao de instancias:
+   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
+
 
 3. **[T1]** Como mostra a mensagem de erro anterior, não e possível executar o container `mysql` sem configurar alguma das seguintes opções em relação à autenticação:
     - Uma senha para o usuario *root* do banco via `MYSQL_ROOT_PASSWORD`
