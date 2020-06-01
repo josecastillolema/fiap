@@ -12,13 +12,13 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 2. Lançar o assistente de criaçao de instancias:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-1.png)
 
-3. Escolher a imagem do Amazon Linux 2 AMI:
+3. Escolher a **imagem** do Amazon Linux 2 AMI:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-2.png)
    
-4. Escolher o *flavor* `t2.micro`:
+4. Escolher o ***flavor*** `t2.micro`:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-3.png)
 
-5. Usaremos um *script* de `cloud-init` para customizar a instância:
+5. Usaremos um *script* de `*cloud-init*` para customizar a instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
