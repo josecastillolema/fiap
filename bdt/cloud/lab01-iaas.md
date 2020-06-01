@@ -18,7 +18,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 4. Escolher o ***flavor*** `t2.micro`:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-3.png)
 
-5. Usaremos um *script* de `*cloud-init*` para customizar a instância:
+5. Usaremos um *script* de *`cloud-init`* para customizar a instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
