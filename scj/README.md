@@ -8,4 +8,4 @@
 
 Para saber mais sobre o curso, acesse o *site* do MBA em  da FIAP em *Full Stack Developer* - *Microservices*, *Cloud* e IoT no seguinte *link*: https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/.
 
-![FIAP MBA](../img/full-stack.png)
+![FIAP MBA](/img/full-stack.png)
