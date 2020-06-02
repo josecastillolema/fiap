@@ -47,10 +47,16 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     https://aws.amazon.com/amazon-linux-2/
     [ec2-user@ip-172-31-50-1 ~]$
     ```
+    
+11. Confirmar que o script de **cloud-init** rodou com sucesso:
+   ```
+   $ ls /tmp/
+   cloudInitFunciona
+   ```
 
 ## Instalando um servidor web
 
-11. Instalar o pacote `httpd`:
+12. Instalar o pacote `httpd`:
    ```
    [ec2-user@ip-172-31-50-1 ~]$ sudo yum install -y httpd
    Failed to set locale, defaulting to C
@@ -149,20 +155,20 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    Complete!
    ```
 
-12. Habilitar o serviço `httpd`:
+13. Habilitar o serviço `httpd`:
    ```
    [ec2-user@ip-172-31-50-1 ~]$ sudo service httpd start  
    Redirecting to /bin/systemctl start httpd.service
    ```
    
-13. Criar um *site* de teste, no arquivo `/var/www/html/index.html`:
+14. Criar um *site* de teste, no arquivo `/var/www/html/index.html`:
    ```
    <h1>
       FIAP!!!
    </h1>
    ```
    
-14. Testar localmente o servidor web:
+15. Testar localmente o servidor web:
    ```
    [ec2-user@ip-172-31-50-1 ~]$ curl localhost
    <h1>
@@ -170,14 +176,14 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    </h1>
    ```
   
-15. Obter o IP público da VM:
+16. Obter o IP público da VM:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-9.png)
 
-16. Testar accesso pelo IP público:
+17. Testar accesso pelo IP público:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-10.png)
 
-17. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
+18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-11.png)
 
-18. Testar novamente o acesso pelo IP público:
+19. Testar novamente o acesso pelo IP público:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-12.png)
