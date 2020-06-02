@@ -4,4 +4,4 @@
 
 Para saber mais sobre o curso, acesse o *site* do MBA em *Artificial Intelligence & Machine Learning* da FIAP em https://www.fiap.com.br/mba/mba-em-artificial-intelligence-e-machine-learning/.
 
-![FIAP MBA](../img/ai1.png)
+![FIAP MBA](/img/ai1.png)
