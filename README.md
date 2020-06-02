@@ -30,4 +30,4 @@
 
 Para saber mais sobre os cursos, acesse o *site* de MBA da FIAP em [https://www.fiap.com.br/mba/](https://www.fiap.com.br/mba/).
 
-![FIAP MBA](img/20181011_fiap_mba_shareDefault.png)
+![FIAP MBA](/img/20181011_fiap_mba_shareDefault.png)
