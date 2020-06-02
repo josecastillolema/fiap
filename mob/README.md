@@ -5,4 +5,4 @@
 
 Para saber mais sobre o curso, acesse o *site* do MBA em *Mobile Development* da FIAP no seguinte *link*: https://www.fiap.com.br/mba/mba-em-mobile-development/.
 
-![FIAP MBA](../img/mob1.png)
+![FIAP MBA](/img/mob1.png)
