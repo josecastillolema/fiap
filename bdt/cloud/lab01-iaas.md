@@ -10,30 +10,30 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ![](/bdt/cloud/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-1.png)
+   ![](/bdt/cloud/img/ec2-1.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-2.png)
+   ![](/bdt/cloud/img/ec2-2.png)
    
 4. Escolher o ***flavor*** `t2.micro`:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-3.png)
+   ![](/bdt/cloud/img/ec2-3.png)
 
 5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-4.png)
+   ![](/bdt/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-5.png)
+   ![](/bdt/cloud/img/ec2-5.png)
    
 7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
    <img src="https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-6.png" width="465" height="342">
 
 8. Validar a criacao da instância:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-7.png)
+   ![](/bdt/cloud/img/ec2-7.png)
 
 ## Accessando à instancia
 
 9. Seguiremos as próprias indicações do EC2:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-8.png)
+   ![](/bdt/cloud/img/ec2-8.png)
    
 10. Em um terminal local:
     ```
@@ -177,13 +177,13 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ```
   
 16. Obter o IP público da VM:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-9.png)
+   ![](/bdt/cloud/img/ec2-9.png)
 
 17. Testar accesso pelo IP público:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-10.png)
+   ![](/bdt/cloud/img/ec2-10.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-11.png)
+   ![](/bdt/cloud/img/ec2-11.png)
 
 19. Testar novamente o acesso pelo IP público:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-12.png)
+   ![](/bdt/cloud/img/ec2-12.png)
