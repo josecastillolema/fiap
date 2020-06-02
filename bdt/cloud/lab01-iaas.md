@@ -7,7 +7,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
  - **[cloud-init](https://cloud-init.io/)**
  
 1. Acessar o serviço **EC2**:
-   ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-0.png)
+   ![](/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
    ![](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/img/ec2-1.png)
