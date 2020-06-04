@@ -6,4 +6,4 @@
  - [*Cloud Development*](https://github.com/josecastillolema/fiap/tree/master/scj/java)
  - Desenvolvimento de aplicações usando *Cloud Computing*
 
-[![FIAP MBA](/img/full-stack.png)](https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/)
+[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/full-stack.png)](https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/)
