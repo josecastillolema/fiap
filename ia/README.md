@@ -1,7 +1,4 @@
-# MBA em *Artificial Intelligence & Machine Learning* (IA)
+[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/ai1.png)](https://www.fiap.com.br/mba/mba-em-artificial-intelligence-e-machine-learning/)
 
-## [Princípios de Robótica e IoT](https://github.com/josecastillolema/fiap/tree/master/ia/iot)
+ - [Princípios de Robótica e IoT](https://github.com/josecastillolema/fiap/tree/master/ia/iot)
 
-Para saber mais sobre o curso, acesse o *site* do MBA em *Artificial Intelligence & Machine Learning* da FIAP em https://www.fiap.com.br/mba/mba-em-artificial-intelligence-e-machine-learning/.
-
-![FIAP MBA](/img/ai1.png)
