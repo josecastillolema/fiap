@@ -1,4 +1,4 @@
-[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/big-data.png)](https://www.fiap.com.br/mba/mba-em-big-data/)
+[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/bdt.png)](https://www.fiap.com.br/mba/mba-em-big-data/)
 
  - [*Cloud Computing*](https://github.com/josecastillolema/fiap/tree/master/bdt/cloud)
  - *Fast Data* & *Microservices*
