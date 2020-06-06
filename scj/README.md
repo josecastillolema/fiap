@@ -1,6 +1,4 @@
-# FIAP MBA em *Full Stack Developer* - *Microservices*, *Cloud* e IoT (SCJ)
-
-[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/full-stack.png)](https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/)
+[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/scj.png)](https://www.fiap.com.br/mba/mba-em-full-stack-developer-microservices-cloud-e-iot/)
 
  - Arquitetura e Desenvolvimento Java com IoT
  - Arquitetura e Desenvolvimento Java de Alta Disponibilidade para *Cloud Computing*
