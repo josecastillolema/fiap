@@ -1,5 +1,5 @@
 # Aplicações para os cursos de pós-graduação da FIAP
- - [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aoj/README.md)
+ - [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
    * Cloud Computing & SRE 
  - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
    * Arquitetura de *Storage* / *DataCenter* / Virtualização e *Microcontainers*
