@@ -52,14 +52,14 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     storage: disabled
     ```
 
-5. Usar o cliente interno do microk8s (**`kubectl`**):
+5. Usar o cliente interno do microk8s (**`microk8s.kubectl`**):
     ```
     $ microk8s.kubectl get all
     NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   4m5s
     ```
 
-6. Instalação do cliente externo:
+6. Instalação do cliente externo (**`kubectl`**):
     ```
     $ sudo snap install kubectl --classic
     kubectl 1.18.0 from Canonical✓ installed
