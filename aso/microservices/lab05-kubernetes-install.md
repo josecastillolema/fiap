@@ -11,7 +11,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
  
 1. Instalação do **microk8s**:
     ```
-    $ $ sudo snap install microk8s --classic
+    $ sudo snap install microk8s --classic
     microk8s v1.18.0 from Canonical✓ installed
     ```
 2. Ajuste de permissões do usuário ***ubuntu*** no grupo ***microk8s***:
