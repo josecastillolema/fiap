@@ -13,13 +13,13 @@ Existem vários recursos dentro de um cluster Kubernetes:
 
  
 1. Navegar até a pasta ***/fiap/aso/kubernetes*** de este repositório *git*:
-    ```
-    $ cd fiap/aso/kubernetes
+    <pre>
+    <b>$ cd fiap/aso/kubernetes</b>
     $ pwd
     /home/ubuntu/fiap/aso/kubernetes
     $ ls
     api-deployment.yaml  api-service.yaml  mysql-deployment.yaml  mysql-pv.yaml  mysql-service.yaml
-    ```
+    </pre>
     
 2. Criar o volume persistente do banco de dados:
     ```
