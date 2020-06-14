@@ -22,8 +22,10 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
 
 3. Após o *reboot*, confirmar que o usuário pertence ao grupo **`microk8s`**:
    ```
+   <pre>
    $ groups
-   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker microk8s
+   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker <b>microk8s</b>
+   </pre>
    ```
 
 4. Conferir instalação:
