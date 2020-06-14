@@ -53,7 +53,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
 6. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yaml***. São definidos dois serviços:
     - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*, com **3 réplicas**
     - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno, com **1 réplica**
-    ```
+    ```yaml
     $ cat docker-compose.yaml 
     version: '3'
 
