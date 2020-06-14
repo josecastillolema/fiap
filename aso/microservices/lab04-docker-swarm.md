@@ -67,9 +67,9 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
           - mysql
         deploy:
           replicas: 3
-          #update_config:
-          #  parallelism: 1
-          #  delay: 10is
+          # update_config:
+          #   parallelism: 1
+          #   delay: 10is
           mode: replicated
           restart_policy:
             condition: on-failure
