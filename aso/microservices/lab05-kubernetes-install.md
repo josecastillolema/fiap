@@ -97,7 +97,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
-9. Habilitar os *plugins* de ***dns*** e ***dashboard***
+9. Habilitar os *plugins* **`dns`** e **`dashboard`**
     ```
     $ microk8s.enable dns dashboard
     Enabling DNS
