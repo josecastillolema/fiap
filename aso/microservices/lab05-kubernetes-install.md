@@ -152,8 +152,8 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     $ microk8s.status
     microk8s is running
     addons:
-    dashboard: enabled
-    dns: enabled
+    <b>dashboard: enabled
+    dns: enabled</b>
     cilium: disabled
     fluentd: disabled
     gpu: disabled
