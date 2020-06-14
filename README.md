@@ -1,6 +1,39 @@
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba.png)](https://www.fiap.com.br/mba/)
 
+```html
+<a href="#" class="btn--success">Success Button</a>
+```
+
 [Default Button](#){: .btn}
+[Primary Button](#){: .btn .btn--primary}
+[Success Button](#){: .btn .btn--success}
+[Warning Button](#){: .btn .btn--warning}
+[Danger Button](#){: .btn .btn--danger}
+[Info Button](#){: .btn .btn--info}
+[Inverse Button](#){: .btn .btn--inverse}
+[Light Outline Button](#){: .btn .btn--light-outline}
+
+```markdown
+[Default Button Text](#link){: .btn}
+[Primary Button Text](#link){: .btn .btn--primary}
+[Success Button Text](#link){: .btn .btn--success}
+[Warning Button Text](#link){: .btn .btn--warning}
+[Danger Button Text](#link){: .btn .btn--danger}
+[Info Button Text](#link){: .btn .btn--info}
+[Inverse Button](#link){: .btn .btn--inverse}
+[Light Outline Button](#link){: .btn .btn--light-outline}
+```
+
+[X-Large Button](#){: .btn .btn--primary .btn--x-large}
+[Large Button](#){: .btn .btn--primary .btn--large}
+[Default Button](#){: .btn .btn--primary }
+[Small Button](#){: .btn .btn--primary .btn--small}
+
+```markdown
+[X-Large Button](#link){: .btn .btn--primary .btn--x-large}
+[Large Button](#link){: .btn .btn--primary .btn--large}
+[Default Button](#link){: .btn .btn--primary }
+[Small Button](#link){: .btn .btn--primary .btn--small}
 
 # Aplicações para os cursos de pós-graduação da FIAP
  - [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
