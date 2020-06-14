@@ -21,7 +21,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 3. Conferir instalação:
-    ```
+    ```yaml
     $ microk8s.status
     microk8s is running
     addons:
@@ -60,7 +60,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 6. Configuracão dos parámetros de acesso (URL, credenciais, etc.) do cliente externo:
-    ```
+    ```yaml
     $ microk8s.config > .kube/config
     $ cat .kube/config 
     apiVersion: v1
