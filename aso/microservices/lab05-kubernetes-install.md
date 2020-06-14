@@ -20,7 +20,13 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     $ sudo reboot
     ```
 
-3. Conferir instalação:
+3. Após o *reboot*, confirmar que o usuário pertence ao grupo `microk8s`:
+   ```
+   $ groups
+   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker microk8s
+   ```
+
+4. Conferir instalação:
     ```yaml
     $ microk8s.status
     microk8s is running
@@ -46,20 +52,20 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     storage: disabled
     ```
 
-4. Usar o cliente interno do microk8s (***kubectl***):
+5. Usar o cliente interno do microk8s (***kubectl***):
     ```
     $ microk8s.kubectl get all
     NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   4m5s
     ```
 
-5. Instalação do cliente externo:
+6. Instalação do cliente externo:
     ```
     $ sudo snap install kubectl --classic
     kubectl 1.18.0 from Canonical✓ installed
     ```
 
-6. Configuracão dos parámetros de acesso (URL, credenciais, etc.) do cliente externo:
+7. Configuracão dos parámetros de acesso (URL, credenciais, etc.) do cliente externo:
     ```yaml
     $ microk8s.config > .kube/config
     $ cat .kube/config 
@@ -84,14 +90,14 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
         password: NldvWW5rZGFzY3I4Tkw4SVY4Y25kV3YrR1lXcnZNek1tc2Z2a2prVStEQT0K\
     ```
 
-7. Testar o cliente externo:
+8. Testar o cliente externo:
     ```
     $ kubectl get all --all-namespaces
     NAMESPACE   NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
-8. Habilitar os *plugins* de ***dns*** e ***dashboard***
+9. Habilitar os *plugins* de ***dns*** e ***dashboard***
     ```
     $ microk8s.enable dns dashboard
     Enabling DNS
@@ -138,7 +144,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
     ```
 
-9. Confirmar que os *plugins* estão habilitados:
+10. Confirmar que os *plugins* estão habilitados:
     ```yaml
     $ microk8s.status
     microk8s is running
