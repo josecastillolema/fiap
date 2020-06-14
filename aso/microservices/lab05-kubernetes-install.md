@@ -139,7 +139,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 9. Confirmar que os *plugins* estão habilitados:
-    ```
+    ```yaml
     $ microk8s.status
     microk8s is running
     addons:
