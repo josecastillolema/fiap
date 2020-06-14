@@ -14,10 +14,10 @@ Existem vários recursos dentro de um cluster Kubernetes:
  
 1. Navegar até a pasta ***/fiap/aso/kubernetes*** de este repositório *git*:
     <pre>
-    <b>$ cd fiap/aso/kubernetes</b>
-    $ pwd
+    <b>$ cd fiap/aso/kubernetes
+    $ pwd</b>
     /home/ubuntu/fiap/aso/kubernetes
-    $ ls
+    <b>$ ls</b>
     api-deployment.yaml  api-service.yaml  mysql-deployment.yaml  mysql-pv.yaml  mysql-service.yaml
     </pre>
     
