@@ -147,7 +147,8 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 10. Confirmar que os *plugins* estão habilitados:
-    ```yaml
+    yaml
+    <pre><code class="yaml">
     $ microk8s.status
     microk8s is running
     addons:
@@ -170,5 +171,5 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     rbac: disabled
     registry: disabled
     storage: disabled
-    ```
+    </code></pre>
 
