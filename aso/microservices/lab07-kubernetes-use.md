@@ -12,7 +12,7 @@ Existem vários recursos dentro de um cluster Kubernetes:
      - número de réplicas
 
  
-1. Navegar até a pasta **`/fiap/aso/kubernetes`** de este repositório *git*:
+1. Navegar até a pasta `/fiap/aso/kubernetes` de este repositório *git*:
     <pre>
     <b>$ cd fiap/aso/kubernetes
     $ pwd</b>
