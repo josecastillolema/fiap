@@ -80,7 +80,7 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 8. Escalar o número de replicas da API (***scale-up***). Para iso, editar o arquivo ***api-deployment.yaml*** da seguinte forma:
-    ```
+    ```yaml
     $ cat api-deployment.yaml 
     apiVersion: apps/v1
     kind: Deployment
