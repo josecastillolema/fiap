@@ -1,3 +1,8 @@
+![GitHub](https://img.shields.io/github/license/josecastillolema/fiap)
+![GitHub top language](https://img.shields.io/github/languages/top/josecastillolema/fiap)
+
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/josecastillolema/fiap)
+
 # Aplicações para os cursos de pós-graduação da FIAP
 
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba.png)](https://www.fiap.com.br/mba/)
