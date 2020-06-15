@@ -1,6 +1,6 @@
 ![GitHub](https://img.shields.io/github/license/josecastillolema/fiap)
-![GitHub top language](https://img.shields.io/github/languages/top/josecastillolema/fiap)
 ![GitHub language count](https://img.shields.io/github/languages/count/josecastillolema/fiap)
+![GitHub top language](https://img.shields.io/github/languages/top/josecastillolema/fiap)
 
 # Aplicações para os cursos de pós-graduação da FIAP
 
