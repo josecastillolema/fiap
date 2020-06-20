@@ -20,7 +20,7 @@ These steps are mandatory during the CI.
 
 ## Submitting changes
 
-Please send a [GitHub Pull Request](/pull/new/master) with a clear list of what has been done (read more about [pull requests](http://help.github.com/pull-requests/)). Please follow coding conventions (below) and make sure all of the commits are atomic (one feature per commit).
+Please send a [GitHub Pull Request](https://josecastillolema/fiap/pull/new/master) with a clear list of what has been done (read more about [pull requests](http://help.github.com/pull-requests/)). Please follow coding conventions (below) and make sure all of the commits are atomic (one feature per commit).
 
 Always write a clear log message for the commits. One-line messages are fine for small changes, but bigger changes should look like this:
 
