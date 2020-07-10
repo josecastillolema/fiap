@@ -42,5 +42,6 @@
    * *Cloud Development*
    * Desenvolvimento de aplicações usando *Cloud Computing*
   
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpeg)](https://josecastillolema.github.io/aws-ambassador/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy.jpeg)](https://josecastillolema.github.io/aws-academy/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
