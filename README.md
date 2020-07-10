@@ -42,3 +42,4 @@
    * *Cloud Development*
    * Desenvolvimento de aplicações usando *Cloud Computing*
 
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
