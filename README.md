@@ -12,9 +12,9 @@
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba.png)](https://www.fiap.com.br/mba/)
 
 
- - [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
+ ### [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
    * Cloud Computing & SRE 
- - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
+ ### [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
    * [Arquitetura de Storage / DataCenter / Virtualização e Microcontainers](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/README.md)
    * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
  - [MBA em Big Data / Data Science (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
@@ -31,17 +31,17 @@
  - [MBA em Artificial Intelligence & Machine Learning (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
    * Princípios de Robótica e IoT
  - [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
-   * *Cloud Foundation*
-   * *DevOps & Cloud Oriented Architecture*
-   * Segurança para Aplicações Móveis para Internet das Coisas e *Cloud Computing*
+   * Cloud Foundation
+   * DevOps & Cloud Oriented Architecture
+   * Segurança para Aplicações Móveis para Internet das Coisas e Cloud Computing
  - [MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)](https://github.com/josecastillolema/fiap/tree/master/net)
-   * [Arquitetura *Windows Azure Services*](https://github.com/josecastillolema/fiap/tree/master/net/azure)
- - [MBA em *Full Stack Developer* - *Microservices*, *Cloud* e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
+   * [Arquitetura Windows Azure Services](https://github.com/josecastillolema/fiap/tree/master/net/azure)
+ - [MBA em Full Stack Developer - Microservices, Cloud e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
    * Arquitetura e Desenvolvimento Java com IoT
-   * Arquitetura e Desenvolvimento Java de Alta Disponibilidade para *Cloud Computing*
-   * Arquitetura e Infraestrutura de *Cloud Computing* e Internet das Coisas
-   * *Cloud Development*
-   * Desenvolvimento de aplicações usando *Cloud Computing*
+   * Arquitetura e Desenvolvimento Java de Alta Disponibilidade para Cloud Computing
+   * Arquitetura e Infraestrutura de Cloud Computing e Internet das Coisas
+   * Cloud Development
+   * Desenvolvimento de aplicações usando Cloud Computing
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-ambassador/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy.jpeg)](https://josecastillolema.github.io/aws-academy/)
