@@ -17,18 +17,18 @@
  - [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
    * [Arquitetura de Storage / DataCenter / Virtualização e Microcontainers](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/README.md)
    * Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
- - [MBA em *Big Data / Data Science* (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
-   * *Cloud Computing*
-   * *Fast Data* & *Microservices*
+ - [MBA em Big Data / Data Science (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
+   * Cloud Computing
+   * Fast Data & Microservices
    * Internet das Coisas
    * [Microserviços](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/README.md)
- - [MBA em *Blockchain Development & Technologies* (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
-   * *DevOps & Cloud Oriented Architecture*
- - [MBA em *Cloud Computing* (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
-   * [*BootCamp* OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
-   * [Implementação de *Cloud*](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
+ - [MBA em Blockchain Development & Technologies (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
+   * DevOps & Cloud Oriented Architecture
+ - [MBA em Cloud Computing (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
+   * [BootCamp OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
+   * [Implementação de Cloud](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
    * [Implementação OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
- - [MBA em *Artificial Intelligence & Machine Learning* (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
+ - [MBA em Artificial Intelligence & Machine Learning (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
    * Princípios de Robótica e IoT
  - [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
    * *Cloud Foundation*
