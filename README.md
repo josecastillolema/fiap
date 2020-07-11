@@ -31,6 +31,7 @@
  - [MBA em *Artificial Intelligence & Machine Learning* (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
    * Princípios de Robótica e IoT
  - [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
+   * *Cloud Foundation*
    * *DevOps & Cloud Oriented Architecture*
    * Segurança para Aplicações Móveis para Internet das Coisas e *Cloud Computing*
  - [MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)](https://github.com/josecastillolema/fiap/tree/master/net)
