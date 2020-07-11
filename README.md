@@ -12,7 +12,7 @@
 ## [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba.png)](https://www.fiap.com.br/mba/)
 
 
-### [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
+### [MBA em Engenharia de Software - Online (**AOJO**)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
 - Cloud Computing & SRE 
 
 ### [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
