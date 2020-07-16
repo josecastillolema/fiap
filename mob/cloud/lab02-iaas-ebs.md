@@ -2,8 +2,8 @@
 
 Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos importantes do armazenamento em blocos:
  - Criação de volumes
- - Anexar volumes a instancias
- - Configurar volumes dentro das instancias
+ - Anexar volumes a instâncias
+ - Configurar volumes dentro das instâncias
    * Formatação
    * Criação do sistema de arquivos
    * Montar o volume
@@ -17,24 +17,24 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
     xvda    202:0    0   8G  0 disk 
     `-xvda1 202:1    0   8G  0 part /
     ```
-    Veja que so existe um volume (do sistema operacional), com um tamanho de 8 GB e uma partição (`xvda1`). Estas informações podem mudar, o importante e garantir que após a criação de um novo volume e anexa-lo a instância, novos dispositivos serão listados.
+    Veja que só existe um volume (do sistema operacional), com um tamanho de 8 GB e uma partição (`xvda1`). Estas informações podem mudar, o importante e garantir que após a criação de um novo volume e de anexa-lo a instância, novos dispositivos serão listados.
 
 ## Criando o volume
  
 1. Ainda no serviço **EC2**, navegar ate **Elastic Block Volume** -> **Volumes**. Importante notar a zona de disponibilidade a onde foi criada a maquina virtual do lab 01:
-   ![](/bdt/cloud/img/ebs-0.png)
+   ![](/mob/cloud/img/ebs-0.png)
 
 2. Criar um novo volume vazio com tamanho de 10 GB, na mesma zona de disponibilidade a onde foi criada a VM do lab 01:
-   ![](/bdt/cloud/img/ebs-1.png)
+   ![](/mob/cloud/img/ebs-1.png)
 
 3. Uma vez o volume for criado, anexar ele à maquina virtual:
-   ![](/bdt/cloud/img/ebs-2.png)
+   ![](/mob/cloud/img/ebs-2.png)
    
 4. Seleccionar o nome da maquina virtual criada no lab01:
-   ![](/bdt/cloud/img/ebs-3.png)
+   ![](/mob/cloud/img/ebs-3.png)
 
 5. Apos uns instantes, conferir a informação sobre anexos do volume:
-   ![](/bdt/cloud/img/ebs-4.png)
+   ![](/mob/cloud/img/ebs-4.png)
 
 ## Configurando o volume dentro da instancia
 

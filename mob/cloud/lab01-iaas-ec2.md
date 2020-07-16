@@ -7,33 +7,33 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
  - **[cloud-init](https://cloud-init.io/)**
  
 1. Acessar o serviço **EC2**:
-   ![](/bdt/cloud/img/ec2-0.png)
+   ![](/mob/cloud/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
-   ![](/bdt/cloud/img/ec2-1.png)
+   ![](/mob/cloud/img/ec2-1.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](/bdt/cloud/img/ec2-2.png)
+   ![](/mob/cloud/img/ec2-2.png)
    
 4. Escolher o ***flavor*** `t2.micro`:
-   ![](/bdt/cloud/img/ec2-3.png)
+   ![](/mob/cloud/img/ec2-3.png)
 
 5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
-   ![](/bdt/cloud/img/ec2-4.png)
+   ![](/mob/cloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
-   ![](/bdt/cloud/img/ec2-5.png)
+   ![](/mob/cloud/img/ec2-5.png)
    
 7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
    <img src="/bdt/cloud/img/ec2-6.png" width="465" height="342">
 
 8. Validar a criacao da instância:
-   ![](/bdt/cloud/img/ec2-7.png)
+   ![](/mob/cloud/img/ec2-7.png)
 
 ## Accessando à instancia
 
 9. Seguiremos as próprias indicações do EC2:
-   ![](/bdt/cloud/img/ec2-8.png)
+   ![](/mob/cloud/img/ec2-8.png)
    
 10. Em um terminal local:
     ```
@@ -51,7 +51,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 11. Confirmar que o script de **cloud-init** rodou com sucesso:
    ```
    $ ls /tmp/
-   cloudInitFunciona
+   CloudInitFunciona
    ```
 
 ## Instalando um servidor web
@@ -177,13 +177,13 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ```
   
 16. Obter o IP público da VM:
-   ![](/bdt/cloud/img/ec2-9.png)
+   ![](/mob/cloud/img/ec2-9.png)
 
 17. Testar accesso pelo IP público:
-   ![](/bdt/cloud/img/ec2-10.png)
+   ![](/mob/cloud/img/ec2-10.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
-   ![](/bdt/cloud/img/ec2-11.png)
+   ![](/mob/cloud/img/ec2-11.png)
 
 19. Testar novamente o acesso pelo IP público:
-   ![](/bdt/cloud/img/ec2-12.png)
+   ![](/mob/cloud/img/ec2-12.png)
