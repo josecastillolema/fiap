@@ -49,14 +49,7 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
     
 7. Usaremos o `fdisk` para criar uma partição no novo disco:
    ```
-   $ fdisk /dev/xvdf
-
-   Welcome to fdisk (util-linux 2.30.2).
-   Changes will remain in memory only, until you decide to write them.
-   Be careful before using the write command.
-
-   fdisk: cannot open /dev/xvdf: Permission denied
-   [ec2-user@ip-172-31-51-147 ~]$ sudo fdisk /dev/xvdf
+   $ sudo fdisk /dev/xvdf
 
    Welcome to fdisk (util-linux 2.30.2).
    Changes will remain in memory only, until you decide to write them.
