@@ -35,9 +35,9 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 9. [**Linux/MAC**] Seguiremos as próprias indicações do EC2:
    ![](/mob/cloud/img/ec2-8.png)
    
-    [**Windows**] Usaremos o putty, seguindo as instruções: https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html
+    [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opçao.
    
-10. Em um terminal local:
+10. [**Linux/MAC**] Em um terminal local:
     ```
     $ chmod 400 fiap.pem
     $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
@@ -50,7 +50,9 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     [ec2-user@ip-172-31-50-1 ~]$
     ```
     
-11. Confirmar que o script de **cloud-init** rodou com sucesso:
+    [**Windows**] Seguir as instruções do PuTTY: https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html
+    
+11. Uma vez logado na maquina virtual, confirmar que o script de **cloud-init** rodou com sucesso:
     ```
     $ ls /tmp/
     CloudInitFunciona
