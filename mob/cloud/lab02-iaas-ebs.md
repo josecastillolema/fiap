@@ -116,29 +116,29 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
    Writing superblocks and filesystem accounting information: done 
    ```
 
-10. Criar a pasta `/mnt/volumeExterno' para montar o volume:
-   ```
-   $ sudo mkdir /mnt/volumeExterno
-   ```
+10. Criar a pasta `/mnt/volumeExterno` para montar o volume:
+    ```
+    $ sudo mkdir /mnt/volumeExterno
+    ```
 
 11. Montar o volume na pasta recem criada:
-   ```
-   $ sudo mount /dev/xvdf1 /mnt/volumeExterno/
-   ```
+    ```
+    $ sudo mount /dev/xvdf1 /mnt/volumeExterno/
+    ```
 
 12. Listar os arquivos do novo volume (é esperado ter uma pasta chamada `lost-found`, mesmo que o volume esteja vazio):
-   ```
-   $ cd /mnt/volumeExterno/
-   $ ls
-   lost+found
-   ```
+    ```
+    $ cd /mnt/volumeExterno/
+    $ ls
+    lost+found
+    ```
 
 13. Criar um arquivo qualquer:
-   ```
-   $ cd /mnt/volumeExterno/meuArquivo
-   $ cat meuArquivo 
-   sic mundus creatus est
-   ```
+    ```
+    $ cd /mnt/volumeExterno/meuArquivo
+    $ cat meuArquivo 
+    sic mundus creatus est
+    ```
 
 14. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
    * Formatação
