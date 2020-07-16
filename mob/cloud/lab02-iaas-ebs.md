@@ -141,6 +141,6 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
     ```
 
 14. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
-   * Formatação
-   * Criação do sistema de arquivos
-   * Montar o volume
+    - Formatação
+    - Criação do sistema de arquivos
+    - Montar o volume
