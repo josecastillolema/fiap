@@ -1,4 +1,4 @@
-## *Cloud Computing*
+## *Cloud Foundation*
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
 
