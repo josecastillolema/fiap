@@ -37,8 +37,8 @@
 - Princípios de Robótica e IoT
 
 ### [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
-- Cloud Foundation
-- DevOps & Cloud Oriented Architecture
+- [Cloud Foundation](https://github.com/josecastillolema/fiap/tree/master/mob/cloud)
+- [DevOps & Cloud Oriented Architecture](https://github.com/josecastillolema/fiap/tree/master/mob/devops)
 - Segurança para Aplicações Móveis para Internet das Coisas e Cloud Computing
 
 ### [MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)](https://github.com/josecastillolema/fiap/tree/master/net)
