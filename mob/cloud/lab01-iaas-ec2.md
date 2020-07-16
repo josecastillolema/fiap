@@ -32,8 +32,10 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 
 ## Accessando à instancia
 
-9. Seguiremos as próprias indicações do EC2:
+9. [Linux/MAC] Seguiremos as próprias indicações do EC2:
    ![](/mob/cloud/img/ec2-8.png)
+   
+9. [Windows] Usaremos o putty, seguindo as instruções: https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html
    
 10. Em um terminal local:
     ```
