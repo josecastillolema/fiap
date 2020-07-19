@@ -270,7 +270,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     root@d8924e5138b3:/#
     ```
     
-11. **[T2]** Sem sair do container no 1o terminal, **No 2o terminal**, listar os containers em execução:
+11. **[T2]** **Sem sair do container no 1o terminal**, listar os containers em execução **no 2o terminal**:
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
