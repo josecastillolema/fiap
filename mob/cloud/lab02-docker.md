@@ -305,7 +305,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ls: meuArquivo: No such file or directory
     ```
 
-15. Customização de imagens via `docker commit`. Vamos criar uma imagem customizada instalando algum software, por exemplo o nmap (um `scanner` de portas).
+15. Customização de imagens via `docker commit`.
+
+    Vamos criar uma imagem customizada instalando algum software, por exemplo o nmap (um `scanner` de portas).
 
     a. **[T1]** **Sem sair do container**, atualizar os repositórios:
     ```
