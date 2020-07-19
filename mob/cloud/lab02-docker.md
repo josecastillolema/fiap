@@ -9,42 +9,42 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
 1. Instalação do Docker
 
     a. Atualização dos repositórios
-      ```
-      $ sudo apt update
-      Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
-      Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
-      Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
-      Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]              
-      Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
-      Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]     
-      Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
-      Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
-      Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1011 kB]
-      Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [341 kB]
-      Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [76.7 kB]
-      Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [17.1 kB]
-      Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1092 kB]
-      Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [340 kB]
-      Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [11.5 kB]
-      Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [4832 B]
-      Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [7516 B]
-      Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [4764 B]
-      Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [7736 B]
-      Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [4588 B]
-      Get:21 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [783 kB] 
-      Get:22 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [247 kB]
-      Get:23 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [67.8 kB]
-      Get:24 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [15.0 kB]
-      Get:25 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [679 kB]
-      Get:26 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [225 kB]
-      Get:27 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [7908 B]
-      Get:28 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [2816 B]
-      Fetched 19.0 MB in 4s (4815 kB/s)                               
-      Reading package lists... Done
-      Building dependency tree       
-      Reading state information... Done
-      29 packages can be upgraded. Run 'apt list --upgradable' to see them.
-      ```
+    ```
+    $ sudo apt update
+    Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+    Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+    Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+    Get:4 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]              
+    Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+    Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]     
+    Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+    Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+    Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [1011 kB]
+    Get:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [341 kB]
+    Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [76.7 kB]
+    Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [17.1 kB]
+    Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1092 kB]
+    Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [340 kB]
+    Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [11.5 kB]
+    Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [4832 B]
+    Get:17 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [7516 B]
+    Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/main Translation-en [4764 B]
+    Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [7736 B]
+    Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [4588 B]
+    Get:21 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [783 kB] 
+    Get:22 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [247 kB]
+    Get:23 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [67.8 kB]
+    Get:24 http://security.ubuntu.com/ubuntu bionic-security/restricted Translation-en [15.0 kB]
+    Get:25 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [679 kB]
+    Get:26 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [225 kB]
+    Get:27 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [7908 B]
+    Get:28 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [2816 B]
+    Fetched 19.0 MB in 4s (4815 kB/s)                               
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    29 packages can be upgraded. Run 'apt list --upgradable' to see them.
+    ```
     
     b. Instalação dos pacotes
     ```
