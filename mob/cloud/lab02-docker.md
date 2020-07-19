@@ -4,7 +4,7 @@
 Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do Docker:
  - instalação
  - customização de imagens via Dockerfile
- - upload de imagens no [Dockerhub](https://hub.docker.com/)
+ - upload de imagens no [DockerHub](https://hub.docker.com/)
  
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
@@ -177,7 +177,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ```
     
-3. **[T1]** Buscar imagens dentro do catálogo do [Dockerhub](https://hub.docker.com/):
+3. **[T1]** Buscar imagens dentro do catálogo do [DockerHub](https://hub.docker.com/):
     ```
     $ docker search mongodb
     NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -585,7 +585,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Available nsock engines: epoll poll select
     ```
     
-17. *Upload* da nova imagem no [Dockerhub](https://hub.docker.com/):
+17. *Upload* da nova imagem no [DockerHub](https://hub.docker.com/):
 
     a. Criar uma conta gratuita
     
