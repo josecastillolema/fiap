@@ -208,7 +208,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     astronomerio/mongodb-source         Mongodb source.                                 0                                       [OK]
     ```
  
-4. **[T1]** Fazer o download (`pull`) da imagem do Ubuntu no repositório local:
+4. **[T1]** Fazer o *download* (`pull`) da imagem do Ubuntu no repositório local:
     ```
     $ docker pull ubuntu
     Using default tag: latest
