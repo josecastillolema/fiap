@@ -120,7 +120,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev
     ```
 
-    d. Adicionar o usuário (`ubuntu`) ao grupo `docker`"
+    d. Adicionar o usuário (`ubuntu`) ao grupo `docker`:
     ```
     $ sudo usermod -aG docker ubuntu
     ```
