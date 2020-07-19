@@ -138,7 +138,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker
     ```
 
-     g. Rodar um docker version para validar a instalação, e conferir que é mostrada tanto a versão do cliente quanto a do servidor:
+     g. Rodar um `docker version` para validar a instalação, e conferir que é mostrada tanto a versão do cliente **quanto a do servidor**:
      ```
      $ docker version
      Client:
