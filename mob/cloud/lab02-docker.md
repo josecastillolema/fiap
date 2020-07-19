@@ -427,7 +427,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     sha256:287d2c84024a50ba13c9d8304d57df853feea9b3dd9df785313111480a84eecc
     ```
     
-    f. Confirmar a criação da imagem (com um tamanho maior a imagem original:
+    f. Confirmar a criação da imagem (com um tamanho maior a imagem original):
     ```
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
