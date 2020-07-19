@@ -280,6 +280,10 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 12. **[T1]** Continuando no 1o terminal, criar um arquivo ainda dentro do container e sair do container:
     ```
     root@d8924e5138b3:/# touch meuArquivo
+    
+    root@d8924e5138b3:/# ls
+    bin   dev  home  lib32  libx32  meuArquivo  opt   root  sbin  sys  usr
+    boot  etc  lib   lib64  media   mnt         proc  run   srv   tmp  var
 
     root@d8924e5138b3:/# exit
     ```
@@ -288,4 +292,111 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+    ```
+    
+14. **[T1]** Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, softwares instalados, etc.:
+    ```
+    $ docker run -it ubuntu
+    root@5b83d8b5b521:/# ls
+    bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+    boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
+
+    root@5b83d8b5b521:/# ls meuArquivo
+    ls: meuArquivo: No such file or directory
+    ```
+
+15. **[T1]** Customização de imagens via `docker commit`. Vamos criar uma imagem customizada instalando algum software, por exemplo o nmap (um `scanner` de portas).
+    a. **Sem sair do container**, atualizar os repositórios:
+    ```
+    root@5b83d8b5b521:/# apt update
+    Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [107 kB]
+    Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+    Get:3 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [45.2 kB]
+    Get:4 http://archive.ubuntu.com/ubuntu focal-updates InRelease [111 kB]
+    Get:5 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [33.9 kB]
+    Get:6 http://archive.ubuntu.com/ubuntu focal-backports InRelease [98.3 kB]
+    Get:7 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [165 kB]
+    Get:8 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [1078 B]
+    Get:9 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+    Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+    Get:11 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+    Get:12 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+    Get:13 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [165 kB]
+    Get:14 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [33.9 kB]
+    Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [330 kB]
+    Get:16 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [4202 B]
+    Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [3209 B]
+    Fetched 14.2 MB in 2s (6179 kB/s)                      
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    1 package can be upgraded. Run 'apt list --upgradable' to see it.
+    ```
+    
+    b. Instalar o pacote `nmap`. O flag `-y` pula a pregunta de confirmação:
+    ```
+    root@5b83d8b5b521:/# apt install -y nmap
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    The following additional packages will be installed:
+      libblas3 liblinear4 liblua5.3-0 libpcap0.8 libssl1.1 lua-lpeg nmap-common
+    Suggested packages:
+      liblinear-tools liblinear-dev ncat ndiff zenmap
+    The following NEW packages will be installed:
+      libblas3 liblinear4 liblua5.3-0 libpcap0.8 libssl1.1 lua-lpeg nmap nmap-common
+    0 upgraded, 8 newly installed, 0 to remove and 1 not upgraded.
+    Need to get 7115 kB of archives.
+    After this operation, 31.3 MB of additional disk space will be used.
+    Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libssl1.1 amd64 1.1.1f-1ubuntu2 [1318 kB]
+    Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libpcap0.8 amd64 1.9.1-3 [128 kB]
+    Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 libblas3 amd64 3.9.0-1build1 [142 kB]
+    Get:4 http://archive.ubuntu.com/ubuntu focal/universe amd64 liblinear4 amd64 2.3.0+dfsg-3build1 [41.7 kB]
+    Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 liblua5.3-0 amd64 5.3.3-1.1ubuntu2 [116 kB]
+    Get:6 http://archive.ubuntu.com/ubuntu focal/universe amd64 lua-lpeg amd64 1.0.2-1 [31.4 kB]
+    Get:7 http://archive.ubuntu.com/ubuntu focal/universe amd64 nmap-common all 7.80+dfsg1-2build1 [3676 kB]
+    Get:8 http://archive.ubuntu.com/ubuntu focal/universe amd64 nmap amd64 7.80+dfsg1-2build1 [1662 kB]
+    Fetched 7115 kB in 1s (7120 kB/s)
+    debconf: delaying package configuration, since apt-utils is not installed
+    Selecting previously unselected package libssl1.1:amd64.
+    (Reading database ... 4122 files and directories currently installed.)
+    Preparing to unpack .../0-libssl1.1_1.1.1f-1ubuntu2_amd64.deb ...
+    Unpacking libssl1.1:amd64 (1.1.1f-1ubuntu2) ...
+    Selecting previously unselected package libpcap0.8:amd64.
+    Preparing to unpack .../1-libpcap0.8_1.9.1-3_amd64.deb ...
+    Unpacking libpcap0.8:amd64 (1.9.1-3) ...
+    Selecting previously unselected package libblas3:amd64.
+    Preparing to unpack .../2-libblas3_3.9.0-1build1_amd64.deb ...
+    Unpacking libblas3:amd64 (3.9.0-1build1) ...
+    Selecting previously unselected package liblinear4:amd64.
+    Preparing to unpack .../3-liblinear4_2.3.0+dfsg-3build1_amd64.deb ...
+    Unpacking liblinear4:amd64 (2.3.0+dfsg-3build1) ...
+    Selecting previously unselected package liblua5.3-0:amd64.
+    Preparing to unpack .../4-liblua5.3-0_5.3.3-1.1ubuntu2_amd64.deb ...
+    Unpacking liblua5.3-0:amd64 (5.3.3-1.1ubuntu2) ...
+    Selecting previously unselected package lua-lpeg:amd64.
+    Preparing to unpack .../5-lua-lpeg_1.0.2-1_amd64.deb ...
+    Unpacking lua-lpeg:amd64 (1.0.2-1) ...
+    Selecting previously unselected package nmap-common.
+    Preparing to unpack .../6-nmap-common_7.80+dfsg1-2build1_all.deb ...
+    Unpacking nmap-common (7.80+dfsg1-2build1) ...
+    Selecting previously unselected package nmap.
+    Preparing to unpack .../7-nmap_7.80+dfsg1-2build1_amd64.deb ...
+    Unpacking nmap (7.80+dfsg1-2build1) ...
+    Setting up lua-lpeg:amd64 (1.0.2-1) ...
+    Setting up libssl1.1:amd64 (1.1.1f-1ubuntu2) ...
+    debconf: unable to initialize frontend: Dialog
+    debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+    debconf: falling back to frontend: Readline
+    debconf: unable to initialize frontend: Readline
+    debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+    debconf: falling back to frontend: Teletype
+    Setting up libblas3:amd64 (3.9.0-1build1) ...
+    update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+    Setting up libpcap0.8:amd64 (1.9.1-3) ...
+    Setting up nmap-common (7.80+dfsg1-2build1) ...
+    Setting up liblua5.3-0:amd64 (5.3.3-1.1ubuntu2) ...
+    Setting up liblinear4:amd64 (2.3.0+dfsg-3build1) ...
+    Setting up nmap (7.80+dfsg1-2build1) ...
+    Processing triggers for libc-bin (2.31-0ubuntu9) ...
     ```
