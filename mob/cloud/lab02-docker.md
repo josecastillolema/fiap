@@ -6,7 +6,10 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
  - customização de imagens via Dockerfile
  - upload de imagens no [Dockerhub](https://hub.docker.com/)
  
-1. Instalação do Docker
+Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
+
+ 
+1. **[T1]** Instalação do Docker
 
     a. Atualização dos repositórios
     ```
@@ -168,13 +171,13 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
      ```
 
 
-2. Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
+2. **[T1]** Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
     ```
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ```
     
-3. Buscar imagens dentro do catálogo do [Dockerhub](https://hub.docker.com/):
+3. **[T1]** Buscar imagens dentro do catálogo do [Dockerhub](https://hub.docker.com/):
     ```
     $ docker search mongodb
     NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -205,7 +208,7 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     astronomerio/mongodb-source         Mongodb source.                                 0                                       [OK]
     ```
  
-4. Fazer o download (`pull`) da imagem do Ubuntu no repositório local:
+4. **[T1]** Fazer o download (`pull`) da imagem do Ubuntu no repositório local:
     ```
     $ docker pull ubuntu
     Using default tag: latest
@@ -219,25 +222,25 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     docker.io/library/ubuntu:latest
     ```
     
-5. Listar as imagens novamente, conferir que existe a imagem `ubuntu`:
+5. **[T1]** Listar as imagens novamente, conferir que existe a imagem `ubuntu`:
     ```
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ubuntu              latest              adafef2e596e        11 days ago         73.9MB
     ```
     
-6. Deletar a imagem (opcional):
+6. **[T1]** Deletar a imagem (opcional):
     ```
     $ docker image rm ubuntu
     ```
     
-7. Rodar um comando de exemplo (`hostname`) dentro do container:
+7. **[T1]** Rodar um comando de exemplo (`hostname`) dentro do container:
     ```
     $ docker run ubuntu hostname
     c293c1989a56
     ```
 
-8. Medir o tempo do comando anterior:
+8. **[T1]** Medir o tempo do comando anterior:
     ```
     $ time docker run ubuntu hostname
     7aa02808ccfc
@@ -252,11 +255,37 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     - Printou a sainda
     - Deletou o container
     
-9. Conferir que tanto container quanto o *host* compartilham o Kernel:
+9. **[T1]** Conferir que tanto container quanto o *host* compartilham o Kernel:
     ```
     $ uname -a
     Linux ip-172-31-60-180 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 
     $ docker run ubuntu uname -a
     Linux de0407ee790f 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+    ```
+
+10. **[T1]** Executar a imagem `ubuntu` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container em este caso).
+    ```
+    $ docker run -it ubuntu
+    root@d8924e5138b3:/#
+    ```
+    
+11. **[T2]** Sem sair do container no 1o terminal, **No 2o terminal**, listar os containers em execução:
+    ```
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+    d8924e5138b3        ubuntu              "/bin/bash"         14 seconds ago      Up 13 seconds                           xenodochial_allen
+    ```
+
+12. **[T1]** Continuando no 1o terminal, criar um arquivo ainda dentro do container e sair do container:
+    ```
+    root@d8924e5138b3:/# touch meuArquivo
+
+    root@d8924e5138b3:/# exit
+    ```
+    
+13. **[T1]** Conferir que o container não está mais em execução:
+    ```
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ```
