@@ -414,7 +414,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Available nsock engines: epoll poll select
     ```
     
-    d. **[T2]** No 20 terminal, confirmar o ID do container em execução (no qual acabamos de instalar o `nmap`):
+    d. **[T2]** No 2o terminal, confirmar o ID do container em execução (no qual acabamos de instalar o `nmap`):
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
