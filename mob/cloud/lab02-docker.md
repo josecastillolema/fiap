@@ -435,7 +435,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ubuntu              latest              adafef2e596e        11 days ago         73.9MB
     ```
     
-    g. Confirmar que na nova imagem, tem de fato o *software* instalado:
+    g. Confirmar que na nova imagem, tem de fato o `nmap` instalado:
     ```
     $ docker run ubuntu_com_nmap nmap --version
     Nmap version 7.80 ( https://nmap.org )
@@ -445,7 +445,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Available nsock engines: epoll poll select
     ```
     
-    h. Confirmar que a imagem original não foi alterada e não tem o *software* instalado:
+    h. Confirmar que a imagem original não foi alterada e não tem o `nmap` instalado:
     ```
     $ docker run ubuntu nmap --version
     docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"nmap\": executable file not found in $PATH": unknown.
