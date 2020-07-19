@@ -168,3 +168,95 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
      ```
 
 
+2. Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
+    ```
+    $ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    ```
+    
+3. Buscar imagens dentro do catálogo do [Dockerhub](https://hub.docker.com/):
+    ```
+    $ docker search mongodb
+    NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+    mongo                               MongoDB document databases provide high avai…   7041                [OK]                
+    mongo-express                       Web-based MongoDB admin interface, written w…   735                 [OK]                
+    tutum/mongodb                       MongoDB Docker image – listens in port 27017…   229                                     [OK]
+    bitnami/mongodb                     Bitnami MongoDB Docker Image                    123                                     [OK]
+    frodenas/mongodb                    A Docker Image for MongoDB                      18                                      [OK]
+    centos/mongodb-32-centos7           MongoDB NoSQL database server                   8                                       
+    webhippie/mongodb                   Docker images for MongoDB                       7                                       [OK]
+    centos/mongodb-26-centos7           MongoDB NoSQL database server                   5                                       
+    centos/mongodb-36-centos7           MongoDB NoSQL database server                   5                                       
+    eses/mongodb_exporter               mongodb exporter for prometheus                 4                                       [OK]
+    neowaylabs/mongodb-mms-agent        This Docker image with MongoDB Monitoring Ag…   4                                       [OK]
+    centos/mongodb-34-centos7           MongoDB NoSQL database server                   3                                       
+    quadstingray/mongodb                MongoDB with Memory and User Settings           3                                       [OK]
+    tozd/mongodb                        Base image for MongoDB server.                  2                                       [OK]
+    mongodbsap/mongodbdocker                                                            2                                       
+    zadki3l/mongodb-oplog               Simple mongodb image with single-node replic…   2                                       [OK]
+    ssalaues/mongodb-exporter           MongoDB Replicaset Prometheus Compatible Met…   2                                       
+    xogroup/mongodb_backup_gdrive       Docker image to create a MongoDB database ba…   1                                       [OK]
+    bitnami/mongodb-exporter                                                            1                                       
+    openshift/mongodb-24-centos7        DEPRECATED: A Centos7 based MongoDB v2.4 ima…   1                                       
+    ansibleplaybookbundle/mongodb-apb   An APB to deploy MongoDB.                       1                                       [OK]
+    targetprocess/mongodb_exporter      MongoDB exporter for prometheus                 0                                       [OK]
+    gebele/mongodb                      mongodb                                         0                                       [OK]
+    phenompeople/mongodb                 MongoDB is an open-source, document databas…   0                                       [OK]
+    astronomerio/mongodb-source         Mongodb source.                                 0                                       [OK]
+    ```
+ 
+4. Fazer o download (`pull`) da imagem do Ubuntu no repositório local:
+    ```
+    $ docker pull ubuntu
+    Using default tag: latest
+    latest: Pulling from library/ubuntu
+    692c352adcf2: Pull complete 
+    97058a342707: Pull complete 
+    2821b8e766f4: Pull complete 
+    4e643cc37772: Pull complete 
+    Digest: sha256:55cd38b70425947db71112eb5dddfa3aa3e3ce307754a3df2269069d2278ce47
+    Status: Downloaded newer image for ubuntu:latest
+    docker.io/library/ubuntu:latest
+    ```
+    
+5. Listar as imagens novamente, conferir que existe a imagem `ubuntu`:
+    ```
+    $ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+    ubuntu              latest              adafef2e596e        11 days ago         73.9MB
+    ```
+    
+6. Deletar a imagem (opcional):
+    ```
+    $ docker image rm ubuntu
+    ```
+    
+7. Rodar um comando de exemplo (`hostname`) dentro do container:
+    ```
+    $ docker run ubuntu hostname
+    c293c1989a56
+    ```
+
+8. Medir o tempo do comando anterior:
+    ```
+    $ time docker run ubuntu hostname
+    7aa02808ccfc
+
+    real	0m0.812s
+    user	0m0.023s
+    sys	0m0.027s
+    ```
+    Note-se que em menos de um segundo:
+    - Docker criou o container
+    - Rodou o comando `hostname` nele
+    - Printou a sainda
+    - Deletou o container
+    
+9. Conferir que tanto container quanto o *host* compartilham o Kernel:
+    ```
+    $ uname -a
+    Linux ip-172-31-60-180 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+    $ docker run ubuntu uname -a
+    Linux de0407ee790f 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+    ```
