@@ -1,0 +1,4 @@
+flask
+flask-mysql
+flask-cors
+cryptography

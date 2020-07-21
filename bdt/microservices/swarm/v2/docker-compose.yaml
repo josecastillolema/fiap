@@ -1,0 +1,48 @@
+version: '3.1'
+
+services:
+
+  api:
+    image: josecastillolema/api
+    ports:
+      - "3000:5000"
+    depends_on:
+      - mysql
+    deploy:
+      replicas: 3
+      #update_config:
+      #  parallelism: 1
+      #  delay: 10is
+      mode: replicated
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - senhaBanco2
+
+  mysql:
+    image: josecastillolema/mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_USER: root
+      MYSQL_DATABASE: fiapdb 
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/senhaBanco2
+    deploy:
+      replicas: 1
+      # resources:
+      #   limits:
+      #     cpus: "0.1"
+      #     memory: 50M
+      restart_policy:
+        condition: on-failure
+    secrets:
+      - senhaBanco2
+
+volumes:
+  db-data:
+
+secrets:
+  senhaBanco2:
+    external: true

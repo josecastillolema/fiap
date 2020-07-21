@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  api:
+    build: api_v2/.
+    ports:
+      - "4000:5000"
+    links:
+      - mysql
+    depends_on:
+      - mysql
+
+  mysql:
+    build: mysql/.
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
+    environment:
+       MYSQL_ROOT_PASSWORD: senhaFiap
+       MYSQL_USER: root
+       MYSQL_DATABASE: fiapdb

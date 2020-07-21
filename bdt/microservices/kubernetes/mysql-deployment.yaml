@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mysql
+spec:
+   replicas: 1 
+   selector:
+     matchLabels:
+       app: mysql
+   template:
+     metadata:
+       labels:
+         app: mysql
+     spec:
+       containers:
+       - name: mysql
+         image: josecastillolema/mysql
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 3306
+         env:
+         - name: MYSQL_ROOT_PASSWORD
+           value: senhaFiap
+#         volumeMounts:
+#         - name: mysql-persistent-storage
+#           mountPath: /var/lib/mysql
+#       volumes:
+#       - name: mysql-persistent-storage
+#         persistentVolumeClaim:
+#           claimName: mysql-pv-claim

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: api-deployment
+spec:
+   replicas: 3
+   selector:
+     matchLabels:
+       app: api
+   template:
+     metadata:
+       labels:
+         app: api
+     spec:
+       containers:
+       - name: api
+         image: josecastillolema/api
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 5000
