@@ -26,7 +26,7 @@
 - [Microserviços](https://github.com/josecastillolema/fiap/blob/master/bdt/microservices/README.md)
 
 ### [MBA em Blockchain Development & Technologies (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
-- DevOps & Cloud Oriented Architecture
+- [DevOps & Cloud Oriented Architecture](https://github.com/josecastillolema/fiap/tree/master/blc/devops)
 
 ### [MBA em Cloud Computing (CLD)](https://github.com/josecastillolema/fiap/tree/master/cld)
 - [BootCamp OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
