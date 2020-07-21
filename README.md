@@ -22,7 +22,7 @@
 ### [MBA em Big Data / Data Science (BDT)](https://github.com/josecastillolema/fiap/tree/master/bdt)
 - [Cloud Computing](https://github.com/josecastillolema/fiap/blob/master/bdt/cloud/README.md)
 - [Fast Data & Microservices](https://github.com/josecastillolema/fiap/blob/master/bdt/microservices/README.md)
-- [Internet das Coisas](https://github.com/josecastillolema/fiap/blob/master/bdt/iot/README.md)
+- [Internet das Coisas](https://github.com/josecastillolema/fiap/tree/master/bdt/iot)
 - [Microserviços](https://github.com/josecastillolema/fiap/blob/master/bdt/microservices/README.md)
 
 ### [MBA em Blockchain Development & Technologies (BLC)](https://github.com/josecastillolema/fiap/tree/master/blc)
