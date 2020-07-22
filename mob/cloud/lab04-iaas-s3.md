@@ -17,7 +17,7 @@ Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos 
 3. Escolher um nome para o *bucket*:
    ![](/mob/cloud/img/s3-04.png)
    
-4. Em esta aba podem ser configuradas algumas opções do *bucket*, como versionamento, logging, etc.:
+4. Em esta aba podem ser configuradas algumas opções do *bucket*, como versionamento, *logging*, etc.:
    ![](/mob/cloud/img/s3-05.png)
 
 5. Habilitar accesso público no *bucket*:
@@ -48,9 +48,9 @@ Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos 
 
 13. Na descrição do objeto, podemos obter a url do mesmo:
 
-    |          | bucket-name |                  | objeto        |
-    |----------|-------------|------------------|-------------- |
-    | https:// | fiap-mba    | s3.amazonaws.com | sicmundus.jpg |
+    |          | bucket-name |                   | objeto        |
+    |----------|-------------|-------------------|-------------- |
+    | https:// | fiap-mba    | .s3.amazonaws.com | sicmundus.jpg |
 
    ![](/mob/cloud/img/s3-15.png)    
 
@@ -66,8 +66,13 @@ Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos 
 16. Introducir o nome do arquivo `html` principal:
    ![](/mob/cloud/img/s3-18.png)    
 
-17. A URL no modo armazenamento de sites estáticos muda:
+17. Fazer *upload* do arquivo `index.html` (ou de qualquer outro arquivo `html`) com permissão de accesso público, como descrito na [criação de objeto](#criacao de objeto)
 
-    |          | bucket-name |                  | objeto        |
-    |----------|-------------|------------------|-------------- |
-    | https:// | fiap-mba    | s3.amazonaws.com | sicmundus.jpg |
+17. A URL no modo armazenamento de sites estáticos apresenta um novo formato:
+
+    |          | bucket-name |            | region    |               |
+    |----------|-------------|------------|---------- | --------------|
+    | https:// | fiap-mba    | s3-website | us-east-1 | amazonaws.com |
+
+18. Acessar o site pela nova URL do *bucket*:
+   ![](/mob/cloud/img/s3-19.png)    
