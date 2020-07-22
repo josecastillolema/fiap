@@ -3,7 +3,7 @@
 Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos importantes do armazenamento de objetos:
  - Criação de *buckets*
  - Criação de objetos
-   * Controle de permissões de acesso
+ - Controle de permissões de acesso
  - Hospedagem de sites estáticos
 
 ## Criação do *bucket*
