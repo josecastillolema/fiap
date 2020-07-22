@@ -66,7 +66,7 @@ Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos 
 16. Introducir o nome do arquivo `html` principal:
    ![](/mob/cloud/img/s3-18.png)    
 
-17. Fazer *upload* do arquivo [`index.html`](/mob/cloud/files/index.html) (ou de qualquer outro arquivo `html`) com permissão de accesso público, como descrito na [criação de objeto](#criacao-do-objeto)
+17. Fazer *upload* do arquivo [`index.html`](/mob/cloud/files/index.html) (ou de qualquer outro arquivo `html`) com permissão de accesso público, como descrito na [criação de objeto](#criação-do-objeto)
 
 17. A URL no modo armazenamento de sites estáticos apresenta um novo formato:
 
