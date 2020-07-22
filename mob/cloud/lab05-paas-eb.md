@@ -6,7 +6,37 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
  - *Logging*
  - Monitoramento
 
-## Deploy da aplicação
+## *Deploy* local
+
+1. Clonar o repositório:
+    ```
+    git clone https://github.com/josecastillolema/fiap
+    ```
+    
+2. Navegar ate o diretorio `fiap/mob/cloud/lab05-paas`. O diretorio contem os [seguintes arquivos](lab05-paas-eb):
+ - [**`application.py`**](lab05-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+ - [**`requirements.txt`**](lab05-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+ 
+3. Instalar as dependências:
+    ```
+    pip3 install -r requirements.txt
+    ```
+    
+4. Executar a aplicação:
+```
+$ python3 application.py
+ * Serving Flask app "application" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+5. Accessar localmente:
+   ![](img/eb10.png)
+
+## *Deploy* na AWS
  
 1. Acessar o serviço **Elastic Beanstalk**:
    ![](img/eb0.png)
