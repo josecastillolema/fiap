@@ -33,7 +33,7 @@ $ python3 application.py
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-5. Accessar localmente:
+5. Testar o acesso local:
    ![](img/eb10.png)
 
 ## *Deploy* na AWS
