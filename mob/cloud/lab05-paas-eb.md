@@ -1,14 +1,14 @@
 # Lab 5 - AWS Elastic Beanstalk
 
 Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
- - Deploy de aplicações
+ - *Deploy* de aplicações
  - Plataformas/entornos de execução disponíveis
  - *Logging*
  - Monitoramento
 
 ## Deploy da aplicação
  
-1. Accessar o serviço **Elastic Beanstalk**:
+1. Acessar o serviço **Elastic Beanstalk**:
    ![](img/eb0.png)
 
 2. Criar um novo *environment*:
@@ -24,7 +24,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
    ![](/mob/cloud/img/eb4.png)
    
 6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](lab05-paas-eb):
- - [**`application.py`**](lab05-paas-eb/application.py): Um simples web server em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+ - [**`application.py`**](lab05-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
  - [**`requirements.txt`**](lab05-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
    ![](/mob/cloud/img/eb5.png)
