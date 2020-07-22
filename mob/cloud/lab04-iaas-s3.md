@@ -14,7 +14,7 @@ Em este lab sobre **Simple Storage Service (S3)** aprenderemos alguns conceitos 
 2. Criar um novo *bucket*:
    ![](/mob/cloud/img/s3-03.png)
 
-3. Escolher um nome para o *bucket*:
+3. Escolher um nome para o *bucket*. O nome deve ser único globalmente:
    ![](/mob/cloud/img/s3-04.png)
    
 4. Em esta aba podem ser configuradas algumas opções do *bucket*, como versionamento, *logging*, etc.:
