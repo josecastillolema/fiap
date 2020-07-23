@@ -34,7 +34,7 @@
 - [Implementação OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
 
 ### [MBA em Artificial Intelligence & Machine Learning (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
-- Princípios de Robótica e IoT
+- [Princípios de Robótica e IoT](https://github.com/josecastillolema/fiap/tree/master/ia/iot)
 
 ### [MBA em *Mobile Development* (MOB)](https://github.com/josecastillolema/fiap/tree/master/mob)
 - [Cloud Foundation](https://github.com/josecastillolema/fiap/tree/master/mob/cloud)
