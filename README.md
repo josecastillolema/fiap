@@ -1,6 +1,7 @@
 ![GitHub](https://img.shields.io/github/license/josecastillolema/fiap)
 ![GitHub language count](https://img.shields.io/github/languages/count/josecastillolema/fiap)
 ![GitHub top language](https://img.shields.io/github/languages/top/josecastillolema/fiap)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=joseccastillolema.josecastillolema)
 ![GitHub last commit](https://img.shields.io/github/last-commit/josecastillolema/josecastillolema.github.io)
 [![Requirements Status](https://requires.io/github/josecastillolema/fiap/requirements.svg?branch=master)](https://requires.io/github/josecastillolema/fiap/requirements/?branch=master)
 
