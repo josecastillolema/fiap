@@ -1,4 +1,4 @@
-# Lab 5 - AWS Elastic Beanstalk
+# Lab 6 - AWS Elastic Beanstalk
 
 Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
  - *Deploy* de aplicações
