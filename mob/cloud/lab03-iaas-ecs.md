@@ -9,5 +9,5 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
 1. Acessar o serviço **ECS**:
    ![](/mob/cloud/img/ecs0.png)
 
-2. Lançar o assistente de criaçao de instancias:
+2. Lançar o assistente de criaçao de containers:
    ![](/mob/cloud/img/ecs1.png)
