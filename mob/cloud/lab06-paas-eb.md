@@ -13,7 +13,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     git clone https://github.com/josecastillolema/fiap
     ```
     
-2. Navegar ate o diretorio `fiap/mob/cloud/lab05-paas`. O diretorio contem os [seguintes arquivos](lab05-paas-eb):
+2. Navegar ate o diretorio `fiap/mob/cloud/lab05-paas`. O diretorio contem os [seguintes arquivos](lab06-paas-eb):
  - [**`application.py`**](lab05-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
  - [**`requirements.txt`**](lab05-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
@@ -53,7 +53,7 @@ $ python3 application.py
 5. Escolher o entorno de execução:
    ![](/mob/cloud/img/eb4.png)
    
-6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](lab05-paas-eb):
+6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](lab06-paas-eb):
  - [**`application.py`**](lab05-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
  - [**`requirements.txt`**](lab05-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
