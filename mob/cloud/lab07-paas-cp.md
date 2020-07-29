@@ -10,7 +10,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
 
 ## Pre-reqs
 
-- A aplicação do [lab de BeanStalk](/mob/cloud/lab06-paas-eb.md) precisa estar no ar:
+- A aplicação do [lab de Beanstalk](/mob/cloud/lab06-paas-eb.md) precisa estar no ar:
    ![](/mob/cloud/img/cp00-0.png)
    
 - Criação de um repositório no [GitHub](https://github.com/) com os arquivos da pasta [lab06-paas-eb](/mob/cloud/lab06-paas-eb):
@@ -34,7 +34,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
 5. Já que usamos uma linguagem interpretada (Python), pulamos a fase de compilação:
    ![](/mob/cloud/img/cp05.png)
 
-6. Selecionar `AWS Elastic BeanStalk` como *Deploy Provider*, apontando para a aplicação dos pre-reqs:
+6. Selecionar `AWS Elastic Beanstalk` como *Deploy Provider*, apontando para a aplicação dos pre-reqs:
    ![](/mob/cloud/img/cp06.png)
 
 7. Revisar as configuraçoes e confirmar a criação do *pipeline*:
@@ -42,11 +42,11 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
    ![](/mob/cloud/img/cp08.png)
 
 8. Acompanhar o *pipeline* pelas diversas fases:
-    * Recuperação do codigo do repositório
-    * Deploy no BeanStalk
+    * Recuperação do código do repositório
+    * Deploy no Beanstalk
    ![](/mob/cloud/img/cp09.png)
 
-9. **No BeanStalk**, confirmar que foi publicada uma nova versão pelo Code Pipeline;
+9. **No Beanstalk**, confirmar que foi publicada uma nova versão pelo Code Pipeline;
    ![](/mob/cloud/img/cp10.png)
 
 10. Confirmar que a aplicação está no ar:
@@ -59,7 +59,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
 12. Acompanhar o *deploy* da nova versão no Code Pipeline:
    ![](/mob/cloud/img/cp14.png)
 
-13. **No BeanStalk**, confirmar que foi publicada uma nova versão pelo Code Pipeline;
+13. **No Beanstalk**, confirmar que foi publicada uma nova versão pelo Code Pipeline;
    ![](/mob/cloud/img/cp15.png)
 
 14. Confirmar que foi publicada a nova versão:
