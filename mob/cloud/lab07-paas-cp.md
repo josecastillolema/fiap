@@ -13,7 +13,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
 - A aplicação do [lab de Beanstalk](/mob/cloud/lab06-paas-eb.md) precisa estar no ar:
    ![](/mob/cloud/img/cp00-0.png)
    
-- Criação de um repositório no [GitHub](https://github.com/) com os arquivos da pasta [lab06-paas-eb](/mob/cloud/lab06-paas-eb):
+- Criação de um repositório no [GitHub](https://github.com/) com [os arquivos do lab de Beanstalk](/mob/cloud/lab06-paas-eb):
    ![](/mob/cloud/img/cp00-1.png)
 
 
