@@ -11,4 +11,5 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 05: IaaS - Simple Storage Service (S3)](https://github.com/josecastillolema/fiap/blob/master/mob/cloud/lab05-iaas-s3.md)
  - [Lab 06: PaaS - Elastic Beanstalk (EB)](https://github.com/josecastillolema/fiap/blob/master/mob/cloud/lab06-paas-eb.md)
  - [Lab 07: PaaS - CodePipeline (CP)](https://github.com/josecastillolema/fiap/blob/master/mob/cloud/lab07-paas-cp.md)
+ - [Lab 08: PaaS - DynamoDB](https://github.com/josecastillolema/fiap/blob/master/mob/cloud/lab08-paas-dynamo.md)
 
