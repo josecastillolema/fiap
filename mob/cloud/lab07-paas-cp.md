@@ -1,12 +1,8 @@
 # Lab 7 - AWS CP
 
 Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da criação de *pipelines*:
- - Criação de volumes
- - Anexar volumes a instâncias
- - Configurar volumes dentro das instâncias
-   * Formatação
-   * Criação do sistema de arquivos
-   * Montar o volume
+ - Criação do *pipeline*
+ - Automação de *deploy* no Beanstalk
 
 ## Pre-reqs
 
@@ -17,7 +13,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
    ![](/mob/cloud/img/cp00-1.png)
 
 
-## Criando o volume
+## Criando o *pipeline*
  
 1. Acessar o serviço **Code Pipeline**:
    ![](/mob/cloud/img/cp01.png)
