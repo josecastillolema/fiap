@@ -99,7 +99,7 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
  
  11. Rodar o código:
      ```
-     $ python3 dynamodb2.py 
+     $ python3 dynamodb.py 
 
       Testando scan:
       [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tlfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
