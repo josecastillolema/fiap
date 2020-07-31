@@ -94,6 +94,7 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
      ```
  10. Instalar as dependências:
      ```
+     $ sudo apt update
      $ sudo apt install -y python3-boto3
      ```
  
