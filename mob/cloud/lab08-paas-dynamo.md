@@ -184,25 +184,22 @@ Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access
 17. Escolher EC2 como serviço que vai utilizar o novo *role*:
    ![](/mob/cloud/img/iam2.png)
 
-18. Escolher EC2 como serviço que vai utilizar o novo *role*:
-   ![](/mob/cloud/img/iam3.png)
-
-19. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
+18. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
    ![](/mob/cloud/img/iam4.png)
 
-20. Configurar *tags*:
+19. Configurar *tags*:
    ![](/mob/cloud/img/iam5.png)
 
-21. Revisar as configurações e confirmar a criação do *role*:
+20. Revisar as configurações e confirmar a criação do *role*:
    ![](/mob/cloud/img/iam6.png)
 
-22. No console do EC2, anexar o novo *role* na VM:
+21. No console do EC2, anexar o novo *role* na VM:
    ![](/mob/cloud/img/iam7.png)
 
-23. Seleccionar o *role* que acabamos de criar:
+22. Seleccionar o *role* que acabamos de criar:
    ![](/mob/cloud/img/iam8.png)
 
-24. Tentar rodar de novo o código (deberia funcionar):
+23. Tentar rodar de novo o código (deberia funcionar):
     ```
     $ python3 dynamodb2.py 
 
