@@ -178,7 +178,7 @@ Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access
 15. Acessar o serviço **IAM**
    ![](/mob/cloud/img/iam0.png)
 
-16. Criar uma novo *role*:
+16. Criar um novo *role*:
    ![](/mob/cloud/img/iam1.png)
 
 17. Escolher EC2 como serviço que vai utilizar o novo *role*:
