@@ -4,6 +4,10 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
  - Criação de tabelas
  - Inserção/consulta de dados via console
  - Inserção/consulta via código `python`
+ 
+Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access Management (IAM)**:
+ - Autenticação usando arquivo de credenciais
+ - Autenticação usando roles
 
 ## Pre-reqs
 
@@ -13,7 +17,7 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
    ![](/mob/cloud/img/d0.png)
    ![](/mob/cloud/img/d1.png)
    
-- Copiar as credencias no arquivo `~/.aws/credentials` dentro da VM:
+- Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
     ```
     $ cat ~/.aws/credentials 
     [default]
@@ -24,7 +28,7 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
    
 ## Criando a tabela
  
-1. Acessar o serviço **DynamoDB**:
+1. Acessar o serviço **DynamoDB**
    
 2. Criar uma nova tabela:
    ![](/mob/cloud/img/d2.png)
@@ -43,6 +47,8 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
 
 
 ## Accessando via código `python`
+
+### Usando o arquivo de credenciais
 
 7. Na VM, clonar o repostiorio das aulas:
     ```
@@ -120,3 +126,99 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
 
 12. No console do DynamoDB, conferir que o novo aluno foi inserido:
    ![](/mob/cloud/img/d7.png)
+
+### Usando IAM *roles* (recomendado)
+
+13. Remover o arquivo de credenciais:
+    ```
+    $ rm -rf ~.aws
+    ```
+
+14. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
+    ```
+    $ python3 dynamodb2.py 
+
+    Testando scan:
+    Traceback (most recent call last):
+      File "dynamodb2.py", line 28, in <module>
+        scan(dynamodb, table)
+      File "dynamodb2.py", line 8, in scan
+        response = table.scan()
+      File "/usr/lib/python3/dist-packages/boto3/resources/factory.py", line 520, in do_action
+        response = action(self, *args, **kwargs)
+      File "/usr/lib/python3/dist-packages/boto3/resources/action.py", line 83, in __call__
+        response = getattr(parent.meta.client, operation_name)(**params)
+      File "/usr/lib/python3/dist-packages/botocore/client.py", line 316, in _api_call
+        return self._make_api_call(operation_name, kwargs)
+      File "/usr/lib/python3/dist-packages/botocore/client.py", line 622, in _make_api_call
+        operation_model, request_dict, request_context)
+      File "/usr/lib/python3/dist-packages/botocore/client.py", line 641, in _make_request
+        return self._endpoint.make_request(operation_model, request_dict)
+      File "/usr/lib/python3/dist-packages/botocore/endpoint.py", line 102, in make_request
+        return self._send_request(request_dict, operation_model)
+      File "/usr/lib/python3/dist-packages/botocore/endpoint.py", line 132, in _send_request
+        request = self.create_request(request_dict, operation_model)
+      File "/usr/lib/python3/dist-packages/botocore/endpoint.py", line 116, in create_request
+        operation_name=operation_model.name)
+      File "/usr/lib/python3/dist-packages/botocore/hooks.py", line 356, in emit
+        return self._emitter.emit(aliased_event_name, **kwargs)
+      File "/usr/lib/python3/dist-packages/botocore/hooks.py", line 228, in emit
+        return self._emit(event_name, kwargs)
+      File "/usr/lib/python3/dist-packages/botocore/hooks.py", line 211, in _emit
+        response = handler(**kwargs)
+      File "/usr/lib/python3/dist-packages/botocore/signers.py", line 90, in handler
+        return self.sign(operation_name, request)
+      File "/usr/lib/python3/dist-packages/botocore/signers.py", line 160, in sign
+        auth.add_auth(request)
+      File "/usr/lib/python3/dist-packages/botocore/auth.py", line 357, in add_auth
+        raise NoCredentialsError
+    botocore.exceptions.NoCredentialsError: Unable to locate credentials
+    ```
+    
+15. Acessar o serviço **IAM**
+   ![](/mob/cloud/img/iam0.png)
+
+16. Criar uma novo *role*:
+   ![](/mob/cloud/img/iam1.png)
+
+17. Escolher EC2 como serviço que vai utilizar o novo *role*:
+   ![](/mob/cloud/img/iam2.png)
+
+18. Escolher EC2 como serviço que vai utilizar o novo *role*:
+   ![](/mob/cloud/img/iam3.png)
+
+19. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
+   ![](/mob/cloud/img/iam4.png)
+
+20. Configurar *tags*:
+   ![](/mob/cloud/img/iam5.png)
+
+21. Revisar as configurações e confirmar a criação do *role*:
+   ![](/mob/cloud/img/iam6.png)
+
+22. No console do EC2, anexar o novo *role* na VM:
+   ![](/mob/cloud/img/iam7.png)
+
+23. Seleccionar o *role* que acabamos de criar:
+   ![](/mob/cloud/img/iam8.png)
+
+24. Tentar rodar de novo o código (deberia funcionar):
+    ```
+    $ python3 dynamodb2.py 
+
+    Testando scan:
+    [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
+
+    Iserindo aluno:
+    {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
+                                          'content-length': '2',
+                                          'content-type': 'application/x-amz-json-1.0',
+                                          'date': 'Wed, 05 Aug 2020 08:39:34 GMT',
+                                          'server': 'Server',
+                                          'x-amz-crc32': '2745614147',
+                                          'x-amzn-requestid': 'ESPGDHO1356RNOVANUH18ASV6NVV4KQNSO5AEMVJF66Q9ASUAAJG'},
+                          'HTTPStatusCode': 200,
+                          'RequestId': 'ESPGDHO1356RNOVANUH18ASV6NVV4KQNSO5AEMVJF66Q9ASUAAJG',
+                          'RetryAttempts': 0}}
+     ```
+                      
