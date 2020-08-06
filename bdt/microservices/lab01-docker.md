@@ -1,4 +1,4 @@
-# Lab 2 - Docker
+# Lab 1 - Docker
 
 ## Criando a instancia
 Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do Docker:
