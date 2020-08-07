@@ -606,7 +606,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     
     c. Taggear a imagem. O nome da imagem deve ser `username/nome da imagem`:
     ```
-    $ docker tag buntu_com_nmap-viadockerfile josecastillolema/fiap-bdt
+    $ docker tag ubuntu_com_nmap-viadockerfile josecastillolema/fiap-bdt
     ```
     
     d. Fazer o *upload* (`push`) da imagem:
