@@ -165,7 +165,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     Redirecting to /bin/systemctl start httpd.service
     ```
    
-14. Criar um *site* de teste, no arquivo `/var/www/html/index.html`:
+14. Criar um *site* de teste, no arquivo `/var/www/html/index.html` (como usuário admin):
     ```
     <h1>
        FIAP!!!
