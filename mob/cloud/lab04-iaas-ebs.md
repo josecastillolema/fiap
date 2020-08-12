@@ -126,7 +126,7 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
     lost+found
     ```
 
-13. Criar um arquivo qualquer:
+13. Criar um arquivo qualquer (como usuário admin):
     ```
     $ cd /mnt/volumeExterno/meuArquivo
     $ cat meuArquivo 
