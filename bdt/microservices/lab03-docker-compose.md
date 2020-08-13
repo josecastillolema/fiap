@@ -240,7 +240,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Processing triggers for libc-bin (2.27-3ubuntu1) ...
     ```
 
-2. **[T1]** Clonar [este repositório](https://github.com/josecastillolema/fiap) e navegar ate a pasta ***/fiap/aso/compose***:
+2. **[T1]** Clonar [este repositório](https://github.com/josecastillolema/fiap) e navegar ate a pasta **`/fiap/aso/compose`**:
     ```
     $ git clone https://github.com/josecastillolema/fiap.git
     $ cd fiap/aso/compose/
