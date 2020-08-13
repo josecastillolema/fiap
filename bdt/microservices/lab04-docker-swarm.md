@@ -7,7 +7,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
  - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
  
- Vamos trabalhar com duas máquinas virtuais (**T1** e **T2**).
+ Vamos trabalhar com duas máquinas virtuais (**T1** e **T2**). Se elas tiver rodando na nuvem, devem pertencer ao mesmo *security group* (ou ter um *security group* em común).
 
 1. **[T1]** Inicialização do ***manager***:
     ```
