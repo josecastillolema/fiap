@@ -131,7 +131,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
-12. **[T1]** Conferir quais containers foram criados na primeira máquina virtual (em este caso o banco de dados e uma instancia da API):
+12. **[T1]** Conferir quais containers foram criados na primeira máquina virtual (em este caso o banco de dados e uma instância da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                   PORTS                 NAMES
@@ -139,7 +139,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     2239ae187e86        josecastillolema/api:latest     "./api.py"               2 minutes ago       Up 2 minutes (healthy)   5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-13. **[T2]** Conferir quais containers foram criados na segunda máquina virtual (em este caso duas instancias da API):
+13. **[T2]** Conferir quais containers foram criados na segunda máquina virtual (em este caso duas instâncias da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS                   PORTS               NAMES
