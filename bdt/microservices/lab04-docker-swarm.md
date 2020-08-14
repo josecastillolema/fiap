@@ -41,7 +41,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
     ```
     
-5. **[T1]** Navegar até a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
+5. **[T1]** Navegar até a pasta **`/fiap/aso/swarm/v1`** de este repositório *git*:
     ```
     $ cd fiap/aso/swarm/v1
     $ pwd
@@ -50,7 +50,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     docker-compose.yaml
     ```
 
-6. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yaml***. São definidos dois serviços:
+6. **[T1]** Mostrar o conteúdo do arquivo **`docker-compose.yaml`**. São definidos dois serviços:
     - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*, com **3 réplicas**
     - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno, com **1 réplica**
     ```yaml
@@ -97,7 +97,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
       db-data:
     ```
 
-7. **[T1]** Criar o *stack* definido no arquivo ***docker-compose.yml***:
+7. **[T1]** Criar o *stack* definido no arquivo **`docker-compose.yml`**:
     ```
     $ docker stack deploy -c docker-compose.yaml stackFiap
     Creating network stackFiap_default
@@ -207,7 +207,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     Connection to ec2-3-85-40-189.compute-1.amazonaws.com closed.
     ```
     
-19. **[T1]** Apos uns instantes, confirmar que o *worker* aparece como ***down***:
+19. **[T1]** Apos uns instantes, confirmar que o *worker* aparece como **`down`**:
     ```
     $ docker node ls
     ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
@@ -215,7 +215,7 @@ Docker Swarm permite orquestrar containers em um cluster formado por vários ser
     1y4bix4oby6nq2jxx5ft4rhd0 *   ip-172-31-47-198    Ready               Active              Leader              19.03.6
     ```
 
-20. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 replicas da API):
+20. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 réplicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED              STATUS                        PORTS                 NAMES
