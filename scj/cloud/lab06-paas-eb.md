@@ -23,15 +23,15 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     ```
     
 4. Executar a aplicação:
-```
-$ python3 application.py
- * Serving Flask app "application" (lazy loading)
- * Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
- * Debug mode: off
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
+    ```
+    $ python3 application.py
+     * Serving Flask app "application" (lazy loading)
+     * Environment: production
+       WARNING: Do not use the development server in a production environment.
+       Use a production WSGI server instead.
+     * Debug mode: off
+     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    ```
 
 5. Testar o acesso local:
    ![](img/eb10.png)
