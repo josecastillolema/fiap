@@ -112,7 +112,10 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     10:44:25 up 36 min,  1 user,  load average: 1.00, 0.94, 0.60
     ```
    
-21. Aguardar o ***scale up***. Pode demorar ate: 5 min (*healt check grace period*) + tempo de criação da instância + tempo de `status checks`.
+21. Aguardar o ***scale up***.
+
+    Pode demorar ate:
+    `5 min (*healt check grace period*) + tempo de criação da instância + tempo de status checks`
    ![](/scj/cloud/img/auto14.png)
 
 22. Parar o processo que consome CPU:
