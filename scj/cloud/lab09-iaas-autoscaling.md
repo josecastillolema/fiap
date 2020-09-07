@@ -134,4 +134,4 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
     
 24. Aguardar o ***scale down***. Pode demorar ate: 5 min *warm up* + 5 min (*healt check grace period*) + tempo de deleção da instância.
-   ![](/sccj/cloud/img/auto14.png)
+   ![](/scj/cloud/img/auto11.png)
