@@ -3,7 +3,7 @@
 Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importantes de *autoscaling*:
  - ***launch configuration templates***
  - ***autoscaling groups***
- - **scaling policies**
+ - ***scaling policies***
  
 ## Criando o *launch template*
 
