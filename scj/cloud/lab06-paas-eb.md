@@ -14,8 +14,8 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     ```
     
 2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](lab06-paas-eb):
- - [**`application.py`**](lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
- - [**`requirements.txt`**](lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+    - [**`application.py`**](lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+    - [**`requirements.txt`**](lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
 3. Instalar as dependências:
     ```
