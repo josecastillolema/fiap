@@ -114,7 +114,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    
 21. Aguardar o ***scale up***.
 
-    Pode demorar ate:
+    Pode demorar até:
     `healt check grace period (5 min) + tempo de criação da instância + tempo de status checks`
    ![](/scj/cloud/img/auto14.png)
 
@@ -136,8 +136,8 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     KiB Swap:        0 total,        0 free,        0 used.   806496 avail Mem 
     ```
     
-24. Aguardar o ***scale down***..
+24. Aguardar o ***scale down***.
 
-    Pode demorar ate:
+    Pode demorar até:
     `warm up (5 min) + healt check grace period (5 min) + tempo de deleção da instância`
    ![](/scj/cloud/img/auto11.png)
