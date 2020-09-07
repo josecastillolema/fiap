@@ -115,7 +115,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 21. Aguardar o ***scale up***.
 
     Pode demorar ate:
-    `5 min (*healt check grace period*) + tempo de criação da instância + tempo de status checks`
+    `healt check grace period (5 min) + tempo de criação da instância + tempo de status checks`
    ![](/scj/cloud/img/auto14.png)
 
 22. Parar o processo que consome CPU:
@@ -136,5 +136,8 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     KiB Swap:        0 total,        0 free,        0 used.   806496 avail Mem 
     ```
     
-24. Aguardar o ***scale down***. Pode demorar ate: 5 min *warm up* + 5 min (*healt check grace period*) + tempo de deleção da instância.
+24. Aguardar o ***scale down***..
+
+    Pode demorar ate:
+    `warm up (5 min) + healt check grace period (5 min) + tempo de deleção da instância`
    ![](/scj/cloud/img/auto11.png)
