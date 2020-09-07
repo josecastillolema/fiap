@@ -8,39 +8,39 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 ## Criando o *launch template*
 
 1. Acessar o serviço **EC2**:
-   ![](/mob/cloud/img/ec2-0.png)
+   ![](/scj/cloud/img/ec2-0.png)
    
 2. Criar um novo *launch template*:
-   ![](/mob/cloud/img/auto0.png)
+   ![](/scj/cloud/img/auto0.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](/mob/cloud/img/ec2-2.png)
+   ![](/scj/cloud/img/ec2-2.png)
    
 4. Escolher o ***flavor*** `t2.micro`:
-   ![](/mob/cloud/img/ec2-3.png)
+   ![](/scj/cloud/img/ec2-3.png)
    
 5. Assignar um nome para o *launch template*:
-   ![](/mob/cloud/img/auto1.png)
+   ![](/scj/cloud/img/auto1.png)
 
 6. Revisar e confirmar a criação do *lauch template*:
-   ![](/mob/cloud/img/auto2.png)
+   ![](/scj/cloud/img/auto2.png)
 
 7. Escolher uma chave previamente criada ou criar uma chave nova para acessar às instâncias do *autoscaling group*:
-   ![](/mob/cloud/img/auto3.png)
+   ![](/scj/cloud/img/auto3.png)
 
 8. Aguardar a criação do *launch template*:
-   ![](/mob/cloud/img/auto4.png)
+   ![](/scj/cloud/img/auto4.png)
 
 ## Criando o *autoscaling group*
 
 9. Criar um novo *autoscaling group*:
-   ![](/mob/cloud/img/auto5.png)
+   ![](/scj/cloud/img/auto5.png)
 
 10. Seleccionar o *launch template* criado anteriormente:
-   ![](/mob/cloud/img/auto6.png)
+   ![](/scj/cloud/img/auto6.png)
 
 11. Assignar um nome e uma subrede para o *autoscaling group*:
-   ![](/mob/cloud/img/auto7.png)
+   ![](/scj/cloud/img/auto7.png)
 
 12. Definir a política de autoscaling:
     - Uso de CPU como métrica
@@ -49,22 +49,22 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     - Número mínimo de instâncias: 1
     - Número máximo de instâncias: 2
     - 300 segundos de *warm up*
-   ![](/mob/cloud/img/auto8.png)
+   ![](/scj/cloud/img/auto8.png)
 
 13. Revisar e confirmar a criação do *autoscaling group*:
-   ![](/mob/cloud/img/auto9.png)
+   ![](/scj/cloud/img/auto9.png)
    
 14. Aguardar a criação do *autoscaling group*:
-   ![](/mob/cloud/img/auto10.png)
+   ![](/scj/cloud/img/auto10.png)
    
 15. Conferir a criação do *autoscaling group*, a princípio só com uma instância:
-   ![](/mob/cloud/img/auto11.png)
+   ![](/scj/cloud/img/auto11.png)
 
 16. Conferir as instâncias que fazem parto do *autoscaling group*:
-   ![](/mob/cloud/img/auto12.png)
+   ![](/scj/cloud/img/auto12.png)
 
 16. Conferir a(s) instância(s) no EC2:
-   ![](/mob/cloud/img/auto13.png)
+   ![](/scj/cloud/img/auto13.png)
 
 ## Testando o *autoscaling group*
 
@@ -113,7 +113,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
    
 21. Aguardar o ***scale up***. Pode demorar ate: 5 min (*healt check grace period*) + tempo de criação da instância + tempo de `status checks`.
-   ![](/mob/cloud/img/auto14.png)
+   ![](/scj/cloud/img/auto14.png)
 
 22. Parar o processo que consome CPU:
     ```
@@ -134,4 +134,4 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
     
 24. Aguardar o ***scale down***. Pode demorar ate: 5 min *warm up* + 5 min (*healt check grace period*) + tempo de deleção da instância.
-   ![](/mob/cloud/img/auto14.png)
+   ![](/sccj/cloud/img/auto14.png)
