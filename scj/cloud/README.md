@@ -13,4 +13,6 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 07: PaaS - CodePipeline (CP)](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab07-paas-cp.md)
  - [Lab 08: PaaS - DynamoDB](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab08-paas-dynamo.md)
  - [Lab 09: IaaS - Autoscaling](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab09-iaas-autoscaling.md)
+ - [Lab 10: PaaS - Elastic Beanstalk (EB) com SpringBoot](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab10-paas-eb-springboot.md)
+
 
