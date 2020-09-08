@@ -204,13 +204,13 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
    ![](/mob/cloud/img/eb2.png)
    
 4. Configurar o nome da apliação:
-   ![](/mob/cloud/img/eb3.png)
+   ![](/mob/cloud/img/ebspring1.png)
 
 5. Escolher o entorno de execução:
-   ![](/mob/cloud/img/eb4.png)
+   ![](/mob/cloud/img/ebspring2.png)
    
 6. Fazer o *upload* da aplicação. O arquivo `.jar` se encontra na pasta: `fiap/scj/cloud/lab10-paas-eb/target/springboot-0.0.1-SNAPSHOT.jar` 
-   ![](/mob/cloud/img/eb5.png)
+   ![](/mob/cloud/img/ebspring3.png)
 
 7. Após uns minutos, conferir o estado da aplicação:
    ![](/mob/cloud/img/eb6.png)
