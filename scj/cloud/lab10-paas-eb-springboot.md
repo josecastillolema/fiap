@@ -1,4 +1,4 @@
-# Lab 10 - AWS Elastic Beanstalk com SpringBoot
+# Lab 10 - AWS Elastic Beanstalk com Spring Boot
 
 Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
  - *Deploy* de aplicações
@@ -223,7 +223,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs. 
 
    Os logs se encontram nos seguintes arquivos:
-    - `var/log/web.stdout.log`: log do springboot
+    - `var/log/web.stdout.log`: logs do Spring Boot
     - `var/log/nginx/access.log`: acessos à aplicação
     - `var/log/nginx/error.log`: log de erros
    ![](img/eb8.png)
