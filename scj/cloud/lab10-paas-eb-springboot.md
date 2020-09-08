@@ -213,15 +213,16 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
    ![](img/ebspring3.png)
 
 7. Após uns minutos, conferir o estado da aplicação:
-   ![](img/eb6.png)
+   ![](img/ebspring4.png)
 
 8. Accessar a URL da aplicação:
-   ![](img/eb7.png)
+   ![](img/ebspring5.png)
 
 ## *Logging* e monitoramento
 
-9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs:
+9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs. O log do springboot se encontra no arquivo `var/log/web.stdout.log`
    ![](img/eb8.png)
 
 10. Para monitorar a aplicação:
-   ![](img/eb9.png)
+   ![](img/ebspring6.png)
+   ![](img/ebspring7.png)
