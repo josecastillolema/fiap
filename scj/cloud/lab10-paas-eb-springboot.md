@@ -220,7 +220,12 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 
 ## *Logging* e monitoramento
 
-9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs. O log do springboot se encontra no arquivo `var/log/web.stdout.log`
+9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs. 
+
+   Os logs se encontram nos seguintes arquivos:
+    - `var/log/web.stdout.log`: log do springboot
+    - `var/log/nginx/access.log`: acessos à aplicação
+    - `var/log/nginx/error.log`: log de erros
    ![](img/eb8.png)
 
 10. Para monitorar a aplicação:
