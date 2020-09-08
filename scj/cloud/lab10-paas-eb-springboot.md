@@ -42,6 +42,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     
 3. Compilar a aplicação:
     ```
+    $ mvn package
     [INFO] Scanning for projects...
     [INFO] 
     [INFO] ------------------------< com.amock:springboot >------------------------
