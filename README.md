@@ -45,11 +45,11 @@
 - [Arquitetura Windows Azure Services](https://github.com/josecastillolema/fiap/tree/master/net/azure)
 
 ### [MBA em Full Stack Developer - Microservices, Cloud e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
-- Arquitetura e Desenvolvimento Java com IoT
+- [Arquitetura e Desenvolvimento Java com IoT](https://github.com/josecastillolema/fiap/tree/master/scj/java)
 - [Arquitetura e Desenvolvimento Java de Alta Disponibilidade para Cloud Computing](https://github.com/josecastillolema/fiap/tree/master/scj/java)
-- Arquitetura e Infraestrutura de Cloud Computing e Internet das Coisas
+- [Arquitetura e Infraestrutura de Cloud Computing e Internet das Coisas](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
 - [Cloud Development](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
-- Desenvolvimento de aplicações usando Cloud Computing
+- [Desenvolvimento de aplicações usando Cloud Computing](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy.jpeg)](https://josecastillolema.github.io/aws-academy/)
