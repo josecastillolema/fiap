@@ -616,3 +616,5 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     
     e. Conferir a imagem no portal do DockerHub:
        ![](/mob/cloud/img/docker0.png)
+       
+18. (Opcional) *Upload* da imagem no Elastic Container Registry (ECR) da AWS
