@@ -34,7 +34,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     ```
 
 5. Testar o acesso local:
-   ![](img/eb10.png)
+   ![](img/eb1.png)
    
 ## *Deploy* em uma VM no EC2
 
