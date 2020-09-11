@@ -85,6 +85,8 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 
 5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
 
+   ![](/mob/cloud/img/eb10.png)
+
 ## *Deploy* na AWS
  
 1. Acessar o serviço **Elastic Beanstalk**:
