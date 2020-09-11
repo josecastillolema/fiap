@@ -35,6 +35,42 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 
 5. Testar o acesso local:
    ![](img/eb10.png)
+   
+## *Deploy* em uma VM no EC2
+
+6. Criar uma VM com a imagem `Ubuntu 18.04`
+
+7. Logar na VM
+
+8. 
+
+1. Clonar o repositório:
+    ```
+    git clone https://github.com/josecastillolema/fiap
+    ```
+    
+2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](lab06-paas-eb):
+    - [**`application.py`**](lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+    - [**`requirements.txt`**](lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+ 
+3. Instalar as dependências:
+    ```
+    pip3 install -r requirements.txt
+    ```
+    
+4. Executar a aplicação:
+    ```
+    $ python3 application.py
+     * Serving Flask app "application" (lazy loading)
+     * Environment: production
+       WARNING: Do not use the development server in a production environment.
+       Use a production WSGI server instead.
+     * Debug mode: off
+     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    ```
+
+5. Testar o acesso local:
+   ![](img/eb10.png)
 
 ## *Deploy* na AWS
  
