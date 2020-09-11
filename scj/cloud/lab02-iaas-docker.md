@@ -423,7 +423,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     
     e. **[T2]** Criar uma nova imagem (`ubuntu_com_nmap`) a partir do container:
     ```
-    $ docker commit 5b8 ubuntu_com_nmap
+    $ docker commit 5b8 ubuntu-com-nmap
     sha256:287d2c84024a50ba13c9d8304d57df853feea9b3dd9df785313111480a84eecc
     ```
     
@@ -573,13 +573,13 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     $ docker images
     REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
     ubuntu-com-nmap-viadockerfile   latest              4647bd58aa0e        13 seconds ago      127MB
-    ubuntu_com_nmap                 latest              287d2c84024a        18 minutes ago      127MB
+    ubuntu-com-nmap                 latest              287d2c84024a        18 minutes ago      127MB
     ubuntu                          latest              adafef2e596e        11 days ago         73.9MB
     ```
     
     d. Testar a nova imagem:
     ```
-    $ docker run ubuntu_com_nmap-viadockerfile nmap --version
+    $ docker run ubuntu-com-nmap-viadockerfile nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
     Compiled with: liblua-5.3.3 openssl-1.1.1d nmap-libssh2-1.8.2 libz-1.2.11 libpcre-8.39 libpcap-1.9.1 nmap-libdnet-1.12 ipv6
