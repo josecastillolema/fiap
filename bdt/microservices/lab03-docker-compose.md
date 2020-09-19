@@ -243,9 +243,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 2. **[T1]** Clonar [este repositório](https://github.com/josecastillolema/fiap) e navegar ate a pasta **`/fiap/aso/compose`**:
     ```
     $ git clone https://github.com/josecastillolema/fiap.git
-    $ cd fiap/aso/compose/
+    $ cd fiap/bdt/microservices/compose
     $ pwd
-    /home/ubuntu/fiap/aso/compose
+    /home/ubuntu/fiap/bdt/microservices/compose
     $ ls
     api_v1  api_v2  api_v3  docker-compose.yml  mongo  mysql
 
