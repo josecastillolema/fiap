@@ -37,4 +37,14 @@ Em este lab sobre **API Gateway** aprenderemos alguns conceitos do API gateway d
 7. Aguardar a criação da API:
    ![](img/api9.png)
 
-8. 
+8. Testar a URL da API, a seguinte mensagem é normal pois não foi configurada a rota `/`:
+   ![](img/api10.png)
+
+9. Testar as rotas `v1` e `v2` da API:
+   ![](img/api11.png)
+   
+   ![](img/api12.png)
+
+10. Existe a possibilidade de limitar o número de requisições por segundo da API (*throttling*):
+   ![](img/api13.png)
+
