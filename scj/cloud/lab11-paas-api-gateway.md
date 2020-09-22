@@ -9,9 +9,9 @@ Em este lab sobre **API Gateway** aprenderemos alguns conceitos do API gateway d
 
 - Dois URLs accessíveis. Por exemplo, dois apps no Beanstalk:
     * http://springboot-env.eba-7znjbf9p.us-eats-1.elasticbeanstalk.com
-        ![](img/api0.png)
-    * http://springboot-env-1.eba-7zbhbf9p.us-east-1.elasticbeanstalk.com
         ![](img/api1.png)
+    * http://springboot-env-1.eba-7zbhbf9p.us-east-1.elasticbeanstalk.com
+        ![](img/api2.png)
 
 
  ## Configuração do serviço
