@@ -7,7 +7,7 @@ Em este lab sobre **EMR** aprenderemos alguns conceitos da plataforma de Big Dat
 
  ## Configuração do serviço
  
-1. Acessar o serviço **API Gateway**:
+1. Acessar o serviço **EMR**:
    ![](img/emr0.png)
    
 2. Iniciar a criação do cluster:
