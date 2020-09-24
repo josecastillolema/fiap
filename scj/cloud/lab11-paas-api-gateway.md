@@ -1,4 +1,4 @@
-# Lab 10 - Amazon API Gateway
+# Lab 11 - Amazon API Gateway
 
 Em este lab sobre **API Gateway** aprenderemos alguns conceitos do API gateway da plataforma da AWS:
  - Configuração de rotas
