@@ -30,7 +30,7 @@ Em este lab sobre **EMR** aprenderemos alguns conceitos da plataforma de Big Dat
 7. Acessar a interface web do Tez:
    ![](img/emr7.png)
    
-8. Acessar via SSH no master node. É necessário liberar a porta 22 no `security group` associado as instâncias criadas no EC2:
+8. Acessar via SSH no master node. É necessário liberar a porta 22 no `security group` associado às instâncias criadas no EC2:
     ```
     % ssh -i fiap.pem hadoop@ec2-3-81-126-78.compute-1.amazonaws.com
 
