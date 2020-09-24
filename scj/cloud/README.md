@@ -15,5 +15,6 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 09: IaaS - Autoscaling](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab09-iaas-autoscaling.md)
  - [Lab 10: PaaS - Elastic Beanstalk (EB) com Spring Boot](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab10-paas-eb-springboot.md)
  - [Lab 11: PaaS - API Gateway](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab11-paas-api-gateway.md)
+ - [Lab 12: PaaS - Elastic Map Reduce (EMR)](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab12-paas-emr.md)
 
 
