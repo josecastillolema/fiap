@@ -51,7 +51,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
-    $ env  | grep OS
+    $ env | grep OS
     OS_PROJECT_DOMAIN_ID=default
     OS_REGION_NAME=RegionOne
     OS_USER_DOMAIN_ID=default
