@@ -1,3 +1,12 @@
+# Lab 1 - Keystone
+
+## Identity Manager
+Usaremos o serviço Keystone para aprender alguns conceitos importantes de autenticação/autorização de usuários:
+ - projetos
+ - róis
+ - quotas
+ - endpoints
+
 1.	Listar os serviços Linux que compõem o Keystone:
 
 2.	Conferir a saúde dos serviços:
@@ -40,11 +49,11 @@
 
 21.	Refazer o mesmo processo via Horizon Dashboard:
 
-   - Listar endpoints
-   - Listar projetos
-   - Criar projeto
-   - Criar usuário
-   - Associar usuário com projeto
-   - Mostrar quotas de um projeto
-   - Mudar quotas de um projeto
+    - Listar endpoints
+    - Listar projetos
+    - Criar projeto
+    - Criar usuário
+    - Associar usuário com projeto
+    - Mostrar quotas de um projeto
+    - Mudar quotas de um projeto
 
