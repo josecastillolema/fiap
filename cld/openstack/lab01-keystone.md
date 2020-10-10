@@ -32,7 +32,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
 
 3.	Mostrar os logs do serviço:
     ```
-    os@ubuntu:~$ journalctl -f -u devstack@keystone
+    $ journalctl -f -u devstack@keystone
     -- Logs begin at Thu 2020-10-01 10:39:16 PDT. --
     Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.policy.backends.rules [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None None] enforce identity:validate_token: {'is_delegated_auth': False, 'access_token_id': None, 'user_id': u'e17c0f6e879c4b8d860ec69a2b28ffff', 'roles': [u'ResellerAdmin', u'admin', u'service'], 'user_domain_id': u'default', 'consumer_id': None, 'trustee_id': None, 'is_domain': False, 'is_admin_project': True, 'trustor_id': None, 'token': <KeystoneToken (audit_id=-ZpKXigzR7eMBVPnVEKdFg, audit_chain_id=-ZpKXigzR7eMBVPnVEKdFg) at 0x7f686de864f0>, 'project_id': u'83667b3fd3964824ae4276cfc8610829', 'trust_id': None, 'project_domain_id': u'default'} {{(pid=914) enforce /opt/stack/keystone/keystone/policy/backends/rules.py:33}}
     Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.common.authorization [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None None] RBAC: Authorization granted {{(pid=914) check_policy /opt/stack/keystone/keystone/common/authorization.py:240}}
