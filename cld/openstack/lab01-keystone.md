@@ -26,8 +26,8 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
                ├─912 keystoneuWSGI worker
                └─914 keystoneuWSGI worker
     Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.policy.backends.rules [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None
-   Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.common.authorization [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None N
-   Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: [pid: 914|app: 0|req: 131/264] 192.168.17.131 () {62 vars in 1401 bytes} [Sun Oct  4 17:1
+    Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.common.authorization [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None N
+    Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: [pid: 914|app: 0|req: 131/264] 192.168.17.131 () {62 vars in 1401 bytes} [Sun Oct  4 17:1
     ```
 
 3.	Mostrar os logs do serviço:
