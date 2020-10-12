@@ -409,6 +409,9 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     | volumes               | 10                               |
     | volumes_lvmdriver-1   | -1                               |
     +-----------------------+----------------------------------+
+    
+    $ openstack quota show fiap | grep cores
+    | cores                 | 30                               |
     ```
 
 20.	Deletar o projeto e usuário:
