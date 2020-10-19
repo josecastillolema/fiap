@@ -65,12 +65,12 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
     ```
     $ less /etc/glance/glance-api.conf
     
-    $ less  /etc/glance/policy.json
+    $ less /etc/glance/policy.json
     ```
     
 6. Listar os módulos instalados no OpenStack:
     ```
-    $ openstack  service list
+    $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
     +----------------------------------+-------------+----------------+
@@ -115,19 +115,19 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
     
 8. Converter a imagem de formato qcow2 a formato raw:
     ```
-    $ qemu-img convert  -f qcow2  -O raw  xenial-server-cloudimg-amd64-disk1.img xenial-server-cloudimg-amd64-disk1.raw
+    $ qemu-img convert -f qcow2 -O raw xenial-server-cloudimg-amd64-disk1.img xenial-server-cloudimg-amd64-disk1.raw
     ```
 
 9. Listar as duas imagens e conferir a diferencia de tamanho:
     ```
-    $ ls -lh  xenial-server-cloudimg-amd64-disk1.*
+    $ ls -lh xenial-server-cloudimg-amd64-disk1.*
     -rw-rw-r-- 1 os os 277M Mar 13  2018 xenial-server-cloudimg-amd64-disk1.img
     -rw-r--r-- 1 os os 2.2G Oct 19 11:27 xenial-server-cloudimg-amd64-disk1.raw
     ```
 
 10.	Subir a imagem para o OpenStack:
     ```
-    $ openstack image create  --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
+    $ openstack image create --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
     +------------------+------------------------------------------------------+
     | Field            | Value                                                |
     +------------------+------------------------------------------------------+
@@ -154,7 +154,7 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
     
     Se o paso anterior der o seguinte erro:
     ```
-    $ openstack image create  --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
+    $ openstack image create --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
     502 Bad Gateway: Bad Gateway: The proxy server received an invalid: response from an upstream server.: Apache/2.4.18 (Ubuntu) Server at 192.168.17.131 Port 80 (HTTP 502)
     ```
     
