@@ -27,11 +27,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 3.	Conferir a saúde dos serviços:
     ```
-    $ systemctl status devstack@n
-    ● devstack@n.service
-       Loaded: not-found (Reason: No such file or directory)
-       Active: inactive (dead)
-    os@ubuntu:~$ systemctl status devstack@n*
+    $ systemctl status devstack@n*
     ● devstack@n-cauth.service - Devstack devstack@n-cauth.service
        Loaded: loaded (/etc/systemd/system/devstack@n-cauth.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
