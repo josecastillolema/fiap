@@ -595,7 +595,20 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
      4     instance-00000006              running
     ```
 
-33.	Mostrar as informações da definição da VM:
+33. Logar na nova VM e confirmar que o arquivo criado previamente existe:
+    ```
+    $ virsh console 4
+    Connected to domain instance-00000006
+    Escape character is ^]
+
+    login as 'cirros' user. default password: 'cubswin:)'. use 'sudo' for root.
+    vmfiap02 login: cirros
+    Password:
+    $ ls
+    teste-fiap
+    ```
+
+34.	Mostrar as informações da definição da VM:
     ```
     $ virsh  dumpxml 3
     <domain type='qemu' id='3'>
@@ -728,14 +741,14 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     </domain>
     ```
 
-34.	Deletar as vms:
+35.	Deletar as vms:
     ```
     $ openstack server delete vmfiap01
     $ openstack server delete vmfiap02
     $ openstack image delete vmfiap01_snap
     ```
 
-35. Recriar desde o Horizon Dashboard:
+36. Recriar desde o Horizon Dashboard:
     - Criação de `flavor` 
     - Criação de VM
     - Criação de `snapshot`
