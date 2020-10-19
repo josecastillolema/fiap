@@ -14,7 +14,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 2.	Listar os serviços Linux que compõem o Nova:
     ```
-    $ systemctl  | grep devstack@n
+    $ systemctl | grep devstack@n
     devstack@n-api-meta.service                                                                      loaded active running   Devstack devstack@n-api-meta.service
     devstack@n-api.service                                                                           loaded active running   Devstack devstack@n-api.service
     devstack@n-cauth.service                                                                         loaded active running   Devstack devstack@n-cauth.service
@@ -205,7 +205,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 10.	Mostrar estatísticas de uso dos hypervisors:
     ```
-    $ openstack hypervisor stats  show
+    $ openstack hypervisor stats show
     +----------------------+-------+
     | Field                | Value |
     +----------------------+-------+
@@ -269,7 +269,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 13.	Criar um *flavor*: 
     ```
-    $ openstack flavor create  --public --ram 64 --vcpus 1 --disk 1 m.fiap
+    $ openstack flavor create --public --ram 64 --vcpus 1 --disk 1 m.fiap
     +----------------------------+--------------------------------------+
     | Field                      | Value                                |
     +----------------------------+--------------------------------------+
@@ -354,7 +354,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 19.	Criar a VM: 
     ```
-    $ openstack server create --flavor m.fiap --image  cirros-0.3.5-x86_64-disk  --key-name chave-fiap vmfiap01
+    $ openstack server create --flavor m.fiap --image cirros-0.3.5-x86_64-disk --key-name chave-fiap vmfiap01
     +-------------------------------------+-----------------------------------------------------------------+
     | Field                               | Value                                                           |
     +-------------------------------------+-----------------------------------------------------------------+
@@ -502,7 +502,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 29.	Criar um snapshot da VM:
     ```
-    $ openstack server image create vmfiap01 --name vmmfiap01_snap
+    $ openstack server image create vmfiap01 --name vmfiap01_snap
     +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field            | Value                                                                                                                                                                                                                                                  |
     +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -514,7 +514,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     | id               | 7b29041a-73f6-438e-91f9-09ff7423a585                                                                                                                                                                                                                   |
     | min_disk         | 1                                                                                                                                                                                                                                                      |
     | min_ram          | 0                                                                                                                                                                                                                                                      |
-    | name             | vmmfiap01_snap                                                                                                                                                                                                                                         |
+    | name             | vmfiap01_snap                                                                                                                                                                                                                                         |
     | owner            | faac34f01fb2464295bcea501b18b741                                                                                                                                                                                                                       |
     | properties       | base_image_ref='cd992dd3-2197-49fe-9f0e-43d783d18a5c', boot_roles='admin', image_type='snapshot', instance_uuid='fd676d99-1d15-4690-b69e-02d71947d1c5', owner_project_name='demo', owner_user_name='admin', user_id='fe2d2a5507ed4ad2919258d7252cebc6' |
     | protected        | False                                                                                                                                                                                                                                                  |
@@ -528,14 +528,14 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     ```
 
-30.	Listar as imagens:
+30.	Listar as imagens (aguardar que fique em estado `active`):
     ```
     $ openstack image list
     +--------------------------------------+--------------------------+--------+
     | ID                                   | Name                     | Status |
     +--------------------------------------+--------------------------+--------+
     | cd992dd3-2197-49fe-9f0e-43d783d18a5c | cirros-0.3.5-x86_64-disk | active |
-    | 7b29041a-73f6-438e-91f9-09ff7423a585 | vmmfiap01_snap           | queued |
+    | 7b29041a-73f6-438e-91f9-09ff7423a585 | vmfiap01_snap            | queued |
     +--------------------------------------+--------------------------+--------+
     
     $ openstack image list
@@ -543,13 +543,13 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     | ID                                   | Name                     | Status |
     +--------------------------------------+--------------------------+--------+
     | cd992dd3-2197-49fe-9f0e-43d783d18a5c | cirros-0.3.5-x86_64-disk | active |
-    | 7b29041a-73f6-438e-91f9-09ff7423a585 | vmmfiap01_snap           | active |
+    | 7b29041a-73f6-438e-91f9-09ff7423a585 | vmfiap01_snap            | active |
     +--------------------------------------+--------------------------+--------+
     ```
 
 31.	Instanciar o `snapshot`:
     ```
-    $ openstack  server create --flavor m.fiap --image vmmfiap01_snap vmfiap02
+    $ openstack server create --flavor m.fiap --image vmfiap01_snap vmfiap02
     +-------------------------------------+-------------------------------------------------------+
     | Field                               | Value                                                 |
     +-------------------------------------+-------------------------------------------------------+
@@ -572,7 +572,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     | flavor                              | m.fiap (a0683bcb-b937-4c75-be19-7641eceeff78)         |
     | hostId                              |                                                       |
     | id                                  | 24731592-0fa0-4ecc-8c1e-8ebe8ec2249e                  |
-    | image                               | vmmfiap01_snap (7b29041a-73f6-438e-91f9-09ff7423a585) |
+    | image                               | vmfiap01_snap (7b29041a-73f6-438e-91f9-09ff7423a585)  |
     | key_name                            | None                                                  |
     | name                                | vmfiap02                                              |
     | progress                            | 0                                                     |
