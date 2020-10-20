@@ -749,10 +749,10 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     ```
 
 36. Recriar desde o Horizon Dashboard:
-    - Criação de `flavor` 
+    - Criação de *flavor* 
     - Criação de VM
-    - Criação de `snapshot`
-    - Criação de VM a partir de `snapshot`
+    - Criação de *snapshot*
+    - Criação de VM a partir de *snapshot*
     ![](/cld/openstack/img/nova1.png)
     ![](/cld/openstack/img/nova2.png)
     ![](/cld/openstack/img/nova3.png)
