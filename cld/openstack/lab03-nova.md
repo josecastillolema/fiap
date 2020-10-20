@@ -610,7 +610,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 
 34.	Mostrar as informações da definição da VM:
     ```
-    $ virsh  dumpxml 3
+    $ virsh dumpxml 3
     <domain type='qemu' id='3'>
       <name>instance-00000005</name>
       <uuid>fd676d99-1d15-4690-b69e-02d71947d1c5</uuid>
