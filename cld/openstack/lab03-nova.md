@@ -430,7 +430,7 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     Password:
     $ touch teste-fiap
     $ ls
-    teste-
+    teste-fiap
     ```
     
 23.	Mostrar o *log* da VM:
