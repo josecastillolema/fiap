@@ -9,7 +9,6 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 1. Conferir se as extensões de virtualizações estão presentes no processador:
     ```
     $ grep -E ' svm | vmx ' /proc/cpuinfo
-    $
     ```
 
 2.	Listar os serviços Linux que compõem o Nova:
@@ -473,7 +472,6 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
 25.	Desligar a VM:
     ```
     $ openstack server stop vmfiap01
-    $
     ```
 
 26.	Listar as VMs e conferir que foi desligada:
