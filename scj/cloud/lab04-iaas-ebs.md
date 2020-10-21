@@ -128,7 +128,7 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 
 13. Criar um arquivo qualquer (como usuário admin):
     ```
-    $ cd /mnt/volumeExterno/meuArquivo
+    $ cd /mnt/volumeExterno
     $ cat meuArquivo 
     sic mundus creatus est
     ```
