@@ -46,7 +46,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
  
 3.	Conferir que a porta 9696 está aberta e associada ao Neutron:
     ```
-    $ sudo netstat -punlt  | grep 9696
+    $ sudo netstat -punlt | grep 9696
     tcp        0      0 0.0.0.0:9696            0.0.0.0:*               LISTEN                    831/python
     
     $ ps aux  | grep 831
@@ -69,16 +69,16 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
  
 5.	Listar os serviços Linux que compõem o Neutron:
     ```
-    $ systemctl  | grep devstack@q
-    devstack@q-agt.service                                                                           loaded active running   Devstack devstack@q-agt.service
-    devstack@q-dhcp.service                                                                          loaded active running   Devstack devstack@q-dhcp.service
-    devstack@q-l3.service                                                                            loaded active running   Devstack devstack@q-l3.service
-    devstack@q-meta.service                                                                          loaded active running   Devstack devstack@q-meta.service
-    devstack@q-svc.service                                                                           loaded active running   Devstack devstack@q-svc.service
+    $ systemctl | grep devstack@q
+    devstack@q-agt.service                                                     loaded active running   Devstack devstack@q-agt.service
+    devstack@q-dhcp.service                                                    loaded active running   Devstack devstack@q-dhcp.service
+    devstack@q-l3.service                                                      loaded active running   Devstack devstack@q-l3.service
+    devstack@q-meta.service                                                    loaded active running   Devstack devstack@q-meta.service
+    devstack@q-svc.service                                                     loaded active running   Devstack devstack@q-svc.service
     
-    $ systemctl  | grep openvswitch
-    openvswitch-nonetwork.service                                                                    loaded active exited    Open vSwitch Internal Unit
-    openvswitch-switch.service                                                                       loaded active exited    Open vSwitch
+    $ systemctl | grep openvswitch
+    openvswitch-nonetwork.service                                              loaded active exited    Open vSwitch Internal Unit
+    openvswitch-switch.service                                                 loaded active exited    Open vSwitch
     ```
  
 6.	Conferir a saúde dos serviços:
@@ -154,14 +154,14 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     ```
     $ less /etc/neutron/neutron.conf
     
-    $ less  /etc/neutron/plugins/ml2/ml2_conf.ini
+    $ less /etc/neutron/plugins/ml2/ml2_conf.ini
     
-    $ less  /etc/neutron/policy.json
+    $ less /etc/neutron/policy.json
     ```
 
 9.	Mostrar os arquivos de configuração de uma forma mais clara (sem comentários nem linhas vazias):
     ```
-    $ grep -vE "^#|^$"  /etc/neutron/plugins/ml2/ml2_conf.ini
+    $ grep -vE "^#|^$" /etc/neutron/plugins/ml2/ml2_conf.ini
     [DEFAULT]
     [l2pop]
     [ml2]
@@ -330,7 +330,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
  
 15.	Adicionar uma interface do roteador à subrede previamente criada:
     ```
-    $ openstack  router add subnet router-fiap subrede-privada
+    $ openstack router add subnet router-fiap subrede-privada
     ```
 
 16.	Repetir os testes de ping **via console na vm previamente criada** para ver se a VM sae para "a Internet" (IP 172.24.4.6):
@@ -394,7 +394,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 20.	Liberar o tráfego ICMP (para poder pingar à VM):
     ```
-    $ openstack security group  rule create --ingress  --protocol  icmp --remote-ip  0.0.0.0/0 fiap
+    $ openstack security group rule create --ingress --protocol icmp --remote-ip 0.0.0.0/0 fiap
     +-------------------+--------------------------------------+
     | Field             | Value                                |
     +-------------------+--------------------------------------+
@@ -418,7 +418,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 21.	Liberar o tráfego TCP (para conseguir acessar via SSH à VM):
     ```
-    $ openstack security group rule  create --ingress --protocol tcp --remote-ip  0.0.0.0/0 fiap
+    $ openstack security group rule create --ingress --protocol tcp --remote-ip 0.0.0.0/0 fiap
     +-------------------+--------------------------------------+
     | Field             | Value                                |
     +-------------------+--------------------------------------+
@@ -450,7 +450,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     | 5342ee28-9516-43d4-825f-a4547a8c7cdf | vm-1 | ACTIVE | rede-privada=10.20.20.10, 172.24.4.13 | cirros-0.3.5-x86_64-disk | m.fiap |
     +--------------------------------------+------+--------+---------------------------------------+--------------------------+--------+
 
-    $ openstack server add security group  vm-1 fiap
+    $ openstack server add security group vm-1 fiap
     ```
 
 23.	Tentar pingar a VM pelo IP interno (não é possível):
@@ -482,11 +482,11 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
  
 25.	Listar os namespaces:
     ```
-     sudo ip netns ls
-     qrouter-d4ea769a-6403-436d-9f8c-c9330597a247
-     qdhcp-f7476929-ffcd-4451-a4b0-3e109d1d782c
-     qrouter-19d71b70-0c7b-4b5b-8fe8-b11a1d3a7bf7
-     qdhcp-4e05e1bd-50f4-494b-aacf-07d43a37d1a1
+    $ sudo ip netns ls
+    qrouter-d4ea769a-6403-436d-9f8c-c9330597a247
+    qdhcp-f7476929-ffcd-4451-a4b0-3e109d1d782c
+    qrouter-19d71b70-0c7b-4b5b-8fe8-b11a1d3a7bf7
+    qdhcp-4e05e1bd-50f4-494b-aacf-07d43a37d1a1
     ```
 
 26.	Acessar ao namespace do router (veja que o *prompt* muda):
@@ -541,7 +541,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 29.	Listar as portas (**fora do *prompt* do *namespace***):
     ```
-    $ openstack  port list
+    $ openstack port list
     +--------------------------------------+------+-------------------+-----------------------------------------------------------------------------------------------------+--------+
     | ID                                   | Name | MAC Address       | Fixed IP Addresses                                                                                  | Status |
     +--------------------------------------+------+-------------------+-----------------------------------------------------------------------------------------------------+--------+
@@ -566,7 +566,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 30.	Mostar informação sobre uma porta virtual determinada:
     ```
-    $ openstack port show  7b272383-9238-429e-9a8f-b06a3824538b
+    $ openstack port show 7b272383-9238-429e-9a8f-b06a3824538b
     +-----------------------+----------------------------------------------------------------------------+
     | Field                 | Value                                                                      |
     +-----------------------+----------------------------------------------------------------------------+
@@ -608,7 +608,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 31.	Encontrar a interface do OpenvSwitch associada a porta:
     ```
-    $ sudo ovs-vsctl show  | grep 7b27
+    $ sudo ovs-vsctl show | grep 7b27
         Port "qvo7b272383-92"
             Interface "qvo7b272383-92"
     ```
