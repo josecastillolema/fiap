@@ -7,3 +7,4 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 01: Keystone - Identity Manager](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab01-keystone.md)
  - [Lab 02: Glance - Image Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab02-glance.md)
  - [Lab 03: Nova - Instance Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab03-nova.md)
+ - [Lab 04: Neutron - Network Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab04-neutron.md)
