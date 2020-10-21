@@ -296,7 +296,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
      1  *  *  10.20.20.10 (10.20.20.10)  3008.291 ms !H
      2  10.20.20.10 (10.20.20.10)  2996.692 ms !H  2999.085 ms !H  2998.905 ms !H
     ```
- 
+
 13.	Criar um roteador:
     ```
     $ openstack router create router-fiap
@@ -373,7 +373,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     ```
     $ openstack server add floating ip vm-1 172.24.4.13
     ```
- 
+
 19.	Criar um security group:
     ```
     $ openstack security group create fiap
