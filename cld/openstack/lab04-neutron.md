@@ -29,7 +29,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     +----------------------------------+-------------+----------------+
     ```
  
-2.	Mostrar informação sobre o endpoint:
+2.	Mostrar informação sobre o *endpoint*:
     ```
     $ openstack catalog show neutron
     +-----------+---------------------------------------+
@@ -347,7 +347,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
      2  172.24.4.6 (172.24.4.6)  3001.284 ms !H  3004.897 ms !H  3001.027 ms !H
     ```
 
-17.	Reservar um IP público (floating IP):
+17.	Reservar um IP público (*floating* IP):
     ```
     $ openstack floating ip create public
     +---------------------+--------------------------------------+
@@ -374,7 +374,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     $ openstack server add floating ip vm-1 172.24.4.13
     ```
 
-19.	Criar um security group:
+19.	Criar um *security group*:
     ```
     $ openstack security group create fiap
     +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -440,7 +440,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     +-------------------+--------------------------------------+
     ```
 
-22.	Associar o security group à VM:
+22.	Associar o *security group* à VM:
     ```
     $ openstack server list
     +--------------------------------------+------+--------+---------------------------------------+--------------------------+--------+
@@ -469,7 +469,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     10 packets transmitted, 0 received, 100% packet loss, time 8999ms
     ```
 
-24.	Conferir o ID do roteador para saber a qual namespace temos que acessar:
+24.	Conferir o ID do roteador para saber a qual *network namespace* temos que acessar:
     ```
     $ openstack router list
     +--------------------------------------+-------------+--------+-------+-------------+-------+----------------------------------+
@@ -480,7 +480,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     +--------------------------------------+-------------+--------+-------+-------------+-------+----------------------------------+
     ``` 
  
-25.	Listar os namespaces:
+25.	Listar os *network namespaces*:
     ```
     $ sudo ip netns ls
     qrouter-d4ea769a-6403-436d-9f8c-c9330597a247
@@ -489,13 +489,13 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     qdhcp-4e05e1bd-50f4-494b-aacf-07d43a37d1a1
     ```
 
-26.	Acessar ao namespace do router (veja que o *prompt* muda):
+26.	Acessar ao *network namespace* do *virtual router* (veja que o *prompt* muda):
     ```
     $ sudo ip netns exec qrouter-d4ea769a-6403-436d-9f8c-c9330597a247 bash
     root@ubuntu:~#
     ``` 
 
-27.	Conferir os IPs (do gateway e floating IPs):
+27.	Conferir os IPs (do *gateway* e *floating* IPs):
     ```
     # ip a
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
@@ -613,7 +613,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
             Interface "qvo7b272383-92"
     ```
     
-32.	Mostrar a porta no openvswitch:
+32.	Mostrar a porta no OpenvSwitch:
     ```
     $ sudo ovs-vsctl list interface qvo7b272383-92
     _uuid               : 59fb7296-d229-43ab-b57e-577eebfa8faf
@@ -652,7 +652,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     type                : ""
     ```
 
-33.	Mostrar os bridges e as interfaces configuradas no OpenvSwitch:
+33.	Mostrar os *bridges* e as interfaces configuradas no OpenvSwitch:
     ```
     $ sudo ovs-vsctl show
     c4198c58-dfa5-4d11-8cac-49b7565354b0
@@ -732,7 +732,7 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
         ovs_version: "2.6.1"
     ```
     
-34.	Deletar vms, rede, subrede e roteador
+34.	Deletar VMs, rede, subrede e roteador
     ```
     $ openstack server remove floating ip vm-1   172.24.4.13
     $ openstack router remove subnet router-fiap subrede-privada
@@ -744,9 +744,9 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 35.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de rede
     ![](/cld/openstack/img/neutron1.png)
-        
+
     ![](/cld/openstack/img/neutron2.png)
-    
+
     - Criação de subrede
     - Criação de roteador
     ![](/cld/openstack/img/neutron3.png)
@@ -754,10 +754,10 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     - Assignar interfaces ao roteador
     ![](/cld/openstack/img/neutron4.png)
 
-    - Reservar floating IP e associar a instância
+    - Reservar *floating* IP e associar a instância
     ![](/cld/openstack/img/neutron5.png)
 
-    - Criação de security group
+    - Criação de *security group*
     ![](/cld/openstack/img/neutron6.png)
 
     - Liberar regras no security group
