@@ -736,17 +736,29 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     ```
     $ openstack server remove floating ip vm-1   172.24.4.13
     $ openstack router remove subnet router-fiap subrede-privada
-    $ openstack router delete  router-fiap
+    $ openstack router delete router-fiap
     $ openstack server delete vm-1 vm-2
-    $ openstack subnet delete  subrede-privada
+    $ openstack subnet delete subrede-privada
     ```
 
 35.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de rede
+    ![](/cld/openstack/img/neutron1.png)
+        
+    ![](/cld/openstack/img/neutron2.png)
+    
     - Criação de subrede
-    - Criação de rotaedor
+    - Criação de roteador
+    ![](/cld/openstack/img/neutron3.png)
+
     - Assignar interfaces ao roteador
+    ![](/cld/openstack/img/neutron4.png)
+
     - Reservar floating IP e associar a instância
+    ![](/cld/openstack/img/neutron5.png)
+
     - Criação de security group
+    ![](/cld/openstack/img/neutron6.png)
+
     - Liberar regras no security group
 
