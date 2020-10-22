@@ -294,7 +294,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ```
     
-14. **[T1]** Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, softwares instalados, etc.:
+14. **[T1]** Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, *softwares* instalados, etc.:
     ```
     $ docker run -it ubuntu
     root@5b83d8b5b521:/# ls
