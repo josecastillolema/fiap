@@ -53,7 +53,7 @@
 
 # SHIFT: Cursos remotos de curta duração nas áreas de tecnologia, inovação e negócios
 
-## [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.jpeg)](https://www.fiap.com.br/shift)
+## [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy.jpeg)](https://josecastillolema.github.io/aws-academy/)
