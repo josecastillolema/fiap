@@ -50,6 +50,10 @@
 - [Arquitetura e Infraestrutura de Cloud Computing e Internet das Coisas](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
 - [Cloud Development](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
 - [Desenvolvimento de aplicações usando Cloud Computing](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
+
+# SHIFT: Cursos remotos de curta duração nas áreas de tecnologia, inovação e negócios
+
+## [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.jpeg)](https://www.fiap.com.br/shift)
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy.jpeg)](https://josecastillolema.github.io/aws-academy/)
