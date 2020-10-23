@@ -431,13 +431,13 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ubuntu_com_nmap     latest              287d2c84024a        7 seconds ago       127MB
+    ubuntu-com-nmap     latest              287d2c84024a        7 seconds ago       127MB
     ubuntu              latest              adafef2e596e        11 days ago         73.9MB
     ```
     
     g. Confirmar que na nova imagem, tem de fato o `nmap` instalado:
     ```
-    $ docker run ubuntu_com_nmap nmap --version
+    $ docker run ubuntu-com-nmap nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
     Compiled with: liblua-5.3.3 openssl-1.1.1d nmap-libssh2-1.8.2 libz-1.2.11 libpcre-8.39 libpcap-1.9.1 nmap-libdnet-1.12 ipv6
