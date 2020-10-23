@@ -604,7 +604,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Login Succeeded
     ```
     
-    c. Taggear a imagem. O nome da imagem deve ser `username/nome da imagem`:
+    c. Taggear a imagem. O nome da imagem deve ser `username/nome` da imagem:
     ```
     $ docker tag ubuntu-com-nmap-viadockerfile josecastillolema/fiap-bdt
     ```
