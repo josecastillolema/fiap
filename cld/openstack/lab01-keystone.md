@@ -1,4 +1,4 @@
-# Lab 1 - Keystone
+# Lab 1 - OpenStack Keystone
 
 ## Identity Manager
 Usaremos o serviço Keystone para aprender alguns conceitos importantes de autenticação/autorização de usuários:
