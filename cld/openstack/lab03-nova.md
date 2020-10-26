@@ -1,4 +1,4 @@
-# Lab 3 - Nova
+# Lab 3 - OpenStack Nova
 
 ## Compute Service
 Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máquinas virtuais:
