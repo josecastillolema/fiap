@@ -1,4 +1,4 @@
-# Lab 4 - Neutron
+# Lab 4 - OpenStack Neutron
 
 ## Network Service
 Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre virtualização de redes:
