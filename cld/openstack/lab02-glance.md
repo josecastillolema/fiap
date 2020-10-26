@@ -1,4 +1,4 @@
-# Lab 2 - Glance
+# Lab 2 - OpenStack Glance
 
 ## Image Service
 Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens/*snapshots* de máquinas virtuais:
