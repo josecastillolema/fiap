@@ -8,3 +8,5 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 02: Glance - Image Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab02-glance.md)
  - [Lab 03: Nova - Instance Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab03-nova.md)
  - [Lab 04: Neutron - Network Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab04-neutron.md)
+ - [Lab 05: Cinder - Block Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab05-cinder.md)
+ - [Lab 06: Swift - Object Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab06-swift.md)
