@@ -483,6 +483,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     - Criação de volume a partir de imagem
     - *Snapshot* de volume
     - Atachar/desatachar volumes a VMs
+    
     ![](/cld/openstack/img/cinder1.png)
     
     ![](/cld/openstack/img/cinder2.png)
