@@ -484,6 +484,9 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     - *Snapshot* de volume
     - Atachar/desatachar volumes a VMs
     ![](/cld/openstack/img/cinder1.png)
+    
     ![](/cld/openstack/img/cinder2.png)
+    
     ![](/cld/openstack/img/cinder3.png)
+    
     ![](/cld/openstack/img/cinder4.png)
