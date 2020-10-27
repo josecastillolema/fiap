@@ -51,7 +51,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
-    $ env | grep OS
+    $ env | grep OS_
     OS_PROJECT_DOMAIN_ID=default
     OS_REGION_NAME=RegionOne
     OS_USER_DOMAIN_ID=default
@@ -63,7 +63,6 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     OS_USERNAME=admin
     OS_TENANT_NAME=demo
     OS_VOLUME_API_VERSION=2
-    LESSCLOSE=/usr/bin/lesspipe %s %s
     ```
 
 6.	Listar os módulos instalados no OpenStack:
