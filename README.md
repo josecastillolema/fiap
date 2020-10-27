@@ -53,7 +53,7 @@
 
 # [SHIFT: Cursos remotos de curta duração](https://github.com/josecastillolema/fiap/blob/master/shift/README.md)
 
-## [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)
+[![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)
 
 ### [AWS Academy Cloud Foundations](https://github.com/josecastillolema/fiap/blob/master/shift/aws-foundations/README.md)
 
