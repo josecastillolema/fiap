@@ -77,11 +77,11 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
 5. Listar os serviços Linux que compõem o Swift:
     ```
     $ systemctl | grep devstack@s
-   devstack@s-account.service                                                           loaded active running   Devstack devstack@s-account.service
-   devstack@s-container.service                                                         loaded active running   Devstack devstack@s-container.service
-   devstack@s-object.service                                                            loaded active running   Devstack devstack@s-object.service
-   devstack@s-proxy.service                                                             loaded active running   Devstack devstack@s-proxy.service
-   ```
+    devstack@s-account.service                                                           loaded active running   Devstack devstack@s-account.service
+    devstack@s-container.service                                                         loaded active running   Devstack devstack@s-container.service
+    devstack@s-object.service                                                            loaded active running   Devstack devstack@s-object.service
+    devstack@s-proxy.service                                                             loaded active running   Devstack devstack@s-proxy.service
+    ```
  
 6. Conferir a saúde dos serviços:
     ```
