@@ -12,7 +12,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 - python
 - pip
 
-Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](## *Deploy* em uma VM no EC2)
+Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2)
 
 ## *Deploy* local
 
