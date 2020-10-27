@@ -1,6 +1,6 @@
 # Multicloud Architecture: Development, Solutions & Service
 
-## [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift-multicloud.png)](https://www.fiap.com.br/shift/curso/tecnologia/multicloud-architecture-development-solutions-service-online)
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift-multicloud.png)](https://www.fiap.com.br/shift/curso/tecnologia/multicloud-architecture-development-solutions-service-online)
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.
 
