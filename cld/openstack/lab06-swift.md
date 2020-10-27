@@ -16,7 +16,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
     ```
  
-3. Mostrar informação sobre o endpoint:
+3. Mostrar informação sobre o *endpoint*:
     ```
     
     ```
@@ -36,7 +36,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
     ```
  
-7. Mostrar os logs do serviço:
+7. Mostrar os *logs* do serviço:
     ```
     
     ```
@@ -51,7 +51,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
     ```
  
-10.	Conferir o endpoint do Keystone:
+10.	Conferir o *endpoint* do Keystone:
     ```
     
     ```
@@ -66,7 +66,6 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
     ```
  
-
 13.	Criar um arquivo de teste:
     ```
     
@@ -112,12 +111,12 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
     ```
  
-22.	Configurar permissões de leitura para o usuário demo do projeto demo:
+22.	Configurar permissões de leitura para o usuário `demo` do projeto `demo`:
     ```
     
     ```
 
-23.	Configurar permissões de escrita para o usuário demo do projeto demo:
+23.	Configurar permissões de escrita para o usuário `demo` do projeto `demo`:
     ```
     
     ```
@@ -129,8 +128,8 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     
 25.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de container
-    -  Upload de arquivo
-    - Download de arquivo
+    - *Upload* de arquivo
+    - *Download* de arquivo
     - Configuração de permissões
     - Abrir objeto via URL
     
