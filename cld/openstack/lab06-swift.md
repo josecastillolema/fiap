@@ -82,7 +82,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     devstack@s-object.service                                                            loaded active running   Devstack devstack@s-object.service
     devstack@s-proxy.service                                                             loaded active running   Devstack devstack@s-proxy.service
     ```
- 
+
 6. Conferir a saúde dos serviços:
     ```
     $ systemctl status devstack@s*
