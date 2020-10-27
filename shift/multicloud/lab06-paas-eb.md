@@ -8,9 +8,9 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
  
 ## Pre-reqs
 
-- git
-- python
-- pip
+ - `git`
+ - `python3`
+ - `pip3`
 
 Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2).
 
