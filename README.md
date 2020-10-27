@@ -51,7 +51,7 @@
 - [Cloud Development](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
 - [Desenvolvimento de aplicações usando Cloud Computing](https://github.com/josecastillolema/fiap/tree/master/scj/cloud)
 
-# [SHIFT: Cursos remotos de curta duração]((https://github.com/josecastillolema/fiap/blob/master/shift/README.md))
+# [SHIFT: Cursos remotos de curta duração](https://github.com/josecastillolema/fiap/blob/master/shift/README.md)
 
 ## [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)
 
