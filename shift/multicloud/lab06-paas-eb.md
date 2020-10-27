@@ -95,7 +95,7 @@ Se tiver feito o deploy local pode pular esta seção.
 
 5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
 
-   ![](/img/eb10.png)
+   ![](img/eb10.png)
 
 ## *Deploy* na AWS
  
