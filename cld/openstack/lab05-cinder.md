@@ -481,7 +481,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 29. Refazer o mesmo processo via Horizon Dashboard:
     - Criação de volume vazio
     - Criação de volume a partir de imagem
-    - Snapshot de volume
+    - *Snapshot* de volume
     - Atachar/desatachar volumes a VMs
     ![](/cld/openstack/img/cinder1.png)
     ![](/cld/openstack/img/cinder2.png)
