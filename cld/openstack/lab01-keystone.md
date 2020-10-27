@@ -427,7 +427,9 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     ![](/cld/openstack/img/keystone1.png)
     
     - Listar projetos
+    
     - Criar projeto
+    
     - Criar usuário
     ![](/cld/openstack/img/keystone2.png)
     
@@ -435,5 +437,6 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     ![](/cld/openstack/img/keystone3.png)
     
     - Mostrar quotas de um projeto
+    
     - Mudar quotas de um projeto
 
