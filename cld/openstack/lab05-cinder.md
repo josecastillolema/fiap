@@ -264,7 +264,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     $
     ```
 
-### DENTRO DA VM:
+### Dentro da VM:
 
 15. Conferir que o novo volume foi entregue a VM:
     ```
@@ -385,7 +385,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     /mnt/nuevo-vol/arquivo.txt
     ```
 
-### DE VOLTA NO DEVSTACK:
+### De volta no DevStack:
 
 23. Criar um *snapshot* do volume:
     ```
