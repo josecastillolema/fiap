@@ -76,7 +76,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 5. Listar os serviços Linux que compõem o Cinder:
     ```
-    $ systemctl  | grep devstack@c
+    $ systemctl | grep devstack@c
     devstack@c-api.service                                             loaded active running   Devstack devstack@c-api.service
     devstack@c-sch.service                                             loaded active running   Devstack devstack@c-sch.service
     devstack@c-vol.service                                             loaded active running   Devstack devstack@c-vol.service    
@@ -164,7 +164,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 11. Criar uma VM:
     ```
-    $ openstack server create --network private --flavor m.fiap --image  cirros-0.3.5-x86_64-disk vm
+    $ openstack server create --network private --flavor m.fiap --image cirros-0.3.5-x86_64-disk vm
     +-------------------------------------+-----------------------------------------------------------------+
     | Field                               | Value                                                           |
     +-------------------------------------+-----------------------------------------------------------------+
@@ -203,7 +203,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 12. Anexar o volume a uma instancia previamente criada (neste caso `vm`):
     ```
-    $ openstack  server add volume vm teste-fiap
+    $ openstack server add volume vm teste-fiap
     ```
 
 13. Conferir que o volume foi anexado:
@@ -243,7 +243,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     | volumes_attached                    | id='abccb06a-5e9e-422b-a2c0-9f6768071785'                       |
     +-------------------------------------+-----------------------------------------------------------------+
     
-    $ openstack server show vm  | grep volumes
+    $ openstack server show vm | grep volumes
     | volumes_attached                    | id='abccb06a-5e9e-422b-a2c0-9f6768071785'                       |
     ```
 
@@ -274,7 +274,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 16. Criar uma partição no novo disco:
     ```
-    $ sudo fdisk  /dev/vdb
+    $ sudo fdisk /dev/vdb
     Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
     Building a new DOS disklabel with disk identifier 0xaba72f7d.
     Changes will remain in memory only, until you decide to write them.
@@ -327,7 +327,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 18. Formatar a partição:
     ```
-    $ sudo mkfs.ext4  /dev/vdb1
+    $ sudo mkfs.ext4 /dev/vdb1
     mke2fs 1.42.2 (27-Mar-2012)
     Filesystem label=
     OS type: Linux
@@ -352,15 +352,15 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
   
 19. Criar uma nova pasta para montar o volume:
     ```
-    $ sudo mkdir  /mnt/nuevo-vol
+    $ sudo mkdir /mnt/nuevo-vol
     ```
 
 20. Montar o novo volume (pode ignorar o erro):
     ```
-    $ sudo mount  /dev/vdb1  /mnt/nuevo-vol
+    $ sudo mount /dev/vdb1 /mnt/nuevo-vol
     [  201.700545] EXT3-fs (vdb1): error: couldn't mount because of unsupported optional features (240)
     ```
-21.  Confirmar que o volume foi montado:
+21. Confirmar que o volume foi montado:
     ```
     $ mount
     rootfs on / type rootfs (rw)
@@ -379,7 +379,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 22. Criar um arquivo no novo volume:
     ```
-    $ sudo touch  /mnt/nuevo-vol/arquivo.txt
+    $ sudo touch /mnt/nuevo-vol/arquivo.txt
     
     $ ls  /mnt/nuevo-vol/
     /mnt/nuevo-vol/arquivo.txt
@@ -413,14 +413,14 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
 
 24. Listar e mostrar o *snapshot*:
     ```
-    $ openstack  volume snapshot list
+    $ openstack volume snapshot list
     +--------------------------------------+-----------------+-------------+-----------+------+
     | ID                                   | Name            | Description | Status    | Size |
     +--------------------------------------+-----------------+-------------+-----------+------+
     | b55e6a7c-3072-4879-8f35-bf68901d0e1a | teste-fiap-snap | None        | available |    1 |
     +--------------------------------------+-----------------+-------------+-----------+------+
     
-    $ openstack volume snapshot show  teste-fiap-snap
+    $ openstack volume snapshot show teste-fiap-snap
     +--------------------------------------------+--------------------------------------+
     | Field                                      | Value                                |
     +--------------------------------------------+--------------------------------------+
@@ -457,16 +457,25 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
       /dev/loop2 stack-volumes-lvmdriver-1 lvm2 a--  10.01g  7.01g
     ```
 
-26. Desatachar o volume da VM:
+26. Desatachar o volume da VM e confirmar que volta para o estado `available`:
     ```
+    $ openstack server remove volume vm teste-fiap
     
+    $ openstack volume list
+    +--------------------------------------+------------+-----------+------+-------------+
+    | ID                                   | Name       | Status    | Size | Attached to |
+    +--------------------------------------+------------+-----------+------+-------------+
+    | abccb06a-5e9e-422b-a2c0-9f6768071785 | teste-fiap | available |    1 |             |
+    +--------------------------------------+------------+-----------+------+-------------+
     ```
 
 27. Anexar o volume a outra VM, monta-lo e conferir que o arquivo criado continua presente
 
 28. Desanexar e deletar volumes e *snapshots*:
     ```
+    $ openstack volume snapshot delete teste-fiap-snap
     
+    $ openstack volume delete teste-fiap
     ```
 
 29. Refazer o mesmo processo via Horizon Dashboard:
