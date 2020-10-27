@@ -743,21 +743,26 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
 
 35.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de rede
+    
     ![](/cld/openstack/img/neutron1.png)
 
     ![](/cld/openstack/img/neutron2.png)
 
     - Criação de subrede
     - Criação de roteador
+    
     ![](/cld/openstack/img/neutron3.png)
 
     - Assignar interfaces ao roteador
+    
     ![](/cld/openstack/img/neutron4.png)
 
     - Reservar *floating* IP e associar a instância
+    
     ![](/cld/openstack/img/neutron5.png)
 
     - Criação de *security group*
+    
     ![](/cld/openstack/img/neutron6.png)
 
     - Liberar regras no security group
