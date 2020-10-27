@@ -6,7 +6,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
  - objetos
  - acesso via URL
 
-1. Carregar as credenciais de administrador e conferir que foram carregadas no ambiente:
+1. Carregar as credenciais de administrador e conferir que foram configuradas no ambiente:
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
@@ -81,7 +81,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
    devstack@s-container.service                                                         loaded active running   Devstack devstack@s-container.service
    devstack@s-object.service                                                            loaded active running   Devstack devstack@s-object.service
    devstack@s-proxy.service                                                             loaded active running   Devstack devstack@s-proxy.service
-    ```
+   ```
  
 6. Conferir a saúde dos serviços:
     ```
@@ -283,7 +283,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     $ swift -V 3 -A http://192.168.17.131/identity/v3 post fiap -w "demo:demo"
     ```
  
-24.	Deletar objeto e container
+24.	Deletar objeto e container:
     ```
     $ swift -V 3 -A http://192.168.17.131/identity/v3 delete fiap
     fiap
