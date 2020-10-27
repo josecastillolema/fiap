@@ -12,7 +12,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 - python
 - pip
 
-Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2)
+Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2).
 
 ## *Deploy* local
 
@@ -45,6 +45,8 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
    ![](img/eb1.png)
    
 ## *Deploy* em uma VM no EC2
+
+Se tiver feito o deploy local pode pular esta seção.
 
 1. Criar uma VM com a imagem `Ubuntu 18.04`
 
