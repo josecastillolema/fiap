@@ -42,7 +42,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     ```
 
 5. Testar o acesso local:
-   ![](img/eb1.png)
+   ![](img/eb11.png)
    
 ## *Deploy* em uma VM no EC2
 
