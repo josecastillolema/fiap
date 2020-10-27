@@ -5,6 +5,14 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
  - Plataformas/entornos de execução disponíveis
  - *Logging*
  - Monitoramento
+ 
+## Pre-reqs
+
+- git
+- python
+- pip
+
+Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](## *Deploy* em uma VM no EC2)
 
 ## *Deploy* local
 
