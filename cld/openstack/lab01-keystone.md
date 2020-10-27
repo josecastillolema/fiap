@@ -421,8 +421,8 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     $ openstack project delete fiap
     ```
 
-21.	Refazer o mesmo processo via Horizon Dashboard:
-    - Listar endpoints
+21. Refazer o mesmo processo via Horizon Dashboard:
+    - Listar *endpoints*
     ![](/cld/openstack/img/keystone1.png)
     - Listar projetos
     - Criar projeto
@@ -432,4 +432,3 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     ![](/cld/openstack/img/keystone3.png)
     - Mostrar quotas de um projeto
     - Mudar quotas de um projeto
-
