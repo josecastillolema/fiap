@@ -134,4 +134,4 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     - Configuração de permissões
     - Abrir objeto via URL
     
-    ![](/cld/openstack/img/cinder1.png)
+    ![](/cld/openstack/img/swift1.png)
