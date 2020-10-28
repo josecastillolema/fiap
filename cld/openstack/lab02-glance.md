@@ -6,7 +6,7 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
  - conversão entre formatos: ferramenta `qemu-img`
  - *snapshots*
 
-1. Carregar as credenciais de administrador e conferir que foram carregadas no ambiente:
+1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
