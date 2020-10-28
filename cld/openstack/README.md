@@ -11,4 +11,6 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 05: Cinder - Block Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab05-cinder.md)
  - [Lab 06: Swift - Object Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab06-swift.md)
  - [Lab 07: Heat - Orquestration Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab07-heat.md)
+ - [Lab 07: Terraform no OpenStack](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab08-terraform.md)
+
 
