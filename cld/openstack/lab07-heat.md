@@ -94,7 +94,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
                └─913 /usr/local/bin/uwsgi --ini /etc/heat/heat-api-cfn-uwsgi.ini
     ```
 
-6. Mostrar os logs do serviço:
+6. Mostrar os *logs* do serviço:
     ```
     $ journalctl -u devstack@h-eng
     ```
@@ -104,7 +104,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     $ less /etc/heat/heat.conf
     ```
 
-8. Baixar o template:
+8. Baixar o *template*:
     ```
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
@@ -117,7 +117,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     Checking connectivity... done.
     ```
     
-9. Conferir o stack que vai ser criado:
+9. Conferir o *stack* que vai ser criado:
     ```yaml
     $ cd fiap/cld/openstack/
     
@@ -200,7 +200,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
           Esta URL e a URL "externa" que pode ser usada para acessar o servidor WEB.
     ```
 
-10. Criar um stack:
+10. Criar um *stack*:
     ```
     $ openstack stack create -t heat.yaml fiap-stack --parameter image=cirros-0.3.5-x86_64-disk --parameter private_network=private --parameter flavor=m.fiap --parameter public_network=public
     +---------------------+--------------------------------------+
@@ -216,7 +216,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     +---------------------+--------------------------------------+
     ```
 
-11. Listar ate que fique em CREATE_COMPLATE (demora um pouco):
+11. Listar ate que fique em estado de `CREATE_COMPLATE` (pode demorar uns minutos):
     ```
     $ watch openstack stack list
     +--------------------------------------+------------+----------------------------------+-----------------+----------------------+--------------+
@@ -226,7 +226,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     +--------------------------------------+------------+----------------------------------+-----------------+----------------------+--------------+
     ```
  
-12. Mostrar o stack, e conferir o output:
+12. Mostrar o *stack*, e conferir o *output*:
     ```
     $ openstack stack show fiap-stack
     +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------+
@@ -281,7 +281,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     +---------------+--------------------------------------+----------------------------+-----------------+----------------------+
     ```
 
-14. Mostrar a vm, conferir que tem um *floating* IP assignado:
+14. Mostrar a VM, conferir que tem um *floating* IP assignado:
     ```
     $ openstack server list
     +--------------------------------------+--------------------------------+--------+---------------------------------------------------------------------+--------------------------+--------+
@@ -290,10 +290,19 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     | f62370b4-7cb4-480e-9c13-8a23f7617fa4 | fiap-stack-server-mr66iinpjgzg | ACTIVE | private=fdb5:7432:9bc4:0:f816:3eff:fe12:74d7, 10.0.0.4, 172.24.4.12 | cirros-0.3.5-x86_64-disk | m.fiap |
     +--------------------------------------+--------------------------------+--------+---------------------------------------------------------------------+--------------------------+--------+
     ```
+    
+15. Deletar o *stack* e conferir que a VM foi deletada:
+    ```
+    $ openstack stack delete fiap-stack
+    Are you sure you want to delete this stack(s) [y/N]? y
+    
+    $ openstack server list
+    ```
 
-15. Refazer o mesmo processo via Horizon Dashboard:
-    - Criação de stack
-    - Update de stack
+16. Refazer o mesmo processo via Horizon Dashboard:
+    - Criação de *stack*
+    - Update de *stack*
+    - Remoção de *stack*
  
     ![](/cld/openstack/img/heat1.png)
     
