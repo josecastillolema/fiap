@@ -8,6 +8,11 @@ Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na cria
 Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access Management (IAM)**:
  - Autenticação usando arquivo de credenciais
  - Autenticação usando roles
+ 
+Aproveitaremos também para mostrar as três formas de interação com a AWS:
+ - Console WEB
+ - Command line (comando `aws`)
+ - SDK Python (biblioteca `python3-boto3`)
 
 ## Pre-reqs
 
@@ -25,7 +30,459 @@ Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access
     aws_secret_access_key=KBIiKTVfM4weELy/fnyo2whIX1CU1rIzRGAuKrIY
     aws_session_token=FwoGZXIvYXdzEHsaDHJaxudSvX0PU3dK+iLBAaNXq+ioeMWV0o10aUbmolUTn/Qipy4YuXeGE4iQPYpLdtLd+djB78dl1PdjD50Hzbr9kr3T7YN2Y9YSG949dIThcvLBgTgJCB008YXTaUSClqKtppKGdhTymdhfUuiYin9m5DDgYDvnQhmt/9ukDWe8lzpFVz6NvjPnfgQrRCfViCs4KPCWz3WqPM6Q7opJM+FPFySWWY57TlzJ4919JpDLsLaE0CBSJQqgj0CWT/rX6zhh1rAQ3gGD8MRGipe6Chwol4qM+QUyLfX8HXTVHQTnTdspoG0ARfrtJglg9imONXKaHIFopyaajJZ12OgQjUKhl3u+WA==
     ```
-   
+- Para testar as credenciais, instalaremos o CLI da AWS:
+    ```
+    $ sudo apt update
+    
+    $ sudo apt install -y awscli
+    ```
+    
+ - Configuramos a região correta (ignorar o resto dos campos):
+    ````
+    $ aws configure
+    AWS Access Key ID [****************Q5QG]: 
+    AWS Secret Access Key [****************aqWs]: 
+    Default region name [None]: us-east-1
+    Default output format [None]:
+    ```
+    
+ - Listar VMs (em formato `json`):
+    ```
+    $ aws ec2 describe-instances
+    {
+        "Reservations": [
+            {
+                "Groups": [],
+                "Instances": [
+                    {
+                        "AmiLaunchIndex": 0,
+                        "ImageId": "ami-0914bc04e5495b889",
+                        "InstanceId": "i-0eea6b50a48d07613",
+                        "InstanceType": "t2.micro",
+                        "LaunchTime": "2020-09-18T00:17:13.000Z",
+                        "Monitoring": {
+                            "State": "disabled"
+                        },
+                        "Placement": {
+                            "AvailabilityZone": "us-east-1c",
+                            "GroupName": "",
+                            "Tenancy": "default"
+                        },
+                        "PrivateDnsName": "",
+                        "ProductCodes": [],
+                        "PublicDnsName": "",
+                        "State": {
+                            "Code": 48,
+                            "Name": "terminated"
+                        },
+                        "StateTransitionReason": "User initiated (2020-09-20 20:10:17 GMT)",
+                        "Architecture": "x86_64",
+                        "BlockDeviceMappings": [],
+                        "ClientToken": "cb65d27a-49cb-d46d-a7ca-1b8368d22330",
+                        "EbsOptimized": false,
+                        "EnaSupport": true,
+                        "Hypervisor": "xen",
+                        "NetworkInterfaces": [],
+                        "RootDeviceName": "/dev/xvda",
+                        "RootDeviceType": "ebs",
+                        "SecurityGroups": [],
+                        "StateReason": {
+                            "Code": "Client.UserInitiatedShutdown",
+                            "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                        },
+                        "Tags": [
+                            {
+                                "Key": "aws:cloudformation:stack-id",
+                                "Value": "arn:aws:cloudformation:us-east-1:440730077537:stack/awseb-e-32fei49nnj-stack/35d81f30-f944-11ea-9cb6-0eb23bbe71c5"
+                            },
+                            {
+                                "Key": "elasticbeanstalk:environment-id",
+                                "Value": "e-32fei49nnj"
+                            },
+                            {
+                                "Key": "Name",
+                                "Value": "Fiapapp-env"
+                            },
+                            {
+                                "Key": "aws:cloudformation:stack-name",
+                                "Value": "awseb-e-32fei49nnj-stack"
+                            },
+                            {
+                                "Key": "elasticbeanstalk:environment-name",
+                                "Value": "Fiapapp-env"
+                            },
+                            {
+                                "Key": "aws:autoscaling:groupName",
+                                "Value": "awseb-e-32fei49nnj-stack-AWSEBAutoScalingGroup-17NY3APZ43NN7"
+                            },
+                            {
+                                "Key": "aws:cloudformation:logical-id",
+                                "Value": "AWSEBAutoScalingGroup"
+                            }
+                        ],
+                        "VirtualizationType": "hvm",
+                        "CpuOptions": {
+                            "CoreCount": 1,
+                            "ThreadsPerCore": 1
+                        },
+                        "CapacityReservationSpecification": {
+                            "CapacityReservationPreference": "open"
+                        },
+                        "HibernationOptions": {
+                            "Configured": false
+                        },
+                        "MetadataOptions": {
+                            "State": "pending",
+                            "HttpTokens": "optional",
+                            "HttpPutResponseHopLimit": 1,
+                            "HttpEndpoint": "enabled"
+                        }
+                    }
+                ],
+                "OwnerId": "440730077537",
+                "RequesterId": "940372691376",
+                "ReservationId": "r-04e5222922400810c"
+            },
+            {
+                "Groups": [],
+                "Instances": [
+                    {
+                        "AmiLaunchIndex": 0,
+                        "ImageId": "ami-0817d428a6fb68645",
+                        "InstanceId": "i-02a7e6dfe99d1f769",
+                        "InstanceType": "t2.micro",
+                        "KeyName": "fiap",
+                        "LaunchTime": "2020-09-20T20:11:49.000Z",
+                        "Monitoring": {
+                            "State": "disabled"
+                        },
+                        "Placement": {
+                            "AvailabilityZone": "us-east-1a",
+                            "GroupName": "",
+                            "Tenancy": "default"
+                        },
+                        "PrivateDnsName": "ip-172-31-40-37.ec2.internal",
+                        "PrivateIpAddress": "172.31.40.37",
+                        "ProductCodes": [],
+                        "PublicDnsName": "ec2-18-232-70-66.compute-1.amazonaws.com",
+                        "PublicIpAddress": "18.232.70.66",
+                        "State": {
+                            "Code": 16,
+                            "Name": "running"
+                        },
+                        "StateTransitionReason": "",
+                        "SubnetId": "subnet-17a00f48",
+                        "VpcId": "vpc-7166990c",
+                        "Architecture": "x86_64",
+                        "BlockDeviceMappings": [
+                            {
+                                "DeviceName": "/dev/sda1",
+                                "Ebs": {
+                                    "AttachTime": "2020-09-20T20:11:49.000Z",
+                                    "DeleteOnTermination": true,
+                                    "Status": "attached",
+                                    "VolumeId": "vol-0b8b82a6443e712cf"
+                                }
+                            }
+                        ],
+                        "ClientToken": "",
+                        "EbsOptimized": false,
+                        "EnaSupport": true,
+                        "Hypervisor": "xen",
+                        "NetworkInterfaces": [
+                            {
+                                "Association": {
+                                    "IpOwnerId": "amazon",
+                                    "PublicDnsName": "ec2-18-232-70-66.compute-1.amazonaws.com",
+                                    "PublicIp": "18.232.70.66"
+                                },
+                                "Attachment": {
+                                    "AttachTime": "2020-09-20T20:11:49.000Z",
+                                    "AttachmentId": "eni-attach-00f1dc9a09492b219",
+                                    "DeleteOnTermination": true,
+                                    "DeviceIndex": 0,
+                                    "Status": "attached"
+                                },
+                                "Description": "",
+                                "Groups": [
+                                    {
+                                        "GroupName": "launch-wizard-3",
+                                        "GroupId": "sg-0976be2478d3b8b08"
+                                    }
+                                ],
+                                "Ipv6Addresses": [],
+                                "MacAddress": "0e:6a:4f:ca:d5:f1",
+                                "NetworkInterfaceId": "eni-09f8ba40f97bbc142",
+                                "OwnerId": "440730077537",
+                                "PrivateDnsName": "ip-172-31-40-37.ec2.internal",
+                                "PrivateIpAddress": "172.31.40.37",
+                                "PrivateIpAddresses": [
+                                    {
+                                        "Association": {
+                                            "IpOwnerId": "amazon",
+                                            "PublicDnsName": "ec2-18-232-70-66.compute-1.amazonaws.com",
+                                            "PublicIp": "18.232.70.66"
+                                        },
+                                        "Primary": true,
+                                        "PrivateDnsName": "ip-172-31-40-37.ec2.internal",
+                                        "PrivateIpAddress": "172.31.40.37"
+                                    }
+                                ],
+                                "SourceDestCheck": true,
+                                "Status": "in-use",
+                                "SubnetId": "subnet-17a00f48",
+                                "VpcId": "vpc-7166990c",
+                                "InterfaceType": "interface"
+                            }
+                        ],
+                        "RootDeviceName": "/dev/sda1",
+                        "RootDeviceType": "ebs",
+                        "SecurityGroups": [
+                            {
+                                "GroupName": "launch-wizard-3",
+                                "GroupId": "sg-0976be2478d3b8b08"
+                            }
+                        ],
+                        "SourceDestCheck": true,
+                        "VirtualizationType": "hvm",
+                        "CpuOptions": {
+                            "CoreCount": 1,
+                            "ThreadsPerCore": 1
+                        },
+                        "CapacityReservationSpecification": {
+                            "CapacityReservationPreference": "open"
+                        },
+                        "HibernationOptions": {
+                            "Configured": false
+                        },
+                        "MetadataOptions": {
+                            "State": "applied",
+                            "HttpTokens": "optional",
+                            "HttpPutResponseHopLimit": 1,
+                            "HttpEndpoint": "enabled"
+                        }
+                    }
+                ],
+                "OwnerId": "440730077537",
+                "ReservationId": "r-06e3113829e85cdc6"
+            }
+        ]
+    }
+    ```
+
+ - Listar VMs (em formato tabela):
+    ```
+    $ aws ec2 describe-instances --output table
+    ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    |                                                                        DescribeInstances                                                                       |
+    +----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+    ||                                                                         Reservations                                                                         ||
+    |+------------------------------------------------------------------+-------------------------------------------------------------------------------------------+|
+    ||  OwnerId                                                         |  440730077537                                                                             ||
+    ||  RequesterId                                                     |  940372691376                                                                             ||
+    ||  ReservationId                                                   |  r-04e5222922400810c                                                                      ||
+    |+------------------------------------------------------------------+-------------------------------------------------------------------------------------------+|
+    |||                                                                          Instances                                                                         |||
+    ||+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+||
+    |||  AmiLaunchIndex                                       |  0                                                                                                 |||
+    |||  Architecture                                         |  x86_64                                                                                            |||
+    |||  ClientToken                                          |  cb65d27a-49cb-d46d-a7ca-1b8368d22330                                                              |||
+    |||  EbsOptimized                                         |  False                                                                                             |||
+    |||  EnaSupport                                           |  True                                                                                              |||
+    |||  Hypervisor                                           |  xen                                                                                               |||
+    |||  ImageId                                              |  ami-0914bc04e5495b889                                                                             |||
+    |||  InstanceId                                           |  i-0eea6b50a48d07613                                                                               |||
+    |||  InstanceType                                         |  t2.micro                                                                                          |||
+    |||  LaunchTime                                           |  2020-09-18T00:17:13.000Z                                                                          |||
+    |||  PrivateDnsName                                       |                                                                                                    |||
+    |||  PublicDnsName                                        |                                                                                                    |||
+    |||  RootDeviceName                                       |  /dev/xvda                                                                                         |||
+    |||  RootDeviceType                                       |  ebs                                                                                               |||
+    |||  StateTransitionReason                                |  User initiated (2020-09-20 20:10:17 GMT)                                                          |||
+    |||  VirtualizationType                                   |  hvm                                                                                               |||
+    ||+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+||
+    ||||                                                             CapacityReservationSpecification                                                             ||||
+    |||+----------------------------------------------------------------------------------------------------------------------------+-----------------------------+|||
+    ||||  CapacityReservationPreference                                                                                             |  open                       ||||
+    |||+----------------------------------------------------------------------------------------------------------------------------+-----------------------------+|||
+    ||||                                                                        CpuOptions                                                                        ||||
+    |||+------------------------------------------------------------------------------------------------------------------------+---------------------------------+|||
+    ||||  CoreCount                                                                                                             |  1                              ||||
+    ||||  ThreadsPerCore                                                                                                        |  1                              ||||
+    |||+------------------------------------------------------------------------------------------------------------------------+---------------------------------+|||
+    ||||                                                                    HibernationOptions                                                                    ||||
+    |||+---------------------------------------------------------------------------------------------+------------------------------------------------------------+|||
+    ||||  Configured                                                                                 |  False                                                     ||||
+    |||+---------------------------------------------------------------------------------------------+------------------------------------------------------------+|||
+    ||||                                                                      MetadataOptions                                                                     ||||
+    |||+----------------------------------------------------------------------------------------------------------+-----------------------------------------------+|||
+    ||||  HttpEndpoint                                                                                            |  enabled                                      ||||
+    ||||  HttpPutResponseHopLimit                                                                                 |  1                                            ||||
+    ||||  HttpTokens                                                                                              |  optional                                     ||||
+    ||||  State                                                                                                   |  pending                                      ||||
+    |||+----------------------------------------------------------------------------------------------------------+-----------------------------------------------+|||
+    ||||                                                                        Monitoring                                                                        ||||
+    |||+-----------------------------------------------------------------+----------------------------------------------------------------------------------------+|||
+    ||||  State                                                          |  disabled                                                                              ||||
+    |||+-----------------------------------------------------------------+----------------------------------------------------------------------------------------+|||
+    ||||                                                                         Placement                                                                        ||||
+    |||+------------------------------------------------------------------------------------------+---------------------------------------------------------------+|||
+    ||||  AvailabilityZone                                                                        |  us-east-1c                                                   ||||
+    ||||  GroupName                                                                               |                                                               ||||
+    ||||  Tenancy                                                                                 |  default                                                      ||||
+    |||+------------------------------------------------------------------------------------------+---------------------------------------------------------------+|||
+    ||||                                                                           State                                                                          ||||
+    |||+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+|||
+    ||||  Code                                                 |  48                                                                                              ||||
+    ||||  Name                                                 |  terminated                                                                                      ||||
+    |||+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+|||
+    ||||                                                                        StateReason                                                                       ||||
+    |||+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+|||
+    ||||  Code                 |  Client.UserInitiatedShutdown                                                                                                    ||||
+    ||||  Message              |  Client.UserInitiatedShutdown: User initiated shutdown                                                                           ||||
+    |||+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+|||
+    ||||                                                                           Tags                                                                           ||||
+    |||+-----------------------------------+----------------------------------------------------------------------------------------------------------------------+|||
+    ||||                Key                |                                                        Value                                                         ||||
+    |||+-----------------------------------+----------------------------------------------------------------------------------------------------------------------+|||
+    ||||  aws:cloudformation:stack-id      |  arn:aws:cloudformation:us-east-1:440730077537:stack/awseb-e-32fei49nnj-stack/35d81f30-f944-11ea-9cb6-0eb23bbe71c5   ||||
+    ||||  elasticbeanstalk:environment-id  |  e-32fei49nnj                                                                                                        ||||
+    ||||  Name                             |  Fiapapp-env                                                                                                         ||||
+    ||||  aws:cloudformation:stack-name    |  awseb-e-32fei49nnj-stack                                                                                            ||||
+    ||||  elasticbeanstalk:environment-name|  Fiapapp-env                                                                                                         ||||
+    ||||  aws:autoscaling:groupName        |  awseb-e-32fei49nnj-stack-AWSEBAutoScalingGroup-17NY3APZ43NN7                                                        ||||
+    ||||  aws:cloudformation:logical-id    |  AWSEBAutoScalingGroup                                                                                               ||||
+    |||+-----------------------------------+----------------------------------------------------------------------------------------------------------------------+|||
+    ||                                                                         Reservations                                                                         ||
+    |+------------------------------------------------------------------+-------------------------------------------------------------------------------------------+|
+    ||  OwnerId                                                         |  440730077537                                                                             ||
+    ||  RequesterId                                                     |                                                                                           ||
+    ||  ReservationId                                                   |  r-06e3113829e85cdc6                                                                      ||
+    |+------------------------------------------------------------------+-------------------------------------------------------------------------------------------+|
+    |||                                                                          Instances                                                                         |||
+    ||+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+||
+    |||  AmiLaunchIndex                                       |  0                                                                                                 |||
+    |||  Architecture                                         |  x86_64                                                                                            |||
+    |||  ClientToken                                          |                                                                                                    |||
+    |||  EbsOptimized                                         |  False                                                                                             |||
+    |||  EnaSupport                                           |  True                                                                                              |||
+    |||  Hypervisor                                           |  xen                                                                                               |||
+    |||  ImageId                                              |  ami-0817d428a6fb68645                                                                             |||
+    |||  InstanceId                                           |  i-02a7e6dfe99d1f769                                                                               |||
+    |||  InstanceType                                         |  t2.micro                                                                                          |||
+    |||  KeyName                                              |  fiap                                                                                              |||
+    |||  LaunchTime                                           |  2020-09-20T20:11:49.000Z                                                                          |||
+    |||  PrivateDnsName                                       |  ip-172-31-40-37.ec2.internal                                                                      |||
+    |||  PrivateIpAddress                                     |  172.31.40.37                                                                                      |||
+    |||  PublicDnsName                                        |  ec2-18-232-70-66.compute-1.amazonaws.com                                                          |||
+    |||  PublicIpAddress                                      |  18.232.70.66                                                                                      |||
+    |||  RootDeviceName                                       |  /dev/sda1                                                                                         |||
+    |||  RootDeviceType                                       |  ebs                                                                                               |||
+    |||  SourceDestCheck                                      |  True                                                                                              |||
+    |||  StateTransitionReason                                |                                                                                                    |||
+    |||  SubnetId                                             |  subnet-17a00f48                                                                                   |||
+    |||  VirtualizationType                                   |  hvm                                                                                               |||
+    |||  VpcId                                                |  vpc-7166990c                                                                                      |||
+    ||+-------------------------------------------------------+----------------------------------------------------------------------------------------------------+||
+    ||||                                                                    BlockDeviceMappings                                                                   ||||
+    |||+-------------------------------------------------------------------------------+--------------------------------------------------------------------------+|||
+    ||||  DeviceName                                                                   |  /dev/sda1                                                               ||||
+    |||+-------------------------------------------------------------------------------+--------------------------------------------------------------------------+|||
+    |||||                                                                           Ebs                                                                          |||||
+    ||||+-------------------------------------------------------------------+------------------------------------------------------------------------------------+||||
+    |||||  AttachTime                                                       |  2020-09-20T20:11:49.000Z                                                          |||||
+    |||||  DeleteOnTermination                                              |  True                                                                              |||||
+    |||||  Status                                                           |  attached                                                                          |||||
+    |||||  VolumeId                                                         |  vol-0b8b82a6443e712cf                                                             |||||
+    ||||+-------------------------------------------------------------------+------------------------------------------------------------------------------------+||||
+    ||||                                                             CapacityReservationSpecification                                                             ||||
+    |||+----------------------------------------------------------------------------------------------------------------------------+-----------------------------+|||
+    ||||  CapacityReservationPreference                                                                                             |  open                       ||||
+    |||+----------------------------------------------------------------------------------------------------------------------------+-----------------------------+|||
+    ||||                                                                        CpuOptions                                                                        ||||
+    |||+------------------------------------------------------------------------------------------------------------------------+---------------------------------+|||
+    ||||  CoreCount                                                                                                             |  1                              ||||
+    ||||  ThreadsPerCore                                                                                                        |  1                              ||||
+    |||+------------------------------------------------------------------------------------------------------------------------+---------------------------------+|||
+    ||||                                                                    HibernationOptions                                                                    ||||
+    |||+---------------------------------------------------------------------------------------------+------------------------------------------------------------+|||
+    ||||  Configured                                                                                 |  False                                                     ||||
+    |||+---------------------------------------------------------------------------------------------+------------------------------------------------------------+|||
+    ||||                                                                      MetadataOptions                                                                     ||||
+    |||+----------------------------------------------------------------------------------------------------------+-----------------------------------------------+|||
+    ||||  HttpEndpoint                                                                                            |  enabled                                      ||||
+    ||||  HttpPutResponseHopLimit                                                                                 |  1                                            ||||
+    ||||  HttpTokens                                                                                              |  optional                                     ||||
+    ||||  State                                                                                                   |  applied                                      ||||
+    |||+----------------------------------------------------------------------------------------------------------+-----------------------------------------------+|||
+    ||||                                                                        Monitoring                                                                        ||||
+    |||+-----------------------------------------------------------------+----------------------------------------------------------------------------------------+|||
+    ||||  State                                                          |  disabled                                                                              ||||
+    |||+-----------------------------------------------------------------+----------------------------------------------------------------------------------------+|||
+    ||||                                                                     NetworkInterfaces                                                                    ||||
+    |||+--------------------------------------------------------------+-------------------------------------------------------------------------------------------+|||
+    ||||  Description                                                 |                                                                                           ||||
+    ||||  InterfaceType                                               |  interface                                                                                ||||
+    ||||  MacAddress                                                  |  0e:6a:4f:ca:d5:f1                                                                        ||||
+    ||||  NetworkInterfaceId                                          |  eni-09f8ba40f97bbc142                                                                    ||||
+    ||||  OwnerId                                                     |  440730077537                                                                             ||||
+    ||||  PrivateDnsName                                              |  ip-172-31-40-37.ec2.internal                                                             ||||
+    ||||  PrivateIpAddress                                            |  172.31.40.37                                                                             ||||
+    ||||  SourceDestCheck                                             |  True                                                                                     ||||
+    ||||  Status                                                      |  in-use                                                                                   ||||
+    ||||  SubnetId                                                    |  subnet-17a00f48                                                                          ||||
+    ||||  VpcId                                                       |  vpc-7166990c                                                                             ||||
+    |||+--------------------------------------------------------------+-------------------------------------------------------------------------------------------+|||
+    |||||                                                                       Association                                                                      |||||
+    ||||+-----------------------------------------+--------------------------------------------------------------------------------------------------------------+||||
+    |||||  IpOwnerId                              |  amazon                                                                                                      |||||
+    |||||  PublicDnsName                          |  ec2-18-232-70-66.compute-1.amazonaws.com                                                                    |||||
+    |||||  PublicIp                               |  18.232.70.66                                                                                                |||||
+    ||||+-----------------------------------------+--------------------------------------------------------------------------------------------------------------+||||
+    |||||                                                                       Attachment                                                                       |||||
+    ||||+--------------------------------------------------------------+-----------------------------------------------------------------------------------------+||||
+    |||||  AttachTime                                                  |  2020-09-20T20:11:49.000Z                                                               |||||
+    |||||  AttachmentId                                                |  eni-attach-00f1dc9a09492b219                                                           |||||
+    |||||  DeleteOnTermination                                         |  True                                                                                   |||||
+    |||||  DeviceIndex                                                 |  0                                                                                      |||||
+    |||||  Status                                                      |  attached                                                                               |||||
+    ||||+--------------------------------------------------------------+-----------------------------------------------------------------------------------------+||||
+    |||||                                                                         Groups                                                                         |||||
+    ||||+----------------------------------------------------+---------------------------------------------------------------------------------------------------+||||
+    |||||  GroupId                                           |  sg-0976be2478d3b8b08                                                                             |||||
+    |||||  GroupName                                         |  launch-wizard-3                                                                                  |||||
+    ||||+----------------------------------------------------+---------------------------------------------------------------------------------------------------+||||
+    |||||                                                                   PrivateIpAddresses                                                                   |||||
+    ||||+---------------------------------------------------------+----------------------------------------------------------------------------------------------+||||
+    |||||  Primary                                                |  True                                                                                        |||||
+    |||||  PrivateDnsName                                         |  ip-172-31-40-37.ec2.internal                                                                |||||
+    |||||  PrivateIpAddress                                       |  172.31.40.37                                                                                |||||
+    ||||+---------------------------------------------------------+----------------------------------------------------------------------------------------------+||||
+    ||||||                                                                      Association                                                                     ||||||
+    |||||+----------------------------------------+-------------------------------------------------------------------------------------------------------------+|||||
+    ||||||  IpOwnerId                             |  amazon                                                                                                     ||||||
+    ||||||  PublicDnsName                         |  ec2-18-232-70-66.compute-1.amazonaws.com                                                                   ||||||
+    ||||||  PublicIp                              |  18.232.70.66                                                                                               ||||||
+    |||||+----------------------------------------+-------------------------------------------------------------------------------------------------------------+|||||
+    ||||                                                                         Placement                                                                        ||||
+    |||+------------------------------------------------------------------------------------------+---------------------------------------------------------------+|||
+    ||||  AvailabilityZone                                                                        |  us-east-1a                                                   ||||
+    ||||  GroupName                                                                               |                                                               ||||
+    ||||  Tenancy                                                                                 |  default                                                      ||||
+    |||+------------------------------------------------------------------------------------------+---------------------------------------------------------------+|||
+    ||||                                                                      SecurityGroups                                                                      ||||
+    |||+-----------------------------------------------------+----------------------------------------------------------------------------------------------------+|||
+    ||||  GroupId                                            |  sg-0976be2478d3b8b08                                                                              ||||
+    ||||  GroupName                                          |  launch-wizard-3                                                                                   ||||
+    |||+-----------------------------------------------------+----------------------------------------------------------------------------------------------------+|||
+    ||||                                                                           State                                                                          ||||
+    |||+----------------------------------------------------------------+-----------------------------------------------------------------------------------------+|||
+    ||||  Code                                                          |  16                                                                                     ||||
+    ||||  Name                                                          |  running                                                                                ||||
+    |||+----------------------------------------------------------------+-----------------------------------------------------------------------------------------+|||
+    ```
+
+
 ## Criando a tabela
  
 1. Acessar o serviço **DynamoDB**
