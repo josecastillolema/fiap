@@ -118,7 +118,7 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     ```
     
 9. Conferir o stack que vai ser criado:
-    ```json
+    ```yaml
     $ cd fiap/cld/openstack/
     
     $ cat heat.yaml
