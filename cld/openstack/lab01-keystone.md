@@ -46,7 +46,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     $ less /etc/keystone/keystone.conf
     ```
 
-5.	Carregar as credenciais de administrador e conferir que foram carregadas no ambiente:
+5.	Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
