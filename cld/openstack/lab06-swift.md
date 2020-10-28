@@ -6,7 +6,7 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
  - objetos
  - acesso via URL
 
-1. Carregar as credenciais de administrador e conferir que foram configuradas no ambiente:
+1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
