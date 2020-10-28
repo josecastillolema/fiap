@@ -10,3 +10,5 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 04: Neutron - Network Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab04-neutron.md)
  - [Lab 05: Cinder - Block Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab05-cinder.md)
  - [Lab 06: Swift - Object Storage Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab06-swift.md)
+ - [Lab 07: Heat - Orquestration Service](https://github.com/josecastillolema/fiap/blob/master/cld/openstack/lab07-heat.md)
+
