@@ -1,22 +1,22 @@
 provider "openstack" {
-    user_name   = ""
-    tenant_name = ""
-    tenant_id   = ""
-    password    = ""
-    auth_url    = ""
+    user_name   = "admin"
+    tenant_name = "demo"
+    tenant_id   = "faac34f01fb2464295bcea501b18b741"
+    password    = "nomoresecret"
+    auth_url    = "http://192.168.17.131/identity"
 }
 
 variable "defaults" {
     description = "OpenStack Variables for Tenant"
     type = "map"
-    default  {
-        image_name     = ""
-        az_name        = "nova"
-        region         = ""
-        tenant_name    = ""
-        flavor_name    = ""
-        security_group = ""
-        network_name   = ""
+    default = { 
+       image_name     = "cirros-0.3.5-x86_64-disk"
+       az_name        = "nova"
+       region         = "RegionOne"
+       tenant_name    = "demo"
+       flavor_name    = "m.fiap"
+       security_group = "default"
+       network_name   = "private"
     }
 }
 
