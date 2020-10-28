@@ -483,7 +483,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
 
 
-## Criando a tabela
+## Criando o DB no DynamoDB
  
 1. Acessar o serviço **DynamoDB**
    
