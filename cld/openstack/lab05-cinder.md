@@ -7,7 +7,7 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
  - partição, formatação e montagem de volumes
  
 
-1. Carregar as credenciais de administrador e conferir que foram carregadas no ambiente:
+1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
