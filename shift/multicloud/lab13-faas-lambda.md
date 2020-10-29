@@ -56,4 +56,4 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
  10. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
        ![](img/lambda8.png)
 
-
+ 11. No 
