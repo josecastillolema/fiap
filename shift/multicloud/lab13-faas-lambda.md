@@ -8,6 +8,9 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 ## Pre-reqs
 
 - A seguinte tabela, com nome `Atmosfera` criada no DynamoDB:
+    * sala: *primary key*, string
+    * temperatura: number
+    * humidade: number
     ![](img/lambda0.png)
 
  ## Configuração do serviço
