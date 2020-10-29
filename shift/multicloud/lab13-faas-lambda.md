@@ -16,7 +16,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
  ## Configuração do serviço
 
 1. Acessar o serviço **Lambda**:
-    ![](img/labmda1.png)
+    ![](img/lambda1.png)
 
 2. Criar uma nova função:
     ![](img/lambda2.png)
@@ -45,18 +45,31 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
      ![](img/lambda4.png)
 
  6. Vamos testar o código:
-      ![](img/lambda5.png)
+     ![](img/lambda5.png)
 
  7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
-      ![](img/lambda6.png)
+     ![](img/lambda6.png)
 
  8. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
-      ![](img/lambda6.png)
+     ![](img/lambda6.png)
 
  9. Executar o evento de testes recém criado `testeGetTemperatura`:
-       ![](img/lambda7.png)
+     ![](img/lambda7.png)
 
  10. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
-       ![](img/lambda8.png)
+     ![](img/lambda8.png)
 
- 11. No 
+ 11. No IAM, procurar o *role* da função:
+     ![](img/lambda9.png)
+
+ 12. Adicionar uma nova *policy*: 
+     ![](img/lambda10.png)
+
+ 13. A policy `AmazonDynamoDBReadOnlyAccess` vai dar acesso de leitura ao DynamoDB:
+     ![](img/lambda11.png)
+
+ 14. Estado final da *role*:
+     ![](img/lambda12.png)
+
+ 15. Ejecutar de novo o teste, agora deberia funcionar:
+     ![](img/lambda13.png)
