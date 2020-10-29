@@ -21,7 +21,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 2. Criar uma nova função:
     ![](img/lambda2.png)
    
-3. Criar uma primera função getTemperatura com Python como *runtime*:
+3. Criar uma primera função `getTemperatura` com Python como *runtime*:
     ![](img/lambda3.png)
 
 4. Configurar o seguinte código para a função:
@@ -42,34 +42,68 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
     
     
  5. Fazer *deploy* do código:
-     ![](img/lambda4.png)
+    ![](img/lambda4.png)
 
  6. Vamos testar o código:
-     ![](img/lambda5.png)
+    ![](img/lambda5.png)
 
  7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
-     ![](img/lambda6.png)
+    ![](img/lambda6.png)
 
- 8. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
-     ![](img/lambda6.png)
+ 8. Executar o evento de testes recém criado `testeGetTemperatura`:
+    ![](img/lambda7.png)
 
- 9. Executar o evento de testes recém criado `testeGetTemperatura`:
-     ![](img/lambda7.png)
+ 9. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
+    ![](img/lambda8.png)
 
- 10. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
-     ![](img/lambda8.png)
+ 10. No IAM, procurar o *role* da função:
+    ![](img/lambda9.png)
 
- 11. No IAM, procurar o *role* da função:
-     ![](img/lambda9.png)
+ 11. Adicionar uma nova *policy*: 
+    ![](img/lambda10.png)
 
- 12. Adicionar uma nova *policy*: 
-     ![](img/lambda10.png)
+ 12. A policy `AmazonDynamoDBReadOnlyAccess` vai dar acesso de leitura ao DynamoDB:
+    ![](img/lambda11.png)
 
- 13. A policy `AmazonDynamoDBReadOnlyAccess` vai dar acesso de leitura ao DynamoDB:
-     ![](img/lambda11.png)
+ 13. Estado final da *role*:
+    ![](img/lambda12.png)
 
- 14. Estado final da *role*:
-     ![](img/lambda12.png)
+ 14. Ejecutar de novo o teste, agora deberia funcionar:
+    ![](img/lambda13.png)
 
- 15. Ejecutar de novo o teste, agora deberia funcionar:
-     ![](img/lambda13.png)
+ 15. Agora vamos configurar um *trigger* para a função:
+    ![](img/lambda14.png)
+
+ 16. O *trigger* será um *endpoint* em uma nova API do API Gateway chamada `api-lambda`:
+    ![](img/lambda15.png)
+
+ 17. Conferir que o *trigger* foi criado e asociado à função:
+    ![](img/lambda16.png)
+
+ 18. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
+    ![](img/lambda17.png)
+
+ 19. Testamos o *endpoint*:
+    ![](img/lambda18.png)
+
+ ## Configuração do segundo *endpoint* usando a mesma API
+
+ 20. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
+    ![](img/lambda19.png)
+ 
+ 21. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
+    ```python
+    import json
+    import boto3
+    def lambda_handler(event, context):
+       # TODO implement
+       dynamodb = boto3.resource('dynamodb')
+       tableTemperatures = dynamodb.Table('Atmosfera')
+       response = tableTemperatures.scan()
+       return {
+          'statusCode': 200,
+          'body': response['Items'][0]['humidade']
+       }
+    ```
+
+    O código lee o valor temperatura da tabela `Atmosfera` do DynamoDB.
