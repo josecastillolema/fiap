@@ -29,7 +29,6 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
     import json
     import boto3
     def lambda_handler(event, context):
-       # TODO implement
        dynamodb = boto3.resource('dynamodb')
        tableTemperatures = dynamodb.Table('Atmosfera')
        response = tableTemperatures.scan()
@@ -38,16 +37,16 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
           'body': response['Items'][0]['temperatura']
        }
     ```
-    O código lee o valor temperatura da tabela `Atmosfera` do DynamoDB.
+    O código lee o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
     
     
- 5. Fazer *deploy* do código:
+5. Fazer *deploy* do código:
     ![](img/lambda4.png)
 
- 6. Vamos testar o código:
+6. Vamos testar o código:
     ![](img/lambda5.png)
 
- 7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
+7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
     ![](img/lambda6.png)
 
  8. Executar o evento de testes recém criado `testeGetTemperatura`:
@@ -88,15 +87,14 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 
  ## Configuração do segundo *endpoint* usando a mesma API
 
- 20. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
+20. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
     ![](img/lambda19.png)
  
- 21. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
+21. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
     ```python
     import json
     import boto3
     def lambda_handler(event, context):
-       # TODO implement
        dynamodb = boto3.resource('dynamodb')
        tableTemperatures = dynamodb.Table('Atmosfera')
        response = tableTemperatures.scan()
@@ -106,4 +104,12 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
        }
     ```
 
-    O código lee o valor temperatura da tabela `Atmosfera` do DynamoDB.
+    O código lee o valor `humidade` da tabela `Atmosfera` do DynamoDB.
+
+22. Configurar as devidas permissões para a role da nova função no IAM, como mostrado nos passos **10**, **11**, **12** e **13**:
+    ![](img/lambda20.png)
+
+23. Testar a nova função como mostrado nos passos **7** e **8**:
+    ![](img/lambda21.png)
+
+23. Criar um *trigger* para a função usando *a mesma API* que no passo **16**:
