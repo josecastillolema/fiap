@@ -82,7 +82,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
  18. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
     ![](img/lambda17.png)
 
- 19. Testamos o *endpoint*:
+ 19. Testamos o *endpoint* (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
     ![](img/lambda18.png)
 
  ## Configuração do segundo *endpoint* usando a mesma API
@@ -118,5 +118,5 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 24. Obter o endpoint nos detalhes do trigger:
     ![](img/lambda23.png)
 
-25. Conferir o novo endpoint da API:
+25. Conferir o novo endpoint da API (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
     ![](img/lambda24.png)
