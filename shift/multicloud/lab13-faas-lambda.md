@@ -113,3 +113,10 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
     ![](img/lambda21.png)
 
 23. Criar um *trigger* para a função usando *a mesma API* que no passo **16**:
+    ![](img/lambda22.png)
+    
+24. Obter o endpoint nos detalhes do trigger:
+    ![](img/lambda23.png)
+
+25. Conferir o novo endpoint da API:
+    ![](img/lambda24.png)
