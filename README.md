@@ -62,6 +62,14 @@
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 
+{{
+< rawhtml >
+}}
+
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5f33a8fe-cb96-4458-a574-e4892068c66e" data-share-badge-host="https://www.youracclaim.com"></div><script type="text/javascript" async src="//cdn.youracclaim.com/assets/utilities/embed.js"></script>
+
+{{
+< /rawhtml >
+}}
 
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
