@@ -61,5 +61,5 @@
 
   
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_academy2.png)](https://josecastillolema.github.io/aws-academy/)
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy2.png)](https://josecastillolema.github.io/aws-academy/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
