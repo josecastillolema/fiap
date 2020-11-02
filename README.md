@@ -59,9 +59,9 @@
 
 ## [Multicloud Architecture: Developments, Solutions & Service](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/README.md)
 
-&NewLine;
-&NewLine;
-&NewLine;
+ &NewLine;
+ &NewLine;
+ &NewLine;
 
 > [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 > [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png)](https://josecastillolema.github.io/aws-academy/)
