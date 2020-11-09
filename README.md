@@ -18,6 +18,12 @@
     - Cloud Computing & SRE 
     - Leadership and Corporate Accountability
 
+## [MBA em Arquitetura de Soluções - Online (AS)O)](https://github.com/josecastillolema/fiap/blob/master/asoo/README.md)
+- Fase 4
+    - Gestão Financeira de TI
+    - Bimodal IT & Sourcing
+    - Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)
+
 ## [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
 - [Arquitetura de Storage / DataCenter / Virtualização e Microcontainers](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/README.md)
 - Arquitetura em MultiCloud (AWS / GCP / Azure / IBM Cloud)
