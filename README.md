@@ -13,7 +13,10 @@
 
 
 ## [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
-- Cloud Computing & SRE 
+- Fase 4
+    - Data Engineering (Big Data & Analytics)
+    - Cloud Computing & SRE 
+    - Leadership and Corporate Accountability
 
 ## [MBA em Arquitetura de Soluções (ASO)](https://github.com/josecastillolema/fiap/blob/master/aso/README.md)
 - [Arquitetura de Storage / DataCenter / Virtualização e Microcontainers](https://github.com/josecastillolema/fiap/blob/master/aso/microservices/README.md)
