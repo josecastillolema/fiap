@@ -18,7 +18,7 @@
     - Cloud Computing & SRE 
     - Leadership and Corporate Accountability
 
-## [MBA em Arquitetura de Soluções - Online (AS)O)](https://github.com/josecastillolema/fiap/blob/master/asoo/README.md)
+## [MBA em Arquitetura de Soluções - Online (ASOO)](https://github.com/josecastillolema/fiap/blob/master/asoo/README.md)
 - Fase 4
     - Gestão Financeira de TI
     - Bimodal IT & Sourcing
