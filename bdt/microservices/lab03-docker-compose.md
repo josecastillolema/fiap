@@ -427,9 +427,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 6. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo **`docker-compose.yml`**.
     ```
-    $ cd fiap/aso/compose/
+    $ cd fiap/bdt/microservices/compose/
     $ pwd
-    /home/ubuntu/fiap/aso/compose
+    /home/ubuntu/fiap/bdt/microservices/compose
     $ docker-compose ps
          Name                   Command             State                 Ports              
     -----------------------------------------------------------------------------------------
