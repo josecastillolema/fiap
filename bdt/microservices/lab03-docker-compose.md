@@ -457,7 +457,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
-10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no passo 6:
+10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no passo **7**:
     ``` 
     $ docker exec 6d7277694bc3 ping -c 3 mysql
     PING mysql (172.18.0.2) 56(84) bytes of data.
