@@ -321,7 +321,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     2020-04-05T13:28:25.590278Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
 
-17. **[T1]** Acessar o banco e confirmar que o *database* criado foi persistido:
+17. **[T2]** Acessar o banco e confirmar que o *database* criado foi persistido:
     ```
     $ mysql -h 127.0.0.1 -u root -p
     Enter password: 
