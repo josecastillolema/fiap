@@ -73,7 +73,7 @@ Se tiver feito o deploy local pode pular esta seção.
  
 7. Instalar as dependências:
     ```
-    pip3 install -r requirements.txt
+    sudo pip3 install -r requirements.txt
     ```
     
 8. Executar a aplicação:
