@@ -19,7 +19,7 @@
     - Leadership and Corporate Accountability
 
 ## [MBA em Arquitetura de Soluções - Online (ASOO)](https://github.com/josecastillolema/fiap/blob/master/asoo/README.md)
-- Fase 4
+- Fase 4: Data Analytics
     - Gestão Financeira de TI
     - Bimodal IT & Sourcing
     - [Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)](https://github.com/josecastillolema/fiap/blob/master/asoo/multicloud/README.md)
