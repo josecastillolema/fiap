@@ -13,13 +13,13 @@
 
 
 ## [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
-- Fase 4: On the Clouds
+- Fase 4: **On the Clouds**
     - Data Engineering (Big Data & Analytics)
     - Cloud Computing & SRE 
     - Leadership and Corporate Accountability
 
 ## [MBA em Arquitetura de Soluções - Online (ASOO)](https://github.com/josecastillolema/fiap/blob/master/asoo/README.md)
-- Fase 4: Data Analytics
+- Fase 4: **Data Analytics**
     - Gestão Financeira de TI
     - Bimodal IT & Sourcing
     - [Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)](https://github.com/josecastillolema/fiap/blob/master/asoo/multicloud/README.md)
