@@ -50,7 +50,7 @@
 
 # MBA Online
 
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba-in.png)](https://www.fiap.com.br/online/mba/)
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba-on.png)](https://www.fiap.com.br/online/mba/)
 
 
 ## [MBA em Engenharia de Software - Online (AOJO)](https://github.com/josecastillolema/fiap/blob/master/aojo/README.md)
