@@ -30,7 +30,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
    
    <pre>
    $ groups
-   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker <b>microk8s</b>
+   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev <b>microk8s</b>
    </pre>
    
 
