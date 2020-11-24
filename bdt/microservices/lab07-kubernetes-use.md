@@ -1,4 +1,4 @@
-# Lab 5 - Kubernetes - Uso
+# Lab 7 - Kubernetes - Uso
 
 Orquestrando containers
 --------------
