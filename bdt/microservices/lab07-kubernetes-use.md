@@ -12,11 +12,11 @@ Existem vários recursos dentro de um cluster Kubernetes:
      - número de réplicas
 
  
-1. Navegar até a pasta `/fiap/aso/kubernetes` de este repositório *git*:
+1. Navegar até a pasta `/fiap/bdt/microservices/kubernetes` de este repositório *git*:
     <pre>
-    <b>$ cd fiap/aso/kubernetes
+    <b>$ cd fiap/bdt/microservices/kubernetes
     $ pwd</b>
-    /home/ubuntu/fiap/aso/kubernetes
+    /home/ubuntu/fiap/bdt/microservices/kubernetes
     <b>$ ls</b>
     api-deployment.yaml  api-service.yaml  mysql-deployment.yaml  mysql-pv.yaml  mysql-service.yaml
     </pre>
