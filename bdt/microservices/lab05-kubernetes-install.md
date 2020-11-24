@@ -9,6 +9,12 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
  
  **Microk8s** é um Kubernetes pequeno, rápido, seguro e com um único nó (*all-in-one*) que é instalado em praticamente qualquer computador com Linux. Usado para desenvolvimento *off-line*, criação de protótipos, testes ou uso em uma VM como um k8s pequeno, barato e confiável para CI/CD.
  
+## Pre-reqs
+
+- Uma VM com a imagem `Ubuntu Linux 18.04`
+
+- Flavor `t2.medium` (2 vcpus, 4 GB de memória) ou maior
+ 
 1. Instalação do **microk8s**:
     ```
     $ sudo snap install microk8s --classic
