@@ -105,4 +105,77 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
+9. Habilitar os *plugins* **`dns`** e **`dashboard`**:
+    ```
+    $ microk8s.enable dns dashboard
+    Enabling DNS
+    Applying manifest
+    serviceaccount/coredns created
+    configmap/coredns created
+    deployment.apps/coredns created
+    service/kube-dns created
+    clusterrole.rbac.authorization.k8s.io/coredns created
+    clusterrolebinding.rbac.authorization.k8s.io/coredns created
+    Restarting kubelet
+    DNS is enabled
+    Applying manifest
+    serviceaccount/kubernetes-dashboard created
+    service/kubernetes-dashboard created
+    secret/kubernetes-dashboard-certs created
+    secret/kubernetes-dashboard-csrf created
+    secret/kubernetes-dashboard-key-holder created
+    configmap/kubernetes-dashboard-settings created
+    role.rbac.authorization.k8s.io/kubernetes-dashboard created
+    clusterrole.rbac.authorization.k8s.io/kubernetes-dashboard created
+    rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+    clusterrolebinding.rbac.authorization.k8s.io/kubernetes-dashboard created
+    deployment.apps/kubernetes-dashboard created
+    service/dashboard-metrics-scraper created
+    deployment.apps/dashboard-metrics-scraper created
+    service/monitoring-grafana created
+    service/monitoring-influxdb created
+    service/heapster created
+    deployment.apps/monitoring-influxdb-grafana-v4 created
+    serviceaccount/heapster created
+    clusterrolebinding.rbac.authorization.k8s.io/heapster created
+    configmap/heapster-config created
+    configmap/eventer-config created
+    deployment.apps/heapster-v1.5.2 created
+
+    If RBAC is not enabled access the dashboard using the default token retrieved with:
+
+    token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+    microk8s kubectl -n kube-system describe secret $token
+
+    In an RBAC enabled setup (microk8s enable RBAC) you need to create a user with restricted
+    permissions as shown in:
+    https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+    ```
+
+10. Confirmar que os *plugins* estão habilitados:
+    
+    <pre class="brush: yaml">
+    $ microk8s.status
+    microk8s is running
+    addons:
+    <b>dashboard: enabled
+    dns: enabled</b>
+    cilium: disabled
+    fluentd: disabled
+    gpu: disabled
+    helm: disabled
+    helm3: disabled
+    ingress: disabled
+    istio: disabled
+    jaeger: disabled
+    knative: disabled
+    kubeflow: disabled
+    linkerd: disabled
+    metallb: disabled
+    metrics-server: disabled
+    prometheus: disabled
+    rbac: disabled
+    registry: disabled
+    storage: disabled
+    </pre>
 
