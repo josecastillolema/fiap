@@ -3,4 +3,4 @@
  - Fase 4: **On the Clouds**
     - Gestão Financeira de TI
     - Bimodal IT & Sourcing
-    - [Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)]((https://github.com/josecastillolema/fiap/blob/master/asoo/multicloud/README.md)
+    - [Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)](https://github.com/josecastillolema/fiap/blob/master/asoo/multicloud/README.md)
