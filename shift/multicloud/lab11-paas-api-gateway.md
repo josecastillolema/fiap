@@ -14,7 +14,7 @@ Em este lab sobre [**API Gateway**](https://aws.amazon.com/pt/api-gateway/) apre
         ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api2.png)
 
 
- ## Configuração do serviço
+## Configuração do serviço
  
 1. Acessar o serviço **API Gateway**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api3.png)
@@ -36,6 +36,8 @@ Em este lab sobre [**API Gateway**](https://aws.amazon.com/pt/api-gateway/) apre
    
 7. Aguardar a criação da API:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api9.png)
+
+## Testando o serviço
 
 8. Testar a URL da API, a seguinte mensagem é normal pois não foi configurada a rota `/`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api10.png)
