@@ -15,7 +15,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     
 2. Navegar ate o diretorio `fiap/scj/cloud/lab10-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab10-paas-eb-springboot):
     ```
-    $ cd fiap/scj/cloud/lab10-paas-eb-springboot
+    $ cd fiap/shift/multicloud/lab10-paas-eb-springboot
     $ tree .
     .
     ├── mvnw
@@ -190,7 +190,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     ```
     
 5. Testar o acesso local:
-   ![](img/ebspring0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring0.png)
 
 ## *Deploy* na AWS
  
@@ -209,7 +209,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 5. Escolher o entorno de execução:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring2.png)
    
-6. Fazer o *upload* da aplicação. O arquivo `.jar` se encontra na pasta: `fiap/scj/cloud/lab10-paas-eb/target/springboot-0.0.1-SNAPSHOT.jar` 
+6. Fazer o *upload* da aplicação. O arquivo `.jar` se encontra na pasta: `fiap/shift/multicloud/lab10-paas-eb/target/springboot-0.0.1-SNAPSHOT.jar` 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring3.png)
 
 7. Após uns minutos, conferir o estado da aplicação:
