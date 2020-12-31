@@ -1,6 +1,6 @@
 # Lab 7 - AWS CP
 
-Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da criação de *pipelines*:
+Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) aprenderemos alguns conceitos importantes da criação de *pipelines*:
  - Criação do *pipeline*
  - Automação de *deploy* no Beanstalk
 
