@@ -37,7 +37,7 @@ Em este lab sobre [**API Gateway**](https://aws.amazon.com/pt/api-gateway/) apre
 7. Aguardar a criação da API:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api9.png)
 
-## Testando o serviço
+## Validando o serviço
 
 8. Testar a URL da API, a seguinte mensagem é normal pois não foi configurada a rota `/`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/api10.png)
