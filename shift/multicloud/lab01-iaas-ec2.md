@@ -10,25 +10,25 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
-   ![](/mob/cloud/img/ec2-1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-1.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](/mob/cloud/img/ec2-2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-2.png)
    
 4. Escolher o ***flavor*** `t2.micro`:
-   ![](/mob/cloud/img/ec2-3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-3.png)
 
 5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
-   ![](/mob/cloud/img/ec2-4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-4.png)
 
 6. Confirmar criaçao da instância:
-   ![](/mob/cloud/img/ec2-5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-5.png)
    
 7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
-   <img src="/bdt/cloud/img/ec2-6.png" width="465" height="342">
+   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-6.png" width="465" height="342">
 
 8. Validar a criacao da instância:
-   ![](/mob/cloud/img/ec2-7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-7.png)
 
 ## Accessando à instancia
 
