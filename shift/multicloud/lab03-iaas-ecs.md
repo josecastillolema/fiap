@@ -1,6 +1,6 @@
 # Lab 3 - AWS ECS
 
-## Criando a instancia
+## Criando a instância
 Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.docker.com/r/josecastillolema/api) para aprender alguns conceitos importantes do [**Elastic Container Service**](https://aws.amazon.com/pt/ecs/):
  - Deploy de containers no ECS
  - Mapeamento de portas
@@ -41,7 +41,9 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
    
 11. Confirmar a criação do cluster:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ecs10.png)
-   
+  
+## Acessando a instância
+  
 12. Mostrar as informações do cluster:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ecs11.png)
 
