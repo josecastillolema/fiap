@@ -1,6 +1,6 @@
 # Lab 10 - AWS Elastic Beanstalk com Spring Boot
 
-Em este lab sobre [**Elastic Beanstalk (EB)**]((https://aws.amazon.com/pt/elasticbeanstalk/)) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
+Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elasticbeanstalk/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
  - *Deploy* de aplicações
  - Plataformas/entornos de execução disponíveis
  - *Logging*
