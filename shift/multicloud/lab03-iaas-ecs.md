@@ -1,7 +1,7 @@
 # Lab 3 - AWS ECS
 
 ## Criando a instancia
-Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.docker.com/r/josecastillolema/api) para aprender alguns conceitos importantes do **Elastic Container Service**:
+Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.docker.com/r/josecastillolema/api) para aprender alguns conceitos importantes do [**Elastic Container Service**](https://aws.amazon.com/pt/ecs/):
  - Deploy de containers no ECS
  - Mapeamento de portas
  - ***Memory limits***
