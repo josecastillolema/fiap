@@ -19,8 +19,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 - Uma VM com a imagem `Ubuntu Linux 18.04`
 
 - No painel da Vocareum, accessar as credenciais da conta para acesso programático:
-   ![](/mob/cloud/img/d0.png)
-   ![](/mob/cloud/img/d1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d1.png)
    
 - Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
     ```
@@ -488,19 +488,19 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 1. Acessar o serviço **DynamoDB**
    
 2. Criar uma nova tabela:
-   ![](/mob/cloud/img/d2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d2.png)
    
 3. Configurar o nome da tabela e a chave primaria da mesma:
-   ![](/mob/cloud/img/d3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d3.png)
 
 4. Aguardar a criação da tabela:
-   ![](/mob/cloud/img/d4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d4.png)
 
 5. Na aba `Items`, adicionar um novo item:
-   ![](/mob/cloud/img/d5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d5.png)
 
 6. Confirmar a criação do item:
-   ![](/mob/cloud/img/d6.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d6.png)
 
 
 ## Accessando via código `python`
@@ -582,7 +582,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
      ```
 
 12. No console do DynamoDB, conferir que o novo aluno foi inserido:
-   ![](/mob/cloud/img/d7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d7.png)
 
 ### Usando IAM *roles* (recomendado)
 
@@ -633,28 +633,28 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
     
 15. Acessar o serviço **IAM**
-   ![](/mob/cloud/img/iam0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam0.png)
 
 16. Criar um novo *role*:
-   ![](/mob/cloud/img/iam1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam1.png)
 
 17. Escolher EC2 como serviço que vai utilizar o novo *role*:
-   ![](/mob/cloud/img/iam2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam2.png)
 
 18. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
-   ![](/mob/cloud/img/iam4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam4.png)
 
 19. Configurar *tags*:
-   ![](/mob/cloud/img/iam5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam5.png)
 
 20. Revisar as configurações e confirmar a criação do *role*:
-   ![](/mob/cloud/img/iam6.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam6.png)
 
 21. No console do EC2, anexar o novo *role* na VM:
-   ![](/mob/cloud/img/iam7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
 
 22. Seleccionar o *role* que acabamos de criar:
-   ![](/mob/cloud/img/iam8.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam8.png)
 
 23. Tentar rodar de novo o código (deberia funcionar):
     ```
