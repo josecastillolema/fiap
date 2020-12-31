@@ -33,7 +33,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 ## Accessando à instancia
 
 9. [**Linux/MAC**] Seguiremos as próprias indicações do EC2:
-   ![](/mob/cloud/img/ec2-8.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-8.png)
    
     [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opçao.
    
@@ -181,13 +181,13 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
   
 16. Obter o IP público da VM:
-   ![](/mob/cloud/img/ec2-9.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-9.png)
 
 17. Testar accesso pelo IP público:
-   ![](/mob/cloud/img/ec2-10.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-10.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
-   ![](/mob/cloud/img/ec2-11.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-11.png)
 
 19. Testar novamente o acesso pelo IP público:
-   ![](/mob/cloud/img/ec2-12.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-12.png)
