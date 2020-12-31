@@ -1,6 +1,6 @@
 # Lab 4 - AWS EBS
 
-Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos importantes do armazenamento em blocos:
+Em este lab sobre [**Elastic Block Service**](https://aws.amazon.com/pt/ebs/) aprenderemos alguns conceitos importantes do armazenamento em blocos:
  - Criação de volumes
  - Anexar volumes a instâncias
  - Configurar volumes dentro das instâncias
