@@ -8,27 +8,27 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
  ## Configuração do serviço
  
 1. Acessar o serviço **EMR**:
-   ![](img/emr0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr0.png)
    
 2. Iniciar a criação do cluster:
-   ![](img/emr1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr1.png)
    
 3. Escolher um nome para o cluster, um bucket do S3 para armacenar os logs, versão do EMR e conjunto de aplicações solicitado:
-   ![](img/emr2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr2.png)
 
 4. Escolha de flavor, número de instâncias e chave SSH para acessar o cluster. Quem tiver usando a conta do AWS Educate, lembre-se que só os seguintes flavors estão disponíveis: `t2.small`, `t2.micro`, `t2.nano`, `m4.large`, `c4.large`, `c5.large`, `m5.large`, `t2.medium`, `m4.xlarge`, `t2.nano`, `c4.xlarge`, `c5.xlarge`, `t2.2xlarge`, `m5.2xlarge`, `t2.large` e `t2.xlarge`.
-   ![](img/emr3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr3.png)
 
 5. Aguardar a criação do cluster:
-   ![](img/emr4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr4.png)
 
-   ![](img/emr5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr5.png)
    
 6. Acessar a interface web do YARN timeline server:
-   ![](img/emr6.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr6.png)
 
 7. Acessar a interface web do Tez:
-   ![](img/emr7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr7.png)
    
 8. Acessar via SSH no master node e fazer uma consulta no Hive. É necessário liberar a porta 22 no `security group` associado às instâncias criadas no EC2:
     ```
@@ -74,4 +74,4 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
     ```
     
  9. Conferir a aba de monitoramento:
-   ![](img/emr8.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr8.png)
