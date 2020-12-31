@@ -13,7 +13,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     git clone https://github.com/josecastillolema/fiap
     ```
     
-2. Navegar ate o diretorio `fiap/scj/cloud/lab10-paas-eb`. O diretorio contem os [seguintes arquivos](lab10-paas-eb-springboot):
+2. Navegar ate o diretorio `fiap/scj/cloud/lab10-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab10-paas-eb-springboot):
     ```
     $ cd fiap/scj/cloud/lab10-paas-eb-springboot
     $ tree .
