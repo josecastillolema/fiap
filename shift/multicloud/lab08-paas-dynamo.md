@@ -521,6 +521,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     * Carrega a tabela `Alunos` da *region* `us-east-1` 
     * Faz um *scan* de todos os dados da tabela
     * Insere um novo aluno
+    
     ```python
     from pprint import pprint
     import boto3
