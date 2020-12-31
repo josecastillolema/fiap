@@ -8,39 +8,39 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 ## Criando o *launch template*
 
 1. Acessar o serviço **EC2**:
-   ![](/scj/cloud/img/ec2-0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-0.png)
    
 2. Criar um novo *launch template*:
-   ![](/scj/cloud/img/auto0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto0.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](/scj/cloud/img/ec2-2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-2.png)
    
 4. Escolher o ***flavor*** `t2.micro`:
-   ![](/scj/cloud/img/ec2-3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-3.png)
    
 5. Assignar um nome para o *launch template*:
-   ![](/scj/cloud/img/auto1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto1.png)
 
 6. Revisar e confirmar a criação do *lauch template*:
-   ![](/scj/cloud/img/auto2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto2.png)
 
 7. Escolher uma chave previamente criada ou criar uma chave nova para acessar às instâncias do *autoscaling group*:
-   ![](/scj/cloud/img/auto3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto3.png)
 
 8. Aguardar a criação do *launch template*:
-   ![](/scj/cloud/img/auto4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto4.png)
 
 ## Criando o *autoscaling group*
 
 9. Criar um novo *autoscaling group*:
-   ![](/scj/cloud/img/auto5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto5.png)
 
 10. Seleccionar o *launch template* criado anteriormente:
-   ![](/scj/cloud/img/auto6.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto6.png)
 
 11. Assignar um nome e uma subrede para o *autoscaling group*:
-   ![](/scj/cloud/img/auto7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto7.png)
 
 12. Definir a política de autoscaling:
     - Uso de CPU como métrica
@@ -49,22 +49,22 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     - Número mínimo de instâncias: 1
     - Número máximo de instâncias: 2
     - 300 segundos de *warm up*
-   ![](/scj/cloud/img/auto8.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto8.png)
 
 13. Revisar e confirmar a criação do *autoscaling group*:
-   ![](/scj/cloud/img/auto9.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto9.png)
    
 14. Aguardar a criação do *autoscaling group*:
-   ![](/scj/cloud/img/auto10.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto10.png)
    
 15. Conferir a criação do *autoscaling group*, a princípio só com uma instância:
-   ![](/scj/cloud/img/auto11.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto11.png)
 
 16. Conferir as instâncias que fazem parto do *autoscaling group*:
-   ![](/scj/cloud/img/auto12.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto12.png)
 
 16. Conferir a(s) instância(s) no EC2:
-   ![](/scj/cloud/img/auto13.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto13.png)
 
 ## Testando o *autoscaling group*
 
@@ -116,7 +116,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 
     Pode demorar até:
     `healt check grace period (5 min) + tempo de criação da instância + tempo de status checks`
-   ![](/scj/cloud/img/auto14.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto14.png)
 
 22. Parar o processo que consome CPU:
     ```
@@ -140,4 +140,4 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 
     Pode demorar até:
     `warm up (5 min) + healt check grace period (5 min) + tempo de deleção da instância`
-   ![](/scj/cloud/img/auto11.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto11.png)
