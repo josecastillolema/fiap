@@ -1,11 +1,11 @@
 # Lab 8 - AWS DynamoDB
 
-Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
+Em este lab sobre [**DynamoDB**](https://aws.amazon.com/pt/dynamodb/) aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
  - Criação de tabelas
  - Inserção/consulta de dados via console
  - Inserção/consulta via código `python`
  
-Aproveitaremos para ver alguns conceitos importantes sobre **Identity and Access Management (IAM)**:
+Aproveitaremos para ver alguns conceitos importantes sobre [**Identity and Access Management (IAM)**](https://aws.amazon.com/pt/iam/):
  - Autenticação usando arquivo de credenciais
  - Autenticação usando roles
  
