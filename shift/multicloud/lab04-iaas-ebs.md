@@ -22,19 +22,19 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 ## Criando o volume
  
 1. Ainda no serviço **EC2**, navegar ate **Elastic Block Volume** -> **Volumes**. Importante notar a zona de disponibilidade a onde foi criada a maquina virtual do lab 01:
-   ![](/mob/cloud/img/ebs0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebs0.png)
 
 2. Criar um novo volume vazio com tamanho de 10 GB, na mesma zona de disponibilidade a onde foi criada a VM do lab 01:
-   ![](/mob/cloud/img/ebs1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebs1.png)
 
 3. Uma vez o volume for criado, anexar ele à maquina virtual:
-   ![](/mob/cloud/img/ebs2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebs2.png)
    
 4. Seleccionar o nome da maquina virtual criada no lab01:
-   ![](/mob/cloud/img/ebs3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebs3.png)
 
 5. Apos uns instantes, conferir a informação sobre anexos do volume:
-   ![](/mob/cloud/img/ebs4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebs4.png)
 
 ## Configurando o volume dentro da instancia
 
