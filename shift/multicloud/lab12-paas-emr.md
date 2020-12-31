@@ -1,6 +1,6 @@
 # Lab 12 - Elastic Map Reduce
 
-Em este lab sobre **EMR** aprenderemos alguns conceitos da plataforma de Big Data as a Service da AWS:
+Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns conceitos da plataforma de Big Data as a Service da AWS:
  - Criação de cluster
  - Acesso via WEB e SSH/CLI
  - Monitoramento
