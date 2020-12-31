@@ -10,7 +10,7 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 
 ## Pre-reqs
 
-- Na maquina virtual do [lab 01 - EC2](/mob/cloud/lab01-iaas-ec2.md), conferir os volumes:
+- Na maquina virtual do [lab 01 - EC2](https://github.com/josecastillolema/fiap/shift/multicloud/lab01-iaas-ec2.md), conferir os volumes:
     ```
     [ec2-user@ip-172-31-51-147 ~]$ lsblk
     NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
