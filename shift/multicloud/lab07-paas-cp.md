@@ -9,7 +9,7 @@ Em este lab sobre **Code Pipeline** aprenderemos alguns conceitos importantes da
 - A aplicação do [lab de Beanstalk](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb.md) precisa estar no ar:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp00-0.png)
    
-- Criação de um repositório no [GitHub](https://github.com/) com [os arquivos do lab de Beanstalk](/mob/cloud/lab06-paas-eb):
+- Criação de um repositório no [GitHub](https://github.com/) com [os arquivos do lab de Beanstalk](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp00-1.png)
 
 
