@@ -11,6 +11,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
     * sala: *primary key*, string
     * temperatura: number
     * humidade: number
+    
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda0.png)
 
 ## Configuração do serviço
