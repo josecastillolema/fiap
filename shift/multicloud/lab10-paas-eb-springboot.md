@@ -195,28 +195,28 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 ## *Deploy* na AWS
  
 1. Acessar o serviço **Elastic Beanstalk**:
-   ![](img/eb0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb0.png)
 
 2. Criar um novo *environment*:
-   ![](img/eb1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb1.png)
 
 3. A aplicação é um serviço web:
-   ![](img/eb2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb2.png)
    
 4. Configurar o nome da apliação:
-   ![](img/ebspring1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring1.png)
 
 5. Escolher o entorno de execução:
-   ![](img/ebspring2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring2.png)
    
 6. Fazer o *upload* da aplicação. O arquivo `.jar` se encontra na pasta: `fiap/scj/cloud/lab10-paas-eb/target/springboot-0.0.1-SNAPSHOT.jar` 
-   ![](img/ebspring3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring3.png)
 
 7. Após uns minutos, conferir o estado da aplicação:
-   ![](img/ebspring4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring4.png)
 
 8. Accessar a URL da aplicação:
-   ![](img/ebspring5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring5.png)
 
 ## *Logging* e monitoramento
 
@@ -226,8 +226,8 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     - `var/log/web.stdout.log`: logs do Spring Boot
     - `var/log/nginx/access.log`: acessos à aplicação
     - `var/log/nginx/error.log`: log de erros
-   ![](img/eb8.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb8.png)
 
 10. Para monitorar a aplicação:
-   ![](img/ebspring6.png)
-   ![](img/ebspring7.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring6.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring7.png)
