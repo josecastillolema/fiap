@@ -1,6 +1,6 @@
 # Lab 13 - Amazon Lambda
 
-Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
+Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
  - Criação de funções Lambda
  - Teste de funções 
  - Criação de triggers (via API Gateway)
