@@ -20,7 +20,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     ```
     git clone https://github.com/josecastillolema/fiap
     ```
-    
+
 2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
     - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
     - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
@@ -29,7 +29,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     ```
     pip3 install -r requirements.txt
     ```
-    
+
 4. Executar a aplicação:
     ```
     $ python3 application.py
@@ -56,7 +56,7 @@ Se tiver feito o deploy local pode pular esta seção.
     ```
     $ sudo apt update
     ```
-    
+
 4. Instalar o pip3 (gestor de pacotes do python3):
     ```
     $ sudo apt install python3-pip -y
@@ -66,7 +66,7 @@ Se tiver feito o deploy local pode pular esta seção.
     ```
     git clone https://github.com/josecastillolema/fiap
     ```
-    
+
 6. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
     - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
     - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
@@ -75,7 +75,7 @@ Se tiver feito o deploy local pode pular esta seção.
     ```
     sudo pip3 install -r requirements.txt
     ```
-    
+
 8. Executar a aplicação:
     ```
     $ python3 application.py
