@@ -1,7 +1,7 @@
 # Lab 1 - AWS EC2
 
 ## Criando a instancia
-Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importantes do EC2:
+Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importantes do [**Amazon Elastic Computing**](https://aws.amazon.com/pt/ec2/):
  - ***flavors***
  - ***security groups***
  - **[cloud-init](https://cloud-init.io/)**
