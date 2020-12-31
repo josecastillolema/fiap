@@ -23,7 +23,9 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr4.png)
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr5.png)
-   
+  
+## Acessando o serviço  
+  
 6. Acessar a interface web do YARN timeline server:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr6.png)
 
