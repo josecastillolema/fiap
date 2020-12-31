@@ -7,7 +7,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
  - **[cloud-init](https://cloud-init.io/)**
  
 1. Acessar o serviço **EC2**:
-   ![](/mob/cloud/img/ec2-0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-0.png)
 
 2. Lançar o assistente de criaçao de instancias:
    ![](/mob/cloud/img/ec2-1.png)
