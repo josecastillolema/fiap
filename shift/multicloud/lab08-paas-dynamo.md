@@ -38,7 +38,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
     
  - Configuramos a região correta (ignorar o resto dos campos):
-    ````
+    ```
     $ aws configure
     AWS Access Key ID [****************Q5QG]: 
     AWS Secret Access Key [****************aqWs]: 
