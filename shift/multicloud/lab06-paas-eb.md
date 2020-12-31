@@ -22,6 +22,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     ```
 
  2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
+ 
     - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
     - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
 
