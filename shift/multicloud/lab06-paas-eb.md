@@ -30,7 +30,6 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     pip3 install -r requirements.txt
     ```
 4. Executar a aplicação:
-
     ```
     $ python3 application.py
     * Serving Flask app "application" (lazy loading)
