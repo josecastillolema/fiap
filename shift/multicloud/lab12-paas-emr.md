@@ -5,7 +5,7 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
  - Acesso via WEB e SSH/CLI
  - Monitoramento
 
- ## Configuração do serviço
+## Configuração do serviço
  
 1. Acessar o serviço **EMR**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr0.png)
