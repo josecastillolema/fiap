@@ -7,6 +7,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
  - quotas
  - *endpoints*
 
+## Pre-reqs
+
 1.	Listar os serviços Linux que compõem o Keystone:
     ```
     $ systemctl | grep devstack@keystone
@@ -102,6 +104,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
       service show
     ```
 
+## *Endpoints*
+
 8.	Mostrar a saída de um comando de OpenStack em formato estendido (neste caso `openstack service list`, mas tem muitos outros que também aceitam):
     ```
     $ openstack service list --long
@@ -196,6 +200,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     | type      | identity                                 |
     +-----------+------------------------------------------+
     ```
+
+## Projetos, usuários e róis
 
 11.	Listar os projetos:
     ```
@@ -312,6 +318,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     +----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
     ```
 
+## Quotas
+
 18.	Mostrar as quotas do projeto:
     ```
     $ openstack quota show fiap
@@ -419,6 +427,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     
     $ openstack project delete fiap
     ```
+
+## Horizon
 
 21. Refazer o mesmo processo via Horizon Dashboard:
     - Listar *endpoints*
