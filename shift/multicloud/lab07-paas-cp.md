@@ -37,6 +37,8 @@ Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) a
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp07.png)
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp08.png)
 
+## Validando o *pipeline*
+
 8. Acompanhar o *pipeline* pelas diversas fases:
     * Recuperação do código do repositório
     * Deploy no Beanstalk
