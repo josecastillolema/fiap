@@ -86,7 +86,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
     +----------------------------------+-------------+----------------+
     ```
 
-7.	Mostrar todas as opções para um comando determinado do OpenStack (neste caso openstack service, mas serve para qualquer um):
+7.	Mostrar todas as opções para um comando determinado do OpenStack (neste caso `openstack service`, mas serve para qualquer um):
     ```
     $ openstack service --help
     Command "service" matches:
