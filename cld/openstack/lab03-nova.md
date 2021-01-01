@@ -158,9 +158,9 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     $ less /etc/nova/nova.conf
     ```
 
-## Hypervisors
+## *Hypervisors*
 
-8.	Mostrar os hypervisors disponíveis:
+8.	Mostrar os *hypervisors* disponíveis:
     ```
     $ openstack hypervisor list
     +----+---------------------+-----------------+----------------+-------+
@@ -170,7 +170,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +----+---------------------+-----------------+----------------+-------+
     ```
 
-9.	Mostrar a descrição do hypervisor:
+9.	Mostrar a descrição do *hypervisor*:
     ```
     $ openstack hypervisor show ubuntu
     +----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -205,7 +205,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     ```
 
-10.	Mostrar estatísticas de uso dos hypervisors:
+10.	Mostrar estatísticas de uso dos *hypervisors*:
     ```
     $ openstack hypervisor stats show
     +----------------------+-------+
@@ -226,7 +226,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +----------------------+-------+
     ```
 
-## Flavors
+## *Flavors*
 
 11.	Listar os *flavors*:
     ```
@@ -409,7 +409,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +--------------------------------------+----------+--------+-------------------------------------------------------+--------------------------+--------+
     ```
 
-21.	Mostrar a *url* do console:
+21.	Mostrar a URL do console:
     ```
     $ openstack console url show vmfiap01
     +-------+-------------------------------------------------------------------------------------+
@@ -420,9 +420,10 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +-------+-------------------------------------------------------------------------------------+
     ```
 
-22.	Acessar por console a vm e criar uma pasta ou um arquivo qualquer:
-    - Pela URL do console
-    - Directo pelo hypervisor:
+22.	Acessar por console à VM e criar uma pasta ou um arquivo qualquer:
+    - Pela URL do console (ou)
+    - Directo pelo *hypervisor*:
+    
     ```
     $ virsh list
      Id    Name                           State
