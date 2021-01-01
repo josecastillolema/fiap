@@ -1,7 +1,7 @@
 # Lab 2 - OpenStack Glance
 
 ## Image Service
-Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens/*snapshots* de máquinas virtuais:
+Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para aprender alguns conceitos importantes de imagens/*snapshots* de máquinas virtuais:
  - formatos: qcow2, raw, vmdk, ami, ...
  - conversão entre formatos: ferramenta `qemu-img`
  - *snapshots*
