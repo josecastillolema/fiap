@@ -1,7 +1,7 @@
 # Lab 1 - OpenStack Keystone
 
 ## Identity Manager
-Usaremos o serviço Keystone para aprender alguns conceitos importantes de autenticação/autorização de usuários:
+Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para aprender alguns conceitos importantes de autenticação/autorização de usuários:
  - projetos
  - róis
  - quotas
