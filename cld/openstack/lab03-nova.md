@@ -1,7 +1,7 @@
 # Lab 3 - OpenStack Nova
 
 ## Compute Service
-Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máquinas virtuais:
+Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprender alguns conceitos importantes sobre máquinas virtuais:
  - ***flavors***
  - ***security groups***
  - **[cloud-init](https://cloud-init.io/)**
