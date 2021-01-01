@@ -6,6 +6,8 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
  - conversão entre formatos: ferramenta `qemu-img`
  - *snapshots*
 
+## Pre-reqs
+
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
     $ source devstack/openrc admin
@@ -98,7 +100,9 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
     | type        | image                            |
     +-------------+----------------------------------+
     ```
-    
+
+## Imagens
+
 7. Mostrar informação sobre a imagem (se encontra na pasta HOME do usuário):
     ```
     $ qemu-img info xenial-server-cloudimg-amd64-disk1.img
@@ -235,13 +239,15 @@ Usaremos o serviço Glance para aprender alguns conceitos importantes de imagens
     | properties       | os_name='linux'                                      |
     ```
 
-14.	Deletar a imagem e repetir o mesmo processo via Horizon Dashboard, criação de imagem e assignação de metadatos:
+14.	Deletar a imagem:
     ```
     $ openstack image delete ubuntu-xenial
     ```
 
-16.	Repetir o processo via Horizon:
+## Horizon
+
+16.	Repetir o processo via Horizon Dashboard, criação de imagem e assignação de metadatos::
     - Criação de imagem
     - Assinação de metadata
-    ![](/cld/openstack/img/glance1.png)
-    ![](/cld/openstack/img/glance2.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/glance1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/glance2.png)
