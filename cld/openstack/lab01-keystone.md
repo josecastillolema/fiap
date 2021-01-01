@@ -5,7 +5,7 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
  - projetos
  - róis
  - quotas
- - endpoints
+ - *endpoints*
 
 1.	Listar os serviços Linux que compõem o Keystone:
     ```
