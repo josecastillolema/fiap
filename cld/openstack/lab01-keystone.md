@@ -102,7 +102,7 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
       service show
     ```
 
-8.	Mostrar a saída de um comando de OpenStack em formato estendido (neste caso openstack service list, mas tem muitos outros que também aceitam):
+8.	Mostrar a saída de um comando de OpenStack em formato estendido (neste caso `openstack service list`, mas tem muitos outros que também aceitam):
     ```
     $ openstack service list --long
     +----------------------------------+-------------+----------------+-----------------------------------+---------+
@@ -123,7 +123,7 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     +----------------------------------+-------------+----------------+-----------------------------------+---------+
     ```
 
-9.	Mostrar os endpoints dos módulos instalados no OpenStack:
+9.	Mostrar os *endpoints* dos módulos instalados no OpenStack:
     ```
     $ openstack catalog list
     +-------------+----------------+--------------------------------------------------------------------------------+
@@ -180,7 +180,7 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     +-------------+----------------+--------------------------------------------------------------------------------+
     ```
 
-10.	Mostrar informação sobre um endpoint específico:
+10.	Mostrar informação sobre um *endpoint* específico:
     ```
     $ openstack catalog show identity
     +-----------+------------------------------------------+
