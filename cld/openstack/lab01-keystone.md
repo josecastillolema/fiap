@@ -422,12 +422,12 @@ Usaremos o serviço Keystone para aprender alguns conceitos importantes de auten
 
 21. Refazer o mesmo processo via Horizon Dashboard:
     - Listar *endpoints*
-    ![](/cld/openstack/img/keystone1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/keystone1.png)
     - Listar projetos
     - Criar projeto
     - Criar usuário
-    ![](/cld/openstack/img/keystone2.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/keystone2.png)
     - Associar usuário com projeto
-    ![](/cld/openstack/img/keystone3.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/keystone3.png)
     - Mostrar quotas de um projeto
     - Mudar quotas de um projeto
