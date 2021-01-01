@@ -6,6 +6,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
  - ***security groups***
  - **[cloud-init](https://cloud-init.io/)**
 
+## Pre-reqs
+
 1. Conferir se as extensões de virtualizações estão presentes no processador:
     ```
     $ grep -E ' svm | vmx ' /proc/cpuinfo
@@ -156,6 +158,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     $ less /etc/nova/nova.conf
     ```
 
+## Hypervisors
+
 8.	Mostrar os hypervisors disponíveis:
     ```
     $ openstack hypervisor list
@@ -222,6 +226,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     +----------------------+-------+
     ```
 
+## Flavors
+
 11.	Listar os *flavors*:
     ```
     $ openstack flavor list
@@ -284,6 +290,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     | vcpus                      | 1                                    |
     +----------------------------+--------------------------------------+
     ```
+
+## Chaves SSH
 
 14.	Criar uma chave:
     ```
@@ -349,6 +357,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     | cd992dd3-2197-49fe-9f0e-43d783d18a5c | cirros-0.3.5-x86_64-disk | active |
     +--------------------------------------+--------------------------+--------+
     ```
+
+## Instâncias
 
 19.	Criar a VM: 
     ```
@@ -498,6 +508,8 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     ```
     $ openstack server start vmfiap01
     ```
+
+## **Snapshots**
 
 29.	Criar um snapshot da VM:
     ```
@@ -747,11 +759,13 @@ Usaremos o serviço Nova para aprender alguns conceitos importantes sobre máqui
     $ openstack image delete vmfiap01_snap
     ```
 
+## Horizon
+
 36. Recriar desde o Horizon Dashboard:
     - Criação de *flavor* 
     - Criação de VM
     - Criação de *snapshot*
     - Criação de VM a partir de *snapshot*
-    ![](/cld/openstack/img/nova1.png)
-    ![](/cld/openstack/img/nova2.png)
-    ![](/cld/openstack/img/nova3.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/nova1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/nova2.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/nova3.png)
