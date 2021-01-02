@@ -235,7 +235,7 @@ Orquestrando containers
     2239ae187e86        josecastillolema/api:latest     "./api.py"               15 minutes ago       Up 15 minutes (healthy)       5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
 
-## Clean-up
+## *Clean-up*
 
 21. **[T1]** Remover o *stack*:
     ```
