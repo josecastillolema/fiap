@@ -267,7 +267,7 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     $
     ```
 
-### Dentro da VM:
+### Dentro da VM
 
 15. Conferir que o novo volume foi entregue a VM:
     ```
@@ -388,7 +388,7 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     /mnt/nuevo-vol/arquivo.txt
     ```
 
-### De volta no DevStack:
+### De volta no DevStack
 
 23. Criar um *snapshot* do volume:
     ```
