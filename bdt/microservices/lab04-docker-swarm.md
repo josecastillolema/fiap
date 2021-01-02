@@ -9,6 +9,8 @@ Orquestrando containers
  
  Vamos trabalhar com duas máquinas virtuais (**T1** e **T2**). Se elas tiver rodando na nuvem, devem pertencer ao mesmo *security group* (ou ter um *security group* em común).
 
+## Criação do *cluster*
+
 1. **[T1]** Inicialização do ***manager***:
     ```
     $ docker swarm init
@@ -40,7 +42,9 @@ Orquestrando containers
     $ docker node ls
     Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
     ```
-    
+
+## Uso
+
 5. **[T1]** Navegar até a pasta **`fiap/bdt/microservices/swarm/v1`** de este repositório *git*:
     ```
     $ cd fiap/aso/swarm/v1
@@ -125,6 +129,7 @@ Orquestrando containers
     $ curl localhost:3000
     Benvido a API FIAP!
     ```
+
 11. **[T1]** Testar a conexão da API com o banco de dados:
     ```
     $ curl localhost:3000/getDados
@@ -229,6 +234,8 @@ Orquestrando containers
     44cfaf700b20        josecastillolema/mysql:latest   "docker-entrypoint.s…"   14 minutes ago       Up 14 minutes                 3306/tcp, 33060/tcp   stackFiap_mysql.1.wr5ia70abxco05ypimayagrm0
     2239ae187e86        josecastillolema/api:latest     "./api.py"               15 minutes ago       Up 15 minutes (healthy)       5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
     ```
+
+## Clean-up
 
 21. **[T1]** Remover o *stack*:
     ```
