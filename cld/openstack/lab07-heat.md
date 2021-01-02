@@ -312,13 +312,13 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     - Update de *stack*
     - Remoção de *stack*
  
-    ![](/cld/openstack/img/heat1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/heat1.png)
     
-    ![](/cld/openstack/img/heat2.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/heat2.png)
 
-    ![](/cld/openstack/img/heat3.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/heat3.png)
 
-    ![](/cld/openstack/img/heat4.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/heat4.png)
 
-    ![](/cld/openstack/img/heat5.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/heat5.png)
 
