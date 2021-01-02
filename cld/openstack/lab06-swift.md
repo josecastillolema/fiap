@@ -1,10 +1,12 @@
 # Lab 6 - OpenStack Swift
 
 ## Object Storage Service
-Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armazenamento de objeto:
+Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para aprender alguns conceitos importantes sobre armazenamento de objeto:
  - criação de containers
  - objetos
  - acesso via URL
+ 
+## Pre-reqs 
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
@@ -153,7 +155,9 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
     | type      | identity                                 |
     +-----------+------------------------------------------+
     ```
- 
+
+## Containers e objetos
+
 11.	Mostrar estatísticas de uso gerais (passando o endpoint do Keystone + `/v3`):
     ```
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat
@@ -303,7 +307,9 @@ Usaremos o serviço Swift para aprender alguns conceitos importantes sobre armaz
                        Content-Type: text/plain; charset=utf-8
                       Accept-Ranges: bytes
     ```
-    
+
+## Horizon
+
 25.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de container
     - *Upload* de arquivo
