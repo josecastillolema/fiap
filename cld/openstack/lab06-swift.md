@@ -286,7 +286,9 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
     $ swift -V 3 -A http://192.168.17.131/identity/v3 post fiap -w "demo:demo"
     ```
- 
+
+## *Clean-up*
+
 24.	Deletar objeto e container:
     ```
     $ swift -V 3 -A http://192.168.17.131/identity/v3 delete fiap
