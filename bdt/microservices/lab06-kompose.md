@@ -1,6 +1,6 @@
 # Lab 6 - Kompose
 
-Kompose permite importar *templates* do Docker Swarm no Kubernetes.
+[Kompose](https://kompose.io/) permite importar *templates* do Docker Swarm no Kubernetes.
  
 1. Instalação do Kompose
 
