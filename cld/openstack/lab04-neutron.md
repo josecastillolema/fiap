@@ -300,7 +300,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
      2  10.20.20.10 (10.20.20.10)  2996.692 ms !H  2999.085 ms !H  2998.905 ms !H
     ```
 
-## **Virtual routers**
+## *Virtual routers*
 
 13.	Criar um roteador:
     ```
