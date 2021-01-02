@@ -2,7 +2,7 @@
 
 Orquestrando containers
 --------------
-[Kubernetes (k8s)](https://kubernetes.io/pt/), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. De esta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
+[**Kubernetes** (k8s)](https://kubernetes.io/pt/), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. De esta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
  - **tolerância a falhas**: se um dos servidores do cluster cair, o container automaticamente será iniciado em outro servidor do cluster
  - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
