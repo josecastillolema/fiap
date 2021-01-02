@@ -1,9 +1,11 @@
 # Lab 7 - OpenStack Heat
 
 ## Orchestration Service
-Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orquestração e *infrastructure as code*:
+Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprender alguns conceitos importantes sobre orquestração e *Infrastructure as Code* (IaC):
  - criação de pilhas (*stacks*)
  - listagem de recursos
+
+## Pre-reqs
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
@@ -103,6 +105,8 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     ```
     $ less /etc/heat/heat.conf
     ```
+
+## *Stacks*
 
 8. Baixar o *template*:
     ```
@@ -290,7 +294,9 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     | f62370b4-7cb4-480e-9c13-8a23f7617fa4 | fiap-stack-server-mr66iinpjgzg | ACTIVE | private=fdb5:7432:9bc4:0:f816:3eff:fe12:74d7, 10.0.0.4, 172.24.4.12 | cirros-0.3.5-x86_64-disk | m.fiap |
     +--------------------------------------+--------------------------------+--------+---------------------------------------------------------------------+--------------------------+--------+
     ```
-    
+
+## *Clean-up*
+
 15. Deletar o *stack* e conferir que a VM foi deletada:
     ```
     $ openstack stack delete fiap-stack
@@ -298,6 +304,8 @@ Usaremos o serviço Heat para aprender alguns conceitos importantes sobre orques
     
     $ openstack server list
     ```
+
+## Horizon
 
 16. Refazer o mesmo processo via Horizon Dashboard:
     - Criação de *stack*
