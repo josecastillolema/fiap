@@ -260,7 +260,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     $ cat docker-compose.yml 
     version: '2'
     services:
-
+    
       api:
         build: api_v2/.
         ports:
@@ -269,7 +269,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
           - mysql
         depends_on:
           - mysql
-
+    
       mysql:
         build: mysql/.
         ports:
