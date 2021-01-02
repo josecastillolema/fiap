@@ -33,7 +33,7 @@
     Resolving deltas: 100% (2059/2059), done.
     ```
 
-3. Navegar até a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
+3. Navegar até a pasta ***/fiap/bdt/microservices/swarm/v1*** de este repositório *git*:
     ```
     $ cd fiap/bdt/microservices/swarm/v1
     $ pwd
@@ -46,9 +46,7 @@
     ```yaml
     $ cat docker-compose.yaml 
     version: '3'
-
     services:
-
       api:
         image: josecastillolema/api
         ports:
@@ -63,7 +61,6 @@
           mode: replicated
           restart_policy:
             condition: on-failure
-
       mysql:
         image: josecastillolema/mysql
         ports:
@@ -82,7 +79,6 @@
           #     memory: 50M
           restart_policy:
             condition: on-failure
-
     volumes:
       db-data:
     ```
