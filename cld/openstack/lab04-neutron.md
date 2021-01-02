@@ -1,12 +1,13 @@
 # Lab 4 - OpenStack Neutron
 
 ## Network Service
-Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre virtualização de redes:
+Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para aprender alguns conceitos importantes sobre virtualização de redes:
  - criação de redes/subredes virtuais
  - *virtual routers*
  - *security groups*
  - *floating IPs*
  
+## Pre-reqs
 
 1.	Conferir que o Neutron foi instalado no OpenStack:
     ```
@@ -191,6 +192,8 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     local_ip = 192.168.17.131
     ```
  
+## Redes e subredes virtuais
+
 10.	Criar uma rede:
     ```
     $ openstack network create rede-privada
@@ -297,6 +300,8 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
      2  10.20.20.10 (10.20.20.10)  2996.692 ms !H  2999.085 ms !H  2998.905 ms !H
     ```
 
+## **Virtual routers**
+
 13.	Criar um roteador:
     ```
     $ openstack router create router-fiap
@@ -373,6 +378,8 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     ```
     $ openstack server add floating ip vm-1 172.24.4.13
     ```
+
+## *Security groups*
 
 19.	Criar um *security group*:
     ```
@@ -740,6 +747,8 @@ Usaremos o serviço Neutron para aprender alguns conceitos importantes sobre vir
     $ openstack server delete vm-1 vm-2
     $ openstack subnet delete subrede-privada
     ```
+
+## Horizon
 
 35.	Refazer o mesmo processo via Horizon Dashboard:
     - Criação de rede
