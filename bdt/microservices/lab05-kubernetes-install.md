@@ -7,7 +7,7 @@ Orquestrando containers
  - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
  
- **Microk8s** é um Kubernetes pequeno, rápido, seguro e com um único nó (*all-in-one*) que é instalado em praticamente qualquer computador com Linux. Usado para desenvolvimento *off-line*, criação de protótipos, testes ou uso em uma VM como um k8s pequeno, barato e confiável para CI/CD.
+ [**Microk8s**](https://microk8s.io/) é um Kubernetes pequeno, rápido, seguro e com um único nó (*all-in-one*) que é instalado em praticamente qualquer computador com Linux. Usado para desenvolvimento *off-line*, criação de protótipos, testes ou uso em uma VM como um k8s pequeno, barato e confiável para CI/CD.
  
 ## Pre-reqs
 
