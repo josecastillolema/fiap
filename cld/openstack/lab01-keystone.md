@@ -421,6 +421,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     | cores                 | 30                               |
     ```
 
+## Clean-up
+
 20.	Deletar o projeto e usuário:
     ```
     $ openstack user delete aluno-fiap
