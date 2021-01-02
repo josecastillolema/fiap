@@ -14,7 +14,9 @@ Orquestrando containers
 - Uma VM com a imagem `Ubuntu Linux 18.04`
 
 - Flavor `t2.medium` (2 vcpus, 4 GB de memória) ou maior
- 
+
+## Instalação
+
 1. Instalação do **microk8s**:
     ```
     $ sudo snap install microk8s --classic
@@ -33,6 +35,7 @@ Orquestrando containers
    ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev <b>microk8s</b>
    </pre>
    
+## Validação
 
 4. Conferir instalação:
     ```yaml
