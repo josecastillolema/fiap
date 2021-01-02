@@ -2,13 +2,15 @@
 
 Executando servicos
 --------------
-Docker Compose permite definir serviços (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Além disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possível definir:
+[Docker Compose](https://docs.docker.com/compose/) permite definir serviços (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Além disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possível definir:
  - **variáveis de entorno**: comando `environment`
  - **mapeamento de portas**: comando `ports`
  - **persistência de dados**: comando `volumes`
  - **dependências entre os serviços**: comandos `links` e `depends on`
  
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
+
+### Instalação
 
 1. **[T1]** Instalação do Docker Compose:
     ```
@@ -279,7 +281,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
            MYSQL_USER: root
            MYSQL_DATABASE: fiapdb
     ```
-  
+
+### Uso
+
 4. **[T1]** Criar os serviços definidos no arquivo **`docker-compose.yml`**:
     ```
     $ docker-compose up
@@ -425,6 +429,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Creating compose_api_1 ... done
     ```
 
+### Validação
+
 6. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo **`docker-compose.yml`**.
     ```
     $ cd fiap/bdt/microservices/compose/
@@ -469,6 +475,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     3 packets transmitted, 3 received, 0% packet loss, time 35ms
     rtt min/avg/max/mdev = 0.070/0.071/0.073/0.009 ms
     ```
+
+### *Clean-up*
 
 11. **[T2]** Remover os serviços (e os containers):
     ```
