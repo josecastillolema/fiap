@@ -1,6 +1,5 @@
 # Lab 1 - Docker
 
-## Criando a instancia
 Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do Docker:
  - instalação
  - customização de imagens via Dockerfile
@@ -8,6 +7,7 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
  
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
+## Instalação
  
 1. **[T1]** Instalação do Docker
 
@@ -170,6 +170,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
        GitCommit:
      ```
 
+## Primeiros passos
 
 2. **[T1]** Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
     ```
@@ -304,6 +305,10 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     root@5b83d8b5b521:/# ls meuArquivo
     ls: meuArquivo: No such file or directory
     ```
+
+## Customização de imagens
+
+### Via `docker commit`
 
 15. Customização de imagens via `docker commit`.
 
@@ -450,7 +455,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     $ docker run ubuntu nmap --version
     docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"nmap\": executable file not found in $PATH": unknown.
     ```
-    
+
+### Via `Dockerfile`
+
 16. Customização de imagens via **Dockerfile**. Este é o metodo recomendado para customizar imagens, pois é mais reproduzível que `docker commit`.
 
     a. Criar o arquivo `Dockerfile` com o seguinte conteúdo:
@@ -586,7 +593,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Compiled without:
     Available nsock engines: epoll poll select
     ```
-    
+ 
+## DockerHub
+ 
 17. *Upload* da nova imagem no [DockerHub](https://hub.docker.com/):
 
     a. Criar uma conta gratuita
