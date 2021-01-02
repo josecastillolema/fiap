@@ -738,7 +738,9 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
                     type: internal
         ovs_version: "2.6.1"
     ```
-    
+
+## *Clean-up*
+
 34.	Deletar VMs, rede, subrede e roteador
     ```
     $ openstack server remove floating ip vm-1   172.24.4.13
