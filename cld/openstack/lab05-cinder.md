@@ -474,6 +474,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
 
 27. Anexar o volume a outra VM, monta-lo e conferir que o arquivo criado continua presente
 
+## *Clean-up*
+
 28. Desanexar e deletar volumes e *snapshots*:
     ```
     $ openstack volume snapshot delete teste-fiap-snap
