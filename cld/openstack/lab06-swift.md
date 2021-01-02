@@ -158,7 +158,7 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
 
 ## Containers e objetos
 
-11.	Mostrar estatísticas de uso gerais (passando o endpoint do Keystone + `/v3`):
+11.	Mostrar estatísticas de uso gerais (passando o *endpoint* do Keystone + `/v3`):
     ```
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat
                    Account: AUTH_faac34f01fb2464295bcea501b18b741
