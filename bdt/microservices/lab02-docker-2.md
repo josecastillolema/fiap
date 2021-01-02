@@ -31,6 +31,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     docker.io/library/mysql:latest
     ```
 
+### Variáveis de entorno (`-e`)
+
 2. **[T1]** Primeira tentativa executando o servidor MySQL
    ```
    $ docker run mysql
@@ -84,6 +86,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     2020-04-05T12:51:14.668536Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.19'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
     2020-04-05T12:51:14.783305Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: '/var/run/mysqld/mysqlx.sock' bind-address: '::' port: 33060
     ```
+
+### Mapeamento de portas (`-p`)
 
 4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
     ```
@@ -226,6 +230,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     $ docker stop 38e202140601
     38e202140601
     ```
+
+### Persistência de dados (`-v`)
 
 12. **[T1]** Conseguimos acessar ao banco. Porem, containers são efêmeros. Qualquer dado criado no banco será perdido após o termino do container.
 
