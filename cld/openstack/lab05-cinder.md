@@ -1,11 +1,13 @@
 # Lab 5 - OpenStack Cinder
 
 ## Block Storage Service
-Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre armazenamento de bloco:
+
+Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para aprender alguns conceitos importantes sobre armazenamento de bloco:
  - criação de volumes
  - *snapshots*
  - partição, formatação e montagem de volumes
  
+## Pre-reqs
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
     ```
@@ -120,6 +122,8 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     $ less /etc/cinder/cinder.conf
     $ less /etc/cinder/policy.json
     ```
+
+## Volumes
 
 9. Criar um volume vazio de 1 GB:
     ```
@@ -477,16 +481,18 @@ Usaremos o serviço Cinder para aprender alguns conceitos importantes sobre arma
     $ openstack volume delete teste-fiap
     ```
 
+## Horizon
+
 29. Refazer o mesmo processo via Horizon Dashboard:
     - Criação de volume vazio
     - Criação de volume a partir de imagem
     - *Snapshot* de volume
     - Atachar/desatachar volumes a VMs
     
-    ![](/cld/openstack/img/cinder1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/cinder1.png)
     
-    ![](/cld/openstack/img/cinder2.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/cinder2.png)
     
-    ![](/cld/openstack/img/cinder3.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/cinder3.png)
     
-    ![](/cld/openstack/img/cinder4.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/cinder4.png)
