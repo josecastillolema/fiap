@@ -615,4 +615,4 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     e. Conferir a imagem no portal do DockerHub:
-       ![](/mob/cloud/img/docker0.png)
+       ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/mob/cloud/img/docker0.png)
