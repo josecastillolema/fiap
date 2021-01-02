@@ -1,6 +1,6 @@
 # Lab 1 - Docker
 
-Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do Docker:
+Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do [Docker](https://www.docker.com/):
  - instalação
  - customização de imagens via Dockerfile
  - upload de imagens no [DockerHub](https://hub.docker.com/)
