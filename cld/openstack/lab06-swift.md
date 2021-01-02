@@ -317,4 +317,4 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     - Configuração de permissões
     - Abrir objeto via URL
     
-    ![](/cld/openstack/img/swift1.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/swift1.png)
