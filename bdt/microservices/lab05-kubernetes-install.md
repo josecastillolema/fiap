@@ -29,11 +29,10 @@ Orquestrando containers
     ```
 
 3. Após o *reboot*, confirmar que o usuário pertence ao grupo **`microk8s`**:
-   
-   <pre>
+   ```
    $ groups
-   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev <b>microk8s</b>
-   </pre>
+   ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev microk8s
+   ```
    
 ## Validação
 
@@ -157,13 +156,12 @@ Orquestrando containers
     ```
 
 10. Confirmar que os *plugins* estão habilitados:
-    
-    <pre class="brush: yaml">
+    ```
     $ microk8s.status
     microk8s is running
     addons:
-    <b>dashboard: enabled
-    dns: enabled</b>
+    dashboard: enabled
+    dns: enabled
     cilium: disabled
     fluentd: disabled
     gpu: disabled
@@ -181,5 +179,5 @@ Orquestrando containers
     rbac: disabled
     registry: disabled
     storage: disabled
-    </pre>
+    ```
 
