@@ -2,6 +2,8 @@
 
 [Kompose](https://kompose.io/) permite importar *templates* do Docker Swarm no Kubernetes.
  
+## Instalação
+
 1. Instalação do Kompose
 
     a. Obtenção do executável:
@@ -20,6 +22,8 @@
     ```
     $ sudo mv ./kompose /usr/local/bin/
     ```
+
+## Uso
 
 2. Clonar este repositório *git*:
     ```
@@ -98,6 +102,8 @@
     Your application has been deployed to Kubernetes. You can run 'kubectl get deployment,svc,pods,pvc' for details.
     ```
 
+## Validação
+
 6. Conferir que o *stack* foi importado corretamente dentro do Kubernetes:
     ```
     $ kubectl get service/api
@@ -110,6 +116,9 @@
     $ curl 10.152.183.40:3000
     Benvido a API FIAP!
     ```
+
+## *Clean-up*
+
 8. Remover o *stack*:
     ```
     $ kompose down
