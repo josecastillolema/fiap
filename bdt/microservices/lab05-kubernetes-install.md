@@ -77,6 +77,7 @@ Orquestrando containers
     ```
 
 7. Configuracão dos parámetros de acesso (URL, credenciais, etc.) do cliente externo:
+
     ```yaml
     $ microk8s.config > .kube/config
     $ cat .kube/config 
