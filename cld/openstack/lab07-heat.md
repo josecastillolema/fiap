@@ -123,7 +123,7 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     
 9. Conferir o *stack* que vai ser criado:
     ```yaml
-    $ cd fiap/cld/openstack/
+    $ cd fiap/cld/openstack/lab07-heat/
     
     $ cat heat.yaml
     heat_template_version: 2016-04-08
