@@ -753,6 +753,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     </domain>
     ```
 
+## *Clean-up*
+
 35.	Deletar as vms:
     ```
     $ openstack server delete vmfiap01
