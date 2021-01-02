@@ -454,7 +454,7 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
       stack-volumes-default       1   0   0 wz--n- 10.01g 10.01g
       stack-volumes-lvmdriver-1   1   3   1 wz--n- 10.01g  7.01g
       
-    $ sudo  pvs
+    $ sudo pvs
       PV         VG                        Fmt  Attr PSize  PFree
       /dev/loop1 stack-volumes-default     lvm2 a--  10.01g 10.01g
       /dev/loop2 stack-volumes-lvmdriver-1 lvm2 a--  10.01g  7.01g
