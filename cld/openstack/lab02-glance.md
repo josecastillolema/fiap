@@ -239,6 +239,8 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     | properties       | os_name='linux'                                      |
     ```
 
+## *Clean-up*
+
 14.	Deletar a imagem:
     ```
     $ openstack image delete ubuntu-xenial
