@@ -37,7 +37,7 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     
 3. Movimentar o executável:
     ```
-    $ sudo mv terraform  /usr/local/bin/
+    $ sudo mv terraform /usr/local/bin/
     ```
 
 ## Uso
