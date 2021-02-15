@@ -43,6 +43,7 @@
 
 ## [MBA em Arquitetura e Desenvolvimento na Plataforma .NET (NET)](https://github.com/josecastillolema/fiap/tree/master/net)
 - [Arquitetura Windows Azure Services](https://github.com/josecastillolema/fiap/tree/master/net/azure)
+- [Gestão de Configuração - ALM e DevOps](https://github.com/josecastillolema/fiap/tree/master/net/devops)
 
 ## [MBA em Full Stack Developer - Microservices, Cloud e IoT (SCJ)](https://github.com/josecastillolema/fiap/tree/master/scj)
 - [Arquitetura e Desenvolvimento Java com IoT](https://github.com/josecastillolema/fiap/tree/master/scj/java)
