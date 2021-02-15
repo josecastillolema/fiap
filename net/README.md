@@ -2,3 +2,4 @@
 
 
  - [Arquitetura *Windows Azure Services*](https://github.com/josecastillolema/fiap/tree/master/net/azure)
+ - [Gestão de Configuração - ALM e DevOps](https://github.com/josecastillolema/fiap/tree/master/net/devops)
