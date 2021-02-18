@@ -9,50 +9,85 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 1. Acessar o serviço **Virtual machine**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm00.png)
 
-2. Lançar o assistente de criaçao de instancias:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-1.png)
-
-3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-2.png)
+2. Sempre que for criar novos recursos, selecione como ***subscription*** `Azure for students` e como ***resource group*** `19net`. Se o *resource group* ainda não existe, como é o caso, criar ele:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm01.png)
    
-4. Escolher o ***flavor*** `t2.micro`:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-3.png)
-
-5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-4.png)
-
-6. Confirmar criaçao da instância:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-5.png)
+3. Configurar um nome para a instãncia, escolher a **imagem** `Ubuntu Server` e o ***flavor*** `Standard_B1`:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm02.png)
    
-7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
-   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-6.png" width="465" height="342">
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm03.png)
 
-8. Validar a criacao da instância:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-7.png)
+4. Usaremos chave ssh como método de acesso à VM:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm04.png)
+
+5. A porta 22 no ***security group*** precisa estar aberta para poder acessar a instância via SSH:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm05.png)
+   
+6. Configurar `Standard HDD` como tipo de disco:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm06.png)
+
+7. Usaremos um *script* de **`cloud-init`** para customizar a instância:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm07.png)
+
+6. Confirmar criaçao da instância uma vez validada:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm08.png)
+   
+7. Fazer *download* da **chave** para poder acessar a instância via SSH de forma segura:
+   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/net/devops/img/vm09.png" width="465" height="342">
+
+8. Aguardar a criacao da instância:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm10.png)
 
 ## Accessando à instancia
 
-9. [**Linux/MAC**] Seguiremos as próprias indicações do EC2:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-8.png)
+9. Note-se o IP público da instância:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm11.png)
+
+10. [**Linux/MAC**] Seguiremos as próprias indicações do Azure:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm12.png)
    
-    [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opçao.
+    [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opçao.
    
-10. [**Linux/MAC**] Em um terminal local:
+11. [**Linux/MAC**] Em um terminal local:
     ```
-    $ chmod 400 fiap.pem
-    $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
+    $ chmod 400 aula1_key.pem 
+    $ ssh -i aula1_key.pem  azureuser@168.61.32.71
+    The authenticity of host '168.61.32.71 (168.61.32.71)' can't be established.
+    ECDSA key fingerprint is SHA256:KASB7hYoy0WvdiE+zDEBlyFQ7eoO3bwco32davnUxCA.
+    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+    Warning: Permanently added '168.61.32.71' (ECDSA) to the list of known hosts.
+    Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1039-azure x86_64)
 
-       __|  __|_  )
-       _|  (     /   Amazon Linux 2 AMI
-      ___|\___|___|
+     * Documentation:  https://help.ubuntu.com
+     * Management:     https://landscape.canonical.com
+     * Support:        https://ubuntu.com/advantage
 
-    https://aws.amazon.com/amazon-linux-2/
-    [ec2-user@ip-172-31-50-1 ~]$
+      System information as of Thu Feb 18 13:57:15 UTC 2021
+
+      System load:  0.0               Processes:           107
+      Usage of /:   4.5% of 28.90GB   Users logged in:     0
+      Memory usage: 44%               IP address for eth0: 10.0.0.4
+      Swap usage:   0%
+
+    0 packages can be updated.
+    0 of these updates are security updates.
+
+    The programs included with the Ubuntu system are free software;
+    the exact distribution terms for each program are described in the
+    individual files in /usr/share/doc/*/copyright.
+
+    Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+    applicable law.
+
+    To run a command as administrator (user "root"), use "sudo <command>".
+    See "man sudo_root" for details.
+
+    azureuser@aula1:~$ 
     ```
     
-    [**Windows**] Seguir as instruções do PuTTY: https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/putty.html
+    [**Windows**] Seguir as instruções do PuTTY: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows
     
-11. Uma vez logado na maquina virtual, confirmar que o script de **cloud-init** rodou com sucesso:
+12. Uma vez logado na maquina virtual, confirmar que o script de **cloud-init** rodou com sucesso:
     ```
     $ ls /tmp/
     CloudInitFunciona
@@ -60,109 +95,112 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 
 ## Instalando um servidor web
 
-12. Instalar o pacote `httpd`:
+13. Instalar o pacote `apache2`:
     ```
-    [ec2-user@ip-172-31-50-1 ~]$ sudo yum install -y httpd
-    Failed to set locale, defaulting to C
-    Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
-    amzn2-core                                                                                                                     | 2.4 kB  00:00:00     
-    Resolving Dependencies
-    --> Running transaction check
-    ---> Package httpd.x86_64 0:2.4.43-1.amzn2 will be installed
-    --> Processing Dependency: httpd-tools = 2.4.43-1.amzn2 for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: httpd-filesystem = 2.4.43-1.amzn2 for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: system-logos-httpd for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: mod_http2 for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: httpd-filesystem for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: /etc/mime.types for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.43-1.amzn2.x86_64
-    --> Running transaction check
-    ---> Package apr.x86_64 0:1.6.3-5.amzn2.0.2 will be installed
-    ---> Package apr-util.x86_64 0:1.6.1-5.amzn2.0.2 will be installed
-    --> Processing Dependency: apr-util-bdb(x86-64) = 1.6.1-5.amzn2.0.2 for package: apr-util-1.6.1-5.amzn2.0.2.x86_64
-    ---> Package generic-logos-httpd.noarch 0:18.0.0-4.amzn2 will be installed
-    ---> Package httpd-filesystem.noarch 0:2.4.43-1.amzn2 will be installed
-    ---> Package httpd-tools.x86_64 0:2.4.43-1.amzn2 will be installed
-    ---> Package mailcap.noarch 0:2.1.41-2.amzn2 will be installed
-    ---> Package mod_http2.x86_64 0:1.15.3-2.amzn2 will be installed
-    --> Running transaction check
-    ---> Package apr-util-bdb.x86_64 0:1.6.1-5.amzn2.0.2 will be installed
-    --> Finished Dependency Resolution
-
-    Dependencies Resolved
-
-    ======================================================================================================================================================
-     Package                                  Arch                        Version                                   Repository                       Size
-    ======================================================================================================================================================
-    Installing:
-     httpd                                    x86_64                      2.4.43-1.amzn2                            amzn2-core                      1.3 M
-    Installing for dependencies:
-     apr                                      x86_64                      1.6.3-5.amzn2.0.2                         amzn2-core                      118 k
-     apr-util                                 x86_64                      1.6.1-5.amzn2.0.2                         amzn2-core                       99 k
-     apr-util-bdb                             x86_64                      1.6.1-5.amzn2.0.2                         amzn2-core                       19 k
-     generic-logos-httpd                      noarch                      18.0.0-4.amzn2                            amzn2-core                       19 k
-     httpd-filesystem                         noarch                      2.4.43-1.amzn2                            amzn2-core                       23 k
-     httpd-tools                              x86_64                      2.4.43-1.amzn2                            amzn2-core                       87 k
-     mailcap                                  noarch                      2.1.41-2.amzn2                            amzn2-core                       31 k
-     mod_http2                                x86_64                      1.15.3-2.amzn2                            amzn2-core                      146 k
-
-    Transaction Summary
-    ======================================================================================================================================================
-    Install  1 Package (+8 Dependent packages)
-
-    Total download size: 1.8 M
-    Installed size: 5.1 M
-    Downloading packages:
-    (1/9): apr-util-1.6.1-5.amzn2.0.2.x86_64.rpm                                                                                   |  99 kB  00:00:00     
-    (2/9): apr-util-bdb-1.6.1-5.amzn2.0.2.x86_64.rpm                                                                               |  19 kB  00:00:00     
-    (3/9): apr-1.6.3-5.amzn2.0.2.x86_64.rpm                                                                                        | 118 kB  00:00:00     
-    (4/9): generic-logos-httpd-18.0.0-4.amzn2.noarch.rpm                                                                           |  19 kB  00:00:00     
-    (5/9): httpd-filesystem-2.4.43-1.amzn2.noarch.rpm                                                                              |  23 kB  00:00:00     
-    (6/9): httpd-2.4.43-1.amzn2.x86_64.rpm                                                                                         | 1.3 MB  00:00:00     
-    (7/9): httpd-tools-2.4.43-1.amzn2.x86_64.rpm                                                                                   |  87 kB  00:00:00     
-    (8/9): mailcap-2.1.41-2.amzn2.noarch.rpm                                                                                       |  31 kB  00:00:00     
-    (9/9): mod_http2-1.15.3-2.amzn2.x86_64.rpm                                                                                     | 146 kB  00:00:00     
-    ------------------------------------------------------------------------------------------------------------------------------------------------------
-    Total                                                                                                                 6.2 MB/s | 1.8 MB  00:00:00     
-    Running transaction check
-    Running transaction test
-    Transaction test succeeded
-    Running transaction
-      Installing : apr-1.6.3-5.amzn2.0.2.x86_64                                                                                                       1/9 
-      Installing : apr-util-bdb-1.6.1-5.amzn2.0.2.x86_64                                                                                              2/9 
-      Installing : apr-util-1.6.1-5.amzn2.0.2.x86_64                                                                                                  3/9 
-      Installing : httpd-tools-2.4.43-1.amzn2.x86_64                                                                                                  4/9 
-      Installing : generic-logos-httpd-18.0.0-4.amzn2.noarch                                                                                          5/9 
-      Installing : mailcap-2.1.41-2.amzn2.noarch                                                                                                      6/9 
-      Installing : httpd-filesystem-2.4.43-1.amzn2.noarch                                                                                             7/9 
-      Installing : mod_http2-1.15.3-2.amzn2.x86_64                                                                                                    8/9 
-      Installing : httpd-2.4.43-1.amzn2.x86_64                                                                                                        9/9 
-      Verifying  : apr-util-1.6.1-5.amzn2.0.2.x86_64                                                                                                  1/9 
-      Verifying  : apr-util-bdb-1.6.1-5.amzn2.0.2.x86_64                                                                                              2/9 
-      Verifying  : httpd-2.4.43-1.amzn2.x86_64                                                                                                        3/9 
-      Verifying  : mod_http2-1.15.3-2.amzn2.x86_64                                                                                                    4/9 
-      Verifying  : httpd-filesystem-2.4.43-1.amzn2.noarch                                                                                             5/9 
-      Verifying  : apr-1.6.3-5.amzn2.0.2.x86_64                                                                                                       6/9 
-      Verifying  : mailcap-2.1.41-2.amzn2.noarch                                                                                                      7/9 
-      Verifying  : generic-logos-httpd-18.0.0-4.amzn2.noarch                                                                                          8/9 
-      Verifying  : httpd-tools-2.4.43-1.amzn2.x86_64                                                                                                  9/9 
-
-    Installed:
-      httpd.x86_64 0:2.4.43-1.amzn2                                                                                                                       
-
-    Dependency Installed:
-      apr.x86_64 0:1.6.3-5.amzn2.0.2                      apr-util.x86_64 0:1.6.1-5.amzn2.0.2              apr-util-bdb.x86_64 0:1.6.1-5.amzn2.0.2        
-      generic-logos-httpd.noarch 0:18.0.0-4.amzn2         httpd-filesystem.noarch 0:2.4.43-1.amzn2         httpd-tools.x86_64 0:2.4.43-1.amzn2            
-      mailcap.noarch 0:2.1.41-2.amzn2                     mod_http2.x86_64 0:1.15.3-2.amzn2               
-
-    Complete!
-    ```
-
-13. Habilitar o serviço `httpd`:
-    ```
-    [ec2-user@ip-172-31-50-1 ~]$ sudo service httpd start  
-    Redirecting to /bin/systemctl start httpd.service
+    azureuser@aula1:~$ sudo apt install apache2
+    Reading package lists... Done
+    Building dependency tree       
+    Reading state information... Done
+    The following package was automatically installed and is no longer required:
+      linux-headers-4.15.0-135
+    Use 'sudo apt autoremove' to remove it.
+    The following additional packages will be installed:
+      apache2-bin apache2-data apache2-utils libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+      liblua5.2-0 ssl-cert
+    Suggested packages:
+      www-browser apache2-doc apache2-suexec-pristine | apache2-suexec-custom openssl-blacklist
+    The following NEW packages will be installed:
+      apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+      libaprutil1-ldap liblua5.2-0 ssl-cert
+    0 upgraded, 10 newly installed, 0 to remove and 0 not upgraded.
+    Need to get 1729 kB of archives.
+    After this operation, 6985 kB of additional disk space will be used.
+    Do you want to continue? [Y/n] y
+    Get:1 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libapr1 amd64 1.6.3-2 [90.9 kB]
+    Get:2 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1 amd64 1.6.1-2 [84.4 kB]
+    Get:3 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-2 [10.6 kB]
+    Get:4 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 libaprutil1-ldap amd64 1.6.1-2 [8764 B]
+    Get:5 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]
+    Get:6 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-bin amd64 2.4.29-1ubuntu4.14 [1070 kB]
+    Get:7 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-utils amd64 2.4.29-1ubuntu4.14 [83.9 kB]
+    Get:8 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2-data all 2.4.29-1ubuntu4.14 [160 kB]
+    Get:9 http://azure.archive.ubuntu.com/ubuntu bionic-updates/main amd64 apache2 amd64 2.4.29-1ubuntu4.14 [95.1 kB]
+    Get:10 http://azure.archive.ubuntu.com/ubuntu bionic/main amd64 ssl-cert all 1.0.39 [17.0 kB]
+    Fetched 1729 kB in 0s (28.4 MB/s)
+    Preconfiguring packages ...
+    Selecting previously unselected package libapr1:amd64.
+    (Reading database ... 76706 files and directories currently installed.)
+    Preparing to unpack .../0-libapr1_1.6.3-2_amd64.deb ...
+    Unpacking libapr1:amd64 (1.6.3-2) ...
+    Selecting previously unselected package libaprutil1:amd64.
+    Preparing to unpack .../1-libaprutil1_1.6.1-2_amd64.deb ...
+    Unpacking libaprutil1:amd64 (1.6.1-2) ...
+    Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+    Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.1-2_amd64.deb ...
+    Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+    Selecting previously unselected package libaprutil1-ldap:amd64.
+    Preparing to unpack .../3-libaprutil1-ldap_1.6.1-2_amd64.deb ...
+    Unpacking libaprutil1-ldap:amd64 (1.6.1-2) ...
+    Selecting previously unselected package liblua5.2-0:amd64.
+    Preparing to unpack .../4-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...
+    Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+    Selecting previously unselected package apache2-bin.
+    Preparing to unpack .../5-apache2-bin_2.4.29-1ubuntu4.14_amd64.deb ...
+    Unpacking apache2-bin (2.4.29-1ubuntu4.14) ...
+    Selecting previously unselected package apache2-utils.
+    Preparing to unpack .../6-apache2-utils_2.4.29-1ubuntu4.14_amd64.deb ...
+    Unpacking apache2-utils (2.4.29-1ubuntu4.14) ...
+    Selecting previously unselected package apache2-data.
+    Preparing to unpack .../7-apache2-data_2.4.29-1ubuntu4.14_all.deb ...
+    Unpacking apache2-data (2.4.29-1ubuntu4.14) ...
+    Selecting previously unselected package apache2.
+    Preparing to unpack .../8-apache2_2.4.29-1ubuntu4.14_amd64.deb ...
+    Unpacking apache2 (2.4.29-1ubuntu4.14) ...
+    Selecting previously unselected package ssl-cert.
+    Preparing to unpack .../9-ssl-cert_1.0.39_all.deb ...
+    Unpacking ssl-cert (1.0.39) ...
+    Setting up libapr1:amd64 (1.6.3-2) ...
+    Setting up apache2-data (2.4.29-1ubuntu4.14) ...
+    Setting up ssl-cert (1.0.39) ...
+    Setting up libaprutil1:amd64 (1.6.1-2) ...
+    Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+    Setting up libaprutil1-ldap:amd64 (1.6.1-2) ...
+    Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.1-2) ...
+    Setting up apache2-utils (2.4.29-1ubuntu4.14) ...
+    Setting up apache2-bin (2.4.29-1ubuntu4.14) ...
+    Setting up apache2 (2.4.29-1ubuntu4.14) ...
+    Enabling module mpm_event.
+    Enabling module authz_core.
+    Enabling module authz_host.
+    Enabling module authn_core.
+    Enabling module auth_basic.
+    Enabling module access_compat.
+    Enabling module authn_file.
+    Enabling module authz_user.
+    Enabling module alias.
+    Enabling module dir.
+    Enabling module autoindex.
+    Enabling module env.
+    Enabling module mime.
+    Enabling module negotiation.
+    Enabling module setenvif.
+    Enabling module filter.
+    Enabling module deflate.
+    Enabling module status.
+    Enabling module reqtimeout.
+    Enabling conf charset.
+    Enabling conf localized-error-pages.
+    Enabling conf other-vhosts-access-log.
+    Enabling conf security.
+    Enabling conf serve-cgi-bin.
+    Enabling site 000-default.
+    Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+    Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+    Processing triggers for libc-bin (2.27-3ubuntu1.4) ...
+    Processing triggers for systemd (237-3ubuntu10.44) ...
+    Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+    Processing triggers for ufw (0.36-0ubuntu0.18.04.1) ...
+    Processing triggers for ureadahead (0.100.0-21) ...
     ```
    
 14. Criar um *site* de teste, no arquivo `/var/www/html/index.html` (como usuário admin):
@@ -174,20 +212,26 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
    
 15. Testar localmente o servidor web:
     ```
-    [ec2-user@ip-172-31-50-1 ~]$ curl localhost
+    azureuser@aula1:~$ curl localhost
     <h1>
-            FIAP!!!
+       FIAP!!!
     </h1>
     ```
   
 16. Obter o IP público da VM:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-9.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm11.png)
 
 17. Testar accesso pelo IP público:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-10.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm13.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-11.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm14.png)
+
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm15.png)
+
+19. Validar a criação da regra: 
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm16.png)
+
 
 19. Testar novamente o acesso pelo IP público:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-12.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm17.png)
