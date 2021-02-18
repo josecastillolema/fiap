@@ -13,9 +13,9 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm01.png)
    
 3. Configurar um nome para a instãncia, escolher a **imagem** `Ubuntu Server` e o ***flavor*** `Standard_B1`:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm02.png)
-   
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm03.png)
+   
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm02.png)
 
 4. Usaremos chave ssh como método de acesso à VM:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm04.png)
