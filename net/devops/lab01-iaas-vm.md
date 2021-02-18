@@ -33,7 +33,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm08.png)
    
 7. Fazer *download* da **chave** para poder acessar a instância via SSH de forma segura:
-   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/net/devops/img/vm09.png" width="465" height="342">
+   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm09.png" width="465" height="342">
 
 8. Aguardar a criacao da instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm10.png)
