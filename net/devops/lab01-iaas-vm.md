@@ -7,7 +7,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
  - **[cloud-init](https://cloud-init.io/)**
  
 1. Acessar o serviço **Virtual machine**:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm00.png)
 
 2. Lançar o assistente de criaçao de instancias:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-1.png)
