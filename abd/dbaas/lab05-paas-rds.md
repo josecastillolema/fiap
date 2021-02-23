@@ -1,8 +1,8 @@
 # Lab 5 - AWS RDS
 
-Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/elasticbeanstalk/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
- - *Deploy* de aplicações
- - Plataformas/entornos de execução disponíveis
+Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/rds/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
+ - Criação de instâncias RDS
+ - Plataformas/entornos disponíveis
  - *Logging*
  - Monitoramento
 
