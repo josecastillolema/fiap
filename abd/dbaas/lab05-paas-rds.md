@@ -70,7 +70,7 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 
  - `mysql` (client)
 
-Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2).
+Se não tiver os pre-reqs na máquina local pular para o [teste em uma VM no EC2](#deploy-em-uma-vm-no-ec2).
 
 ## Teste local
 
@@ -101,11 +101,11 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
     3 rows in set (0.15 sec)
     ```
    
-## *Deploy* em uma VM no EC2
+## Teste em uma VM no EC2
 
 Se tiver feito o deploy local pode pular esta seção.
 
-1. Criar uma VM com a imagem `Ubuntu 18.04`
+1. Criar uma VM com a imagem `Ubuntu 20.04`
 
 2. Logar na VM
 
