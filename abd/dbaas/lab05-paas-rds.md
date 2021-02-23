@@ -63,6 +63,16 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 16. Aguardar a configuraçao ser aplicada na instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds15.png)
 
+17. Testar novamente a conetividade:
+    ```
+    $ telnet fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com 3306
+    Trying 18.210.97.78...
+    Connected to ec2-18-210-97-78.compute-1.amazonaws.com.
+    Escape character is '^]'.
+    8.0.20a#Xm7w(?M:w{%Z-
+                         /mysql_native_password
+    ```
+
 
 ## Testando o acesso ao banco
 
