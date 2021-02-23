@@ -37,7 +37,7 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 9. Na descrição da instância, note-se o *endpoint* e a porta da mesma:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds09.png)
 
-10. Testemos a conetividade com a instância:
+10. Testemos a conectividade com a instância:
     ```
     $ telnet fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com 3306         
     Trying 18.210.97.78...
