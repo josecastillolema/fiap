@@ -23,7 +23,7 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 5. Parametrizaçao de *storage*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds05.png)
    
-6. Se formos acessar desde a nossas máquinas locais, habilitar o acesso público ao banco:
+6. Se formos acessar desde a nossa máquina local, habilitar o acesso público ao banco:
  
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds06.png)
 
