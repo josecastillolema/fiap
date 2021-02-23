@@ -1,6 +1,6 @@
 # Lab 4 - AWS DynamoDB
 
-Em este lab sobre [**DynamoDB**](https://aws.amazon.com/pt/dynamodb/) aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
+Em este lab sobre [**DynamoDB**](https://aws.amazon.com/pt/dynamodb/) aprenderemos alguns conceitos importantes na criação de serviços de DBaaS NoSQL:
  - Criação de tabelas
  - Inserção/consulta de dados via console
  - Inserção/consulta via código `python`
