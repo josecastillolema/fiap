@@ -1,6 +1,6 @@
 # Lab 5 - AWS RDS
 
-Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/rds/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
+Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/rds/) aprenderemos alguns conceitos importantes na criação de serviços de DBaaS NoSQL:
  - Criação de instâncias RDS
  - Plataformas/entornos disponíveis
  - *Logging*
