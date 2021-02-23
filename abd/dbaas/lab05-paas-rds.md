@@ -8,8 +8,8 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 
 ## Criação da instância RDS
  
-1. Acessar o serviço **Elastic Beanstalk**:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb0.png)
+1. Acessar o serviço **RDS**:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds01.png)
 
 2. Criar um novo *environment*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb1.png)
