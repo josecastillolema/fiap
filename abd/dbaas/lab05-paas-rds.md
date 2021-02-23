@@ -23,53 +23,83 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 5. Parametrizaçao de *storage*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds05.png)
    
-6. Se formos acessar desde a nossas maquinas locais, habilitar o acesso publico ao banco:
+6. Se formos acessar desde a nossas máquinas locais, habilitar o acesso público ao banco:
  
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds06.png)
 
-7. Após uns minutos, conferir o estado da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb6.png)
+7. Revisar as configurações e confirmar a criação da instância RDS:
+ 
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds07.png)
 
-8. Accessar a URL da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb7.png)
+8. Aguardar a correta criação da instância:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds08.png)
+   
+9. Na descrição da instância, note-se o *endpoint* e a porta da mesma:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds09.png)
+
+10. Testemos a conetividade com a instância:
+    ```
+    $ telnet fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com 3306         
+    Trying 18.210.97.78...
+    telnet: connect to address 18.210.97.78: Operation timed out
+    telnet: Unable to connect to remote host
+    ```
+    
+11. Como vimos no passo anterior, a instância não está acessível na porta 3306. Precisamos criar um novo *security group* e liberar a porta. Para isso, acessar o serviço Virtual Private Cloud (VPC):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds10.png)
+
+12. Criar um novo *security group*:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds11.png)
+
+13. Liberar a porta 3306 desde *anywhere*:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds12.png)
+
+14. De volta no serviço RDS, vamos atualizar a instância com o novo *security group*:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds13.png)
+
+15. Nos ajustes de conetividade, incluir o novo *security group*:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds14.png)
+
+16. Aguardar a configuraçao ser aplicada na instância:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds15.png)
 
 
-## Pre-reqs
+## Testando o acesso ao banco
+
+### Pre-reqs
 
  - `mysql` (client)
 
 Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC2](#deploy-em-uma-vm-no-ec2).
 
-## *Deploy* local
+## Teste local
 
- 1. Clonar o repositório:
+ 1. Usar o cliente `mysql` para acessar ao banco:
     ```
-    git clone https://github.com/josecastillolema/fiap
-    ```
+    $ mysql -h fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com -u admin -p
+    Enter password: 
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 26
+    Server version: 8.0.20 Source distribution
 
- 2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
- 
-    - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-    - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+    Copyright (c) 2000, 2021, Oracle and/or its affiliates.
 
- 3. Instalar as dependências:
-    ```
-    pip3 install -r requirements.txt
-    ```
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
 
- 4. Executar a aplicacao:
-    ```
-    $ python3 application.py
-     Serving Flask app "application" (lazy loading)
-     Environment: production
-       WARNING: Do not use the development server in a production environment.
-       Use a production WSGI server instead.
-     Debug mode: off
-     Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-    ```
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
- 5. Testar o acesso local:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb11.png)
+    mysql> show databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | performance_schema |
+    +--------------------+
+    3 rows in set (0.15 sec)
+    ```
    
 ## *Deploy* em uma VM no EC2
 
@@ -84,79 +114,34 @@ Se tiver feito o deploy local pode pular esta seção.
     $ sudo apt update
     ```
 
-4. Instalar o pip3 (gestor de pacotes do python3):
+4. Instalar o cliente `mysql`:
     ```
-    $ sudo apt install python3-pip -y
-    ```
-
-5. Clonar o repositório:
-    ```
-    git clone https://github.com/josecastillolema/fiap
+    $ sudo apt install mysql-client -y
     ```
 
-6. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
-    - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-    - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
- 
-7. Instalar as dependências:
+5. Usar o cliente `mysql` para acessar ao banco:
     ```
-    sudo pip3 install -r requirements.txt
-    ```
+    $ mysql -h fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com -u admin -p
+    Enter password: 
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 26
+    Server version: 8.0.20 Source distribution
 
-8. Executar a aplicação:
-    ```
-    $ python3 application.py
-     Serving Flask app "application" (lazy loading)
-     Environment: production
-       WARNING: Do not use the development server in a production environment.
-       Use a production WSGI server instead.
-     Debug mode: off
-     Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-    ```
+    Copyright (c) 2000, 2021, Oracle and/or its affiliates.
 
-9. Testar o acesso local:
-    ```
-    $ curl localhost:5000
-    <h1>Hola FIAP!</h1>
-    ```
+    Oracle is a registered trademark of Oracle Corporation and/or its
+    affiliates. Other names may be trademarks of their respective
+    owners.
 
-5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb10.png)
+    mysql> show databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | performance_schema |
+    +--------------------+
+    3 rows in set (0.15 sec)
 
-## *Deploy* na AWS
- 
-1. Acessar o serviço **Elastic Beanstalk**:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb0.png)
-
-2. Criar um novo *environment*:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb1.png)
-
-3. A aplicação é um serviço web:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb2.png)
-   
-4. Configurar o nome da apliação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb3.png)
-
-5. Escolher o entorno de execução:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb4.png)
-   
-6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
- - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
- - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
- 
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb5.png)
-
-7. Após uns minutos, conferir o estado da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb6.png)
-
-8. Accessar a URL da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb7.png)
-
-## *Logging* e monitoramento
-
-9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb8.png)
-
-10. Para monitorar a aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb9.png)
