@@ -567,7 +567,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
      $ python3 dynamodb.py 
 
       Testando scan:
-      [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tlfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
+      [{'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
       Iserindo aluno:
       {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
