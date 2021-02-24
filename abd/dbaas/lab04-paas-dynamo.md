@@ -589,12 +589,12 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 13. Remover o arquivo de credenciais:
     ```
-    $ rm -rf ~.aws
+    $ rm -rf ~./aws
     ```
 
 14. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
     ```
-    $ python3 dynamodb2.py 
+    $ python3 dynamodb.py 
 
     Testando scan:
     Traceback (most recent call last):
@@ -659,7 +659,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 23. Tentar rodar de novo o código (deberia funcionar):
     ```
-    $ python3 dynamodb2.py 
+    $ python3 dynamodb.py 
 
     Testando scan:
     [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
