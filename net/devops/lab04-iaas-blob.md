@@ -6,7 +6,7 @@ Em este lab sobre **Azure Blob Storage** aprenderemos alguns conceitos important
  - Controle de permissões de acesso
  - Hospedagem de sites estáticos
 
-## Criação do *bucket*
+## Criação do *container*
  
 1. Accessar o serviço **Storage account**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob01.png)
