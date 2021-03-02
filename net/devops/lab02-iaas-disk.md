@@ -47,7 +47,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     
 3. Usaremos o `fdisk` para criar uma partição no novo disco:
    ```
-   $ sudo fdisk /dev/sdc
+   aula1$ sudo fdisk /dev/sdc
 
    Welcome to fdisk (util-linux 2.30.2).
    Changes will remain in memory only, until you decide to write them.
@@ -75,7 +75,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
    
 4. Conferir a nova partição (em este caso, `sdc1`):
    ```
-   $ aula1:~$ lsblk
+   aula1:~$ lsblk
    NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
    sda       8:0    0   30G  0 disk 
    ├─sda1    8:1    0 29.9G  0 part /
