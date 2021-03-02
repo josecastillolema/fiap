@@ -136,6 +136,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 ## Desanexando o volume
 
 11. Na aba `Disks` da descrição da instância, remover o volume de dados:
+
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk02.png)
    
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk03.png)
