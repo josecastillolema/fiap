@@ -10,7 +10,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 
 ## Pre-reqs
 
-- Na maquina virtual do [lab 01 - EC2](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab01-iaas-vm.md), conferir os volumes:
+- Na maquina virtual do [lab 01 - Virtual Machine](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab01-iaas-vm.md), conferir os volumes:
     ```
     aula1:~$ lsblk
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -26,7 +26,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 
 ## Criando o volume
  
-1. Na aba `Disks` da descrição da instância, criar um novo volume vazio de tipo HDD com tamanho de 50 GB:
+1. Na aba `Disks` da descrição da instância, criar um novo volume vazio de tipo HDD com tamanho de 50 GB e nome `dados`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk01.png)
 
 ## Configurando o volume dentro da instancia
@@ -133,3 +133,60 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     - Criação do sistema de arquivos
     - Montar o volume
 
+## Desanexando o volume
+
+11. Na aba `Disks` da descrição da instância, remover o volume de dados:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk02.png)
+   
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk03.png)
+   
+## Anexando o volume a uma 2a instância
+
+12. Criar uma nova máquina virtual com nome `aula2` seguindo os passos do [lab 01 - Virtual Machine](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab01-iaas-vm.md).
+
+13. Uma vez criada, conferir os volumes:
+    ```
+    aula2:~$ lsblk 
+    NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+    sda       8:0    0   30G  0 disk 
+    ├─sda1    8:1    0 29.9G  0 part /
+    ├─sda14   8:14   0    4M  0 part 
+    └─sda15   8:15   0  106M  0 part /boot/efi
+    sdb       8:16   0    4G  0 disk 
+    └─sdb1    8:17   0    4G  0 part /mnt
+    sr0      11:0    1  628K  0 rom
+    ```
+    
+14. Na aba `Disks` da descrição da nova instância (*`aula2`*), anexar o volume `dados` previamente criado:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk04.png)
+   
+15. Na nova maquina virtual, conferir o novo dispositivo, em este caso `sdc`, com tamanho 50 GB (o nome pode mudar). Observe-se que já possue uma partição (`sdc1`):
+    ```
+    aula2:~$ lsblk 
+    NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+    sda       8:0    0   30G  0 disk 
+    ├─sda1    8:1    0 29.9G  0 part /
+    ├─sda14   8:14   0    4M  0 part 
+    └─sda15   8:15   0  106M  0 part /boot/efi
+    sdb       8:16   0    4G  0 disk 
+    └─sdb1    8:17   0    4G  0 part /mnt
+    sdc       8:32   0   50G  0 disk 
+    └─sdc1    8:33   0   50G  0 part 
+    sr0      11:0    1  628K  0 rom 
+    ```
+    
+16. Criar a pasta `/mnt/volumeExterno` para montar o volume:
+    ```
+    aula2$ sudo mkdir /mnt/volumeExterno
+    ```
+
+17. Montar o volume na pasta recem criada:
+    ```
+    aula2$ sudo mount /dev/sdc1 /mnt/volumeExterno/
+    ```
+    
+18. Confirmar que os dados criados na VM `aula1` foram persistidos:
+    ```
+    aula2:~$ cat /mnt/volumeExterno/meuArquivo 
+    sic mundus creatus est
+    ```
