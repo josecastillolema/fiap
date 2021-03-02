@@ -88,7 +88,7 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
    sr0      11:0    1  628K  0 rom
    ```
 
-9. Criar o sistema de arquivos:
+5. Criar o sistema de arquivos:
     ```
     aula1$ sudo mkfs /dev/sdc1
     mke2fs 1.44.1 (24-Mar-2018)
@@ -104,31 +104,32 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     Writing superblocks and filesystem accounting information: done   
     ```
  
-10. Criar a pasta `/mnt/volumeExterno` para montar o volume:
+6. Criar a pasta `/mnt/volumeExterno` para montar o volume:
     ```
     aula1$ sudo mkdir /mnt/volumeExterno
     ```
 
-11. Montar o volume na pasta recem criada:
+7. Montar o volume na pasta recem criada:
     ```
     aula1$ sudo mount /dev/sdc1 /mnt/volumeExterno/
     ```
 
-12. Listar os arquivos do novo volume (é esperado ter uma pasta chamada `lost-found`, mesmo que o volume esteja vazio):
+8. Listar os arquivos do novo volume (é esperado ter uma pasta chamada `lost-found`, mesmo que o volume esteja vazio):
     ```
     aula1$ cd /mnt/volumeExterno/
     aula1$ ls
     lost+found
     ```
 
-13. Criar um arquivo qualquer (como usuário admin):
+9. Criar um arquivo qualquer (como usuário admin):
     ```
     aula1$ cd /mnt/volumeExterno
     aula1$ cat meuArquivo 
     sic mundus creatus est
     ```
 
-14. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
+10. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
     - Formatação
     - Criação do sistema de arquivos
     - Montar o volume
+
