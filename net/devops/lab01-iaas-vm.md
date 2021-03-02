@@ -1,4 +1,4 @@
-# Lab 1 - Virtual Machine
+# Lab 1 - Virtual Machines
 
 ## Criando a instancia
 Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importantes de máquinas virtuais:
