@@ -38,8 +38,8 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
     ```
 
 6. Navegar ate o diretorio `fiap/net/devops/lab05-paas-app`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/net/devops/lab05-paas-app):
-    - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
-    - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+    - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas-app/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+    - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas-app/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
 7. Instalar as dependências:
     ```
