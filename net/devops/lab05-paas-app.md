@@ -50,7 +50,7 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
     ```
     $ FLASK_APP=./application.py FLASK_RUN_HOST=0.0.0.0 flask run &
      * Serving Flask app "application"
-     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+     * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
     ```
 
 9. Testar o acesso local:
