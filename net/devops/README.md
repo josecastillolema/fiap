@@ -8,3 +8,4 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 02: IaaS - Containers](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab02-iaas-container.md)
  - [Lab 03: IaaS - Disks](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab03-iaas-disk.md)
  - [Lab 04: IaaS - Blob Storage](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab04-iaas-blob.md)
+ - [Lab 05: PaaS - App Service Plans](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas-app.md)
