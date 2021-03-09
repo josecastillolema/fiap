@@ -98,7 +98,7 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
 
 ## Deploy da aplicaçao
 
-De volta na VM, 
+De volta na VM, copiar a URI do passo anterior
 
 ## *Logging* e monitoramento
 
