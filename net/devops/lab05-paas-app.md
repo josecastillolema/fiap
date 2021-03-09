@@ -62,30 +62,24 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
 5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
 
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb10.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb10.png)
 
-## *Deploy* na AWS
+## *Deploy* na Azure
  
-1. Acessar o serviço **Elastic Beanstalk**:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb0.png)
+1. Acessar o serviço **Web Application**:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb0.png)
 
 2. Criar um novo *environment*:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb1.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb1.png)
 
 3. A aplicação é um serviço web:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb2.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb2.png)
    
 4. Configurar o nome da apliação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb3.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb3.png)
 
 5. Escolher o entorno de execução:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb4.png)
-   
-6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
- - [**`application.py`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/application.py): Um serviço web escrito em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
- - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
- 
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/net/devops/img/eb4.png)
 
 7. Após uns minutos, conferir o estado da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb6.png)
