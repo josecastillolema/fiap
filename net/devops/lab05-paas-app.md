@@ -64,25 +64,31 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app01.png)
 
-## *Deploy* na Azure
+## Criaçao do serviço na Azure
  
 1. Acessar o serviço **Web Application**:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb0.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app02.png)
 
-2. Criar um novo *environment*:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb1.png)
+2. Criar uma nova *web application*.
+    - Runtime: `Python 3.6`
+    - SKU: `S1` ou algum outro SKU que tenha permissao para usar *deployment slots*
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app03.png)
 
-3. A aplicação é um serviço web:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb2.png)
+3. Revisar a configuraçao do serviço:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app04.png)
    
-4. Configurar o nome da apliação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb3.png)
+4. Aguardar a criaçao do serviço:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app05.png)
 
-5. Escolher o entorno de execução:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/net/devops/img/eb4.png)
+5. Acessar a URL do serviço criado:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app06.png)
 
-7. Após uns minutos, conferir o estado da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb6.png)
+7. Foi desplegado automaticamente um site de teste:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app07.png)
+   
+## Configuraçao do repositório `git`
+
+Criaremos um repositório `git` local para automatizar o *deploy* da aplicação.
 
 8. Accessar a URL da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb7.png)
