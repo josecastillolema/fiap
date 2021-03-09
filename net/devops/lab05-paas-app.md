@@ -62,7 +62,7 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
 5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
 
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/eb10.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app01.png)
 
 ## *Deploy* na Azure
  
