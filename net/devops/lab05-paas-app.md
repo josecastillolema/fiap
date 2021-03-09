@@ -256,3 +256,18 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
 ## Deployment slots
 
 Para implementar algums estratégias de *release* (blue-green e canary) usaremos *deployment slots*:
+
+11. Criar um novo *slot* para o ambiente de homolgação:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app13.png)
+
+12. Confirmar a URL do *slot* de homologação. Se o endereço da app for https://fiap.azurewebsites.net/, o endereço do ambiente de homologação será https://fiap-homol.azurewebsites.net/
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app14.png)
+   
+13. Acessar o endereço de homologação e confirmar que Azure fez deploy da aplicação de teste:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app15.png)
+
+14. Para fazer **blue-green**, escolher a opçao ***Swap*** (Intercambiar):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app16.png)
+
+16. Para fazer o **canary release**, ajustar as porcentagens conforme desejado (usar *browsers* diferentes para testar):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app17.png)
