@@ -48,19 +48,16 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
 8. Executar a aplicação:
     ```
-    $ python3 application.py
-     Serving Flask app "application" (lazy loading)
-     Environment: production
-       WARNING: Do not use the development server in a production environment.
-       Use a production WSGI server instead.
-     Debug mode: off
-     Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+    $ FLASK_APP=./application.py flask run
+     * Serving Flask app "application"
+     * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
     ```
 
 9. Testar o acesso local:
     ```
     $ curl localhost:5000
     <h1>Hola FIAP!</h1>
+    MBA! o/
     ```
 
 5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
