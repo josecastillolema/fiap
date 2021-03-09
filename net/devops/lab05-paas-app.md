@@ -71,31 +71,38 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
 2. Criar uma nova *web application*.
     - Runtime: `Python 3.6`
-    - SKU: `S1` ou algum outro SKU que tenha permissao para usar *deployment slots*
+    - SKU: `S1` ou algum outro SKU que tenha permissão para usar *deployment slots*
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app03.png)
 
-3. Revisar a configuraçao do serviço:
+3. Revisar a configuração do serviço:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app04.png)
    
-4. Aguardar a criaçao do serviço:
+4. Aguardar a criação do serviço:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app05.png)
 
 5. Acessar a URL do serviço criado:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app06.png)
 
-7. Foi desplegado automaticamente um site de teste:
+6. Foi desplegado automaticamente um site de teste:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app07.png)
    
 ## Configuraçao do repositório `git`
 
 Criaremos um repositório `git` local para automatizar o *deploy* da aplicação.
 
-8. Accessar a URL da aplicação:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb7.png)
+7. No *Deployment center*, na aba de configuraçao criar um repositório git local:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app08.png)
+   
+8. Na aba de credenciais configurar um usuário e senha para poder clonar o repositório:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app09.png)
+
+## Deploy da aplicaçao
+
+De volta na VM, 
 
 ## *Logging* e monitoramento
 
-9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs:
+9. No *Deployment center*, na aba de configuraçao criar um repositório git local:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb8.png)
 
 10. Para monitorar a aplicação:
