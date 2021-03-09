@@ -250,7 +250,7 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
 9. Na descrição da aplicaçao podemos consultar algumas métricas básicas:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app11.png)
 
-10. Para fazer *troubleshooting* da aplicação, se o endereço da mesma for https://fiap.azurewebsites.net/, acessar https://fiap.**scm**.azurewebsites.net/:
+10. Para fazer *troubleshooting* da aplicação, se o endereço da mesma for https://fiap.azurewebsites.net/, acessar https://fiap.scm.azurewebsites.net/:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app12.png)
 
 ## Deployment slots
