@@ -48,8 +48,12 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 
 8. Executar a aplicação:
     ```
-    $ FLASK_APP=./application.py FLASK_RUN_HOST=0.0.0.0 flask run &
-     * Serving Flask app "application"
+    $ FLASK_APP=./application.py FLASK_RUN_HOST=0.0.0.0 flask run
+     * Serving Flask app "./application.py"
+     * Environment: production
+       WARNING: Do not use the development server in a production environment.
+       Use a production WSGI server instead.
+     * Debug mode: off
      * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
     ```
 
