@@ -1,11 +1,23 @@
 # Lab 2 - Docker
 
 ## Criando a instancia
-Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do Docker:
+Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.docker.com/r/josecastillolema/api) para aprender alguns conceitos importantes do docker. 
  - instalação
- - customização de imagens via Dockerfile
- - upload de imagens no [DockerHub](https://hub.docker.com/)
+ - mapeamento de portas
+
+A imagem `josecastillolema/api` contem os [seguintes arquivos](lab02-iaas-docker):
+    - [**`api.py`**](lab02-iaas-docker/api.py): Uma simples API escrita em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
+    - [**`requirements.txt`**](lab02-iaas-docker/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
+    - [**`Dockerfile`**](lab02-iaas-docker/Dockerfile): O arquivo usado por ´docker´ para criar a imagem
+
+## Pre-reqs
+
+Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` para rodar o Docker:
+
+- Uma maquina virtual com `Ubuntu Linux 18.04`. Seguir os passos do lab [lab 01 - EC2](/shift/multicloud/lab01-iaas-ec2.md) **mudando a imagem** (não usar `Amazon Linux`). 
  
+## Instalação do Docker
+
 1. Instalação do Docker
 
     a. Atualização dos repositórios
@@ -167,6 +179,7 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
        GitCommit:
      ```
 
+## Obtenção da imagem
 
 2. Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
     ```
@@ -225,7 +238,9 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ubuntu              latest              adafef2e596e        11 days ago         73.9MB
     ```
-    
+
+## Testes com o container
+
 6. Rodar um comando de exemplo (`hostname`) dentro do container:
     ```
     $ docker run ubuntu hostname
@@ -290,7 +305,9 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     ls: meuArquivo: No such file or directory
     ```
 
+## Execuçao do container
 
-    
-
-       
+13. Vamos adicionar ao comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, a onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container. O parâmetro `-d` configura `docker` para rodar o container no *background*:
+   ```
+   $ docker run -d -p 5000:5000 josecastillolema/api
+   ```
