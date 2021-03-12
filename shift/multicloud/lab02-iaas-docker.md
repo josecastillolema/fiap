@@ -262,7 +262,7 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     root@d8924e5138b3:/#
     ```
 
-12. **[T1]** Continuando no 1o terminal, criar um arquivo ainda dentro do container e sair do container:
+10. Criar um arquivo ainda dentro do container e sair do container:
     ```
     root@d8924e5138b3:/# touch meuArquivo
     
@@ -273,13 +273,13 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     root@d8924e5138b3:/# exit
     ```
     
-13. **[T1]** Conferir que o container não está mais em execução:
+11. Conferir que o container não está mais em execução:
     ```
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ```
     
-14. **[T1]** Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, *softwares* instalados, etc.:
+12. Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, *softwares* instalados, etc.:
     ```
     $ docker run -it josecastillolema/api
     root@5b83d8b5b521:/# ls
@@ -294,4 +294,3 @@ Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos im
     
 
        
-18. (Opcional) *Upload* da imagem no Elastic Container Registry (ECR) da AWS
