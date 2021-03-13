@@ -216,38 +216,45 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` p
     astronomerio/mongodb-source         Mongodb source.                                 0                                       [OK]
     ```
  
-4. Fazer o *download* (`pull`) da imagem do Ubuntu no repositório local:
+4. Fazer o *download* (`pull`) da imagem `josecastillolema/api` no repositório local:
     ```
     $ docker pull josecastillolema/api
     Using default tag: latest
-    latest: Pulling from library/ubuntu
-    692c352adcf2: Pull complete 
-    97058a342707: Pull complete 
-    2821b8e766f4: Pull complete 
-    4e643cc37772: Pull complete 
-    Digest: sha256:55cd38b70425947db71112eb5dddfa3aa3e3ce307754a3df2269069d2278ce47
-    Status: Downloaded newer image for ubuntu:latest
-    docker.io/library/ubuntu:latest
+    latest: Pulling from josecastillolema/api
+    741437d97401: Pull complete 
+    34d8874714d7: Pull complete 
+    0a108aa26679: Pull complete 
+    7f0334c36886: Pull complete 
+    65c95cb8b3be: Pull complete 
+    d6518cb8a076: Pull complete 
+    978af0c41163: Pull complete 
+    2279c641f679: Pull complete 
+    0adc21e4cdc7: Pull complete 
+    44e1126d38c8: Pull complete 
+    24c75b074ef0: Pull complete 
+    Digest: sha256:3da8f411cec4ffa960543c9260b193badde97397eb16f35bcac5e8e320bd5393
+    Status: Downloaded newer image for josecastillolema/api:latest
+    docker.io/josecastillolema/api:latest
     ```
     
-5. Listar as imagens novamente, conferir que existe a imagem `ubuntu`:
+5. Listar as imagens novamente, conferir que existe a imagem `josecastillolema/api`:
     ```
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    ubuntu              latest              adafef2e596e        11 days ago         73.9MB
+    josecastillolema/api   latest              ad8814253c1b        2 years ago         933MB
     ```
 
 ## Testes com o container
 
 6. Rodar um comando de exemplo (`hostname`) dentro do container:
     ```
-    $ docker run ubuntu hostname
+    $ docker run josecastillolema/api hostname
     c293c1989a56
     ```
 
 7. Medir o tempo do comando anterior:
     ```
-    $ time docker run ubuntu hostname
+    $ time docker run josecastillolema/api hostname
     7aa02808ccfc
 
     real	0m0.812s
@@ -265,13 +272,13 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` p
     $ uname -a
     Linux ip-172-31-60-180 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 
-    $ docker run ubuntu uname -a
+    $ docker run josecastillolema/api uname -a
     Linux de0407ee790f 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
 9. Executar a imagem `josecastillolema/api` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container em este caso).
     ```
-    $ docker run -it josecastillolema/api
+    $ docker run -it josecastillolema/api bash
     root@d8924e5138b3:/#
     ```
 
@@ -294,13 +301,15 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` p
     
 12. Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, *softwares* instalados, etc.:
     ```
-    $ docker run -it josecastillolema/api
+    $ docker run -it josecastillolema/api bash
     root@5b83d8b5b521:/# ls
     bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
     boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
 
     root@5b83d8b5b521:/# ls meuArquivo
     ls: meuArquivo: No such file or directory
+    
+    root@5b83d8b5b521:/# exit
     ```
 
 ## Execuçao do container
@@ -309,3 +318,26 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` p
    ```
    $ docker run -d -p 5000:5000 josecastillolema/api
    ```
+
+14. Conferir que o container está em execução:
+   ```
+   $ docker ps
+   CONTAINER ID        IMAGE                  COMMAND             CREATED             STATUS                            PORTS                    NAMES
+   e691f0fd676b        josecastillolema/api   "./api.py"          9 seconds ago       Up 8 seconds (health: starting)   0.0.0.0:5000->5000/tcp   funny_roentgen
+   ```
+   
+15. Após 30 segundos da sua criação, o container deberia transicionar para estado `healthy` (columna `STATUS`):
+   ```
+   $ docker ps
+   CONTAINER ID        IMAGE                  COMMAND             CREATED              STATUS                        PORTS                    NAMES
+   e691f0fd676b        josecastillolema/api   "./api.py"          About a minute ago   Up About a minute (healthy)   0.0.0.0:5000->5000/tcp   funny_roentgen
+   ```
+   
+16. Testar localmente a API:
+   ```
+   $ curl localhost:5000
+   Benvido a API FIAP!
+   ```
+
+17. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no security group da VM):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/docker01.png)
