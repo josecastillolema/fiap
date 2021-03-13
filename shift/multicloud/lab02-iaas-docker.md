@@ -134,14 +134,12 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Ubuntu Linux 18.04` p
     $ sudo usermod -aG docker ubuntu
     ```
 
-    e. Reiniciar a VM para que as mudanças de grupo sejam aplicadas (o acesso via SSH será interrompido):
+    e. Carregar o usuário `ubuntu` para aplicar as mudanças:
     ```
-    $ sudo reboot
-    Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed by remote host.
-    Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed.
+    $ sudo su ubuntu
     ```
 
-    f. Após o reboot, logar novamente via SSH na instância e confirmar que o usuário pertence ao grupo `docker`:
+    f. Confirmar que o usuário agora pertence ao grupo `docker`:
     ```
     $ groups
     ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker
