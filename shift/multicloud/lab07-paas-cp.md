@@ -62,3 +62,7 @@ Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) a
 
 14. Confirmar que foi publicada a nova versão:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp16.png)
+   
+15. (Desafio) Sustituir o GitHub pelo CodeCommit :)
+
+
