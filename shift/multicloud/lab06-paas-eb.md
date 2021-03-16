@@ -79,7 +79,7 @@ Se tiver feito o deploy local pode pular esta seção.
 
 8. Executar a aplicação:
     ```
-    $ python3 application.py
+    $ python3 application.py &
      Serving Flask app "application" (lazy loading)
      Environment: production
        WARNING: Do not use the development server in a production environment.
