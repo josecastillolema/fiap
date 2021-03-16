@@ -18,7 +18,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
 
  1. Clonar o repositório:
     ```
-    git clone https://github.com/josecastillolema/fiap
+    $ git clone https://github.com/josecastillolema/fiap
     ```
 
  2. Navegar ate o diretorio `fiap/scj/cloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
@@ -28,7 +28,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
 
  3. Instalar as dependências:
     ```
-    pip3 install -r requirements.txt
+    $ pip3 install -r requirements.txt
     ```
 
  4. Executar a aplicacao:
@@ -65,7 +65,7 @@ Se tiver feito o deploy local pode pular esta seção.
 
 5. Clonar o repositório:
     ```
-    git clone https://github.com/josecastillolema/fiap
+    $ git clone https://github.com/josecastillolema/fiap
     ```
 
 6. Navegar ate o diretorio `fiap/shift/multicloud/lab06-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab06-paas-eb):
@@ -74,7 +74,7 @@ Se tiver feito o deploy local pode pular esta seção.
  
 7. Instalar as dependências:
     ```
-    sudo pip3 install -r requirements.txt
+    $ sudo pip3 install -r requirements.txt
     ```
 
 8. Executar a aplicação:
