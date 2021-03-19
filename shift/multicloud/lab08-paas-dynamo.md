@@ -514,7 +514,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 8. Navegar ate a pasta dos códigos de este lab:
     ```
-    $ cd fiap/mob/cloud/lab08-paas-dynamo/
+    $ cd fiap/shift/multicloud/lab08-paas-dynamo/
     ```
     
 9. Conferir o código:
