@@ -558,7 +558,6 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
      ```
  10. Instalar as dependências:
      ```
-     $ sudo apt update
      $ sudo apt install -y python3-boto3
      ```
  
