@@ -1,4 +1,4 @@
-# Lab 5 - AWS S3
+# Lab 14 - AWS CloudFormation
 
 Em este lab sobre [**CloudFormation**](https://aws.amazon.com/pt/cloudformation/) aprenderemos alguns conceitos importantes do paradigma de Infrastructure as Code (IaC):
  - Criação de *stacks*
