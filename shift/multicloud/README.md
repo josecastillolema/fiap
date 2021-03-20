@@ -20,6 +20,8 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 11: PaaS - API Gateway](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab11-paas-api-gateway.md)
  - [Lab 12: PaaS - Elastic Map Reduce (EMR)](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab12-paas-emr.md)
  - [Lab 13: FaaS - Lambda](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab13-faas-lambda.md)
+ - [Lab 14: IaaS - CloudFormation](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab14-iaas-cloudformation.md)
+
 
 
 
