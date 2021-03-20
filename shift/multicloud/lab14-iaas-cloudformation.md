@@ -25,6 +25,7 @@ Criaremos um *stack* que configura um servidor WordPress.
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf05.png)
 
 6. Revisar e confirmar a criação do *stack*:
+
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf06.png)
 
 ## Accesso ao *stack*
