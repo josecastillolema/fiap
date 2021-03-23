@@ -50,7 +50,7 @@ Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/servic
 10. Selecionar o *application service* dos pre-reqs:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap11.png)
    
-11. Revisar o template `yaml` que descreve o *pipeline*. **Apontar para a versão 3.6 do Python**. *Template* completo [aqui]().
+11. Revisar o template `yaml` que descreve o *pipeline*. **Apontar para a versão 3.6 do Python**. *Template* completo [aqui](https://github.com/josecastillolema/fiap/tree/master/net/devops/lab06-paas-pipeline/azure-pipelines.yml).
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap12.png)
 
 12. Confirmar a criação do *template* no repositório do GitHub (automaticamente o *pipeline* será iniciado):
