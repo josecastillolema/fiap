@@ -9,6 +9,9 @@ Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/servic
 - Um *application service* no ar, seguindo os passos do [lab 05 - Application Services](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas-app.md)
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app07.png)
+   
+- Criação de um repositório no [GitHub](https://github.com/) com [os arquivos do lab de Application Services](https://github.com/josecastillolema/fiap/tree/master/net/devops/lab05-paas-app):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp00-1.png)
 
 ## Acessando e criando a conta no Azure Pipelines
 
