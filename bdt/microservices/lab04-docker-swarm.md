@@ -8,6 +8,11 @@ Orquestrando containers
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
  
  Vamos trabalhar com duas máquinas virtuais (**T1** e **T2**). Se elas tiver rodando na nuvem, devem pertencer ao mesmo *security group* (ou ter um *security group* em común).
+ 
+Requisitos
+--------------
+ - 2 VMs Ubuntu 18.04 com Docker instalado
+ - As duas VMs devem pertencer ao mesmo *security group* (ou ter um *security group* em común). Se nao for suficiente, liberar a porta 2377 no *security group*. Pode usar o comando `telnet` para testar a comunicaçao (`telnet $ip $porta`).
 
 ## Criação do *cluster*
 
