@@ -108,7 +108,7 @@ Orquestrando containers
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
-9. Habilitar os *plugins* **`dns`** e **`dashboard`**:
+9. Habilitar o *plugins* **`dns`**:
     ```
     $ microk8s.enable dns dashboard
     Enabling DNS
@@ -160,7 +160,7 @@ Orquestrando containers
     $ microk8s.status
     microk8s is running
     addons:
-    dashboard: enabled
+    dashboard: disabled
     dns: enabled
     cilium: disabled
     fluentd: disabled
