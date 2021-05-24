@@ -111,6 +111,13 @@
     api    ClusterIP   10.152.183.40   <none>        3000/TCP   95s
     ```
 
+7. Aguardar os pods ficar em estado `running`
+    ```
+    $ kubectl get pod api
+    NAME   READY   STATUS    RESTARTS   AGE
+    api    1/1     Running   0          2m52s
+    ```
+
 7. Testar a API:
     ```
     $ curl 10.152.183.40:3000
