@@ -264,8 +264,6 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
         build: api_v2/.
         ports:
           - "4000:5000"
-        links:
-          - mysql
         depends_on:
           - mysql
       mysql:
@@ -276,7 +274,6 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
           - /var/lib/mysql
         environment:
            MYSQL_ROOT_PASSWORD: senhaFiap
-           MYSQL_USER: root
            MYSQL_DATABASE: fiapdb
     ```
 
