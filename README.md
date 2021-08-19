@@ -32,6 +32,7 @@
 - [BootCamp OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
 - [Implementação de Cloud](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
 - [Implementação OpenStack](https://github.com/josecastillolema/fiap/tree/master/cld/openstack)
+- [Soluções MultiCloud](https://github.com/josecastillolema/fiap/tree/master/cld/multicloud)
 
 ## [MBA em Artificial Intelligence & Machine Learning (IA)](https://github.com/josecastillolema/fiap/tree/master/ia)
 - [Princípios de Robótica e IoT](https://github.com/josecastillolema/fiap/tree/master/ia/iot)
