@@ -11,7 +11,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Obtenção da imagem
     ```
-    $ docker pull mysql
+    $ docker pull mysql:5.7
     Using default tag: latest
     latest: Pulling from library/mysql
     c499e6d256d6: Pull complete 
@@ -35,7 +35,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 2. **[T1]** Primeira tentativa executando o servidor MySQL
    ```
-   $ docker run mysql
+   $ docker run mysql:5.7
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -50,7 +50,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
     Vamos optar pela primeira opção. Para passar variáveis de entorno ao container usaremos a opção `-e`. É importante colocar todos os parâmetros opcionais do comando `docker run` **antes** do nome da imagem:
     ```
-    $ docker run -e MYSQL_ROOT_PASSWORD=fiap mysql
+    $ docker run -e MYSQL_ROOT_PASSWORD=fiap mysql:5.7
     2020-04-05 12:50:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 12:50:57+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
     2020-04-05 12:50:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -122,7 +122,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 8. **[T1]** Vamos adicionar ao nosso comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, a onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container.
    ```
-   $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 mysql
+   $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 mysql:5.7
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -197,7 +197,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
     Para conseguir persistência de dados, vamos adicionar ao comando `docker run` o parâmetro `-v`. Recebe um argumento do tipo ***x:y***, a onde ***x*** é o nome do volume e ***y*** a pasta a onde esse volume será mapeado dentro do container.
     ```
-    $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
+    $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql:5.7
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
@@ -275,7 +275,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 16. **[T1]** Executar novamente o container, para conferir que os dados foram persistidos:
     ```
-    $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
+    $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql:5.7
     2020-04-05 13:28:24+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 13:28:24+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
     2020-04-05 13:28:24+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
