@@ -231,7 +231,7 @@
     ec2-user@ec2-54-145-72-182.compute-1.amazonaws.com : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
     ```
     
-8. Concluir o playbook com os restantes passos para o correto deploy da aplicação (consultar o [lab de Beanstalk - deploy em uma VM do EC2](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab06-paas-eb.md#deploy-em-uma-vm-no-ec2):
+8. Concluir o playbook com os restantes passos para o correto deploy da aplicação (consultar o [lab de Beanstalk - deploy em uma VM do EC2](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab06-paas-eb.md#deploy-em-uma-vm-no-ec2)):
     - Copiar os arquivos da aplicação (ou clonar este repositório git)
     - Instalação das dependencias Python usando o `pip` (arquivo `requirements`)
     - Execução da aplicação
