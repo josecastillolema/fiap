@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  user: ec2-user
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: install pip
+    yum:
+      name:
+      - pip
+      state: latest
