@@ -17,5 +17,6 @@ Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei
  - [Lab 11: PaaS - Elastic Beanstalk (EB) com Spring Boot](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab10-paas-eb-springboot.md)
  - [Lab 12: PaaS - API Gateway](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab11-paas-api-gateway.md)
  - [Lab 13: PaaS - Elastic Map Reduce (EMR)](https://github.com/josecastillolema/fiap/blob/master/scj/cloud/lab12-paas-emr.md)
+ - [Lab 14: IaaS - Terraform](https://github.com/josecastillolema/fiap/blob/master/cld/multicloud/lab14-iaas-terraform.md)
 
 
