@@ -562,7 +562,7 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     $ cd fiap/cld/multicloud/lab14-iaas-terraform/
     ```
 
-6. Conferir o conteúdo do template:
+6. Conferir o conteúdo do [template](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/multicloud/lab14-iaas-terraform/main.tf):
     ```
     $ cat main.tf 
     terraform {
@@ -591,7 +591,7 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     }
     ```
 
-7. Inicializar o Terraform e o correspondente *provider* (plugin) de OpenStack:
+7. Inicializar o Terraform e o correspondente *provider* (plugin) de AWS:
     ```
     $ terraform init
 
