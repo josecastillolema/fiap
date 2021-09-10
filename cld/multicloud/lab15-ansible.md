@@ -7,6 +7,8 @@
 - Uma VM com a imagem `Amazon Linux` que será usada como destino do playbook
 
 - O terminal do AWS Academy Learner Lab será usado como bastion para rodar os playbooks do Ansible
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/multicloud/img/a1.png)
+
 
 ## Instalação (no terminal do AWS Academy Learner Lab)
 
