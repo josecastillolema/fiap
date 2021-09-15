@@ -74,6 +74,15 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     | cinder-volume    | ubuntu@lvmdriver-1 | nova | enabled | up    | 2020-10-26T23:22:07.000000 |
     +------------------+--------------------+------+---------+-------+----------------------------+
     ```
+     
+    **Nota:** Se o `cinder-volume` aparece com estado `down` (provavelmente a VM foi restartada em algum momento), seguem os passos para corrigi-lo:
+    ```
+    $ sudo losetup -f /opt/stack/data/stack-volumes-default-backing-file
+    $ sudo losetup -f /opt/stack/data/stack-volumes-lvmdriver-1-backing-file
+    $ sudo systemctl restart devstack@c-vol
+    ```
+    
+    Tentar o comando `openstack volume service list novamente.
 
 5. Listar os serviços Linux que compõem o Cinder:
     ```
