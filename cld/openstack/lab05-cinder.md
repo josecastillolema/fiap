@@ -82,7 +82,7 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     $ sudo systemctl restart devstack@c-vol
     ```
     
-    Tentar o comando `openstack volume service list novamente.
+    Tentar o comando `openstack volume service list` novamente.
 
 5. Listar os serviços Linux que compõem o Cinder:
     ```
