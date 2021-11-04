@@ -27,7 +27,7 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
     * Mapeamento de porta: 5000
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ecs5.png)
    
-7. Revisar as definições da *task*:
+7. Editar as definições da *task* e selecionar **LabRole** como `Task execution role` (isto é uma limitação específica das contas da AWS Academy):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ecs6.png)
 
 8. Na configuração do serviço, desativar o balanceador de carga:
