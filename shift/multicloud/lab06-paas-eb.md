@@ -122,6 +122,7 @@ Se tiver feito o deploy local pode pular esta seção.
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb5.png)
 
 7. Os próximos passos relativos a segurança são específicos das contas AWS Academy
+
     a. Antes de criar a aplicaçao, mostrar as opções avançadas:
      ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb10.png)
 
