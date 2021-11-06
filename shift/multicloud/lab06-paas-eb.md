@@ -60,7 +60,7 @@ Se tiver feito o deploy local pode pular esta seção.
 
 4. Instalar o pip3 (gestor de pacotes do python3):
     ```
-    $ sudo yum install python3-pip -y
+    $ sudo yum install -y python3-pip git
     ```
 
 5. Clonar o repositório:
