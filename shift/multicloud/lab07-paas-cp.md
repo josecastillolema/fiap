@@ -21,8 +21,12 @@ Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) a
 2. Criar um novo *pipeline*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp02.png)
 
-3. Nomear o *pipeline*:
+3. Em uma **conta normal da AWS**, nomear o *pipeline*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp03.png)
+   
+   Em uma **conta da AWS Academy**, selecionar `LabRole` como Role ARN:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp03-2.png)
+
 
 4. Escolher `GitHub` como *source provider* e o repositório criado nos pre-reqs:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp04.png)
