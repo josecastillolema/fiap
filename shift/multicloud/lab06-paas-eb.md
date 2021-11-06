@@ -94,7 +94,7 @@ Se tiver feito o deploy local pode pular esta seção.
     <h1>Hola FIAP!</h1>
     ```
 
-5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
+10. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb10.png)
 
@@ -144,9 +144,9 @@ Se tiver feito o deploy local pode pular esta seção.
 
 ## *Logging* e monitoramento
 
-9. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs:
+10. Se for necessário fazer *troubleshooting* da aplicação, fazer *download* dos logs:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb8.png)
 
-10. Para monitorar a aplicação:
+11. Para monitorar a aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb9.png)
 
