@@ -49,7 +49,7 @@ Se não tiver os pre-reqs na máquina local pular para o [deploy em uma VM no EC
 
 Se tiver feito o deploy local pode pular esta seção.
 
-1. Criar uma VM com a imagem `Ubuntu 18.04`
+1. Criar uma VM com a imagem `Amazon Linux`
 
 2. Logar na VM
 
