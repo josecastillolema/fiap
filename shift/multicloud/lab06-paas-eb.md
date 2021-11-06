@@ -121,10 +121,24 @@ Se tiver feito o deploy local pode pular esta seção.
  
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb5.png)
 
-7. Após uns minutos, conferir o estado da aplicação:
+7. Os próximos passos relativos a segurança são específicos das contas AWS Academy
+    a. Antes de criar a aplicaçao, mostrar as opções avançadas:
+     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb10.png)
+
+    b. Editar as opções de segurança:
+     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb11.png)
+     
+    c. Fazer os seguintes ajustes:
+    * Service role: `LabRole`
+    * EC2 key pair: `vockey`
+    * IAM instance profile: `LabInstanceProfile`
+     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb12.png)
+
+
+8. Após uns minutos, conferir o estado da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb6.png)
 
-8. Accessar a URL da aplicação:
+9. Accessar a URL da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb7.png)
 
 ## *Logging* e monitoramento
