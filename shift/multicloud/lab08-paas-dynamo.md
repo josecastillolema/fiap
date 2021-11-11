@@ -501,17 +501,22 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 ### Usando o arquivo de credenciais
 
-7. Na VM, clonar o repostiorio das aulas:
+7. Na VM, instalar o `git`:
+    ```
+    $ sudo yum install -y git
+    ```
+
+8. Clonar o repostiorio das aulas:
     ```
     $ git clone https://github.com/josecastillolema/fiap.git
     ```
 
-8. Navegar ate a pasta dos códigos de este lab:
+9. Navegar ate a pasta dos códigos de este lab:
     ```
     $ cd fiap/shift/multicloud/lab08-paas-dynamo/
     ```
     
-9. Conferir o código:
+10. Conferir o código:
     * Carrega a tabela `Alunos` da *region* `us-east-1` 
     * Faz um *scan* de todos os dados da tabela
     * Insere um novo aluno
@@ -550,12 +555,12 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
        print("\nIserindo aluno:")
        pprint(resp)
      ```
- 10. Instalar as dependências:
+ 11. Instalar as dependências:
      ```
      $ sudo apt install -y python3-boto3
      ```
  
- 11. Rodar o código:
+ 12. Rodar o código:
      ```
      $ python3 dynamodb.py 
 
@@ -575,17 +580,17 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
                             'RetryAttempts': 0}}
      ```
 
-12. No console do DynamoDB, conferir que o novo aluno foi inserido:
+13. No console do DynamoDB, conferir que o novo aluno foi inserido:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d7.png)
 
 ### Usando IAM *roles* (recomendado)
 
-13. Remover o arquivo de credenciais:
+14. Remover o arquivo de credenciais:
     ```
     $ rm -rf ~/.aws
     ```
 
-14. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
+15. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
     ```
     $ python3 dynamodb.py 
 
@@ -626,31 +631,31 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     botocore.exceptions.NoCredentialsError: Unable to locate credentials
     ```
     
-15. Acessar o serviço **IAM**
+16. Acessar o serviço **IAM**
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam0.png)
 
-16. Criar um novo *role*:
+17. Criar um novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam1.png)
 
-17. Escolher EC2 como serviço que vai utilizar o novo *role*:
+18. Escolher EC2 como serviço que vai utilizar o novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam2.png)
 
-18. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
+19. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam4.png)
 
-19. Configurar *tags*:
+20. Configurar *tags*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam5.png)
 
-20. Revisar as configurações e confirmar a criação do *role*:
+21. Revisar as configurações e confirmar a criação do *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam6.png)
 
-21. No console do EC2, anexar o novo *role* na VM:
+22. No console do EC2, anexar o novo *role* na VM:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
 
-22. Seleccionar o *role* que acabamos de criar:
+23. Seleccionar o *role* que acabamos de criar:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam8.png)
 
-23. Tentar rodar de novo o código (deberia funcionar):
+24. Tentar rodar de novo o código (deberia funcionar):
     ```
     $ python3 dynamodb.py 
 
