@@ -127,3 +127,5 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 
 27. Ejecutar de novo o teste, agora deberia funcionar:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda13.png)
+
+28. Continuar o laboratório normalmente a partir do passo **11**
