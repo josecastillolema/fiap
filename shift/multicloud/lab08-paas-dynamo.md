@@ -16,7 +16,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 ## Pre-reqs
 
-- Uma VM com a imagem `Ubuntu Linux 18.04`
+- Uma VM com a imagem `Amazon Linux`
 
 - No painel da Vocareum, accessar as credenciais da conta para acesso programático:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d0.png)
