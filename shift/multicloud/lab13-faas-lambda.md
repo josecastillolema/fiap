@@ -58,7 +58,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
     
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda25.png)
 
-10. Se tiver usando uma **conta "normal" da AWS** ir para o passo X, se tiver usando uma **conta do AWS Academy** continuar normalmente.
+10. Se tiver usando uma **conta "normal" da AWS** ir para o passo **22**, se tiver usando uma **conta do AWS Academy** continuar normalmente.
 
 11. Agora vamos configurar um *trigger* para a função:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda14.png)
