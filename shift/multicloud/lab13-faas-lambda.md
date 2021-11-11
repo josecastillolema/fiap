@@ -55,46 +55,32 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 
 9. Executar o evento de testes recém criado `testeGetTemperatura`:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda7.png)
+    
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda25.png)
 
-9. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda8.png)
+10. Se tiver usando uma **conta "normal" da AWS** ir para o passo X, se tiver usando uma **conta do AWS Academy** continuar normalmente.
 
-10. No IAM, procurar o *role* da função:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda9.png)
-
-11. Adicionar uma nova *policy*: 
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda10.png)
-
-12. A policy `AmazonDynamoDBReadOnlyAccess` vai dar acesso de leitura ao DynamoDB:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda11.png)
-
-13. Estado final da *role*:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda12.png)
-
-14. Ejecutar de novo o teste, agora deberia funcionar:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda13.png)
-
-15. Agora vamos configurar um *trigger* para a função:
+11. Agora vamos configurar um *trigger* para a função:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda14.png)
 
-16. O *trigger* será um *endpoint* em uma nova API do API Gateway chamada `api-lambda`:
+12. O *trigger* será um *endpoint* em uma nova API do API Gateway chamada `api-lambda`:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda15.png)
 
-17. Conferir que o *trigger* foi criado e asociado à função:
+13. Conferir que o *trigger* foi criado e asociado à função:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda16.png)
 
-18. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
+14. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda17.png)
 
-19. Testamos o *endpoint* (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
+15. Testamos o *endpoint* (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda18.png)
 
 ## Configuração do segundo *endpoint* usando a mesma API
 
-20. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
+16. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda19.png)
  
-21. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
+17. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
     ```python
     import json
     import boto3
@@ -110,17 +96,34 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 
     O código lee o valor `humidade` da tabela `Atmosfera` do DynamoDB.
 
-22. Configurar as devidas permissões para a role da nova função no IAM, como mostrado nos passos **10**, **11**, **12** e **13**:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda20.png)
-
-23. Testar a nova função como mostrado nos passos **7** e **8**:
+18. Testar a nova função como mostrado nos passos **7**, **8** e **9**:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda21.png)
 
-23. Criar um *trigger* para a função usando *a mesma API* que no passo **16**:
+19. Criar um *trigger* para a função usando *a mesma API* que no passo **16**:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda22.png)
     
-24. Obter o endpoint nos detalhes do trigger:
+20. Obter o endpoint nos detalhes do trigger:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda23.png)
 
-25. Conferir o novo endpoint da API (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
+21. Conferir o novo endpoint da API (se aparecer a mensagem `{"message":"Missing Authentication Token"}` aguardar um minuto e repetir o teste):
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda24.png)
+    
+## Criação do IAM *role* em contas "normais" da AWS
+
+22. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda8.png)
+
+23. No IAM, procurar o *role* da função:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda9.png)
+
+24. Adicionar uma nova *policy*: 
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda10.png)
+
+25. A policy `AmazonDynamoDBReadOnlyAccess` vai dar acesso de leitura ao DynamoDB:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda11.png)
+
+26. Estado final da *role*:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda12.png)
+
+27. Ejecutar de novo o teste, agora deberia funcionar:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda13.png)
