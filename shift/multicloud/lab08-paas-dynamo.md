@@ -492,6 +492,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 5. Na aba `Items`, adicionar um novo item:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d5.png)
 
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d5_2.png)
+
 6. Confirmar a criação do item:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d6.png)
 
