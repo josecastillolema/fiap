@@ -25,7 +25,10 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 3. Criar uma primera função `getTemperatura` com Python como *runtime*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda3.png)
 
-4. Configurar o seguinte código para a função:
+4. Nas contas da **AWS Academy** é necessário mudar o *execution role* por `LabRole`:
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda3_2.png)
+
+5. Configurar o seguinte código para a função:
     ```python
     import json
     import boto3
@@ -41,16 +44,16 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
     O código lee o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
     
     
-5. Fazer *deploy* do código:
+6. Fazer *deploy* do código:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda4.png)
 
-6. Vamos testar o código:
+7. Vamos testar o código:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda5.png)
 
-7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
+8. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda6.png)
 
-8. Executar o evento de testes recém criado `testeGetTemperatura`:
+9. Executar o evento de testes recém criado `testeGetTemperatura`:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda7.png)
 
 9. O teste deve falhar, pois a função não tem permissão para acessar o DynamoDB:
