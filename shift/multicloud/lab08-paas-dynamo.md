@@ -642,12 +642,14 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam2.png)
 
 19. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam4.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam3.png)
 
 20. Configurar *tags*:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam5.png)
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam4.png)
 
 21. Revisar as configurações e confirmar a criação do *role*:
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam5.png)
+
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam6.png)
 
 22. No console do EC2, anexar o novo *role* na VM:
