@@ -18,8 +18,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 - Uma VM com a imagem `Amazon Linux`
 
-- No painel da Vocareum, accessar as credenciais da conta para acesso programático:
-   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d0.png)
+- No console da AWS Academy, accessar as credenciais da conta para acesso programático:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d1.png)
    
 - Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
