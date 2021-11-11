@@ -631,34 +631,58 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
         raise NoCredentialsError
     botocore.exceptions.NoCredentialsError: Unable to locate credentials
     ```
-    
-16. Acessar o serviço **IAM**
+
+16. Nas **contas da AWS Academy**, basta nexar o *role* `LabInstanceProfile` na VM e rodar de novo o código (deberia funcionar):
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
+   
+   ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam9.png)
+   
+    ```
+    $ python3 dynamodb.py 
+
+    Testando scan:
+    [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
+
+    Iserindo aluno:
+    {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
+                                          'content-length': '2',
+                                          'content-type': 'application/x-amz-json-1.0',
+                                          'date': 'Wed, 05 Aug 2020 08:39:34 GMT',
+                                          'server': 'Server',
+                                          'x-amz-crc32': '2745614147',
+                                          'x-amzn-requestid': 'ESPGDHO1356RNOVANUH18ASV6NVV4KQNSO5AEMVJF66Q9ASUAAJG'},
+                          'HTTPStatusCode': 200,
+                          'RequestId': 'ESPGDHO1356RNOVANUH18ASV6NVV4KQNSO5AEMVJF66Q9ASUAAJG',
+                          'RetryAttempts': 0}}
+     ```
+
+17. Nas **contas "normais" da AWS** seguir os seguintes passos. Acessar o serviço **IAM**
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam0.png)
 
-17. Criar um novo *role*:
+18. Criar um novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam1.png)
 
-18. Escolher EC2 como serviço que vai utilizar o novo *role*:
+19. Escolher EC2 como serviço que vai utilizar o novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam2.png)
 
-19. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
+20. Anexar a *policy* `AmazonDynamoDBFullAccess` no novo *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam3.png)
 
-20. Configurar *tags*:
+21. Configurar *tags*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam4.png)
 
-21. Revisar as configurações e confirmar a criação do *role*:
+22. Revisar as configurações e confirmar a criação do *role*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam5.png)
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam6.png)
 
-22. No console do EC2, anexar o novo *role* na VM:
+23. No console do EC2, anexar o novo *role* na VM:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
 
-23. Seleccionar o *role* que acabamos de criar:
+24. Seleccionar o *role* que acabamos de criar:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam8.png)
 
-24. Tentar rodar de novo o código (deberia funcionar):
+25. Tentar rodar de novo o código (deberia funcionar):
     ```
     $ python3 dynamodb.py 
 
