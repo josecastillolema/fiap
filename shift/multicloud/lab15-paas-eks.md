@@ -2,9 +2,8 @@
 
 ## Criando o cluster
 Vamos criar um cluster Kubernetes gerenciado para aprender alguns conceitos importantes do [**Elastic Kubernetes Service**](https://aws.amazon.com/pt/eks/):
- - Deploy de containers no ECS
- - Mapeamento de portas
- - ***Memory limits***
+ - Geração do arquivo `kubeconfig`
+ - Uso do cliente `kubectl`
  
 1. Acessar o serviço **EKS**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eks1.png)
