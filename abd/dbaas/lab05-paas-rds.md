@@ -115,21 +115,16 @@ Se não tiver os pre-reqs na máquina local pular para o [teste em uma VM no EC2
 
 Se tiver feito o deploy local pode pular esta seção.
 
-1. Criar uma VM com a imagem `Ubuntu 20.04`
+1. Criar uma VM com a imagem `Amazon Linux`
 
 2. Logar na VM
 
-3. Atualizar os repositorios:
+3. Instalar o cliente `mysql`:
     ```
-    $ sudo apt update
-    ```
-
-4. Instalar o cliente `mysql`:
-    ```
-    $ sudo apt install mysql-client -y
+    $ sudo yum install mariadb
     ```
 
-5. Usar o cliente `mysql` para acessar ao banco:
+4. Usar o cliente `mysql` para acessar ao banco:
     ```
     $ mysql -h fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com -u admin -p
     Enter password: 
