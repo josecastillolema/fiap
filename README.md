@@ -3,8 +3,6 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/josecastillolema/fiap)
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=josecastillolema.fiap&title=hits)
 ![GitHub last commit](https://img.shields.io/github/last-commit/josecastillolema/josecastillolema.github.io)
-[![Requirements Status](https://requires.io/github/josecastillolema/fiap/requirements.svg?branch=master)](https://requires.io/github/josecastillolema/fiap/requirements/?branch=master)
-
 
 
 # Aplicações para os cursos de pós-graduação da FIAP
