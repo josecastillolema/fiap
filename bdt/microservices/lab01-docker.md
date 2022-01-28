@@ -586,7 +586,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     
     d. Testar a nova imagem:
     ```
-    $ docker run ubuntu_com_nmap-viadockerfile nmap --version
+    $ docker run ubuntu-com-nmap-viadockerfile nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
     Compiled with: liblua-5.3.3 openssl-1.1.1d nmap-libssh2-1.8.2 libz-1.2.11 libpcre-8.39 libpcap-1.9.1 nmap-libdnet-1.12 ipv6
@@ -615,7 +615,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     
     c. Taggear a imagem. O nome da imagem deve ser `username/nome da imagem`:
     ```
-    $ docker tag ubuntu_com_nmap-viadockerfile josecastillolema/fiap-bdt
+    $ docker tag ubuntu-com-nmap-viadockerfile josecastillolema/fiap-bdt
     ```
     
     d. Fazer o *upload* (`push`) da imagem:
