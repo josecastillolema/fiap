@@ -19,7 +19,7 @@ Uma máquina virtual `Ubuntu Linux 18.04` na Microsoft Azure **ou** `Amazon Linu
  
 1. **[T1]** Instalação do Docker
 
-    a. [So no Ubuntu] Atualização dos repositórios
+    a. [Só no Ubuntu] Atualização dos repositórios
     ```
     $ sudo apt update
     Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
