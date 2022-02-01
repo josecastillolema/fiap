@@ -149,7 +149,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     $ sudo yum install -y mariadb
     ```
 
-5. **[T2]** Tentemos acessar ao banco.
+5. **[T2]** Tentemos acessar ao banco (não vai funcionar porque não fizemos o mapeamento de portas).
 
     Alguns parametros do cliente MySQL:
     - *Hostname* do banco via `-h`
