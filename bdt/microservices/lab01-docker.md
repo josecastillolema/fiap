@@ -1,17 +1,25 @@
 # Lab 1 - Docker
 
-Usaremos a imagem oficial `Ubuntu Linux 18.04` para aprender alguns conceitos importantes do [Docker](https://www.docker.com/):
+Usaremos a imagem oficial `Ubuntu Linux 18.04` ou `Amazon Linux` para aprender alguns conceitos importantes do [Docker](https://www.docker.com/):
  - instalação
  - customização de imagens via Dockerfile
  - upload de imagens no [DockerHub](https://hub.docker.com/)
  
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
+## Pre-reqs
+
+Uma máquina virtual `Ubuntu Linux 18.04` na Microsoft Azure **ou** `Amazon Linux` na AWS:
+
+- Uma maquina virtual na Microsoft Azure com `Ubuntu Linux 18.04`. Seguir os passos do lab [lab 01 - EC2](/net/devops/lab01-iaas-vm.md). 
+
+- Uma maquina virtual no AWS EC2 com `Amazon Linux`. Seguir os passos do lab [lab 01 - EC2](/shift/multicloud/lab01-iaas-ec2.md). 
+
 ## Instalação
  
 1. **[T1]** Instalação do Docker
 
-    a. Atualização dos repositórios
+    a. [So no Ubuntu] Atualização dos repositórios
     ```
     $ sudo apt update
     Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
@@ -49,7 +57,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     29 packages can be upgraded. Run 'apt list --upgradable' to see them.
     ```
     
-    b. Instalação dos pacotes
+    b. [Ubuntu] Instalação dos pacotes
     ```
     $ sudo apt install docker.io
     Reading package lists... Done
@@ -114,6 +122,17 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Processing triggers for ureadahead (0.100.0-21) ...
     ```
     
+    [Amazon Linux] Instalação dos pacotes
+    ```
+    $ sudo yum install -y docker
+    ```
+    
+    [Amazon Linux] Iniciar o serviço:
+    ```
+    $ sudo systemctl start docker
+    $ sudo systemctl enable docker
+    ```
+    
     c. Conferir que o usuário não faz parte do grupo `docker`, e consecuentemente nao tem permissão para rodar comandos `docker`:
     ```
     $ groups
@@ -121,8 +140,15 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
     d. Adicionar o usuário (`ubuntu`) ao grupo `docker`:
+    
+    [Ubuntu]
     ```
     $ sudo usermod -aG docker ubuntu
+    ```
+    
+    [Amazon Linux]
+    ```
+    $ sudo usermod -aG docker ec2-user
     ```
 
     e. Reiniciar a VM para que as mudanças de grupo sejam aplicadas:
