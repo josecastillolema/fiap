@@ -98,6 +98,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 ### Mapeamento de portas (`-p`)
 
 4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
+
    [**Ubuntu**]
     ```
     $ sudo apt install mysql-client -y
