@@ -11,7 +11,7 @@ Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do 
 
 Uma máquina virtual **com Docker instalado**:
 
-- Seguir os passos do lab [lab 01 - EC2](/bdt/microservices/lab01-docker.md). 
+- Seguir os passos do lab [lab 01 - EC2](/bdt/microservices/lab01-docker.md) (só para instalar o Docker). 
  
 ## Lab
 
