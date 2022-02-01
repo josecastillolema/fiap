@@ -13,6 +13,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 ### Instalação
 
 1. **[T1]** Instalação do Docker Compose:
+
+    [**Ubuntu**]
     ```
     $ sudo apt  install docker-compose -y
     Reading package lists... Done
@@ -241,6 +243,25 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Processing triggers for mime-support (3.60ubuntu1) ...
     Processing triggers for libc-bin (2.27-3ubuntu1) ...
     ```
+
+    [**Amazon Linux**]
+    ```
+    $ sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+    100   152  100   152    0     0   4252      0 --:--:-- --:--:-- --:--:--  4342
+    100   664  100   664    0     0  16586      0 --:--:-- --:--:-- --:--:-- 16586
+    100 23.5M  100 23.5M    0     0  84.2M      0 --:--:-- --:--:-- --:--:-- 84.2M
+    
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ docker-compose version
+    ```
+    
+    [**Amazon Linux**]
+    Instalar o git:
+    ```
+    $ sudo yum install -y git
+    ```    
 
 2. **[T1]** Clonar [este repositório](https://github.com/josecastillolema/fiap) e navegar ate a pasta **`/fiap/bdt/microservices`**:
     ```
