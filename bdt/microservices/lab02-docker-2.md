@@ -6,7 +6,15 @@ Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do 
  - **variáveis de entorno**: `docker run -e`
  - **mapeamento de portas**: `docker run -p`
  - **persistência de dados**: `docker run -v`
+
+## Pre-reqs
+
+Uma máquina virtual **com Docker instalado**:
+
+- Seguir os passos do lab [lab 01 - EC2](/bdt/microservices/lab01-docker.md). 
  
+## Lab
+
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Obtenção da imagem
@@ -90,6 +98,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 ### Mapeamento de portas (`-p`)
 
 4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
+   [**Ubuntu**]
     ```
     $ sudo apt install mysql-client -y
     Reading package lists... Done
@@ -132,6 +141,11 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Setting up mysql-client (5.7.29-0ubuntu0.18.04.1) ...
     Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
     Processing triggers for libc-bin (2.27-3ubuntu1) ...
+    ```
+    
+    [**Amazon Linux**]
+    ```
+    $ sudo yum install -y mariadb
     ```
 
 5. **[T2]** Tentemos acessar ao banco.
