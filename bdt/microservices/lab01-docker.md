@@ -11,7 +11,7 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 Uma máquina virtual `Ubuntu Linux 18.04` na Microsoft Azure **ou** `Amazon Linux` na AWS:
 
-- Uma maquina virtual na Microsoft Azure com `Ubuntu Linux 18.04`. Seguir os passos do lab [lab 01 - EC2](/net/devops/lab01-iaas-vm.md). 
+- Uma maquina virtual na Microsoft Azure com `Ubuntu Linux 18.04`. Seguir os passos do lab [lab 01 - Virtual Machines](/net/devops/lab01-iaas-vm.md). 
 
 - Uma maquina virtual no AWS EC2 com `Amazon Linux`. Seguir os passos do lab [lab 01 - EC2](/shift/multicloud/lab01-iaas-ec2.md). 
 
