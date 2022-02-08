@@ -185,12 +185,10 @@ Requisitos
     verify: Service converged 
     ```
 
-16. **[T1]** Vamos desligar o *worker* (servidor **T2**). Antes disso, conferir os containers que estão rodando no *manager* (neste caso, o banco de dados e 4 replicas da API):
+16. **[T1]** Vamos desligar o *worker* (servidor **T2**). Antes disso, conferir os containers que estão rodando no *manager* (neste caso, o banco de dados e 2 replicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                    PORTS                 NAMES
-    43b63e9b6440        josecastillolema/api:latest     "./api.py"               4 minutes ago       Up 4 minutes (healthy)    5000/tcp              stackFiap_api.6.s82fwwvh7u7rnm5m9c4g5r9be
-    33c0a2fb04b2        josecastillolema/api:latest     "./api.py"               4 minutes ago       Up 4 minutes (healthy)    5000/tcp              stackFiap_api.8.8qb8bezn59rea0pyf8i3dgd6n
     325de1e84b51        josecastillolema/api:latest     "./api.py"               4 minutes ago       Up 4 minutes (healthy)    5000/tcp              stackFiap_api.4.vciwnzaxakavsj2t3p2tlaekc
     44cfaf700b20        josecastillolema/mysql:latest   "docker-entrypoint.s…"   11 minutes ago      Up 11 minutes             3306/tcp, 33060/tcp   stackFiap_mysql.1.wr5ia70abxco05ypimayagrm0
     2239ae187e86        josecastillolema/api:latest     "./api.py"               11 minutes ago      Up 11 minutes (healthy)   5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
@@ -211,16 +209,12 @@ Requisitos
     1y4bix4oby6nq2jxx5ft4rhd0 *   ip-172-31-47-198    Ready               Active              Leader              19.03.6
     ```
 
-19. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 4 réplicas da API):
+19. **[T1]** Confirmar que os containers que estavam rodando no *worker* (servidor **T2**), foram recriados no *manager* (neste caso, 2 réplicas da API):
     ```
     $ docker ps
     CONTAINER ID        IMAGE                           COMMAND                  CREATED              STATUS                        PORTS                 NAMES
     2bbcefe6fc28        josecastillolema/api:latest     "./api.py"               About a minute ago   Up About a minute (healthy)   5000/tcp              stackFiap_api.3.15hrsir7ac5a2eun79wbp6ftf
     41067e32567d        josecastillolema/api:latest     "./api.py"               About a minute ago   Up About a minute (healthy)   5000/tcp              stackFiap_api.7.ldetjf1ykn7kyaokadcaod0di
-    497a7b5d061f        josecastillolema/api:latest     "./api.py"               About a minute ago   Up About a minute (healthy)   5000/tcp              stackFiap_api.5.kk77a42tdo6u3c04zhz6uu00s
-    28a3f6c31f48        josecastillolema/api:latest     "./api.py"               About a minute ago   Up About a minute (healthy)   5000/tcp              stackFiap_api.2.1bjyj87e8ts56zy2s20h4n2gs
-    43b63e9b6440        josecastillolema/api:latest     "./api.py"               7 minutes ago        Up 7 minutes (healthy)        5000/tcp              stackFiap_api.6.s82fwwvh7u7rnm5m9c4g5r9be
-    33c0a2fb04b2        josecastillolema/api:latest     "./api.py"               7 minutes ago        Up 7 minutes (healthy)        5000/tcp              stackFiap_api.8.8qb8bezn59rea0pyf8i3dgd6n
     325de1e84b51        josecastillolema/api:latest     "./api.py"               7 minutes ago        Up 7 minutes (healthy)        5000/tcp              stackFiap_api.4.vciwnzaxakavsj2t3p2tlaekc
     44cfaf700b20        josecastillolema/mysql:latest   "docker-entrypoint.s…"   14 minutes ago       Up 14 minutes                 3306/tcp, 33060/tcp   stackFiap_mysql.1.wr5ia70abxco05ypimayagrm0
     2239ae187e86        josecastillolema/api:latest     "./api.py"               15 minutes ago       Up 15 minutes (healthy)       5000/tcp              stackFiap_api.1.qedwp50z4l5dhskg66txj91d7
