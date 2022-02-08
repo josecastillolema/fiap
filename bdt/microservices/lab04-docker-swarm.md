@@ -13,7 +13,7 @@ Requisitos
 --------------
  - 2 VMs `Ubuntu 18.04` ou `Amazon Linux` com Docker instalado com no mínimo 2 GB de memória cada (na AWS usar flavor **t2.small** ou maior)
  - As duas VMs devem pertencer ao mesmo *security group* (ou ter um *security group* em común). Se nao for suficiente, liberar a porta 2377 no *security group* da VM que for ser *manager* do cluster. Pode usar o comando `telnet` para testar a comunicaçao (`telnet $ip $porta`). Um exemplo de *security group* para o *manager*:
-    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/mob/cloud/img/docker0.png)
+    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/mob/cloud/img/docker1.png)
 
 
 ## Criação do *cluster*
