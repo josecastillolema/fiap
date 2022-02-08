@@ -154,19 +154,14 @@ Requisitos
 
 13. **[T1]** Aumentar o numero de replicas da API (***scale out***):
     ```
-    $ docker service scale stackFiap_api=10
+    $ docker service scale stackFiap_api=5
     stackFiap_api scaled to 10
-    overall progress: 10 out of 10 tasks 
-    1/10: running   [==================================================>] 
-    2/10: running   [==================================================>] 
-    3/10: running   [==================================================>] 
-    4/10: running   [==================================================>] 
-    5/10: running   [==================================================>] 
-    6/10: running   [==================================================>] 
-    7/10: running   [==================================================>] 
-    8/10: running   [==================================================>] 
-    9/10: running   [==================================================>] 
-    10/10: running   [==================================================>] 
+    overall progress: 5 out of 5 tasks 
+    1/5: running   [==================================================>] 
+    2/5: running   [==================================================>] 
+    3/5: running   [==================================================>] 
+    4/5: running   [==================================================>] 
+    5/5: running   [==================================================>]  
     verify: Service converged
     ```
 
@@ -174,23 +169,19 @@ Requisitos
     ```
     $ docker service ls
     ID                  NAME                MODE                REPLICAS            IMAGE                           PORTS
-    vlh0cjv5nd65        stackFiap_api       replicated          10/10               josecastillolema/api:latest     *:3000->5000/tcp
+    vlh0cjv5nd65        stackFiap_api       replicated          5/5                 josecastillolema/api:latest     *:3000->5000/tcp
     tmns8lwyrb9f        stackFiap_mysql     replicated          1/1                 josecastillolema/mysql:latest   *:3306->3306/tcp
     ```
 
 15. **[T1]** Diminuir o numero de replicas da API (***scale in***):
     ```
-    $ docker service scale stackFiap_api=8
+    $ docker service scale stackFiap_api=4
     stackFiap_api scaled to 8
     overall progress: 8 out of 8 tasks 
-    1/8: running   [==================================================>] 
-    2/8: running   [==================================================>] 
-    3/8: running   [==================================================>] 
-    4/8: running   [==================================================>] 
-    5/8: running   [==================================================>] 
-    6/8: running   [==================================================>] 
-    7/8: running   [==================================================>] 
-    8/8: running   [==================================================>] 
+    1/4: running   [==================================================>] 
+    2/4: running   [==================================================>] 
+    3/4: running   [==================================================>] 
+    4/4: running   [==================================================>] 
     verify: Service converged 
     ```
 
