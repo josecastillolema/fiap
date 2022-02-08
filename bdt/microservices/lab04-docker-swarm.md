@@ -54,9 +54,9 @@ Requisitos
 
 5. **[T1]** Navegar até a pasta **`fiap/bdt/microservices/swarm/v1`** de este repositório *git*:
     ```
-    $ cd fiap/aso/swarm/v1
+    $ cd fiap/aso/microservices/swarm/v1
     $ pwd
-    /home/ubuntu/fiap/aso/swarm/v1
+    /home/ubuntu/fiap/aso/microservices/swarm/v1
     $ ls
     docker-compose.yaml
     ```
