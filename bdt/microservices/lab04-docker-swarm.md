@@ -157,7 +157,7 @@ Requisitos
 13. **[T1]** Aumentar o numero de replicas da API (***scale out***):
     ```
     $ docker service scale stackFiap_api=5
-    stackFiap_api scaled to 10
+    stackFiap_api scaled to 5
     overall progress: 5 out of 5 tasks 
     1/5: running   [==================================================>] 
     2/5: running   [==================================================>] 
@@ -178,8 +178,8 @@ Requisitos
 15. **[T1]** Diminuir o numero de replicas da API (***scale in***):
     ```
     $ docker service scale stackFiap_api=4
-    stackFiap_api scaled to 8
-    overall progress: 8 out of 8 tasks 
+    stackFiap_api scaled to 4
+    overall progress: 4 out of 4 tasks 
     1/4: running   [==================================================>] 
     2/4: running   [==================================================>] 
     3/4: running   [==================================================>] 
