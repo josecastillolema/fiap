@@ -110,7 +110,7 @@ Orquestrando containers
 
 9. Habilitar o *plugins* **`dns`**:
     ```
-    $ microk8s.enable dns dashboard
+    $ microk8s.enable dns
     Enabling DNS
     Applying manifest
     serviceaccount/coredns created
