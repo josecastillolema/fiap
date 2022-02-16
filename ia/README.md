@@ -1,5 +1,3 @@
-[![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/ia.png)](https://www.fiap.com.br/mba/mba-em-artificial-intelligence-e-machine-learning/)
-
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/ia2.jpeg)](https://www.fiap.com.br/mba/mba-em-artificial-intelligence-e-machine-learning/)
 
 
