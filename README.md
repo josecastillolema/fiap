@@ -86,5 +86,6 @@
 
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png)](https://josecastillolema.github.io/haina/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
+[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mct.png)](https://josecastillolema.github.io/mct/)
 
 ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/signature.png)
