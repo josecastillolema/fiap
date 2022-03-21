@@ -81,7 +81,9 @@
 <br><br>
 
 <p float="left">
-  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png" width="100" />
+  <a href="https://www.google.es/">  
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png" width="100" />
+  </a>
   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg" width="100" /> 
   <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png" width="100" />
 </p>
