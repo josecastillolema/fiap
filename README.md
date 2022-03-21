@@ -80,6 +80,12 @@
 
 <br><br>
 
+<p float="left">
+  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png" width="100" />
+  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg" width="100" /> 
+  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png" width="100" />
+</p>
+
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png)](https://josecastillolema.github.io/aws-academy/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png)](https://josecastillolema.github.io/aws-community-builder/)
