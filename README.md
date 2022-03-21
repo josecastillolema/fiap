@@ -81,16 +81,16 @@
 <br><br>
 
 <p float="left">
-  <a href="https://www.google.es/">  
+  <a href="https://josecastillolema.github.io/aws-academy/">  
     <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png" width="100" />
   </a>
-  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg" width="100" /> 
-  <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png" width="100" />
+  <a href="https://josecastillolema.github.io/aws-educate/">
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg" width="100" /> 
+  </a>
+  <a href="https://josecastillolema.github.io/aws-community-builder/">  
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png" width="100" />
+  </a>
 </p>
-
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws-academy-2.png)](https://josecastillolema.github.io/aws-academy/)
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_educate.jpg)](https://josecastillolema.github.io/aws-educate/)
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png)](https://josecastillolema.github.io/aws-community-builder/)
 
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png)](https://josecastillolema.github.io/haina/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
