@@ -101,7 +101,13 @@
   </a>
 </p>
 
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png)](https://josecastillolema.github.io/haina/)
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
+<p float="left">
+  <a href="https://josecastillolema.github.io/haina/">  
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png" width="100" />
+  </a>
+  <a href="https://josecastillolema.github.io/redhat-academy/">
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png" width="100" /> 
+  </a>
+</p>
 
 ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/signature.png)
