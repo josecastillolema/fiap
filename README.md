@@ -90,18 +90,15 @@
   <a href="https://josecastillolema.github.io/aws-community-builder/">  
     <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/aws_community_builder.png" width="100" />
   </a>
-</p>
-
-<p float="left">
   <a href="https://josecastillolema.github.io/mct/">  
     <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mct.png" width="100" />
   </a>
-  <a href="https://josecastillolema.github.io/mie/">
-    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mie.png" width="100" /> 
-  </a>
 </p>
 
 <p float="left">
+  <a href="https://josecastillolema.github.io/mie/">
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mie.png" width="100" /> 
+  </a>
   <a href="https://josecastillolema.github.io/haina/">  
     <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png" width="100" />
   </a>
