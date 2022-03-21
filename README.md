@@ -92,8 +92,16 @@
   </a>
 </p>
 
+<p float="left">
+  <a href="https://josecastillolema.github.io/mct/">  
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mct.png" width="100" />
+  </a>
+  <a href="https://josecastillolema.github.io/mie/">
+    <img src="https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mie.png" width="100" /> 
+  </a>
+</p>
+
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/hcai.png)](https://josecastillolema.github.io/haina/)
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/rh_academy.png)](https://josecastillolema.github.io/redhat-academy/)
-[![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mct.png)](https://josecastillolema.github.io/mct/)
 
 ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/signature.png)
