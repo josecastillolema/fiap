@@ -9,7 +9,26 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
  
 ## Pre-reqs
 
-1.	Conferir que o Neutron foi instalado no OpenStack:
+1. Carregar as credenciais de OpenStack:
+    ```
+    $ source devstack/openrc admin
+    WARNING: setting legacy OS_TENANT_NAME to support cli tools.
+    
+    $ env | grep OS_
+    OS_PROJECT_DOMAIN_ID=default
+    OS_REGION_NAME=RegionOne
+    OS_USER_DOMAIN_ID=default
+    OS_PROJECT_NAME=demo
+    OS_IDENTITY_API_VERSION=3
+    OS_PASSWORD=nomoresecret
+    OS_AUTH_TYPE=password
+    OS_AUTH_URL=http://192.168.17.131/identity
+    OS_USERNAME=admin
+    OS_TENANT_NAME=demo
+    OS_VOLUME_API_VERSION=2
+    ```
+
+2.	Conferir que o Neutron foi instalado no OpenStack:
     ```
     $ openstack service list
     +----------------------------------+-------------+----------------+
@@ -30,7 +49,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     +----------------------------------+-------------+----------------+
     ```
  
-2.	Mostrar informação sobre o *endpoint*:
+3.	Mostrar informação sobre o *endpoint*:
     ```
     $ openstack catalog show neutron
     +-----------+---------------------------------------+
@@ -45,7 +64,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     +-----------+---------------------------------------+
     ```
  
-3.	Conferir que a porta 9696 está aberta e associada ao Neutron:
+4.	Conferir que a porta 9696 está aberta e associada ao Neutron:
     ```
     $ sudo netstat -punlt | grep 9696
     tcp        0      0 0.0.0.0:9696            0.0.0.0:*               LISTEN                    831/python
@@ -55,7 +74,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     os         6963  0.0  0.0  14224   972 pts/2    S+   05:29   0:00 grep --color=auto 831
     ```
 
-4.	Conferir a saúde dos agentes que compõem o Neutron:
+5.	Conferir a saúde dos agentes que compõem o Neutron:
     ```
     $ openstack network agent list
     +--------------------------------------+--------------------+--------+-------------------+-------+-------+---------------------------+
@@ -68,7 +87,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     +--------------------------------------+--------------------+--------+-------------------+-------+-------+---------------------------+
     ```
  
-5.	Listar os serviços Linux que compõem o Neutron:
+6.	Listar os serviços Linux que compõem o Neutron:
     ```
     $ systemctl | grep devstack@q
     devstack@q-agt.service                                                     loaded active running   Devstack devstack@q-agt.service
@@ -82,7 +101,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     openvswitch-switch.service                                                 loaded active exited    Open vSwitch
     ```
  
-6.	Conferir a saúde dos serviços:
+7.	Conferir a saúde dos serviços:
     ```
     $ systemctl status devstack@q*
     ● devstack@q-dhcp.service - Devstack devstack@q-dhcp.service
@@ -146,12 +165,12 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
        CGroup: /system.slice/openvswitch-switch.service
     ```
  
-7.	Mostrar os logs do serviço:
+8.	Mostrar os logs do serviço:
     ```
     $ journalctl -u devstack@q-svc
     ```
     
-8.	Mostrar os arquivos de configuração:
+9.	Mostrar os arquivos de configuração:
     ```
     $ less /etc/neutron/neutron.conf
     
@@ -160,7 +179,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     $ less /etc/neutron/policy.json
     ```
 
-9.	Mostrar os arquivos de configuração de uma forma mais clara (sem comentários nem linhas vazias):
+10.	Mostrar os arquivos de configuração de uma forma mais clara (sem comentários nem linhas vazias):
     ```
     $ grep -vE "^#|^$" /etc/neutron/plugins/ml2/ml2_conf.ini
     [DEFAULT]
@@ -190,25 +209,6 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     bridge_mappings = public:br-ex
     tunnel_bridge = br-tun
     local_ip = 192.168.17.131
-    ```
-    
-10. Carregar as credenciais de OpenStack:
-    ```
-    $ source devstack/openrc admin
-    WARNING: setting legacy OS_TENANT_NAME to support cli tools.
-    
-    $ env | grep OS_
-    OS_PROJECT_DOMAIN_ID=default
-    OS_REGION_NAME=RegionOne
-    OS_USER_DOMAIN_ID=default
-    OS_PROJECT_NAME=demo
-    OS_IDENTITY_API_VERSION=3
-    OS_PASSWORD=nomoresecret
-    OS_AUTH_TYPE=password
-    OS_AUTH_URL=http://192.168.17.131/identity
-    OS_USERNAME=admin
-    OS_TENANT_NAME=demo
-    OS_VOLUME_API_VERSION=2
     ```
  
 ## Redes e subredes virtuais
