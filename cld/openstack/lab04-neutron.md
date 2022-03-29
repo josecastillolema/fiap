@@ -280,7 +280,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     +-------------------------+--------------------------------------+
     ```
  
-13.	Subir duas vms via Horizon no projeto `demo` associadas à rede/subrede que acabamos de criar no passos anteriores. 
+13.	Subir duas vms via Horizon no projeto `demo` associadas à rede/subrede que acabamos de criar nos passos anteriores. 
 	
 14.	Acessar a uma delas via console e tentar pingar a outra vm pelo IP interno. Depois tenta pingar para a Internet (p.ex. 8.8.8.8, o servidor DNS da Google, não vai conseguir):
     ```
