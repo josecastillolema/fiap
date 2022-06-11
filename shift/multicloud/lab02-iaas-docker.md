@@ -8,7 +8,7 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
 A imagem `josecastillolema/api` contem os [seguintes arquivos](lab02-iaas-docker):
    - [**`api.py`**](lab02-iaas-docker/api.py): Uma simples API escrita em Python que usa a biblioteca [Flask](https://flask.palletsprojects.com/en/1.1.x/).
    - [**`requirements.txt`**](lab02-iaas-docker/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
-   - [**`Dockerfile`**](lab02-iaas-docker/Dockerfile): O arquivo usado por ´docker´ para criar a imagem
+   - [**`Dockerfile`**](lab02-iaas-docker/Dockerfile): O arquivo usado por `docker para criar a imagem
 
 ## Pre-reqs
 
