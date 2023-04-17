@@ -5,7 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/josecastillolema/josecastillolema.github.io)
 
 
-# Aplicações para os cursos de pós-graduação da FIAP
+# FIAP
 
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/mba.png)](https://www.fiap.com.br/mba/)
 
