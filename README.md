@@ -70,7 +70,7 @@
     - Bimodal IT & Sourcing
     - [Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)](https://github.com/josecastillolema/fiap/blob/master/asoo/multicloud/README.md)
 
-## [SHIFT: Cursos remotos de curta duração](https://github.com/josecastillolema/fiap/blob/master/shift/README.md)
+## [SHIFT](https://github.com/josecastillolema/fiap/blob/master/shift/README.md)
 
 [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)
 
