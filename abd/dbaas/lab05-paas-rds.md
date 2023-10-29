@@ -149,4 +149,4 @@ Se tiver feito o deploy local pode pular esta seção.
     | performance_schema |
     +--------------------+
     3 rows in set (0.15 sec)
-
+    ```
