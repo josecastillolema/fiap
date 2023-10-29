@@ -35,21 +35,21 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
      Main PID: 798 (nova-consoleaut)
        CGroup: /system.slice/system-devstack.slice/devstack@n-cauth.service
                └─798 /usr/bin/python /usr/local/bin/nova-consoleauth --config-file /etc/nova/nova.conf
-               
+
     ● devstack@n-sch.service - Devstack devstack@n-sch.service
        Loaded: loaded (/etc/systemd/system/devstack@n-sch.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
      Main PID: 848 (nova-scheduler)
        CGroup: /system.slice/system-devstack.slice/devstack@n-sch.service
                └─848 /usr/bin/python /usr/local/bin/nova-scheduler --config-file /etc/nova/nova.conf
-               
+
     ● devstack@n-novnc.service - Devstack devstack@n-novnc.service
        Loaded: loaded (/etc/systemd/system/devstack@n-novnc.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
      Main PID: 861 (nova-novncproxy)
        CGroup: /system.slice/system-devstack.slice/devstack@n-novnc.service
                └─861 /usr/bin/python /usr/local/bin/nova-novncproxy --config-file /etc/nova/nova.conf --web /opt/stack/noV
-               
+
     ● devstack@n-super-cond.service - Devstack devstack@n-super-cond.service
        Loaded: loaded (/etc/systemd/system/devstack@n-super-cond.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
@@ -58,7 +58,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
                ├─ 749 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova.conf
                ├─2363 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova.conf
                └─2368 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova.conf
-               
+
     ● devstack@n-cond-cell1.service - Devstack devstack@n-cond-cell1.service
        Loaded: loaded (/etc/systemd/system/devstack@n-cond-cell1.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
@@ -67,7 +67,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
                ├─ 752 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
                ├─2365 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
                └─2370 /usr/bin/python /usr/local/bin/nova-conductor --config-file /etc/nova/nova_cell1.conf
-               
+
     ● devstack@n-api-meta.service - Devstack devstack@n-api-meta.service
        Loaded: loaded (/etc/systemd/system/devstack@n-api-meta.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
@@ -78,7 +78,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
                ├─877 nova-api-metauWSGI worker
                ├─878 nova-api-metauWSGI worker
                └─879 nova-api-metauWSGI http
-    
+
     ● devstack@n-api.service - Devstack devstack@n-api.service
        Loaded: loaded (/etc/systemd/system/devstack@n-api.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
@@ -88,7 +88,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
                ├─746 nova-apiuWSGI maste
                ├─839 nova-apiuWSGI worker
                └─841 nova-apiuWSGI worker
-               
+
     ● devstack@n-cpu.service - Devstack devstack@n-cpu.service
        Loaded: loaded (/etc/systemd/system/devstack@n-cpu.service; enabled; vendor preset: enabled)
        Active: active (running) since Mon 2020-10-19 11:22:41 PDT; 15min ago
@@ -106,7 +106,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
-    
+
     $ env | grep OS_
     OS_PROJECT_DOMAIN_ID=default
     OS_REGION_NAME=RegionOne
@@ -271,7 +271,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +----------------------------+---------+
     ```
 
-13.	Criar um *flavor*: 
+13.	Criar um *flavor*:
     ```
     $ openstack flavor create --public --ram 64 --vcpus 1 --disk 1 m.fiap
     +----------------------------+--------------------------------------+
@@ -301,33 +301,6 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 15.	Conferir o conteúdo da chave:
     ```
     $ cat chave-fiap.pem
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIEpAIBAAKCAQEAv2niqYsP2O0LE8OUVyFSUDuLPnrIHy8TDBqg0iy8MVEBL6F1
-    I3lRBl8F2qPU9Xb2JAkfaqxgd+nBc9dykh166Q1TYc6+sPau6GymUGlmAvknUcqU
-    Ojs2DbNEctEgKb2FIxJfTxlv+DOxOnkp2yNS1120VXKSTZaSwWkNLhzeNI3L4ijh
-    Aenemwt4k7U94PTVEmZfYLD7i+JmdOeJpXIaJrQIw1IqYoQdIW+GXet83ldDcVeM
-    BK6YtnlXv2c34Sf5DwiejofT8K7STSwpYkeP7uO6k76RtNcZYoqBZWNs+/Lm0+KL
-    pGfs02fIH4OR1XwUnHqTtcHE1POWQ8OQIT28EQIDAQABAoIBAQCX9HwvMilrgYro
-    rrwFi3toHE0HVbunHdzWIBGJqF/iGreBU4DFn5qWHztrfeIi18TBiMh7C8sthtG/
-    n8rheivH9X87R0CVBdCGzTIe5f1I4Pi48sRHkhfwOl9dcu1Alaaq1/v3tG7yMD9C
-    90smH121gTsXFnRUyfNJPZdsAxjXyFSAKbnrELNH2JHLNVj4qNrVWHYwqhJZSx5p
-    a9wqtPKCjZcqhDq4cRdvcgTNMr16N72OV6sw0v6cbzjGjXAonyy/lMt/ecN2soh+
-    tNdpAgru7/vMMWjhR+0lVvCqCrIw/2ZuE1Lkzulkf3Ih2N+gg1fWIGnX9Lw7B4Of
-    5HcxuU5NAoGBAPOIajs5em4RBcQMVMWNcT7P56Q6mQOAnpECRzAxTudnz7HGn6wF
-    IWFbYKakUzGUJgbmJXO8H8U0yUlbdc82yOBbYd13WS4WkAz7EFsgkPTGbSTaZsG9
-    33L+E13C1bmeqBnjGkKt1qaHZVDTzQ8OWg6ay7i/byv+4ki0BZnD3KkfAoGBAMk2
-    bdPenS3X/Rsbp/RZEzbttobyRPePW+gLb899QTFSOMM352hhqt5za629wonTLvql
-    z0c/VL4BuHRaxSUvZ+6SzeHBrpOp3BeDD60QR44b4wPJDaATJe4oLcEn3k10/c6Z
-    8jpKHS3Go8HyzxTkD5CbA94JJAsEoHeev8rYw4TPAoGARGZRJ/c52sYvL2QjPyU9
-    5F1yex72MRSj9KiGJBQFTFtM62qVGDSMrpKCr+tBbpBkqdVkOYBiD/qGenMUwLFr
-    dBBWiWRnCNnPdcXiTyXzcLx2lT4+VDYnF14jRFdfvfXA0xyFGKtIuZcXrr7+PjdS
-    tf1mMKqb5+h7192wIQLw7BMCgYEAnwfr6ibqqA8sNz62koPMkf9z4liddeTSySYw
-    6xeebTMFNhZ7SZ7YBBXJp3pxxakqWmSu3SsK+Vo2xY/wfaFoTcGuA56nMoJwOA0Y
-    WLqjM4iK9rTzle9MbV1IPIAcTbAH4kD+mF93jHSRfXtBfMt8GdjLR7SFzkeL5L+N
-    6u9EKTUCgYBUwwXRr+rrRtxKeO0iVmcyMyNtXWEhSXvfxR3zAdXYJ2z++wS1tPUU
-    7nyFI8L2LrAiHLs0D8e1SmbvkUkVQ9jn9+W52BH9I3s3Z/15VfOkNPNCPeZHTh3l
-    N0O5xtIRsj1V33eQf6j8eaUXPqofXshHjCkI8/9osjx9rB5+L/gjAw==
-    -----END RSA PRIVATE KEY-----
     ```
 
 16.	Listar as chaves disponíveis:
@@ -343,7 +316,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 17.	Assignar as permissões certas na chave e conferir que foram aplicadas:
     ```
     $ chmod 600 chave-fiap.pem
-    
+
     $ ll chave-fiap.pem
     -rw------- 1 os os 1680 Oct 19 11:41 chave-fiap.pem
     ```
@@ -360,7 +333,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 
 ## Instâncias
 
-19.	Criar a VM: 
+19.	Criar a VM:
     ```
     $ openstack server create --flavor m.fiap --image cirros-0.3.5-x86_64-disk --key-name chave-fiap vmfiap01
     +-------------------------------------+-----------------------------------------------------------------+
@@ -423,7 +396,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 22.	Acessar por console à VM e criar uma pasta ou um arquivo qualquer:
     - Pela URL do console (ou)
     - Directo pelo *hypervisor*:
-    
+
     ```
     $ virsh list
      Id    Name                           State
@@ -441,7 +414,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     $ ls
     teste-fiap
     ```
-    
+
 23.	Mostrar o *log* da VM:
     ```
     $ openstack console log show vmfiap01
@@ -549,7 +522,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     | cd992dd3-2197-49fe-9f0e-43d783d18a5c | cirros-0.3.5-x86_64-disk | active |
     | 7b29041a-73f6-438e-91f9-09ff7423a585 | vmfiap01_snap            | queued |
     +--------------------------------------+--------------------------+--------+
-    
+
     $ openstack image list
     +--------------------------------------+--------------------------+--------+
     | ID                                   | Name                     | Status |
@@ -765,7 +738,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## Horizon
 
 36. Recriar desde o Horizon Dashboard:
-    - Criação de *flavor* 
+    - Criação de *flavor*
     - Criação de VM
     - Criação de *snapshot*
     - Criação de VM a partir de *snapshot*
