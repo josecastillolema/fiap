@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - Docker
 
 ## Criando a instancia
@@ -20,42 +22,49 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
 
 1. **[T1]** Instalação do Docker    
     a. Instalação dos pacotes
-    ```
+
+    ```sh
     $ sudo yum install -y docker
     ```
     
     b. Iniciar o serviço:
-    ```
+
+    ```sh
     $ sudo systemctl start docker
     $ sudo systemctl enable docker
     ```
     
-    c. Conferir que o usuário não faz parte do grupo `docker`, e consecuentemente nao tem permissão para rodar comandos `docker`:
-    ```
+    c. Conferir que o usuário não faz parte do grupo `docker`, e consequentemente nao tem permissão para rodar comandos `docker`:
+
+    ```sh
     $ groups
     ec2-user adm wheel systemd-journal
     ```
 
     d. Adicionar o usuário (`ec2-user`) ao grupo `docker`:
-    ```
+
+    ```sh
     $ sudo usermod -aG docker ec2-user
     ```
 
     e. Reiniciar a VM para que as mudanças de grupo sejam aplicadas:
-    ```
+
+    ```sh
     $ sudo reboot
     Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed by remote host.
     Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed.
     ```
 
     f. Após o reboot, confirmar que o usuário pertence ao grupo `docker`:
-    ```
+
+    ```sh
     $ groups
     ec2-user adm wheel systemd-journal docker
     ```
 
      g. Rodar um `docker version` para validar a instalação, e conferir que é mostrada tanto a versão do cliente **quanto a do servidor**:
-     ```
+
+     ```sh
      $ docker version
      Client:
       Version:           19.03.6
@@ -89,13 +98,15 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
 ## Obtenção da imagem
 
 2. Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ```
     
 3. Buscar imagens dentro do catálogo do [DockerHub](https://hub.docker.com/):
-    ```
+
+    ```sh
     $ docker search mongodb
     NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
     mongo                               MongoDB document databases provide high avai…   7041                [OK]                
@@ -126,7 +137,8 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
     ```
  
 4. Fazer o *download* (`pull`) da imagem `josecastillolema/api` no repositório local:
-    ```
+
+    ```sh
     $ docker pull josecastillolema/api
     Using default tag: latest
     latest: Pulling from josecastillolema/api
@@ -147,7 +159,8 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
     ```
     
 5. Listar as imagens novamente, conferir que existe a imagem `josecastillolema/api`:
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     josecastillolema/api   latest              ad8814253c1b        2 years ago         933MB
@@ -156,13 +169,15 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
 ## Testes com o container
 
 6. Rodar um comando de exemplo (`hostname`) dentro do container:
-    ```
+
+    ```sh
     $ docker run josecastillolema/api hostname
     c293c1989a56
     ```
 
 7. Medir o tempo do comando anterior:
-    ```
+
+    ```sh
     $ time docker run josecastillolema/api hostname
     7aa02808ccfc
 
@@ -173,11 +188,12 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
     Note-se que em menos de um segundo:
     - Docker criou o container
     - Rodou o comando `hostname` nele
-    - Printou a sainda
+    - Printou a saída
     - Deletou o container
     
 8. Conferir que tanto container quanto o *host* compartilham o Kernel:
-    ```
+
+    ```sh
     $ uname -a
     Linux ip-172-31-60-180 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -185,14 +201,16 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
     Linux de0407ee790f 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
-9. Executar a imagem `josecastillolema/api` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container em este caso).
-    ```
+9. Executar a imagem `josecastillolema/api` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container neste caso).
+
+    ```sh
     $ docker run -it josecastillolema/api bash
     root@d8924e5138b3:/#
     ```
 
 10. Criar um arquivo ainda dentro do container e sair do container:
-    ```
+
+    ```sh
     root@d8924e5138b3:/# touch meuArquivo
     
     root@d8924e5138b3:/# ls
@@ -203,13 +221,15 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
     ```
     
 11. Conferir que o container não está mais em execução:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ```
     
 12. Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, *softwares* instalados, etc.:
-    ```
+
+    ```sh
     $ docker run -it josecastillolema/api bash
     root@5b83d8b5b521:/# ls
     bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
@@ -223,30 +243,34 @@ Usaremos uma máquina virtual no EC2 com a imagem oficial `Amazon Linux` para ro
 
 ## Execuçao do container
 
-13. Vamos adicionar ao comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, a onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container. O parâmetro `-d` configura `docker` para rodar o container no *background*:
-   ```
+13. Vamos adicionar ao comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container. O parâmetro `-d` configura `docker` para rodar o container no *background*:
+
+   ```sh
    $ docker run -d -p 5000:5000 josecastillolema/api
    ```
 
 14. Conferir que o container está em execução:
-   ```
+
+   ```sh
    $ docker ps
    CONTAINER ID        IMAGE                  COMMAND             CREATED             STATUS                            PORTS                    NAMES
    e691f0fd676b        josecastillolema/api   "./api.py"          9 seconds ago       Up 8 seconds (health: starting)   0.0.0.0:5000->5000/tcp   funny_roentgen
    ```
    
-15. Após 30 segundos da sua criação, o container deberia transicionar para estado `healthy` (columna `STATUS`):
-   ```
+15. Após 30 segundos da sua criação, o container deveria transicionar para estado `healthy` (columna `STATUS`):
+
+   ```sh
    $ docker ps
    CONTAINER ID        IMAGE                  COMMAND             CREATED              STATUS                        PORTS                    NAMES
    e691f0fd676b        josecastillolema/api   "./api.py"          About a minute ago   Up About a minute (healthy)   0.0.0.0:5000->5000/tcp   funny_roentgen
    ```
    
 16. Testar localmente a API:
-   ```
+
+   ```sh
    $ curl localhost:5000
    Benvido a API FIAP!
    ```
 
-17. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no security group da VM):
+17. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberação da porta 5000 no security group da VM):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/docker01.png)

@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 ## DataBase as a Service - DBaaS
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.

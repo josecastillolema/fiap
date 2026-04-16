@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 15 - Ansible
 
 ## Ansible
@@ -14,7 +16,7 @@
 
 1. Instalar o `ansible` via `pip`:
 
-    ```
+    ```sh
     $ pip install ansible
     Defaulting to user installation because normal site-packages is not writeable
     Collecting ansible
@@ -51,7 +53,8 @@
     ```
     
 2. Testar a instalação:
-    ```
+
+    ```sh
     $ ansible -h
     usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
                    [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
@@ -172,7 +175,8 @@
 ## Uso do `ansible`
 
 3. Baixar os *templates*:
-    ```
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
     remote: Enumerating objects: 10, done.
@@ -187,7 +191,8 @@
     ```
     
 4. Atualizar o conteúdo do arquivo [hosts](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/multicloud/lab15-ansible/hosts) com o endereço da máquina virtual `Amazon Linux` e testar o acesso a máquina virtual:
-    ```
+
+    ```sh
     $ ansible all -m  ping -i hosts --key-file ~/.ssh/labsuser.pem
     ec2-user@ec2-54-145-72-182.compute-1.amazonaws.com | SUCCESS => {
         "ansible_facts": {
@@ -202,7 +207,8 @@
 
 
 5. Invocar o playbook [template](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/multicloud/lab15-ansible/deploy-flask.yaml):
-    ```
+
+    ```sh
     $ ansible-playbook deploy-flask.yaml -i hosts --key-file ~/.ssh/labsuser.pem
     PLAY [webservers] *******************************************************************************
 
@@ -216,8 +222,9 @@
     ec2-user@ec2-54-145-72-182.compute-1.amazonaws.com : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  
     ```
 
-6. Na 1a execução do playbook, veja que o pip foi instalado (`changed=1`). Se rodar-mos o playbook outra vez, não haberá mudanças na VM (`changed=0`):
-    ```
+6. Na 1a execução do playbook, veja que o pip foi instalado (`changed=1`). Se rodar-mos o playbook outra vez, não haverá mudanças na VM (`changed=0`):
+
+    ```sh
     $ ansible-playbook deploy-flask.yaml -i hosts --key-file ~/.ssh/labsuser.pem
     PLAY [webservers] *******************************************************************************
 

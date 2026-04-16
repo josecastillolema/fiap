@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - Containers
 
 ## Criando a instância

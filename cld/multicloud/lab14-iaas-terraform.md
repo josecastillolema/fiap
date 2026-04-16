@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 14 - Terraform
 
 ## AWS Provider
@@ -14,12 +16,13 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 
 - Uma VM com a imagem `Amazon Linux`
 
-- No painel da Vocareum, accessar as credenciais da conta para acesso programático:
+- No painel da Vocareum, acessar as credenciais da conta para acesso programático:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d0.png)
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d1.png)
    
 - Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
-    ```
+
+    ```sh
     $ cat ~/.aws/credentials 
     [default]
     aws_access_key_id=<copy here>
@@ -28,7 +31,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
  - Configuramos a região correta (ignorar o resto dos campos):
-    ```
+
+    ```sh
     $ aws configure
     AWS Access Key ID [****************Q5QG]: 
     AWS Secret Access Key [****************aqWs]: 
@@ -37,7 +41,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
  - Listar VMs (em formato `json`):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances
     {
         "Reservations": [
@@ -261,7 +266,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
  - Listar VMs (em formato tabela):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances --output table
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------
     |                                                                        DescribeInstances                                                                       |
@@ -476,7 +482,7 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 
 1. Fazer o *download* da ferramenta:
 
-    ```
+    ```sh
     $ wget https://releases.hashicorp.com/terraform/1.0.6/terraform_1.0.6_linux_amd64.zip
     --2021-09-10 13:40:42--  https://releases.hashicorp.com/terraform/1.0.6/terraform_1.0.6_linux_amd64.zip
     Resolving releases.hashicorp.com (releases.hashicorp.com)... 199.232.65.183, 2a04:4e42:50::439
@@ -491,19 +497,22 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 2. Descomprimir o arquivo baixado:
-    ```
+
+    ```sh
     $ unzip terraform_1.0.6_linux_amd64.zip 
     Archive:  terraform_1.0.6_linux_amd64.zip
       inflating: terraform               
     ```
     
 3. Movimentar o executável:
-    ```
+
+    ```sh
     $ sudo mv terraform /usr/local/bin/
     ```
     
 4. Testar a instalação:
-    ```
+
+    ```sh
     $ terraform -h
     Usage: terraform [global options] <subcommand> [args]
 
@@ -548,7 +557,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 ## Uso
 
 5. Baixar os *templates*:
-    ```
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
     remote: Enumerating objects: 10, done.
@@ -563,7 +573,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 6. Conferir o conteúdo do [template](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/multicloud/lab14-iaas-terraform/main.tf):
-    ```
+
+    ```sh
     $ cat main.tf 
     terraform {
       required_providers {
@@ -592,7 +603,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 7. Inicializar o Terraform e o correspondente *provider* (plugin) de AWS:
-    ```
+
+    ```sh
     $ terraform init
 
     Initializing the backend...
@@ -619,14 +631,16 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 8. Validar os templates:
-    ```
+
+    ```sh
     $ terraform fmt
     $ terraform validate
     Success! The configuration is valid.
     ```
     
 9. Criar a infraestrutura virtual:
-    ```
+
+    ```sh
     $ terraform apply
 
     Terraform used the selected providers to generate the following execution plan. Resource actions are
@@ -754,7 +768,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 8. Mostrar os recursos criados:
-    ```
+
+    ```sh
     $ terraform show
     # aws_instance.app_server:
     resource "aws_instance" "app_server" {
@@ -831,7 +846,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 10. Validar a criação da instância:
-    ```
+
+    ```sh
     $ aws ec2 describe-instances --filters Name=tag-key,Values=Name --query "Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key=='Name']|[0].Value}" --output table
     --------------------------------------------------
     |                DescribeInstances               |
@@ -847,7 +863,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 ## *Clean-up*
 
 11. Deletar o plano:
-    ```
+
+    ```sh
     $ terraform destroy
     aws_instance.app_server: Refreshing state... [id=i-0581e7619465fe0bb]
 

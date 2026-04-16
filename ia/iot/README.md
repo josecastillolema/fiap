@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 ## Princípios de Robótica e IoT
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.

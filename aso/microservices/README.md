@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 ## Arquitetura de *Storage* / *DataCenter* / Virtualização e Microcontainers
 
 Cada projeto se refere a aulas e/ou roteiros executados em sala de aula.

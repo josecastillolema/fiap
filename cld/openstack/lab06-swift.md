@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 6 - OpenStack Swift
 
 ## Object Storage Service
@@ -9,7 +11,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
 ## Pre-reqs 
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
 
@@ -28,7 +31,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
 
 2. Conferir que o Swift foi instalado no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -49,7 +53,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 3. Mostrar informação sobre o *endpoint*:
-    ```
+
+    ```sh
     $ openstack catalog show swift
     +-----------+-------------------------------------------------------------------------------+
     | Field     | Value                                                                         |
@@ -66,7 +71,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 4. Conferir que a porta 8080 está aberta e associada ao Swift:
-    ```
+
+    ```sh
     $ sudo netstat -punlt | grep 8080
     tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      842/python
     
@@ -77,7 +83,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 5. Listar os serviços Linux que compõem o Swift:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@s
     devstack@s-account.service                                                           loaded active running   Devstack devstack@s-account.service
     devstack@s-container.service                                                         loaded active running   Devstack devstack@s-container.service
@@ -86,7 +93,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
 
 6. Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@s*
     ● devstack@s-account.service - Devstack devstack@s-account.service
        Loaded: loaded (/etc/systemd/system/devstack@s-account.service; enabled; vendor preset: enabled)
@@ -125,22 +133,26 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 7. Mostrar os *logs* do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@s-proxy
     ```
  
 8. Mostrar os arquivos de configuração:
-    ```
+
+    ```sh
     $ less /etc/swift/swift.conf
     ```
  
 9. Mostrar os arquivos de configuração de uma forma mais clara (sem comentários nem linhas vazias):
-    ```
+
+    ```sh
     $ egrep -v "^#|^$" /etc/swift/swift.conf
     ```
  
 10.	Conferir o *endpoint* do Keystone:
-    ```
+
+    ```sh
     $ openstack catalog show keystone
     +-----------+------------------------------------------+
     | Field     | Value                                    |
@@ -159,7 +171,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
 ## Containers e objetos
 
 11.	Mostrar estatísticas de uso gerais (passando o *endpoint* do Keystone + `/v3`):
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat
                    Account: AUTH_faac34f01fb2464295bcea501b18b741
                 Containers: 0
@@ -173,12 +186,14 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 12.	Listar os containers (não deveria ter nenhum ainda):
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 list
     ```
  
 13.	Criar um arquivo de teste:
-    ```
+
+    ```sh
     $ echo "sic mundus creatus est" > teste.txt
     
     $ cat teste.txt
@@ -186,25 +201,29 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 14.	Subir o arquivo de teste a um container chamado `fiap`:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 upload fiap teste.txt
     teste.txt
     ```
  
 15.	Listar os containers:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 list
     fiap
     ```
  
 16.	Listar o container `fiap`:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 list fiap
     teste
     ```
  
 17.	Mostrar estatísticas de uso gerais:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat
                             Account: AUTH_faac34f01fb2464295bcea501b18b741
                          Containers: 1
@@ -222,7 +241,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 18.	Mostrar estatísticas de uso do container `fiap`:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat fiap
                    Account: AUTH_faac34f01fb2464295bcea501b18b741
                  Container: fiap
@@ -242,7 +262,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 19.	Mostrar estatísticas de uso do arquivo de teste:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 stat fiap teste.txt
                    Account: AUTH_faac34f01fb2464295bcea501b18b741
                  Container: fiap
@@ -259,7 +280,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 20.	Criar uma nova pasta e fazer o *download* do arquivo:
-    ```
+
+    ```sh
     $ mkdir novapasta
     
     $ cd novapasta/
@@ -269,7 +291,8 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 21.	Conferir o conteúdo do arquivo baixado:
-    ```
+
+    ```sh
     $ ls -lh
     total 8.0K  -rw-rw-r-- 1 os os 7 Oct 26 15:58 teste.txt
     
@@ -278,19 +301,22 @@ Usaremos o serviço [Swift](https://docs.openstack.org/swift/latest/) para apren
     ```
  
 22.	Configurar permissões de leitura para o usuário `demo` no projeto `demo`:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 post fiap -r "demo:demo"
     ```
 
 23.	Configurar permissões de escrita para o usuário `demo` no projeto `demo`:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 post fiap -w "demo:demo"
     ```
 
 ## *Clean-up*
 
 24.	Deletar objeto e container:
-    ```
+
+    ```sh
     $ swift -V 3 -A http://192.168.17.131/identity/v3 delete fiap
     fiap
     

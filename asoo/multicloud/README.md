@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Arquitetura em MultiCloud (AWS / Google Cloud / Azure / IBM Cloud)
 
 Fique a vontade para evoluir estes exemplos, desde que sejam válidos, aceitarei *pull requests* 😄.

@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 7 - OpenStack Heat
 
 ## Orchestration Service
@@ -8,13 +10,15 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
 ## Pre-reqs
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     ```
  
 2. Conferir que o Heat foi instalado no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -35,7 +39,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 3. Mostrar informação sobre o *endpoint*:
-    ```
+
+    ```sh
     $ openstack catalog show heat
     +-----------+--------------------------------------------------------------------------------+
     | Field     | Value                                                                          |
@@ -54,7 +59,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 4. Listar os serviços Linux que compõem o Heat:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@h
     devstack@h-api-cfn.service                                            loaded active running   Devstack devstack@h-api-cfn.service
     devstack@h-api.service                                                loaded active running   Devstack devstack@h-api.service
@@ -62,7 +68,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 5. Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@h*
     ● devstack@h-api.service - Devstack devstack@h-api.service
        Loaded: loaded (/etc/systemd/system/devstack@h-api.service; enabled; vendor preset: enabled)
@@ -97,19 +104,22 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 6. Mostrar os *logs* do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@h-eng
     ```
 
 7. Mostrar os arquivos de configuração:
-    ```
+
+    ```sh
     $ less /etc/heat/heat.conf
     ```
 
 ## *Stacks*
 
 8. Baixar o *template*:
-    ```
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
     remote: Enumerating objects: 10, done.
@@ -122,6 +132,7 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
     
 9. Conferir o *stack* que vai ser criado:
+
     ```yaml
     $ cd fiap/cld/openstack/lab07-heat/
     
@@ -205,7 +216,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 10. Criar um *stack*:
-    ```
+
+    ```sh
     $ openstack stack create -t heat.yaml fiap-stack --parameter image=cirros-0.3.5-x86_64-disk --parameter private_network=private --parameter flavor=m.fiap --parameter public_network=public
     +---------------------+--------------------------------------+
     | Field               | Value                                |
@@ -221,7 +233,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 11. Listar ate que fique em estado de `CREATE_COMPLATE` (pode demorar uns minutos):
-    ```
+
+    ```sh
     $ watch openstack stack list
     +--------------------------------------+------------+----------------------------------+-----------------+----------------------+--------------+
     | ID                                   | Stack Name | Project                          | Stack Status    | Creation Time        | Updated Time |
@@ -231,7 +244,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
  
 12. Mostrar o *stack*, e conferir o *output*:
-    ```
+
+    ```sh
     $ openstack stack show fiap-stack
     +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------+
     | Field                 | Value                                                                                                                             |
@@ -273,7 +287,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     ```
 
 13. Listar os recursos que foram criados:
-    ```
+
+    ```sh
     $ openstack stack resource list fiap-stack
     +---------------+--------------------------------------+----------------------------+-----------------+----------------------+
     | resource_name | physical_resource_id                 | resource_type              | resource_status | updated_time         |
@@ -285,8 +300,9 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
     +---------------+--------------------------------------+----------------------------+-----------------+----------------------+
     ```
 
-14. Mostrar a VM, conferir que tem um *floating* IP assignado:
-    ```
+14. Mostrar a VM, conferir que tem um *floating* IP atribuído:
+
+    ```sh
     $ openstack server list
     +--------------------------------------+--------------------------------+--------+---------------------------------------------------------------------+--------------------------+--------+
     | ID                                   | Name                           | Status | Networks                                                            | Image                    | Flavor |
@@ -298,7 +314,8 @@ Usaremos o serviço [Heat](https://docs.openstack.org/heat/latest/) para aprende
 ## *Clean-up*
 
 15. Deletar o *stack* e conferir que a VM foi deletada:
-    ```
+
+    ```sh
     $ openstack stack delete fiap-stack
     Are you sure you want to delete this stack(s) [y/N]? y
     

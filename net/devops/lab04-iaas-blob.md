@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 4 - Blob storage
 
-Em este lab sobre **Azure Blob Storage** aprenderemos alguns conceitos importantes do armazenamento de objetos:
+Neste lab sobre **Azure Blob Storage** aprenderemos alguns conceitos importantes do armazenamento de objetos:
  - Criação de *containers*
  - Criação de objetos (*blobs*)
  - Controle de permissões de acesso
@@ -8,7 +10,7 @@ Em este lab sobre **Azure Blob Storage** aprenderemos alguns conceitos important
 
 ## Criação do *container*
  
-1. Accessar o serviço **Storage account**:
+1. Acessar o serviço **Storage account**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob01.png)
 
 2. Criar um novo *storage account* de tipo *blob storage* e com redundância local (o nome deve ser único na Azure):
@@ -17,12 +19,12 @@ Em este lab sobre **Azure Blob Storage** aprenderemos alguns conceitos important
 3. Habilitar acesso público:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob03.png)
    
-4. Revisar e confirmar a criaçao da conta de armazenamento.
+4. Revisar e confirmar a criação da conta de armazenamento.
 
 5. Aguardar a criação da conta:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob05.png)
 
-6. Na descriçao da conta, acessar a aba de ***Containers***:
+6. Na descrição da conta, acessar a aba de ***Containers***:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob06.png)
 
 6. Criar um novo container, de nome `imgs` e com acesso público:
@@ -36,5 +38,5 @@ Em este lab sobre **Azure Blob Storage** aprenderemos alguns conceitos important
 8. Na descrição do objeto, copiar a URL:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob09.png)
 
-9. Accessar a imagem pela URL do objeto:
+9. Acessar a imagem pela URL do objeto:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/blob10.png)    

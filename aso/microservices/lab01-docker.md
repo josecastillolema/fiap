@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - Docker
 
 ## Criando a instancia
@@ -12,7 +14,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 1. **[T1]** Instalação do Docker
 
     a. Atualização dos repositórios
-    ```
+
+    ```sh
     $ sudo apt update
     Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
     Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
@@ -50,7 +53,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     b. Instalação dos pacotes
-    ```
+
+    ```sh
     $ sudo apt install docker.io
     Reading package lists... Done
     Building dependency tree       
@@ -114,32 +118,37 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Processing triggers for ureadahead (0.100.0-21) ...
     ```
     
-    c. Conferir que o usuário não faz parte do grupo `docker`, e consecuentemente nao tem permissão para rodar comandos `docker`:
-    ```
+    c. Conferir que o usuário não faz parte do grupo `docker`, e consequentemente nao tem permissão para rodar comandos `docker`:
+
+    ```sh
     $ groups
     ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev
     ```
 
     d. Adicionar o usuário (`ubuntu`) ao grupo `docker`:
-    ```
+
+    ```sh
     $ sudo usermod -aG docker ubuntu
     ```
 
     e. Reiniciar a VM para que as mudanças de grupo sejam aplicadas:
-    ```
+
+    ```sh
     $ sudo reboot
     Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed by remote host.
     Connection to ec2-18-210-19-170.compute-1.amazonaws.com closed.
     ```
 
     f. Após o reboot, confirmar que o usuário pertence ao grupo `docker`:
-    ```
+
+    ```sh
     $ groups
     ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev docker
     ```
 
      g. Rodar um `docker version` para validar a instalação, e conferir que é mostrada tanto a versão do cliente **quanto a do servidor**:
-     ```
+
+     ```sh
      $ docker version
      Client:
       Version:           19.03.6
@@ -172,13 +181,15 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 
 2. **[T1]** Listar as imagens do repositório local (o catálogo deveria estar vazio, pois não baixamos nenhuma imagem ainda):
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ```
     
 3. **[T1]** Buscar imagens dentro do catálogo do [DockerHub](https://hub.docker.com/):
-    ```
+
+    ```sh
     $ docker search mongodb
     NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
     mongo                               MongoDB document databases provide high avai…   7041                [OK]                
@@ -209,7 +220,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
  
 4. **[T1]** Fazer o *download* (`pull`) da imagem do Ubuntu no repositório local:
-    ```
+
+    ```sh
     $ docker pull ubuntu
     Using default tag: latest
     latest: Pulling from library/ubuntu
@@ -223,25 +235,29 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
 5. **[T1]** Listar as imagens novamente, conferir que existe a imagem `ubuntu`:
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ubuntu              latest              adafef2e596e        11 days ago         73.9MB
     ```
     
 6. **[T1]** Deletar a imagem (opcional):
-    ```
+
+    ```sh
     $ docker image rm ubuntu
     ```
     
 7. **[T1]** Rodar um comando de exemplo (`hostname`) dentro do container:
-    ```
+
+    ```sh
     $ docker run ubuntu hostname
     c293c1989a56
     ```
 
 8. **[T1]** Medir o tempo do comando anterior:
-    ```
+
+    ```sh
     $ time docker run ubuntu hostname
     7aa02808ccfc
 
@@ -252,11 +268,12 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Note-se que em menos de um segundo:
     - Docker criou o container
     - Rodou o comando `hostname` nele
-    - Printou a sainda
+    - Printou a saída
     - Deletou o container
     
 9. **[T1]** Conferir que tanto container quanto o *host* compartilham o Kernel:
-    ```
+
+    ```sh
     $ uname -a
     Linux ip-172-31-60-180 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -264,21 +281,24 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Linux de0407ee790f 5.3.0-1023-aws #25~18.04.1-Ubuntu SMP Fri Jun 5 15:18:30 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
-10. **[T1]** Executar a imagem `ubuntu` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container em este caso).
-    ```
+10. **[T1]** Executar a imagem `ubuntu` em modo interativo. Observe-se que o `prompt` muda quando logamos no container: usuário `root` com hostname `5b83d8b5b521` (o ID do container neste caso).
+
+    ```sh
     $ docker run -it ubuntu
     root@d8924e5138b3:/#
     ```
     
 11. **[T2]** **Sem sair do container no 1o terminal**, listar os containers em execução **no 2o terminal**:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     d8924e5138b3        ubuntu              "/bin/bash"         14 seconds ago      Up 13 seconds                           xenodochial_allen
     ```
 
 12. **[T1]** Continuando no 1o terminal, criar um arquivo ainda dentro do container e sair do container:
-    ```
+
+    ```sh
     root@d8924e5138b3:/# touch meuArquivo
     
     root@d8924e5138b3:/# ls
@@ -289,13 +309,15 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
 13. **[T1]** Conferir que o container não está mais em execução:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     ```
     
 14. **[T1]** Rodar o container novamente, e confirmar que o arquivo criado não existe mais. **Containers são efêmeros**, não armazenam nenhum tipo de mudança, sejam arquivos, dados, softwares instalados, etc.:
-    ```
+
+    ```sh
     $ docker run -it ubuntu
     root@5b83d8b5b521:/# ls
     bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
@@ -310,7 +332,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Vamos criar uma imagem customizada instalando algum software, por exemplo o nmap (um `scanner` de portas).
 
     a. **[T1]** **Sem sair do container**, atualizar os repositórios:
-    ```
+
+    ```sh
     root@5b83d8b5b521:/# apt update
     Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [107 kB]
     Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
@@ -336,8 +359,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     1 package can be upgraded. Run 'apt list --upgradable' to see it.
     ```
     
-    b. **[T1]** Instalar o pacote `nmap`. O flag `-y` pula a pregunta de confirmação:
-    ```
+    b. **[T1]** Instalar o pacote `nmap`. O flag `-y` pula a pergunta de confirmação:
+
+    ```sh
     root@5b83d8b5b521:/# apt install -y nmap
     Reading package lists... Done
     Building dependency tree       
@@ -405,7 +429,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
     c. **[T1]** Conferir a versão instalada:
-    ```
+
+    ```sh
     root@5b83d8b5b521:/# nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
@@ -415,20 +440,23 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     d. **[T2]** No 2o terminal, confirmar o ID do container em execução (no qual acabamos de instalar o `nmap`):
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
     5b83d8b5b521        ubuntu              "/bin/bash"         18 minutes ago      Up 18 minutes                           compassionate_edison
     ```
     
     e. **[T2]** Criar uma nova imagem (`ubuntu_com_nmap`) a partir do container:
-    ```
+
+    ```sh
     $ docker commit 5b8 ubuntu_com_nmap
     sha256:287d2c84024a50ba13c9d8304d57df853feea9b3dd9df785313111480a84eecc
     ```
     
     f. Confirmar a criação da imagem (com um tamanho maior a imagem original):
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
     ubuntu_com_nmap     latest              287d2c84024a        7 seconds ago       127MB
@@ -436,7 +464,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     g. Confirmar que na nova imagem, tem de fato o `nmap` instalado:
-    ```
+
+    ```sh
     $ docker run ubuntu_com_nmap nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
@@ -446,7 +475,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     h. Confirmar que a imagem original não foi alterada e não tem o `nmap` instalado:
-    ```
+
+    ```sh
     $ docker run ubuntu nmap --version
     docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"nmap\": executable file not found in $PATH": unknown.
     ```
@@ -454,7 +484,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 16. Customização de imagens via **Dockerfile**. Este é o metodo recomendado para customizar imagens, pois é mais reproduzível que `docker commit`.
 
     a. Criar o arquivo `Dockerfile` com o seguinte conteúdo:
-    ```
+
+    ```Dockerfile
     FROM ubuntu
     
     MAINTAINER Jose Castillo <profjose.lema@fiap.com.br>
@@ -464,7 +495,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     b. "Compilar" o `Dockerfile`:
-    ```
+
+    ```sh
     $ docker build -t ubuntu-com-nmap-viadockerfile .
     Sending build context to Docker daemon  15.87kB
     Step 1/4 : FROM ubuntu
@@ -569,7 +601,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     c. Conferir que a nova imagem foi criada (e tem o mesmo tamanho que a imagem criada via `docker commit`):
-    ```
+
+    ```sh
     $ docker images
     REPOSITORY                      TAG                 IMAGE ID            CREATED             SIZE
     ubuntu-com-nmap-viadockerfile   latest              4647bd58aa0e        13 seconds ago      127MB
@@ -578,7 +611,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     d. Testar a nova imagem:
-    ```
+
+    ```sh
     $ docker run ubuntu_com_nmap-viadockerfile nmap --version
     Nmap version 7.80 ( https://nmap.org )
     Platform: x86_64-pc-linux-gnu
@@ -592,7 +626,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     a. Criar uma conta gratuita
     
     b. Logar na conta desde o terminal com o usuário recém criado:
-    ```
+
+    ```sh
     $ docker login
     Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
     Username: josecastillolema
@@ -605,12 +640,14 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
     c. Taggear a imagem. O nome da imagem deve ser `username/nome da imagem`:
-    ```
+
+    ```sh
     $ docker tag buntu_com_nmap-viadockerfile josecastillolema/fiap-bdt
     ```
     
     d. Fazer o *upload* (`push`) da imagem:
-    ```
+
+    ```sh
     $ docker push josecastillolema/fiap-bdt
     ```
     

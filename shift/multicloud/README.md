@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Multicloud Architecture: Development, Solutions & Service
 
 [![](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift-multicloud.png)](https://www.fiap.com.br/shift/curso/tecnologia/multicloud-architecture-development-solutions-service-online)

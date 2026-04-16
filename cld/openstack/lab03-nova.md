@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 3 - OpenStack Nova
 
 ## Compute Service
@@ -9,12 +11,14 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## Pre-reqs
 
 1. Conferir se as extensões de virtualizações estão presentes no processador:
-    ```
+
+    ```sh
     $ grep -E ' svm | vmx ' /proc/cpuinfo
     ```
 
 2.	Listar os serviços Linux que compõem o Nova:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@n
     devstack@n-api-meta.service                                                                      loaded active running   Devstack devstack@n-api-meta.service
     devstack@n-api.service                                                                           loaded active running   Devstack devstack@n-api.service
@@ -27,7 +31,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 3.	Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@n*
     ● devstack@n-cauth.service - Devstack devstack@n-cauth.service
        Loaded: loaded (/etc/systemd/system/devstack@n-cauth.service; enabled; vendor preset: enabled)
@@ -98,12 +103,14 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 4.	Mostrar os *logs* do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@n*
     ```
 
 5. Carregar as credenciais de OpenStack:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
 
@@ -122,7 +129,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 6.	Listar os módulos do OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -154,14 +162,16 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 7.	Mostrar o arquivo de configuração:
-    ```
+
+    ```sh
     $ less /etc/nova/nova.conf
     ```
 
 ## *Hypervisors*
 
 8.	Mostrar os *hypervisors* disponíveis:
-    ```
+
+    ```sh
     $ openstack hypervisor list
     +----+---------------------+-----------------+----------------+-------+
     | ID | Hypervisor Hostname | Hypervisor Type | Host IP        | State |
@@ -171,7 +181,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 9.	Mostrar a descrição do *hypervisor*:
-    ```
+
+    ```sh
     $ openstack hypervisor show ubuntu
     +----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field                | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -206,7 +217,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 10.	Mostrar estatísticas de uso dos *hypervisors*:
-    ```
+
+    ```sh
     $ openstack hypervisor stats show
     +----------------------+-------+
     | Field                | Value |
@@ -229,7 +241,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## *Flavors*
 
 11.	Listar os *flavors*:
-    ```
+
+    ```sh
     $ openstack flavor list
     +--------------------------------------+-----------+-------+------+-----------+-------+-----------+
     | ID                                   | Name      |   RAM | Disk | Ephemeral | VCPUs | Is Public |
@@ -251,7 +264,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 12.	Mostrar informações sobre um *flavor*:
-    ```
+
+    ```sh
     $ openstack flavor show m1.tiny
     +----------------------------+---------+
     | Field                      | Value   |
@@ -272,7 +286,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 13.	Criar um *flavor*:
-    ```
+
+    ```sh
     $ openstack flavor create --public --ram 64 --vcpus 1 --disk 1 m.fiap
     +----------------------------+--------------------------------------+
     | Field                      | Value                                |
@@ -294,17 +309,20 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## Chaves SSH
 
 14.	Criar uma chave:
-    ```
+
+    ```sh
     $ openstack keypair create chave-fiap > chave-fiap.pem
     ```
 
 15.	Conferir o conteúdo da chave:
-    ```
+
+    ```sh
     $ cat chave-fiap.pem
     ```
 
 16.	Listar as chaves disponíveis:
-    ```
+
+    ```sh
     $ openstack keypair list
     +------------+-------------------------------------------------+
     | Name       | Fingerprint                                     |
@@ -313,8 +331,9 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     +------------+-------------------------------------------------+
     ```
 
-17.	Assignar as permissões certas na chave e conferir que foram aplicadas:
-    ```
+17.	Atribuir as permissões certas na chave e conferir que foram aplicadas:
+
+    ```sh
     $ chmod 600 chave-fiap.pem
 
     $ ll chave-fiap.pem
@@ -322,7 +341,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 18.	Listar as imagens:
-    ```
+
+    ```sh
     $ openstack image list
     +--------------------------------------+--------------------------+--------+
     | ID                                   | Name                     | Status |
@@ -334,7 +354,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## Instâncias
 
 19.	Criar a VM:
-    ```
+
+    ```sh
     $ openstack server create --flavor m.fiap --image cirros-0.3.5-x86_64-disk --key-name chave-fiap vmfiap01
     +-------------------------------------+-----------------------------------------------------------------+
     | Field                               | Value                                                           |
@@ -373,7 +394,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 20.	Listar as VMs:
-    ```
+
+    ```sh
     $ openstack server list
     +--------------------------------------+----------+--------+-------------------------------------------------------+--------------------------+--------+
     | ID                                   | Name     | Status | Networks                                              | Image                    | Flavor |
@@ -383,7 +405,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 21.	Mostrar a URL do console:
-    ```
+
+    ```sh
     $ openstack console url show vmfiap01
     +-------+-------------------------------------------------------------------------------------+
     | Field | Value                                                                               |
@@ -397,7 +420,7 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     - Pela URL do console (ou)
     - Directo pelo *hypervisor*:
 
-    ```
+    ```sh
     $ virsh list
      Id    Name                           State
     ----------------------------------------------------
@@ -416,7 +439,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 23.	Mostrar o *log* da VM:
-    ```
+
+    ```sh
     $ openstack console log show vmfiap01
     [    0.000000] Initializing cgroup subsys cpuset
     [    0.000000] Initializing cgroup subsys cpu
@@ -443,7 +467,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 24.	Mostrar os eventos relacionados à VM:
-    ```
+
+    ```sh
     $ openstack server event list vmfiap01
     +------------------------------------------+--------------------------------------+--------+----------------------------+
     | Request ID                               | Server ID                            | Action | Start Time                 |
@@ -453,12 +478,14 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 25.	Desligar a VM:
-    ```
+
+    ```sh
     $ openstack server stop vmfiap01
     ```
 
 26.	Listar as VMs e conferir que foi desligada:
-    ```
+
+    ```sh
     $ openstack server list
     +--------------------------------------+----------+---------+-------------------------------------------------------+--------------------------+--------+
     | ID                                   | Name     | Status  | Networks                                              | Image                    | Flavor |
@@ -468,7 +495,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 27.	Listar novamente os eventos relacionados à VM e conferir que foi registrado o evento de *shutdown* da mesma:
-    ```
+
+    ```sh
     $ openstack server event list vmfiap01
     +------------------------------------------+--------------------------------------+--------+----------------------------+
     | Request ID                               | Server ID                            | Action | Start Time                 |
@@ -479,14 +507,16 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 28.	Ligar novamente a VM:
-    ```
+
+    ```sh
     $ openstack server start vmfiap01
     ```
 
 ## **Snapshots**
 
 29.	Criar um snapshot da VM:
-    ```
+
+    ```sh
     $ openstack server image create vmfiap01 --name vmfiap01_snap
     +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field            | Value                                                                                                                                                                                                                                                  |
@@ -514,7 +544,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 30.	Listar as imagens (aguardar que fique em estado `active`):
-    ```
+
+    ```sh
     $ openstack image list
     +--------------------------------------+--------------------------+--------+
     | ID                                   | Name                     | Status |
@@ -533,7 +564,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 31.	Instanciar o `snapshot`:
-    ```
+
+    ```sh
     $ openstack server create --flavor m.fiap --image vmfiap01_snap vmfiap02
     +-------------------------------------+-------------------------------------------------------+
     | Field                               | Value                                                 |
@@ -572,7 +604,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 32.	Listar as VMs usando o comando `virsh`:
-    ```
+
+    ```sh
     $ virsh list
      Id    Name                           State
     ----------------------------------------------------
@@ -581,7 +614,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 33. Logar na nova VM e confirmar que o arquivo criado previamente existe:
-    ```
+
+    ```sh
     $ virsh console 4
     Connected to domain instance-00000006
     Escape character is ^]
@@ -594,7 +628,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
     ```
 
 34.	Mostrar as informações da definição da VM:
-    ```
+
+    ```sh
     $ virsh dumpxml 3
     <domain type='qemu' id='3'>
       <name>instance-00000005</name>
@@ -729,7 +764,8 @@ Usaremos o serviço [Nova](https://docs.openstack.org/nova/latest/) para aprende
 ## *Clean-up*
 
 35.	Deletar as vms:
-    ```
+
+    ```sh
     $ openstack server delete vmfiap01
     $ openstack server delete vmfiap02
     $ openstack image delete vmfiap01_snap

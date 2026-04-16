@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 8 - AWS DynamoDB
 
-Em este lab sobre [**DynamoDB**](https://aws.amazon.com/pt/dynamodb/) aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
+Neste lab sobre [**DynamoDB**](https://aws.amazon.com/pt/dynamodb/) aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
  - Criação de tabelas
  - Inserção/consulta de dados via console
  - Inserção/consulta via código `python`
@@ -18,11 +20,12 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 - Uma VM com a imagem `Amazon Linux`
 
-- No console da AWS Academy, accessar as credenciais da conta para acesso programático:
+- No console da AWS Academy, acessar as credenciais da conta para acesso programático:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d1.png)
    
 - Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
-    ```
+
+    ```sh
     $ cat ~/.aws/credentials 
     [default]
     aws_access_key_id=<copy here>
@@ -31,7 +34,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
     
  - Configuramos a região correta (ignorar o resto dos campos):
-    ```
+
+    ```sh
     $ aws configure
     AWS Access Key ID [****************Q5QG]: 
     AWS Secret Access Key [****************aqWs]: 
@@ -40,7 +44,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
     
  - Listar VMs (em formato `json`):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances
     {
         "Reservations": [
@@ -264,7 +269,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
 
  - Listar VMs (em formato tabela):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances --output table
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------
     |                                                                        DescribeInstances                                                                       |
@@ -498,22 +504,25 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/d6.png)
 
 
-## Accessando via código `python`
+## Acessando via código `python`
 
 ### Usando o arquivo de credenciais
 
 7. Na VM, instalar o `git`:
-    ```
+
+    ```sh
     $ sudo yum install -y git
     ```
 
-8. Clonar o repostiorio das aulas:
-    ```
+8. Clonar o repositório das aulas:
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap.git
     ```
 
-9. Navegar ate a pasta dos códigos de este lab:
-    ```
+9. Navegar ate a pasta dos códigos deste lab:
+
+    ```sh
     $ cd fiap/shift/multicloud/lab08-paas-dynamo/
     ```
     
@@ -557,18 +566,20 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
        pprint(resp)
      ```
  11. Instalar as dependências:
-     ```
+
+     ```sh
      $ pip3 install boto3
      ```
  
  12. Rodar o código:
-     ```
+
+     ```sh
      $ python3 dynamodb.py 
 
       Testando scan:
       [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tlfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
-      Iserindo aluno:
+      Inserindo aluno:
       {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
                                             'content-length': '2',
                                             'content-type': 'application/x-amz-json-1.0',
@@ -587,12 +598,14 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 ### Usando IAM *roles* (recomendado)
 
 14. Remover o arquivo de credenciais:
-    ```
+
+    ```sh
     $ rm -rf ~/.aws
     ```
 
-15. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
-    ```
+15. Tentar rodar de novo o código (deveria falhar, pois não estamos mais autenticados):
+
+    ```sh
     $ python3 dynamodb.py 
 
     Testando scan:
@@ -632,18 +645,18 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     botocore.exceptions.NoCredentialsError: Unable to locate credentials
     ```
 
-16. Nas **contas da AWS Academy**, basta nexar o *role* `LabInstanceProfile` na VM e rodar de novo o código (deberia funcionar):
+16. Nas **contas da AWS Academy**, basta nexar o *role* `LabInstanceProfile` na VM e rodar de novo o código (deveria funcionar):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
    
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam9.png)
    
-    ```
+    ```sh
     $ python3 dynamodb.py 
 
     Testando scan:
     [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
-    Iserindo aluno:
+    Inserindo aluno:
     {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
                                           'content-length': '2',
                                           'content-type': 'application/x-amz-json-1.0',
@@ -679,17 +692,18 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 23. No console do EC2, anexar o novo *role* na VM:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam7.png)
 
-24. Seleccionar o *role* que acabamos de criar:
+24. Selecionar o *role* que acabamos de criar:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/iam8.png)
 
-25. Tentar rodar de novo o código (deberia funcionar):
-    ```
+25. Tentar rodar de novo o código (deveria funcionar):
+
+    ```sh
     $ python3 dynamodb.py 
 
     Testando scan:
     [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
-    Iserindo aluno:
+    Inserindo aluno:
     {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
                                           'content-length': '2',
                                           'content-type': 'application/x-amz-json-1.0',

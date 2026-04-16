@@ -1,22 +1,26 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 1 - OpenStack Keystone
 
 ## Identity Manager
 Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para aprender alguns conceitos importantes de autenticação/autorização de usuários:
  - projetos
- - róis
+ - papéis
  - quotas
  - *endpoints*
 
 ## Pre-reqs
 
 1.	Listar os serviços Linux que compõem o Keystone:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@keystone
     devstack@keystone.service                                                                        loaded active running   Devstack devstack@keystone.service
     ```
 
 2.	Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@keystone
     ● devstack@keystone.service - Devstack devstack@keystone.service
        Loaded: loaded (/etc/systemd/system/devstack@keystone.service; enabled; vendor preset: enabled)
@@ -33,7 +37,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 3.	Mostrar os logs do serviço:
-    ```
+
+    ```sh
     $ journalctl -f -u devstack@keystone
     -- Logs begin at Thu 2020-10-01 10:39:16 PDT. --
     Oct 04 17:16:40 ubuntu devstack@keystone.service[862]: DEBUG keystone.policy.backends.rules [None req-0b250eac-2081-49bb-bf22-f6fc6b232040 None None] enforce identity:validate_token: {'is_delegated_auth': False, 'access_token_id': None, 'user_id': u'e17c0f6e879c4b8d860ec69a2b28ffff', 'roles': [u'ResellerAdmin', u'admin', u'service'], 'user_domain_id': u'default', 'consumer_id': None, 'trustee_id': None, 'is_domain': False, 'is_admin_project': True, 'trustor_id': None, 'token': <KeystoneToken (audit_id=-ZpKXigzR7eMBVPnVEKdFg, audit_chain_id=-ZpKXigzR7eMBVPnVEKdFg) at 0x7f686de864f0>, 'project_id': u'83667b3fd3964824ae4276cfc8610829', 'trust_id': None, 'project_domain_id': u'default'} {{(pid=914) enforce /opt/stack/keystone/keystone/policy/backends/rules.py:33}}
@@ -44,12 +49,14 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 4.	Mostrar o arquivo de configuração:
-    ```
+
+    ```sh
     $ less /etc/keystone/keystone.conf
     ```
 
 5.	Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
@@ -68,7 +75,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 6.	Listar os módulos instalados no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -89,7 +97,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 7.	Mostrar todas as opções para um comando determinado do OpenStack (neste caso `openstack service`, mas serve para qualquer um):
-    ```
+
+    ```sh
     $ openstack service --help
     Command "service" matches:
       service create
@@ -107,7 +116,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
 ## *Endpoints*
 
 8.	Mostrar a saída de um comando de OpenStack em formato estendido (neste caso `openstack service list`, mas tem muitos outros que também aceitam):
-    ```
+
+    ```sh
     $ openstack service list --long
     +----------------------------------+-------------+----------------+-----------------------------------+---------+
     | ID                               | Name        | Type           | Description                       | Enabled |
@@ -128,7 +138,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 9.	Mostrar os *endpoints* dos módulos instalados no OpenStack:
-    ```
+
+    ```sh
     $ openstack catalog list
     +-------------+----------------+--------------------------------------------------------------------------------+
     | Name        | Type           | Endpoints                                                                      |
@@ -185,7 +196,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 10.	Mostrar informação sobre um *endpoint* específico:
-    ```
+
+    ```sh
     $ openstack catalog show identity
     +-----------+------------------------------------------+
     | Field     | Value                                    |
@@ -201,10 +213,11 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     +-----------+------------------------------------------+
     ```
 
-## Projetos, usuários e róis
+## Projetos, usuários e papéis
 
 11.	Listar os projetos:
-    ```
+
+    ```sh
     $ openstack project list
     +----------------------------------+--------------------+
     | ID                               | Name               |
@@ -221,7 +234,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 12.	Criar um projeto e conferir que foi criado:
-    ```
+
+    ```sh
     $ openstack project create --description "Projeto FIAP" fiap
     +-------------+----------------------------------+
     | Field       | Value                            |
@@ -255,7 +269,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 13.	Mostrar o projeto recém criado:
-    ```
+
+    ```sh
     $ openstack project show fiap
     +-------------+----------------------------------+
     | Field       | Value                            |
@@ -271,7 +286,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 14.	Criar um usuário:
-    ```
+
+    ```sh
     $ openstack user create --password-prompt aluno-fiap
     User Password:
     Repeat User Password:
@@ -287,8 +303,9 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     +---------------------+----------------------------------+
     ```
 
-15.	Listar os róis:
-    ```
+15.	Listar os papéis:
+
+    ```sh
     $ openstack role list
     +----------------------------------+-----------------+
     | ID                               | Name            |
@@ -304,12 +321,14 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 16.	Associar o usuário com o projeto como membro:
-    ```
+
+    ```sh
     $ openstack role add --project fiap --user aluno-fiap Member
     ```
 
 17.	Conferir a designação do rol:
-    ```
+
+    ```sh
     $ openstack role assignment list --project fiap
     +----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
     | Role                             | User                             | Group | Project                          | Domain | Inherited |
@@ -321,7 +340,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
 ## Quotas
 
 18.	Mostrar as quotas do projeto:
-    ```
+
+    ```sh
     $ openstack quota show fiap
     +-----------------------+----------------------------------+
     | Field                 | Value                            |
@@ -369,7 +389,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
     ```
 
 19.	Atualizar a quota de *cores* e comprovar que foi aplicada:
-    ```
+
+    ```sh
     $ openstack quota set --cores 30 fiap
     
     $ openstack quota show fiap
@@ -424,7 +445,8 @@ Usaremos o serviço [Keystone](https://docs.openstack.org/keystone/latest/) para
 ## *Clean-up*
 
 20.	Deletar o projeto e usuário:
-    ```
+
+    ```sh
     $ openstack user delete aluno-fiap
     
     $ openstack project delete fiap

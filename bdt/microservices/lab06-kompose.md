@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 6 - Kompose
 
 [Kompose](https://kompose.io/) permite importar *templates* do Docker Swarm no Kubernetes.
@@ -7,7 +9,8 @@
 1. Instalação do Kompose
 
     a. Obtenção do executável:
-    ```
+
+    ```sh
     $ curl -L https://github.com/kubernetes/kompose/releases/download/v1.17.0/kompose-linux-amd64 -o kompose
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
@@ -15,18 +18,21 @@
     100 50.0M  100 50.0M    0     0  31.3M      0  0:00:01  0:00:01 --:--:-- 37.8M
     ```
     b. Ajuste da permissão de escrita:
-    ```
+
+    ```sh
     $ chmod +x kompose
     ```
     c. Mover o executável para a pasta correspondente:
-    ```
+
+    ```sh
     $ sudo mv ./kompose /usr/local/bin/
     ```
 
 ## Uso
 
 2. Clonar este repositório *git*:
-    ```
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
     remote: Enumerating objects: 121, done.
@@ -37,8 +43,9 @@
     Resolving deltas: 100% (2059/2059), done.
     ```
 
-3. Navegar até a pasta ***/fiap/bdt/microservices/swarm/v1*** de este repositório *git*:
-    ```
+3. Navegar até a pasta ***/fiap/bdt/microservices/swarm/v1*** deste repositório *git*:
+
+    ```sh
     $ cd fiap/bdt/microservices/swarm/v1
     $ pwd
     /home/ubuntu/fiap/bdt/microservices/swarm/v1
@@ -47,6 +54,7 @@
     ```
     
 4. Conferir o conteúdo do arquivo ***docker-compose.yml***:
+
     ```yaml
     $ cat docker-compose.yaml 
     version: '3'
@@ -88,7 +96,8 @@
     ```
 
 5. Importar o *stack* definido no arquivo ***docker-compose.yml*** dentro do Kubernetes:
-    ```
+
+    ```sh
     $ kompose up
     INFO We are going to create Kubernetes Deployments, Services and PersistentVolumeClaims for your Dockerized application. If you need different kind of resources, use the 'kompose convert' and 'kubectl create -f' commands instead. 
 
@@ -105,21 +114,24 @@
 ## Validação
 
 6. Conferir que o *stack* foi importado corretamente dentro do Kubernetes:
-    ```
+
+    ```sh
     $ kubectl get service/api
     NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
     api    ClusterIP   10.152.183.40   <none>        3000/TCP   95s
     ```
 
 7. Aguardar os pods ficar em estado `running`
-    ```
+
+    ```sh
     $ kubectl get pod api
     NAME   READY   STATUS    RESTARTS   AGE
     api    1/1     Running   0          2m52s
     ```
 
 7. Testar a API:
-    ```
+
+    ```sh
     $ curl 10.152.183.40:3000
     Benvido a API FIAP!
     ```
@@ -127,7 +139,8 @@
 ## *Clean-up*
 
 8. Remover o *stack*:
-    ```
+
+    ```sh
     $ kompose down
     INFO Deleting application in "default" namespace  
     INFO Successfully deleted Service: api            

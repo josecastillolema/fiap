@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 6 - Kompose
 
 Kompose permite importar *templates* do Docker Swarm no Kubernetes.
@@ -5,7 +7,8 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
 1. Instalação do Kompose
 
     a. Obtenção do executável:
-    ```
+
+    ```sh
     $ curl -L https://github.com/kubernetes/kompose/releases/download/v1.17.0/kompose-linux-amd64 -o kompose
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
@@ -13,16 +16,19 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
     100 50.0M  100 50.0M    0     0  31.3M      0  0:00:01  0:00:01 --:--:-- 37.8M
     ```
     b. Ajuste da permissão de escrita:
-    ```
+
+    ```sh
     $ chmod +x kompose
     ```
     c. Mover o executável para a pasta correspondente:
-    ```
+
+    ```sh
     $ sudo mv ./kompose /usr/local/bin/
     ```
 
-2. Navegar até a pasta ***/fiap/aso/swarm/v1*** de este repositório *git*:
-    ```
+2. Navegar até a pasta ***/fiap/aso/swarm/v1*** deste repositório *git*:
+
+    ```sh
     $ cd fiap/aso/swarm/v1
     $ pwd
     /home/ubuntu/fiap/aso/swarm/v1
@@ -31,7 +37,8 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
     ```
 
 3. Importar o *stack* definido no arquivo ***docker-compose.yml*** dentro do Kubernetes:
-    ```
+
+    ```sh
     $ kompose up
     INFO We are going to create Kubernetes Deployments, Services and PersistentVolumeClaims for your Dockerized application. If you need different kind of resources, use the 'kompose convert' and 'kubectl create -f' commands instead. 
 
@@ -46,19 +53,22 @@ Kompose permite importar *templates* do Docker Swarm no Kubernetes.
     ```
 
 4. Conferir que o *stack* foi importado corretamente dentro do Kubernetes:
-    ```
+
+    ```sh
     $ kubectl get service/api
     NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
     api    ClusterIP   10.152.183.40   <none>        3000/TCP   95s
     ```
 
 5. Testar a API:
-    ```
+
+    ```sh
     $ curl 10.152.183.40:3000
     Benvido a API FIAP!
     ```
 6. Remover o *stack*:
-    ```
+
+    ```sh
     $ kompose down
     INFO Deleting application in "default" namespace  
     INFO Successfully deleted Service: api            

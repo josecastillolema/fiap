@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 7 - AWS CP
 
-Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) aprenderemos alguns conceitos importantes da criação de *pipelines*:
+Neste lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) aprenderemos alguns conceitos importantes da criação de *pipelines*:
  - Criação do *pipeline*
  - Automação de *deploy* no Beanstalk
 
@@ -37,7 +39,7 @@ Em este lab sobre [**Code Pipeline**](https://aws.amazon.com/pt/codepipeline/) a
 6. Selecionar `AWS Elastic Beanstalk` como *Deploy Provider*, apontando para a aplicação dos pre-reqs:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp06.png)
 
-7. Revisar as configuraçoes e confirmar a criação do *pipeline*:
+7. Revisar as configurações e confirmar a criação do *pipeline*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp07.png)
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cp08.png)
 

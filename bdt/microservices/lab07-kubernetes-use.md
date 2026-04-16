@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 7 - Kubernetes - Uso
 
 Orquestrando containers
@@ -7,12 +9,12 @@ Existem vários recursos dentro de um cluster Kubernetes:
  - **service**: cria um *endpoint* para acessar os *pods* de uma determinada *app*
  - **deployment**: define as propriedades desejadas de uma *app*
      - imagem
-     - variáveis de entorno
+     - variáveis de ambiente
      - volumes
      - número de réplicas
 
  
-1. Navegar até a pasta `/fiap/bdt/microservices/kubernetes` de este repositório *git*:
+1. Navegar até a pasta `/fiap/bdt/microservices/kubernetes` deste repositório *git*:
     <pre>
     <b>$ cd fiap/bdt/microservices/kubernetes
     $ pwd</b>
@@ -22,6 +24,7 @@ Existem vários recursos dentro de um cluster Kubernetes:
     </pre>
     
 2. Conferir as definições do volume persistente:
+
     ```yaml
     $ cat mysql-pv.yaml 
     kind: PersistentVolume
@@ -53,13 +56,15 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 3. Criar o volume persistente do banco de dados:
-    ```
+
+    ```sh
     $ kubectl create -f mysql-pv.yaml
     persistentvolume/mysql-pv-volume created
     persistentvolumeclaim/mysql-pv-claim created
     ```
 
 4. Conferir as definições do serviço `api-deployment`:
+
     ```yaml
     $ cat api-service.yaml
     apiVersion: v1
@@ -75,7 +80,8 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 5. Criar os serviços:
-    ```
+
+    ```sh
     $ kubectl create -f mysql-service.yaml
     service/mysql created
     $ kubectl create -f api-service.yaml
@@ -83,6 +89,7 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 6. Conferir as definições do *deployment* `api-deployment`:
+
     ```yaml
     $ cat api-deployment.yaml 
     apiVersion: apps/v1
@@ -108,7 +115,8 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 7. Criar os *deployments*:
-    ```
+
+    ```sh
     $ kubectl create -f api-deployment.yaml
     deployment.apps/api-deployment created
     $ kubectl create -f mysql-deployment.yaml
@@ -116,7 +124,8 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
     
 8. Confirmar a criação dos recursos:
-   ```
+
+   ```sh
    $ kubectl get all
    NAME                                  READY   STATUS    RESTARTS   AGE
    pod/api-deployment-7bcb964d7c-bmwmx   1/1     Running   0          2m26s
@@ -139,18 +148,21 @@ Existem vários recursos dentro de um cluster Kubernetes:
    ```
    
 9. Testar a API:
-    ```
+
+    ```sh
     $ curl 10.152.183.144:5000
     Benvido a API FIAP!
     ```
 
 10. Testar a conexão da API com o banco de dados:
-    ```
+
+    ```sh
     $ curl 10.152.183.144:5000/getDados
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
 11. Escalar o número de replicas da API (***scale-up***). Para iso, editar o arquivo ***api-deployment.yaml*** da seguinte forma:
+
     ```yaml
     $ cat api-deployment.yaml 
     apiVersion: apps/v1
@@ -176,21 +188,24 @@ Existem vários recursos dentro de um cluster Kubernetes:
     ```
 
 12. Aplicar os novos parámetros:
-    ```
+
+    ```sh
     $ kubectl apply -f api-deployment.yaml
     Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
     deployment.apps/api-deployment configured
     ```
 
 13. Confirmar o ***scale-up***:
-    ```
+
+    ```sh
     $ kubectl get deployment api-deployment
     NAME             READY   UP-TO-DATE   AVAILABLE   AGE
     api-deployment   6/6     6            6           12s
     ```
 
 14. Remover os recursos criados:
-    ```
+
+    ```sh
     $ kubectl delete deployment api-deployment 
     deployment.apps "api-deployment" deleted
 

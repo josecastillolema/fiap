@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # SHIFT: Cursos remotos de curta duração
 
 [![SHIFT FIAP](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/shift.png)](https://www.fiap.com.br/shift)

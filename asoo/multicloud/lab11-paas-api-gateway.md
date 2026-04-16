@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 11 - Amazon API Gateway
 
-Em este lab sobre **API Gateway** aprenderemos alguns conceitos do API gateway da plataforma da AWS:
+Neste lab sobre **API Gateway** aprenderemos alguns conceitos do API gateway da plataforma da AWS:
  - Configuração de rotas
  - *Throttling* (limitação do número de requisições por segundo) 
  - Monitoramento

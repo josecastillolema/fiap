@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - OpenStack Glance
 
 ## Image Service
@@ -9,7 +11,8 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
 ## Pre-reqs
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
@@ -28,12 +31,14 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
     
 2. Listar os serviços Linux que compõem o Glance:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@g
     ```
    
 3. Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@g*
     ● devstack@g-api.service - Devstack devstack@g-api.service
        Loaded: loaded (/etc/systemd/system/devstack@g-api.service; enabled; vendor p
@@ -58,19 +63,22 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
     
 4. Mostrar os logs do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@g-api
     ```
     
 5. Mostrar os arquivos de configuração:
-    ```
+
+    ```sh
     $ less /etc/glance/glance-api.conf
     
     $ less /etc/glance/policy.json
     ```
     
 6. Listar os módulos instalados no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -104,7 +112,8 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
 ## Imagens
 
 7. Mostrar informação sobre a imagem (se encontra na pasta HOME do usuário):
-    ```
+
+    ```sh
     $ qemu-img info xenial-server-cloudimg-amd64-disk1.img
     image: xenial-server-cloudimg-amd64-disk1.img
     file format: qcow2
@@ -117,19 +126,22 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
     
 8. Converter a imagem de formato qcow2 a formato raw:
-    ```
+
+    ```sh
     $ qemu-img convert -f qcow2 -O raw xenial-server-cloudimg-amd64-disk1.img xenial-server-cloudimg-amd64-disk1.raw
     ```
 
-9. Listar as duas imagens e conferir a diferencia de tamanho:
-    ```
+9. Listar as duas imagens e conferir a diferença de tamanho:
+
+    ```sh
     $ ls -lh xenial-server-cloudimg-amd64-disk1.*
     -rw-rw-r-- 1 os os 277M Mar 13  2018 xenial-server-cloudimg-amd64-disk1.img
     -rw-r--r-- 1 os os 2.2G Oct 19 11:27 xenial-server-cloudimg-amd64-disk1.raw
     ```
 
 10.	Subir a imagem para o OpenStack:
-    ```
+
+    ```sh
     $ openstack image create --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
     +------------------+------------------------------------------------------+
     | Field            | Value                                                |
@@ -156,20 +168,23 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
     
     Se o paso anterior der o seguinte erro:
-    ```
+
+    ```sh
     $ openstack image create --file xenial-server-cloudimg-amd64-disk1.img --disk-format qcow2 --public ubuntu-xenial
     502 Bad Gateway: Bad Gateway: The proxy server received an invalid: response from an upstream server.: Apache/2.4.18 (Ubuntu) Server at 192.168.17.131 Port 80 (HTTP 502)
     ```
     
-    Provavelmente a VM do DevStack foi restartada. Para concertar o Swift (*backend* do Glance):
-    ```
+    Provavelmente a VM do DevStack foi restartada. Para consertar o Swift (*backend* do Glance):
+
+    ```sh
     $ sudo mount -t xfs -o loop,noatime,nodiratime,nobarrier,logbufs=8 /opt/stack/data/drives/images/swift.img /opt/stack/data/drives/sdb1
     ```
     
     Tentar de novo o comando de criação de imagem.
 
 11.	Listar as imagens que se encontram no ambiente e conferir o estado:
-    ```
+
+    ```sh
     $ openstack image list
     +--------------------------------------+--------------------------+--------+
     | ID                                   | Name                     | Status |
@@ -180,7 +195,8 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
 
 12.	Mostrar a informação sobre a imagem:
-    ```
+
+    ```sh
     $ openstack image show ubuntu-xenial
     +------------------+------------------------------------------------------+
     | Field            | Value                                                |
@@ -207,7 +223,8 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
     ```
 
 13.	Colocar um metadato na imagem e conferir que foi aplicado na mesma: 
-    ```
+
+    ```sh
     $ openstack image set ubuntu-xenial --property os_name=linux
     
     $ openstack image show ubuntu-xenial
@@ -242,13 +259,14 @@ Usaremos o serviço [Glance](https://docs.openstack.org/glance/latest/) para apr
 ## *Clean-up*
 
 14.	Deletar a imagem:
-    ```
+
+    ```sh
     $ openstack image delete ubuntu-xenial
     ```
 
 ## Horizon
 
-16.	Repetir o processo via Horizon Dashboard, criação de imagem e assignação de metadatos::
+16.	Repetir o processo via Horizon Dashboard, criação de imagem e atribuição de metadatos::
     - Criação de imagem
     - Assinação de metadata
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/glance1.png)

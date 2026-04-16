@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 1 - Virtual Machines
 
 ## Criando a instancia
@@ -12,7 +14,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 2. Sempre que for criar novos recursos, selecione como ***subscription*** `Azure for students` e como ***resource group*** `19net`. Se o *resource group* ainda não existe, como é o caso, criar ele:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm01.png)
    
-3. Configurar um nome para a instãncia, escolher a **imagem** `Ubuntu Server` e o ***flavor*** `Standard_B1`:
+3. Configurar um nome para a instância, escolher a **imagem** `Ubuntu Server` e o ***flavor*** `Standard_B1`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm03.png)
    
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm02.png)
@@ -29,7 +31,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 7. Usaremos um *script* de **`cloud-init`** para customizar a instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm07.png)
 
-6. Confirmar criaçao da instância uma vez validada:
+6. Confirmar criação da instância uma vez validada:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm08.png)
    
 7. Fazer *download* da **chave** para poder acessar a instância via SSH de forma segura:
@@ -38,7 +40,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 8. Aguardar a criacao da instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm10.png)
 
-## Accessando à instancia
+## Acessando à instancia
 
 9. Note-se o IP público da instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm11.png)
@@ -46,10 +48,11 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 10. [**Linux/MAC**] Seguiremos as próprias indicações do Azure:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm12.png)
    
-    [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opçao.
+    [**Windows**] Usaremos o [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), seguindo as seguintes [instruções](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows). Como alternativa ao PuTTy, o [MobaXterm](https://mobaxterm.mobatek.net/) é uma excelente opção.
    
 11. [**Linux/MAC**] Em um terminal local:
-    ```
+
+    ```sh
     $ chmod 400 aula1_key.pem 
     $ ssh -i aula1_key.pem  azureuser@168.61.32.71
     The authenticity of host '168.61.32.71 (168.61.32.71)' can't be established.
@@ -88,7 +91,8 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
     [**Windows**] Seguir as instruções do PuTTY: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows
     
 12. Uma vez logado na maquina virtual, confirmar que o script de **cloud-init** rodou com sucesso:
-    ```
+
+    ```sh
     $ ls /tmp/
     CloudInitFunciona
     ```
@@ -96,7 +100,8 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 ## Instalando um servidor web
 
 13. Instalar o pacote `apache2`:
-    ```
+
+    ```sh
     azureuser@aula1:~$ sudo apt install apache2
     Reading package lists... Done
     Building dependency tree       
@@ -204,14 +209,16 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
     ```
    
 14. Criar um *site* de teste, no arquivo `/var/www/html/index.html` (como usuário admin):
-    ```
+
+    ```html
     <h1>
        FIAP!!!
     </h1>
     ```
    
 15. Testar localmente o servidor web:
-    ```
+
+    ```sh
     azureuser@aula1:~$ curl localhost
     <h1>
        FIAP!!!
@@ -221,7 +228,7 @@ Usaremos a imagem oficial `Ubuntu Server` para aprender alguns conceitos importa
 16. Obter o IP público da VM:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm11.png)
 
-17. Testar accesso pelo IP público:
+17. Testar acesso pelo IP público:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/vm13.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:

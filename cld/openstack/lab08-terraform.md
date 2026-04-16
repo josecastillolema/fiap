@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 8 - Terraform
 
 ## OpenStack Provider
@@ -14,7 +16,7 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 
 1. Fazer o *download* da ferramenta:
 
-    ```
+    ```sh
     $ wget https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip
     --2020-10-28 12:37:26--  https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip
     Resolving releases.hashicorp.com (releases.hashicorp.com)... 151.101.1.183, 151.101.65.183, 151.101.129.183, ...
@@ -29,21 +31,24 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 2. Descomprimir o arquivo baixado:
-    ```
+
+    ```sh
     $ unzip terraform_0.13.5_linux_amd64.zip
     Archive:  terraform_0.13.5_linux_amd64.zip
       inflating: terraform
     ```
     
 3. Movimentar o executável:
-    ```
+
+    ```sh
     $ sudo mv terraform /usr/local/bin/
     ```
 
 ## Uso
 
 4. Baixar os *templates*:
-    ```
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap
     Cloning into 'fiap'...
     remote: Enumerating objects: 10, done.
@@ -58,7 +63,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 5. Inicializar o Terraform e o correspondente *provider* (plugin) de OpenStack:
-    ```
+
+    ```sh
     $ terraform init
 
     Initializing the backend...
@@ -100,7 +106,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 6. Criar o plano:
-    ```
+
+    ```sh
     $ terraform plan
     Refreshing Terraform state in-memory prior to plan...
     The refreshed state will be used to calculate this plan, but will not be
@@ -180,7 +187,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 7. Criar a infraestrutura virtual:
-    ```
+
+    ```sh
     $ terraform apply
 
     An execution plan has been generated and is shown below.
@@ -268,7 +276,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
     
 8. Mostrar os recursos criados:
-    ```
+
+    ```sh
     $ terraform show
     # openstack_compute_floatingip_associate_v2.asoc-ip-publica:
     resource "openstack_compute_floatingip_associate_v2" "asoc-ip-publica" {
@@ -326,7 +335,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 9. Mostrar o grafo dos recursos criados:
-    ```
+
+    ```sh
     $ terraform graph
     digraph {
             compound = "true"
@@ -353,7 +363,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 10. Validar a criação da instância:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
@@ -368,7 +379,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
 ## *Clean-up*
 
 11. Deletar o plano:
-    ```
+
+    ```sh
     $ terraform destroy
     openstack_networking_floatingip_v2.ip-publica: Refreshing state... [id=9ee8f0ab-1c12-4ca3-a357-2cec7843bde6]
     openstack_compute_instance_v2.web: Refreshing state... [id=1bb24176-55be-4156-913a-af062a0237df]
@@ -456,7 +468,8 @@ Com relação a ferramenta podemos comparar o Terraform com o CloudFormation da 
     ```
 
 12. Conferir que a VM foi deletada:
-    ```
+
+    ```sh
     $ openstack server list
 
     $

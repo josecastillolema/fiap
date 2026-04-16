@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - OpenStack Cinder
 
 ## Block Storage Service
@@ -10,7 +12,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
 ## Pre-reqs
 
 1. Carregar as credenciais de administrador e conferir que foram aplicadas no ambiente:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
@@ -29,7 +32,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 2. Conferir que o Cinder foi instalado no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -50,7 +54,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 3. Mostrar informação sobre o *endpoint*:
-    ```
+
+    ```sh
     $ openstack catalog show cinder
     +-----------+----------------------------------------------------------------------------+
     | Field     | Value                                                                      |
@@ -65,7 +70,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 4. Mostrar informação sobre os serviços OpenStack que compõem o Cinder:
-    ```
+
+    ```sh
     $ openstack volume service list
     +------------------+--------------------+------+---------+-------+----------------------------+
     | Binary           | Host               | Zone | Status  | State | Updated At                 |
@@ -76,7 +82,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
      
     **Nota:** Se o `cinder-volume` aparece com estado `down` (provavelmente a VM foi restartada em algum momento), seguem os passos para corrigi-lo:
-    ```
+
+    ```sh
     $ sudo losetup -f /opt/stack/data/stack-volumes-default-backing-file
     $ sudo losetup -f /opt/stack/data/stack-volumes-lvmdriver-1-backing-file
     $ sudo systemctl restart devstack@c-vol
@@ -85,7 +92,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     Tentar o comando `openstack volume service list` novamente.
 
 5. Listar os serviços Linux que compõem o Cinder:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@c
     devstack@c-api.service                                             loaded active running   Devstack devstack@c-api.service
     devstack@c-sch.service                                             loaded active running   Devstack devstack@c-sch.service
@@ -93,7 +101,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
      
 6. Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@c*
     ● devstack@c-api.service - Devstack devstack@c-api.service
        Loaded: loaded (/etc/systemd/system/devstack@c-api.service; enabled; vendor preset: enabled)
@@ -122,12 +131,14 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 7. Mostrar os logs do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@c-vol
     ```
 
 8. Mostrar os arquivos de configuração:
-    ```
+
+    ```sh
     $ less /etc/cinder/cinder.conf
     $ less /etc/cinder/policy.json
     ```
@@ -135,7 +146,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
 ## Volumes
 
 9. Criar um volume vazio de 1 GB:
-    ```
+
+    ```sh
     $ openstack volume create teste-fiap --size 1
     +---------------------+--------------------------------------+
     | Field               | Value                                |
@@ -164,7 +176,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
  
 10. Listar os volumes e mostrar o volume recém criado:
-    ```
+
+    ```sh
     $ openstack volume list
     +--------------------------------------+------------+-----------+------+-------------+
     | ID                                   | Name       | Status    | Size | Attached to |
@@ -175,7 +188,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 11. Criar uma VM:
-    ```
+
+    ```sh
     $ openstack server create --network private --flavor m.fiap --image cirros-0.3.5-x86_64-disk vm
     +-------------------------------------+-----------------------------------------------------------------+
     | Field                               | Value                                                           |
@@ -214,12 +228,14 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 12. Anexar o volume a uma instancia previamente criada (neste caso `vm`):
-    ```
+
+    ```sh
     $ openstack server add volume vm teste-fiap
     ```
 
 13. Conferir que o volume foi anexado:
-    ```
+
+    ```sh
     $ openstack server show vm
     +-------------------------------------+-----------------------------------------------------------------+
     | Field                               | Value                                                           |
@@ -260,7 +276,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 14. Acessar à vm:
-    ```
+
+    ```sh
     $ virsh list
      Id    Name                           State
     ----------------------------------------------------
@@ -279,13 +296,15 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
 ### Dentro da VM
 
 15. Conferir que o novo volume foi entregue a VM:
-    ```
+
+    ```sh
     $ ls /dev/vd*
     /dev/vda   /dev/vda1  /dev/vdb
     ```
 
 16. Criar uma partição no novo disco:
-    ```
+
+    ```sh
     $ sudo fdisk /dev/vdb
     Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
     Building a new DOS disklabel with disk identifier 0xaba72f7d.
@@ -332,13 +351,15 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 17. Conferir que a partição foi criada:
-    ```
+
+    ```sh
     $ ls /dev/vd*
     /dev/vda   /dev/vda1  /dev/vdb   /dev/vdb1
     ```
 
 18. Formatar a partição:
-    ```
+
+    ```sh
     $ sudo mkfs.ext4 /dev/vdb1
     mke2fs 1.42.2 (27-Mar-2012)
     Filesystem label=
@@ -363,17 +384,20 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
   
 19. Criar uma nova pasta para montar o volume:
-    ```
-    $ sudo mkdir /mnt/nuevo-vol
+
+    ```sh
+    $ sudo mkdir /mnt/novo-vol
     ```
 
 20. Montar o novo volume (pode ignorar o erro):
-    ```
-    $ sudo mount /dev/vdb1 /mnt/nuevo-vol
+
+    ```sh
+    $ sudo mount /dev/vdb1 /mnt/novo-vol
     [  201.700545] EXT3-fs (vdb1): error: couldn't mount because of unsupported optional features (240)
     ```
 21. Confirmar que o volume foi montado:
-    ```
+
+    ```sh
     $ mount
     rootfs on / type rootfs (rw)
     /dev on /dev type devtmpfs (rw,relatime,size=21792k,nr_inodes=5448,mode=755)
@@ -383,30 +407,33 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=000)
     tmpfs on /dev/shm type tmpfs (rw,relatime,mode=777)
     tmpfs on /run type tmpfs (rw,nosuid,relatime,size=200k,mode=755)
-    /dev/vdb1 on /mnt/nuevo-vol type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
+    /dev/vdb1 on /mnt/novo-vol type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
 
-    $ mount | grep nuevo-vol
-    /dev/vdb1 on /mnt/nuevo-vol type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
+    $ mount | grep novo-vol
+    /dev/vdb1 on /mnt/novo-vol type ext4 (rw,relatime,user_xattr,barrier=1,data=ordered)
     ```
 
 22. Criar um arquivo no novo volume:
-    ```
-    $ sudo touch /mnt/nuevo-vol/arquivo.txt
+
+    ```sh
+    $ sudo touch /mnt/novo-vol/arquivo.txt
     
-    $ ls  /mnt/nuevo-vol/
-    /mnt/nuevo-vol/arquivo.txt
+    $ ls  /mnt/novo-vol/
+    /mnt/novo-vol/arquivo.txt
     ```
 
 ### De volta no DevStack
 
 23. Criar um *snapshot* do volume:
-    ```
+
+    ```sh
     $ openstack volume snapshot create --volume teste-fiap teste-fiap-snap
     Invalid volume: Volume abccb06a-5e9e-422b-a2c0-9f6768071785 status must be available, but current status is: in-use. (HTTP 400) (Request-ID: req-7c30ee3f-20d4-422e-a6d3-2ed44a631de2)
     ```
     
-    OpenStack não recomenda fazer *snapshots* de volumes em uso. Para forzar:
-    ```
+    OpenStack não recomenda fazer *snapshots* de volumes em uso. Para forçar:
+
+    ```sh
     $ openstack volume snapshot create --volume teste-fiap teste-fiap-snap --force
     +-------------+--------------------------------------+
     | Field       | Value                                |
@@ -424,7 +451,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 24. Listar e mostrar o *snapshot*:
-    ```
+
+    ```sh
     $ openstack volume snapshot list
     +--------------------------------------+-----------------+-------------+-----------+------+
     | ID                                   | Name            | Description | Status    | Size |
@@ -451,7 +479,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 25. Mostrar o volume no LVM:
-    ```
+
+    ```sh
     $ sudo lvs
       LV                                             VG                        Attr       LSize Pool Origin                                      Data%  Meta%  Move Log Cpy%Sync Convert
       _snapshot-b55e6a7c-3072-4879-8f35-bf68901d0e1a stack-volumes-lvmdriver-1 swi-a-s--- 1.00g      volume-abccb06a-5e9e-422b-a2c0-9f6768071785 0.00
@@ -470,7 +499,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
     ```
 
 26. Desatachar o volume da VM e confirmar que volta para o estado `available`:
-    ```
+
+    ```sh
     $ openstack server remove volume vm teste-fiap
     
     $ openstack volume list
@@ -486,7 +516,8 @@ Usaremos o serviço [Cinder](https://docs.openstack.org/cinder/latest/) para apr
 ## *Clean-up*
 
 28. Desanexar e deletar volumes e *snapshots*:
-    ```
+
+    ```sh
     $ openstack volume snapshot delete teste-fiap-snap
     
     $ openstack volume delete teste-fiap

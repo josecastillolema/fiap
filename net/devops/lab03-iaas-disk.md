@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - Azure Disks
 
-Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazenamento em bloco:
+Neste lab sobre **disks** aprenderemos alguns conceitos importantes do armazenamento em bloco:
  - Criação de volumes
  - Anexar volumes a instâncias
  - Configurar volumes dentro das instâncias
@@ -11,7 +13,8 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 ## Pre-reqs
 
 - Na maquina virtual do [lab 01 - Virtual Machine](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab01-iaas-vm.md), conferir os volumes:
-    ```
+
+    ```sh
     aula1:~$ lsblk
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
     sda       8:0    0   30G  0 disk 
@@ -31,8 +34,9 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 
 ## Configurando o volume dentro da instancia
 
-2. Na maquina virtual, conferir o novo dispositivo, em este caso `sdc`, com tamanho 50 GB (o nome pode mudar). Observe-se que ainda não possue nenhuma partição:
-    ```
+2. Na maquina virtual, conferir o novo dispositivo, neste caso `sdc`, com tamanho 50 GB (o nome pode mudar). Observe-se que ainda não possui nenhuma partição:
+
+    ```sh
     aula1:~$ lsblk
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
     sda       8:0    0   30G  0 disk 
@@ -46,7 +50,8 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     ```
     
 3. Usaremos o `fdisk` para criar uma partição no novo disco:
-   ```
+
+   ```sh
    aula1$ sudo fdisk /dev/sdc
 
    Welcome to fdisk (util-linux 2.30.2).
@@ -73,8 +78,9 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
    Syncing disks.
    ```
    
-4. Conferir a nova partição (em este caso, `sdc1`):
-   ```
+4. Conferir a nova partição (neste caso, `sdc1`):
+
+   ```sh
    aula1:~$ lsblk
    NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
    sda       8:0    0   30G  0 disk 
@@ -89,7 +95,8 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
    ```
 
 5. Criar o sistema de arquivos:
-    ```
+
+    ```sh
     aula1$ sudo mkfs /dev/sdc1
     mke2fs 1.44.1 (24-Mar-2018)
     Discarding device blocks: done                            
@@ -105,30 +112,34 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     ```
  
 6. Criar a pasta `/mnt/volumeExterno` para montar o volume:
-    ```
+
+    ```sh
     aula1$ sudo mkdir /mnt/volumeExterno
     ```
 
 7. Montar o volume na pasta recem criada:
-    ```
+
+    ```sh
     aula1$ sudo mount /dev/sdc1 /mnt/volumeExterno/
     ```
 
 8. Listar os arquivos do novo volume (é esperado ter uma pasta chamada `lost-found`, mesmo que o volume esteja vazio):
-    ```
+
+    ```sh
     aula1$ cd /mnt/volumeExterno/
     aula1$ ls
     lost+found
     ```
 
 9. Criar um arquivo qualquer (como usuário admin):
-    ```
+
+    ```sh
     aula1$ cd /mnt/volumeExterno
     aula1$ cat meuArquivo 
     sic mundus creatus est
     ```
 
-10. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
+10. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes passos seria necessario refazer?
     - Formatação
     - Criação do sistema de arquivos
     - Montar o volume
@@ -146,7 +157,8 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 12. Criar uma nova máquina virtual com nome `aula2` seguindo os passos do [lab 01 - Virtual Machine](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab01-iaas-vm.md).
 
 13. Uma vez criada, conferir os volumes:
-    ```
+
+    ```sh
     aula2:~$ lsblk 
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
     sda       8:0    0   30G  0 disk 
@@ -161,8 +173,9 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
 14. Na aba `Disks` da descrição da nova instância (*`aula2`*), anexar o volume `dados` previamente criado:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/disk04.png)
    
-15. Na nova maquina virtual, conferir o novo dispositivo, em este caso `sdc`, com tamanho 50 GB (o nome pode mudar). Observe-se que já possue uma partição (`sdc1`):
-    ```
+15. Na nova maquina virtual, conferir o novo dispositivo, neste caso `sdc`, com tamanho 50 GB (o nome pode mudar). Observe-se que já possui uma partição (`sdc1`):
+
+    ```sh
     aula2:~$ lsblk 
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
     sda       8:0    0   30G  0 disk 
@@ -177,17 +190,20 @@ Em este lab sobre **disks** aprenderemos alguns conceitos importantes do armazen
     ```
     
 16. Criar a pasta `/mnt/volumeExterno` para montar o volume:
-    ```
+
+    ```sh
     aula2$ sudo mkdir /mnt/volumeExterno
     ```
 
 17. Montar o volume na pasta recem criada:
-    ```
+
+    ```sh
     aula2$ sudo mount /dev/sdc1 /mnt/volumeExterno/
     ```
     
 18. Confirmar que os dados criados na VM `aula1` foram persistidos:
-    ```
+
+    ```sh
     aula2:~$ cat /mnt/volumeExterno/meuArquivo 
     sic mundus creatus est
     ```

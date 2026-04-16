@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - AWS S3
 
-Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3/) aprenderemos alguns conceitos importantes do armazenamento de objetos:
+Neste lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3/) aprenderemos alguns conceitos importantes do armazenamento de objetos:
  - Criação de *buckets*
  - Criação de objetos
  - Controle de permissões de acesso
@@ -8,7 +10,7 @@ Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3
 
 ## Criação do *bucket*
  
-1. Accessar o serviço **S3**:
+1. Acessar o serviço **S3**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-02.png)
 
 2. Criar um novo *bucket*:
@@ -17,10 +19,10 @@ Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3
 3. Escolher um nome para o *bucket*. O nome deve ser único globalmente:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-04.png)
    
-4. Em esta aba podem ser configuradas algumas opções do *bucket*, como versionamento, *logging*, etc.:
+4. Nesta aba podem ser configuradas algumas opções do *bucket*, como versionamento, *logging*, etc.:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-05.png)
 
-5. Habilitar accesso público no *bucket*:
+5. Habilitar acesso público no *bucket*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-06.png)
 
 6. Confirmar a criação do *bucket*:
@@ -34,10 +36,10 @@ Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3
 8. Fazer o *upload* de uma imagem qualquer:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-10.png)
 
-9. Habilitar accesso público no objeto:
+9. Habilitar acesso público no objeto:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-11.png)
 
-10. Seleccionar o *tier* `Standard`:
+10. Selecionar o *tier* `Standard`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-12.png)
 
 11. Confirmar a criação do objeto:
@@ -54,7 +56,7 @@ Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-15.png)    
 
-14. Accessar a imagem pela URL do objeto:
+14. Acessar a imagem pela URL do objeto:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-16.png)    
 
 
@@ -63,10 +65,10 @@ Em este lab sobre [**Simple Storage Service (S3)**](https://aws.amazon.com/pt/s3
 15. Alterar a configuração do bucket para permitir o armazenamento de sites estáticos:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-17.png)    
 
-16. Introducir o nome do arquivo `html` principal:
+16. Inserir o nome do arquivo `html` principal:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/s3-18.png)    
 
-17. Fazer *upload* do arquivo [`index.html`](https://github.com/josecastillolema/fiap/blob/master/abd/dbaas/lab03-iaas-s3/index.html) (ou de qualquer outro arquivo `html`) com permissão de accesso público, como descrito na [criação de objeto](#criação-do-objeto)
+17. Fazer *upload* do arquivo [`index.html`](https://github.com/josecastillolema/fiap/blob/master/abd/dbaas/lab03-iaas-s3/index.html) (ou de qualquer outro arquivo `html`) com permissão de acesso público, como descrito na [criação de objeto](#criação-do-objeto)
 
 17. A URL no modo armazenamento de sites estáticos apresenta um novo formato:
 

@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 13 - Amazon Lambda
 
-Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
+Neste lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
  - Criação de funções Lambda
  - Teste de funções 
  - Criação de triggers (via API Gateway)
@@ -21,10 +23,11 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 2. Criar uma nova função:
     ![](img/lambda2.png)
    
-3. Criar uma primera função `getTemperatura` com Python como *runtime*:
+3. Criar uma primeira função `getTemperatura` com Python como *runtime*:
     ![](img/lambda3.png)
 
 4. Configurar o seguinte código para a função:
+
     ```python
     import json
     import boto3
@@ -37,7 +40,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
           'body': response['Items'][0]['temperatura']
        }
     ```
-    O código lee o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
+    O código lê o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
     
     
 5. Fazer *deploy* do código:
@@ -46,7 +49,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 6. Vamos testar o código:
     ![](img/lambda5.png)
 
-7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
+7. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indiferente neste caso específico, pois a API não está lendo entrada:
     ![](img/lambda6.png)
 
  8. Executar o evento de testes recém criado `testeGetTemperatura`:
@@ -67,7 +70,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
  13. Estado final da *role*:
     ![](img/lambda12.png)
 
- 14. Ejecutar de novo o teste, agora deberia funcionar:
+ 14. Executar de novo o teste, agora deveria funcionar:
     ![](img/lambda13.png)
 
  15. Agora vamos configurar um *trigger* para a função:
@@ -76,7 +79,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
  16. O *trigger* será um *endpoint* em uma nova API do API Gateway chamada `api-lambda`:
     ![](img/lambda15.png)
 
- 17. Conferir que o *trigger* foi criado e asociado à função:
+ 17. Conferir que o *trigger* foi criado e associado à função:
     ![](img/lambda16.png)
 
  18. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
@@ -87,10 +90,11 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
 
  ## Configuração do segundo *endpoint* usando a mesma API
 
-20. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
+20. Repetir os passos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
     ![](img/lambda19.png)
  
 21. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
+
     ```python
     import json
     import boto3
@@ -104,7 +108,7 @@ Em este lab sobre **Lambda** aprenderemos alguns conceitos do modulo de Function
        }
     ```
 
-    O código lee o valor `humidade` da tabela `Atmosfera` do DynamoDB.
+    O código lê o valor `humidade` da tabela `Atmosfera` do DynamoDB.
 
 22. Configurar as devidas permissões para a role da nova função no IAM, como mostrado nos passos **10**, **11**, **12** e **13**:
     ![](img/lambda20.png)

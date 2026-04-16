@@ -1,8 +1,10 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - App Service Plans
 
-Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importantes da camada de plataforma da Azure:
+Neste lab sobre **App Service Plans** aprenderemos alguns conceitos importantes da camada de plataforma da Azure:
  - *Deploy* de aplicações
- - Plataformas/entornos de execução disponíveis
+ - Plataformas/ambientes de execução disponíveis
  - *Logging*
  - Monitoramento
  - Estratégias de *release*
@@ -23,17 +25,20 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 2. Logar na VM
 
 3. Atualizar os repositorios:
-    ```
+
+    ```sh
     $ sudo apt update
     ```
 
 4. Instalar o pip3 (gestor de pacotes do python3):
-    ```
+
+    ```sh
     $ sudo apt install python3-pip -y
     ```
 
 5. Clonar o repositório:
-    ```
+
+    ```sh
     git clone https://github.com/josecastillolema/fiap
     ```
 
@@ -42,12 +47,14 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
     - [**`requirements.txt`**](https://github.com/josecastillolema/fiap/blob/master/net/devops/lab05-paas-app/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
 7. Instalar as dependências:
-    ```
+
+    ```sh
     $ sudo pip3 install -r requirements.txt
     ```
 
 8. Executar a aplicação:
-    ```
+
+    ```sh
     $ FLASK_APP=./application.py FLASK_RUN_HOST=0.0.0.0 flask run &
      Serving Flask app "./application.py"
      Environment: production
@@ -58,17 +65,18 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
     ```
 
 9. Testar o acesso local:
-    ```
+
+    ```sh
     $ curl localhost:5000
     <h1>Hola FIAP!</h1>
     MBA! o/
     ```
 
-5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
+5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberação da porta 5000 no *security group* da VM):
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app01.png)
 
-## Criaçao do serviço na Azure
+## Criação do serviço na Azure
  
 1. Acessar o serviço **Web Application**:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app02.png)
@@ -87,25 +95,26 @@ Em este lab sobre **App Service Plans** aprenderemos alguns conceitos importante
 5. Acessar a URL do serviço criado:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app06.png)
 
-6. Foi desplegado automaticamente um site de teste:
+6. Foi publicado automaticamente um site de teste:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app07.png)
    
-## Configuraçao do repositório `git`
+## Configuração do repositório `git`
 
 Criaremos um repositório `git` local para automatizar o *deploy* da aplicação.
 
-7. No *Deployment center*, na aba de configuraçao criar um repositório git local:
+7. No *Deployment center*, na aba de configuração criar um repositório git local:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app08.png)
    
 8. Na aba de credenciais configurar um usuário e senha para poder clonar o repositório:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app09.png)
 
-## Deploy da aplicaçao
+## Deploy da aplicação
 
 **De volta na VM**
 
 9. Clonar o repositório local criado nos passos anteriores (copiar a URI do repositorio git local no passo anterior) usando as credencias recém criadas:
-    ```
+
+    ```sh
     $ git clone https://fiap-app.scm.azurewebsites.net:443/fiap.git
     Cloning into 'fiap-app'...
     Username for 'https://fiap.scm.azurewebsites.net:443': jlema
@@ -114,7 +123,8 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
     ```
 
 10. Copiar os 2 arquivos:
-    ```
+
+    ```sh
     $ cp fiap/net/devops/lab05-paas-app/* fiap-app
     
     $ ls fiap-app
@@ -122,7 +132,8 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
     ```
     
 11. Comittar os novos arquivos no repositorio git local da app:
-    ```
+
+    ```sh
     $ cd fiap-app
     
     $ git status
@@ -251,7 +262,7 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
 
 ## *Logging* e monitoramento
 
-9. Na descrição da aplicaçao podemos consultar algumas métricas básicas:
+9. Na descrição da aplicação podemos consultar algumas métricas básicas:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app11.png)
 
 10. Para fazer *troubleshooting* da aplicação, se o endereço da mesma for https://fiap.azurewebsites.net/, acessar https://fiap.scm.azurewebsites.net/:
@@ -259,9 +270,9 @@ Criaremos um repositório `git` local para automatizar o *deploy* da aplicação
 
 ## Deployment slots
 
-Para implementar algums estratégias de *release* (blue-green e canary) usaremos *deployment slots*:
+Para implementar algumas estratégias de *release* (blue-green e canary) usaremos *deployment slots*:
 
-11. Criar um novo *slot* para o ambiente de homolgação:
+11. Criar um novo *slot* para o ambiente de homologação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app13.png)
 
 12. Confirmar a URL do *slot* de homologação. Se o endereço da app for https://fiap.azurewebsites.net/, o endereço do ambiente de homologação será https://fiap-homol.azurewebsites.net/
@@ -270,7 +281,7 @@ Para implementar algums estratégias de *release* (blue-green e canary) usaremos
 13. Acessar o endereço de homologação e confirmar que Azure fez deploy da aplicação de teste:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app15.png)
 
-14. Para fazer **blue-green**, escolher a opçao ***Swap*** (Intercambiar):
+14. Para fazer **blue-green**, escolher a opção ***Swap*** (Intercambiar):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/app16.png)
 
 16. Para fazer o **canary release**, ajustar as porcentagens conforme desejado (usar *browsers* diferentes para testar):

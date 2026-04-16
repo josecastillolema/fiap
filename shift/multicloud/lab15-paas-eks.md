@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 15 - AWS EKS
 
 ## Criando o cluster
@@ -31,17 +33,20 @@ Para saber em qual zona de disponibilidade foram provisionadas as subredes consu
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eks8.png)
 
 9. Gerar o `kubeconfig` do cluster (é um arquivo com as credencias e a URL do cluster):
-    ```
+
+    ```sh
     $ aws eks --region us-east-1 update-kubeconfig --name fiapCluster
     ```
     
 10. Instalar o `kubectl` (CLI para interagir com o cluster):
-    ```
+
+    ```sh
     $ curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubectl
     $ chmod +x kubectl
     ```
 
 11. Testar o acesso:
-    ```
+
+    ```sh
     $ ./kubectl get svc
     ```

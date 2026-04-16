@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 [![FIAP MBA](https://raw.githubusercontent.com/josecastillolema/fiap/master/img/bdt2.jpeg)](https://www.fiap.com.br/mba/mba-em-big-data/)
 
 

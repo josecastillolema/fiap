@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 4 - OpenStack Neutron
 
 ## Network Service
@@ -10,7 +12,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
 ## Pre-reqs
 
 1. Carregar as credenciais de OpenStack:
-    ```
+
+    ```sh
     $ source devstack/openrc admin
     WARNING: setting legacy OS_TENANT_NAME to support cli tools.
     
@@ -29,7 +32,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 2.	Conferir que o Neutron foi instalado no OpenStack:
-    ```
+
+    ```sh
     $ openstack service list
     +----------------------------------+-------------+----------------+
     | ID                               | Name        | Type           |
@@ -50,7 +54,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 3.	Mostrar informação sobre o *endpoint*:
-    ```
+
+    ```sh
     $ openstack catalog show neutron
     +-----------+---------------------------------------+
     | Field     | Value                                 |
@@ -65,7 +70,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 4.	Conferir que a porta 9696 está aberta e associada ao Neutron:
-    ```
+
+    ```sh
     $ sudo netstat -punlt | grep 9696
     tcp        0      0 0.0.0.0:9696            0.0.0.0:*               LISTEN                    831/python
     
@@ -75,7 +81,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 5.	Conferir a saúde dos agentes que compõem o Neutron:
-    ```
+
+    ```sh
     $ openstack network agent list
     +--------------------------------------+--------------------+--------+-------------------+-------+-------+---------------------------+
     | ID                                   | Agent Type         | Host   | Availability Zone | Alive | State | Binary                    |
@@ -88,7 +95,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 6.	Listar os serviços Linux que compõem o Neutron:
-    ```
+
+    ```sh
     $ systemctl | grep devstack@q
     devstack@q-agt.service                                                     loaded active running   Devstack devstack@q-agt.service
     devstack@q-dhcp.service                                                    loaded active running   Devstack devstack@q-dhcp.service
@@ -102,7 +110,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 7.	Conferir a saúde dos serviços:
-    ```
+
+    ```sh
     $ systemctl status devstack@q*
     ● devstack@q-dhcp.service - Devstack devstack@q-dhcp.service
        Loaded: loaded (/etc/systemd/system/devstack@q-dhcp.service; enabled; vendor preset: enabled)
@@ -166,12 +175,14 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 8.	Mostrar os logs do serviço:
-    ```
+
+    ```sh
     $ journalctl -u devstack@q-svc
     ```
     
 9.	Mostrar os arquivos de configuração:
-    ```
+
+    ```sh
     $ less /etc/neutron/neutron.conf
     
     $ less /etc/neutron/plugins/ml2/ml2_conf.ini
@@ -180,7 +191,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 10.	Mostrar os arquivos de configuração de uma forma mais clara (sem comentários nem linhas vazias):
-    ```
+
+    ```sh
     $ grep -vE "^#|^$" /etc/neutron/plugins/ml2/ml2_conf.ini
     [DEFAULT]
     [l2pop]
@@ -214,7 +226,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
 ## Redes e subredes virtuais
 
 11.	Criar uma rede:
-    ```
+
+    ```sh
     $ openstack network create rede-privada
     +---------------------------+--------------------------------------+
     | Field                     | Value                                |
@@ -250,7 +263,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
  
 12.	Criar uma subrede:
-    ```
+
+    ```sh
     $ openstack subnet create --network rede-privada --subnet-range 10.20.20.0/24 --ip-version 4 --dns-nameserver 8.8.8.8 subrede-privada
     +-------------------------+--------------------------------------+
     | Field                   | Value                                |
@@ -283,7 +297,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
 13.	Subir duas vms via Horizon no projeto `demo` associadas à rede/subrede que acabamos de criar nos passos anteriores. 
 	
 14.	Acessar a uma delas via console e tentar pingar a outra vm pelo IP interno. Depois tenta pingar para a Internet (p.ex. 8.8.8.8, o servidor DNS da Google, não vai conseguir):
-    ```
+
+    ```sh
     $ virsh list
      Id    Name                           State
     ----------------------------------------------------
@@ -324,7 +339,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
 ## *Virtual routers*
 
 15.	Criar um roteador:
-    ```
+
+    ```sh
     $ openstack router create router-fiap
     +-------------------------+--------------------------------------+
     | Field                   | Value                                |
@@ -350,17 +366,20 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 16.	Associar o roteador a rede externa (pública) do OpenStack:
-    ```
+
+    ```sh
     $ openstack router set --external-gateway public router-fiap
     ```
  
 17.	Adicionar uma interface do roteador à subrede previamente criada:
-    ```
+
+    ```sh
     $ openstack router add subnet router-fiap subrede-privada
     ```
 
 18.	Repetir os testes de ping **via console na vm previamente criada** para ver se a VM sae para "a Internet" (IP 172.24.4.6):
-    ```
+
+    ```sh
     $ ping 10.20.20.1
     PING 10.20.20.1 (10.20.20.1) 56(84) bytes of data.
     64 bytes from 10.20.20.1: icmp_seq=1 ttl=64 time=4.24 ms
@@ -374,7 +393,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 19.	Reservar um IP público (*floating* IP):
-    ```
+
+    ```sh
     $ openstack floating ip create public
     +---------------------+--------------------------------------+
     | Field               | Value                                |
@@ -396,14 +416,16 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 20.	Associar o IP público à VM previamente criada:
-    ```
+
+    ```sh
     $ openstack server add floating ip vm-1 172.24.4.13
     ```
 
 ## *Security groups*
 
 21.	Criar um *security group*:
-    ```
+
+    ```sh
     $ openstack security group create fiap
     +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
     | Field           | Value                                                                                                                                                 |
@@ -421,7 +443,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 22.	Liberar o tráfego ICMP (para poder pingar à VM):
-    ```
+
+    ```sh
     $ openstack security group rule create --ingress --protocol icmp --remote-ip 0.0.0.0/0 fiap
     +-------------------+--------------------------------------+
     | Field             | Value                                |
@@ -445,7 +468,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 23.	Liberar o tráfego TCP (para conseguir acessar via SSH à VM):
-    ```
+
+    ```sh
     $ openstack security group rule create --ingress --protocol tcp --remote-ip 0.0.0.0/0 fiap
     +-------------------+--------------------------------------+
     | Field             | Value                                |
@@ -469,7 +493,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 24.	Associar o *security group* à VM:
-    ```
+
+    ```sh
     $ openstack server list
     +--------------------------------------+------+--------+---------------------------------------+--------------------------+--------+
     | ID                                   | Name | Status | Networks                              | Image                    | Flavor |
@@ -482,7 +507,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 25.	Tentar pingar a VM pelo IP interno (não é possível):
-    ```
+
+    ```sh
     $ openstack server list
     +--------------------------------------+------+--------+---------------------------------------+--------------------------+--------+
     | ID                                   | Name | Status | Networks                              | Image                    | Flavor |
@@ -498,7 +524,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 26.	Conferir o ID do roteador para saber a qual *network namespace* temos que acessar:
-    ```
+
+    ```sh
     $ openstack router list
     +--------------------------------------+-------------+--------+-------+-------------+-------+----------------------------------+
     | ID                                   | Name        | Status | State | Distributed | HA    | Project                          |
@@ -509,7 +536,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ``` 
  
 27.	Listar os *network namespaces*:
-    ```
+
+    ```sh
     $ sudo ip netns ls
     qrouter-d4ea769a-6403-436d-9f8c-c9330597a247
     qdhcp-f7476929-ffcd-4451-a4b0-3e109d1d782c
@@ -518,13 +546,15 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 28.	Acessar ao *network namespace* do *virtual router* (veja que o *prompt* muda):
-    ```
+
+    ```sh
     $ sudo ip netns exec qrouter-d4ea769a-6403-436d-9f8c-c9330597a247 bash
     root@ubuntu:~#
     ``` 
 
 29.	Conferir os IPs (do *gateway* e *floating* IPs):
-    ```
+
+    ```sh
     # ip a
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -551,7 +581,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 30.	Pingar à VM e acessar via SSH:
-    ```
+
+    ```sh
     root@ubuntu:~# ping 10.20.20.10
     PING 10.20.20.10 (10.20.20.10) 56(84) bytes of data.
     64 bytes from 10.20.20.10: icmp_seq=1 ttl=64 time=4.24 ms
@@ -568,7 +599,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 31.	Listar as portas (**fora do *prompt* do *namespace***):
-    ```
+
+    ```sh
     $ openstack port list
     +--------------------------------------+------+-------------------+-----------------------------------------------------------------------------------------------------+--------+
     | ID                                   | Name | MAC Address       | Fixed IP Addresses                                                                                  | Status |
@@ -592,8 +624,9 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     +--------------------------------------+------+-------------------+-----------------------------------------------------------------------------------------------------+--------+
     ```
 
-32.	Mostar informação sobre uma porta virtual determinada:
-    ```
+32.	Mostrar informação sobre uma porta virtual determinada:
+
+    ```sh
     $ openstack port show 7b272383-9238-429e-9a8f-b06a3824538b
     +-----------------------+----------------------------------------------------------------------------+
     | Field                 | Value                                                                      |
@@ -635,14 +668,16 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 33.	Encontrar a interface do OpenvSwitch associada a porta:
-    ```
+
+    ```sh
     $ sudo ovs-vsctl show | grep 7b27
         Port "qvo7b272383-92"
             Interface "qvo7b272383-92"
     ```
     
 34.	Mostrar a porta no OpenvSwitch:
-    ```
+
+    ```sh
     $ sudo ovs-vsctl list interface qvo7b272383-92
     _uuid               : 59fb7296-d229-43ab-b57e-577eebfa8faf
     admin_state         : up
@@ -681,7 +716,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     ```
 
 35.	Mostrar os *bridges* e as interfaces configuradas no OpenvSwitch:
-    ```
+
+    ```sh
     $ sudo ovs-vsctl show
     c4198c58-dfa5-4d11-8cac-49b7565354b0
         Manager "ptcp:6640:127.0.0.1"
@@ -763,7 +799,8 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
 ## *Clean-up*
 
 36.	Deletar VMs, rede, subrede e roteador
-    ```
+
+    ```sh
     $ openstack server remove floating ip vm-1   172.24.4.13
     $ openstack router remove subnet router-fiap subrede-privada
     $ openstack router delete router-fiap
@@ -782,7 +819,7 @@ Usaremos o serviço [Neutron](https://docs.openstack.org/neutron/latest/) para a
     - Criação de roteador
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/neutron3.png)
 
-    - Assignar interfaces ao roteador
+    - Atribuir interfaces ao roteador
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/cld/openstack/img/neutron4.png)
 
     - Reservar *floating* IP e associar a instância

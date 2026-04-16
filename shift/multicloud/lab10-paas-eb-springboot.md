@@ -1,20 +1,24 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 10 - AWS Elastic Beanstalk com Spring Boot
 
-Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elasticbeanstalk/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
+Neste lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elasticbeanstalk/) aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
  - *Deploy* de aplicações
- - Plataformas/entornos de execução disponíveis
+ - Plataformas/ambientes de execução disponíveis
  - *Logging*
  - Monitoramento
 
 ## *Deploy* local
 
 1. Clonar o repositório:
-    ```
+
+    ```sh
     git clone https://github.com/josecastillolema/fiap
     ```
     
 2. Navegar ate o diretorio `fiap/shift/multicloud/lab10-paas-eb`. O diretorio contem os [seguintes arquivos](https://github.com/josecastillolema/fiap/tree/master/shift/multicloud/lab10-paas-eb-springboot):
-    ```
+
+    ```sh
     $ cd fiap/shift/multicloud/lab10-paas-eb-springboot
     $ tree .
     .
@@ -41,7 +45,8 @@ Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elastic
     ```
     
 3. Compilar a aplicação:
-    ```
+
+    ```sh
     $ mvn package
     [INFO] Scanning for projects...
     [INFO] 
@@ -134,8 +139,9 @@ Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elastic
     [INFO] ------------------------------------------------------------------------
     ```
     
-4. Ejecutar a aplicação localmente:
-    ```
+4. Executar a aplicação localmente:
+
+    ```sh
     $ mvn spring-boot:run
     [INFO] Scanning for projects...
     [INFO] 
@@ -203,10 +209,10 @@ Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elastic
 3. A aplicação é um serviço web:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/eb2.png)
    
-4. Configurar o nome da apliação:
+4. Configurar o nome da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring1.png)
 
-5. Escolher o entorno de execução:
+5. Escolher o ambiente de execução:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring2.png)
    
 6. Fazer o *upload* da aplicação. O arquivo `.jar` se encontra na pasta: `fiap/shift/multicloud/lab10-paas-eb/target/springboot-0.0.1-SNAPSHOT.jar` 
@@ -215,7 +221,7 @@ Em este lab sobre [**Elastic Beanstalk (EB)**](https://aws.amazon.com/pt/elastic
 7. Após uns minutos, conferir o estado da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring4.png)
 
-8. Accessar a URL da aplicação:
+8. Acessar a URL da aplicação:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ebspring5.png)
 
 ## *Logging* e monitoramento

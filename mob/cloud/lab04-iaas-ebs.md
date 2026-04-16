@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 4 - AWS EBS
 
-Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos importantes do armazenamento em blocos:
+Neste lab sobre **Elastic Block Service** aprenderemos alguns conceitos importantes do armazenamento em blocos:
  - Criação de volumes
  - Anexar volumes a instâncias
  - Configurar volumes dentro das instâncias
@@ -11,7 +13,8 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 ## Pre-reqs
 
 - Na maquina virtual do [lab 01 - EC2](/mob/cloud/lab01-iaas-ec2.md), conferir os volumes:
-    ```
+
+    ```sh
     [ec2-user@ip-172-31-51-147 ~]$ lsblk
     NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
     xvda    202:0    0   8G  0 disk 
@@ -21,16 +24,16 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 
 ## Criando o volume
  
-1. Ainda no serviço **EC2**, navegar ate **Elastic Block Volume** -> **Volumes**. Importante notar a zona de disponibilidade a onde foi criada a maquina virtual do lab 01:
+1. Ainda no serviço **EC2**, navegar ate **Elastic Block Volume** -> **Volumes**. Importante notar a zona de disponibilidade onde foi criada a maquina virtual do lab 01:
    ![](/mob/cloud/img/ebs0.png)
 
-2. Criar um novo volume vazio com tamanho de 10 GB, na mesma zona de disponibilidade a onde foi criada a VM do lab 01:
+2. Criar um novo volume vazio com tamanho de 10 GB, na mesma zona de disponibilidade onde foi criada a VM do lab 01:
    ![](/mob/cloud/img/ebs1.png)
 
 3. Uma vez o volume for criado, anexar ele à maquina virtual:
    ![](/mob/cloud/img/ebs2.png)
    
-4. Seleccionar o nome da maquina virtual criada no lab01:
+4. Selecionar o nome da maquina virtual criada no lab01:
    ![](/mob/cloud/img/ebs3.png)
 
 5. Apos uns instantes, conferir a informação sobre anexos do volume:
@@ -38,8 +41,9 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
 
 ## Configurando o volume dentro da instancia
 
-6. Na maquina virtual, conferir o novo dispositivo, em este caso `xvdf`, com tamanho 10 GB (o nome pode mudar). Observe-se que ainda não possue nenhuma partição:
-    ```
+6. Na maquina virtual, conferir o novo dispositivo, neste caso `xvdf`, com tamanho 10 GB (o nome pode mudar). Observe-se que ainda não possui nenhuma partição:
+
+    ```sh
     $ lsblk
     NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
     xvda    202:0    0   8G  0 disk 
@@ -48,7 +52,8 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
     ```
     
 7. Usaremos o `fdisk` para criar uma partição no novo disco:
-   ```
+
+   ```sh
    $ sudo fdisk /dev/xvdf
 
    Welcome to fdisk (util-linux 2.30.2).
@@ -75,8 +80,9 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
    Syncing disks.
 
    ```
-8. Conferir a nova partição (em este caso, `xvdf1`):
-   ```
+8. Conferir a nova partição (neste caso, `xvdf1`):
+
+   ```sh
    $ lsblk 
    NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
    xvda    202:0    0   8G  0 disk 
@@ -86,7 +92,8 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
    ```
 
 9. Criar o sistema de arquivos:
-   ```
+
+   ```sh
    $ sudo mkfs /dev/xvdf1
    mke2fs 1.42.9 (28-Dec-2013)
    Filesystem label=
@@ -110,30 +117,34 @@ Em este lab sobre **Elastic Block Service** aprenderemos alguns conceitos import
    ```
 
 10. Criar a pasta `/mnt/volumeExterno` para montar o volume:
-    ```
+
+    ```sh
     $ sudo mkdir /mnt/volumeExterno
     ```
 
 11. Montar o volume na pasta recem criada:
-    ```
+
+    ```sh
     $ sudo mount /dev/xvdf1 /mnt/volumeExterno/
     ```
 
 12. Listar os arquivos do novo volume (é esperado ter uma pasta chamada `lost-found`, mesmo que o volume esteja vazio):
-    ```
+
+    ```sh
     $ cd /mnt/volumeExterno/
     $ ls
     lost+found
     ```
 
 13. Criar um arquivo qualquer (como usuário admin):
-    ```
+
+    ```sh
     $ cd /mnt/volumeExterno/meuArquivo
     $ cat meuArquivo 
     sic mundus creatus est
     ```
 
-14. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes pasos seria necessario refazer?
+14. Se for necessario usar este mesmo volume com o arquivo recem criado em outra instancia, quais dos seguintes passos seria necessario refazer?
     - Formatação
     - Criação do sistema de arquivos
     - Montar o volume

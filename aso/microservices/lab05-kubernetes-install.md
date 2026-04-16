@@ -1,8 +1,10 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - Kubernetes - Instalação
 
 Orquestrando containers
 --------------
-Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. De esta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
+Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. Desta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
  - **tolerância a falhas**: se um dos servidores do cluster cair, o container automaticamente será iniciado em outro servidor do cluster
  - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
@@ -10,12 +12,14 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
  **Microk8s** é um Kubernetes pequeno, rápido, seguro e com um único nó (*all-in-one*) que é instalado em praticamente qualquer computador com Linux. Usado para desenvolvimento *off-line*, criação de protótipos, testes ou uso em uma VM como um k8s pequeno, barato e confiável para CI/CD.
  
 1. Instalação do **microk8s**:
-    ```
+
+    ```sh
     $ sudo snap install microk8s --classic
     microk8s v1.18.0 from Canonical✓ installed
     ```
 2. Ajuste de permissões do usuário **`ubuntu`** no grupo **`microk8s`**:
-    ```
+
+    ```sh
     $ sudo usermod -a -G microk8s ubuntu
     $ sudo reboot
     ```
@@ -29,6 +33,7 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
    
 
 4. Conferir instalação:
+
     ```yaml
     $ microk8s.status
     microk8s is running
@@ -55,19 +60,22 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 5. Usar o cliente interno do microk8s (**`microk8s.kubectl`**):
-    ```
+
+    ```sh
     $ microk8s.kubectl get all
     NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   4m5s
     ```
 
 6. Instalação do cliente externo (**`kubectl`**):
-    ```
+
+    ```sh
     $ sudo snap install kubectl --classic
     kubectl 1.18.0 from Canonical✓ installed
     ```
 
 7. Configuracão dos parámetros de acesso (URL, credenciais, etc.) do cliente externo:
+
     ```yaml
     $ microk8s.config > .kube/config
     $ cat .kube/config 
@@ -93,14 +101,16 @@ Kubernetes (k8s), da mesma forma que o Docker Swarm, permite orquestrar containe
     ```
 
 8. Testar o cliente externo:
-    ```
+
+    ```sh
     $ kubectl get all --all-namespaces
     NAMESPACE   NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
 9. Habilitar os *plugins* **`dns`** e **`dashboard`**:
-    ```
+
+    ```sh
     $ microk8s.enable dns dashboard
     Enabling DNS
     Applying manifest

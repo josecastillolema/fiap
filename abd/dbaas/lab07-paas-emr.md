@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 7 - Elastic MapReduce
 
-Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns conceitos da plataforma de Big Data as a Service da AWS:
+Neste lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns conceitos da plataforma de Big Data as a Service da AWS:
  - Criação de cluster
  - Acesso via WEB e SSH/CLI
  - Monitoramento
@@ -13,7 +15,7 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
 2. Iniciar a criação do cluster:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr1.png)
    
-3. Escolher um nome para o cluster, um bucket do S3 para armacenar os logs, versão do EMR e conjunto de aplicações solicitado:
+3. Escolher um nome para o cluster, um bucket do S3 para armazenar os logs, versão do EMR e conjunto de aplicações solicitado:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr2.png)
 
 4. Escolha de flavor, número de instâncias e chave SSH para acessar o cluster. Quem tiver usando a conta do AWS Educate, lembre-se que só os seguintes flavors estão disponíveis: `t2.small`, `t2.micro`, `t2.nano`, `m4.large`, `c4.large`, `c5.large`, `m5.large`, `t2.medium`, `m4.xlarge`, `t2.nano`, `c4.xlarge`, `c5.xlarge`, `t2.2xlarge`, `m5.2xlarge`, `t2.large` e `t2.xlarge`.
@@ -33,7 +35,8 @@ Em este lab sobre [**EMR**](https://aws.amazon.com/pt/emr) aprenderemos alguns c
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/emr7.png)
    
 8. Acessar via SSH no master node e fazer uma consulta no Hive. É necessário liberar a porta 22 no `security group` associado às instâncias criadas no EC2:
-    ```
+
+    ```sh
     % ssh -i fiap.pem hadoop@ec2-3-81-126-78.compute-1.amazonaws.com
 
     The authenticity of host 'ec2-3-81-126-78.compute-1.amazonaws.com (3.81.126.78)' can't be established.

@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 6 - Azure Pipelines
 
-Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/services/devops/pipelines/) aprenderemos alguns conceitos importantes na criação de *pipelines*:
+Neste lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/services/devops/pipelines/) aprenderemos alguns conceitos importantes na criação de *pipelines*:
  - Criação do *pipeline*
  - Automação de deploy no Azure Pipelines
  
@@ -35,7 +37,7 @@ Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/servic
 5. Autorizar o acesso do Azure Pipelines ao GitHub:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap06.png)
 
-6. Selecionar o repositório dos pre-reqs (em este caso `azure-devops`):
+6. Selecionar o repositório dos pre-reqs (neste caso `azure-devops`):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap07.png)
 
 7. Autorizar o acesso do Azure Pipelines ao repositório selecionado:
@@ -44,7 +46,7 @@ Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/servic
 8. Configurar um novo *pipeline*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap09.png)
    
-9. Selecionar a *subscription* adecuada:
+9. Selecionar a *subscription* adequada:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap10.png)
 
 10. Selecionar o *application service* dos pre-reqs:
@@ -64,7 +66,7 @@ Em este lab sobre [**Azure Pipelines**](https://azure.microsoft.com/pt-br/servic
 
 ## Invocando o *pipeline*
 
-15. Atualizar o código da aplicaçao no GitHub:
+15. Atualizar o código da aplicação no GitHub:
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/net/devops/img/ap16.png)
 

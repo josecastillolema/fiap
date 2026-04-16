@@ -1,8 +1,10 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - Kubernetes - Instalação
 
 Orquestrando containers
 --------------
-[**Kubernetes** (k8s)](https://kubernetes.io/pt/), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. De esta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
+[**Kubernetes** (k8s)](https://kubernetes.io/pt/), da mesma forma que o Docker Swarm, permite orquestrar containers em um cluster formado por vários servidores. Desta forma conseguimos garantir as seguintes propriedades nos containers gerenciados pelo orquestrador:
  - **tolerância a falhas**: se um dos servidores do cluster cair, o container automaticamente será iniciado em outro servidor do cluster
  - **alta disponibilidade**: várias réplicas de cada container podem ser executadas em vários servidores do cluster
  - **escalabilidade**: o número de réplicas de cada container pode ser aumentado a qualquer momento em funçao da demanda
@@ -18,18 +20,21 @@ Orquestrando containers
 ## Instalação
 
 1. Instalação do **microk8s**:
-    ```
+
+    ```sh
     $ sudo snap install microk8s --classic
     microk8s v1.18.0 from Canonical✓ installed
     ```
 2. Ajuste de permissões do usuário **`ubuntu`** no grupo **`microk8s`**:
-    ```
+
+    ```sh
     $ sudo usermod -a -G microk8s ubuntu
     $ sudo reboot
     ```
 
 3. Após o *reboot*, confirmar que o usuário pertence ao grupo **`microk8s`**:
-   ```
+
+   ```sh
    $ groups
    ubuntu adm dialout cdrom floppy sudo audio dip video plugdev lxd netdev microk8s
    ```
@@ -37,6 +42,7 @@ Orquestrando containers
 ## Validação
 
 4. Conferir instalação:
+
     ```yaml
     $ microk8s.status
     microk8s is running
@@ -63,14 +69,16 @@ Orquestrando containers
     ```
 
 5. Usar o cliente interno do microk8s (**`microk8s.kubectl`**):
-    ```
+
+    ```sh
     $ microk8s.kubectl get all
     NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   4m5s
     ```
 
 6. Instalação do cliente externo (**`kubectl`**):
-    ```
+
+    ```sh
     $ sudo snap install kubectl --classic
     kubectl 1.18.0 from Canonical✓ installed
     ```
@@ -102,14 +110,16 @@ Orquestrando containers
     ```
 
 8. Testar o cliente externo:
-    ```
+
+    ```sh
     $ kubectl get all --all-namespaces
     NAMESPACE   NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE
     default     service/kubernetes   ClusterIP   10.152.183.1   <none>        443/TCP   6m46s
     ```
 
 9. Habilitar o *plugins* **`dns`**:
-    ```
+
+    ```sh
     $ microk8s.enable dns
     Enabling DNS
     Applying manifest
@@ -156,7 +166,8 @@ Orquestrando containers
     ```
 
 10. Confirmar que os *plugins* estão habilitados:
-    ```
+
+    ```sh
     $ microk8s.status
     microk8s is running
     addons:

@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 14 - AWS CloudFormation
 
-Em este lab sobre [**CloudFormation**](https://aws.amazon.com/pt/cloudformation/) aprenderemos alguns conceitos importantes do paradigma de Infrastructure as Code (IaC):
+Neste lab sobre [**CloudFormation**](https://aws.amazon.com/pt/cloudformation/) aprenderemos alguns conceitos importantes do paradigma de Infrastructure as Code (IaC):
  - Criação de *stacks*
  - Parametrização
  - Monitoramento
@@ -9,7 +11,7 @@ Criaremos um *stack* que configura um servidor WordPress.
 
 ## Criação do *stack*
  
-1. Accessar o serviço **CloudFormation** e criar um novo *stack*:
+1. Acessar o serviço **CloudFormation** e criar um novo *stack*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf01.png)
 
 2. Fazer *upload* do *template* [`lab14-iaas-cloudformation.yaml`](https://github.com/josecastillolema/fiap/blob/master/shift/multicloud/lab14-iaas-cloudformation/lab14-iaas-cloudformation.yaml)
@@ -21,14 +23,14 @@ Criaremos um *stack* que configura um servidor WordPress.
 4. Parametrização do *stack*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf04.png)
 
-5. Opçoes avançadas (sem mudanças):
+5. Opções avançadas (sem mudanças):
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf05.png)
 
 6. Revisar e confirmar a criação do *stack*:
 
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf06.png)
 
-## Accesso ao *stack*
+## Acesso ao *stack*
 
 
 7. Aguardar o *stack* transicionar ao estado `CREATE_COMPLETE`:
@@ -38,5 +40,5 @@ Criaremos um *stack* que configura um servidor WordPress.
 8. Confirmar a URL do WordPress:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf08.png)
 
-9. Accessar o WordPress:
+9. Acessar o WordPress:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/cf09.png)

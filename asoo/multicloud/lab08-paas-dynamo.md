@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 8 - AWS DynamoDB
 
-Em este lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
+Neste lab sobre **DynamoDB** aprenderemos alguns conceitos importantes na criação de DBaaS NoSQL:
  - Criação de tabelas
  - Inserção/consulta de dados via console
  - Inserção/consulta via código `python`
@@ -18,12 +20,13 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 
 - Uma VM com a imagem `Ubuntu Linux 18.04`
 
-- No painel da Vocareum, accessar as credenciais da conta para acesso programático:
+- No painel da Vocareum, acessar as credenciais da conta para acesso programático:
    ![](/mob/cloud/img/d0.png)
    ![](/mob/cloud/img/d1.png)
    
 - Copiar as credenciais no arquivo `~/.aws/credentials` dentro da VM:
-    ```
+
+    ```sh
     $ cat ~/.aws/credentials 
     [default]
     aws_access_key_id=<copy here>
@@ -31,13 +34,15 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     aws_session_token=<copy here>
     ```
 - Para testar as credenciais, instalaremos o CLI da AWS:
-    ```
+
+    ```sh
     $ sudo apt update
     
     $ sudo apt install -y awscli
     ```
     
  - Configuramos a região correta (ignorar o resto dos campos):
+
     ````
     $ aws configure
     AWS Access Key ID [****************Q5QG]: 
@@ -47,7 +52,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
     
  - Listar VMs (em formato `json`):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances
     {
         "Reservations": [
@@ -271,7 +277,8 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     ```
 
  - Listar VMs (em formato tabela):
-    ```
+
+    ```sh
     $ aws ec2 describe-instances --output table
     ------------------------------------------------------------------------------------------------------------------------------------------------------------------
     |                                                                        DescribeInstances                                                                       |
@@ -503,17 +510,19 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
    ![](/mob/cloud/img/d6.png)
 
 
-## Accessando via código `python`
+## Acessando via código `python`
 
 ### Usando o arquivo de credenciais
 
-7. Na VM, clonar o repostiorio das aulas:
-    ```
+7. Na VM, clonar o repositório das aulas:
+
+    ```sh
     $ git clone https://github.com/josecastillolema/fiap.git
     ```
 
-8. Navegar ate a pasta dos códigos de este lab:
-    ```
+8. Navegar ate a pasta dos códigos deste lab:
+
+    ```sh
     $ cd fiap/mob/cloud/lab08-paas-dynamo/
     ```
     
@@ -521,6 +530,7 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
     * Carrega a tabela `Alunos` da *region* `us-east-1` 
     * Faz um *scan* de todos os dados da tabela
     * Insere um novo aluno
+
     ```python
     from pprint import pprint
     import boto3
@@ -556,19 +566,21 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
        pprint(resp)
      ```
  10. Instalar as dependências:
-     ```
+
+     ```sh
      $ sudo apt update
      $ sudo apt install -y python3-boto3
      ```
  
  11. Rodar o código:
-     ```
+
+     ```sh
      $ python3 dynamodb.py 
 
       Testando scan:
       [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tlfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
-      Iserindo aluno:
+      Inserindo aluno:
       {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
                                             'content-length': '2',
                                             'content-type': 'application/x-amz-json-1.0',
@@ -587,12 +599,14 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 ### Usando IAM *roles* (recomendado)
 
 13. Remover o arquivo de credenciais:
-    ```
+
+    ```sh
     $ rm -rf ~.aws
     ```
 
-14. Tentar rodar de novo o código (deberia falhar, pois não estamos mais autenticados):
-    ```
+14. Tentar rodar de novo o código (deveria falhar, pois não estamos mais autenticados):
+
+    ```sh
     $ python3 dynamodb2.py 
 
     Testando scan:
@@ -653,17 +667,18 @@ Aproveitaremos também para mostrar as três formas de interação com a AWS:
 21. No console do EC2, anexar o novo *role* na VM:
    ![](/mob/cloud/img/iam7.png)
 
-22. Seleccionar o *role* que acabamos de criar:
+22. Selecionar o *role* que acabamos de criar:
    ![](/mob/cloud/img/iam8.png)
 
-23. Tentar rodar de novo o código (deberia funcionar):
-    ```
+23. Tentar rodar de novo o código (deveria funcionar):
+
+    ```sh
     $ python3 dynamodb2.py 
 
     Testando scan:
     [{'mail': 'rm234472@fiap.com.br', 'nome': 'Jonas Kahnwald', 'RM': 'RM234472', 'tfne': Decimal('11636229987')}, {'mail': 'rm338132@fiap.com.br', 'nome': 'Joao Lopez', 'RM': 'RM338132', 'tfne': Decimal('11981041293')}]
 
-    Iserindo aluno:
+    Inserindo aluno:
     {'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
                                           'content-length': '2',
                                           'content-type': 'application/x-amz-json-1.0',

@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 3 - AWS ECS
 
 ## Criando a instancia
@@ -9,10 +11,10 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
 1. Acessar o serviço **ECS**:
    ![](/mob/cloud/img/ecs0.png)
 
-2. Lançar o assistente de criaçao de containers:
+2. Lançar o assistente de criação de containers:
    ![](/mob/cloud/img/ecs1.png)
 
-3. Seleccionar o [Fargate](https://aws.amazon.com/pt/fargate/) para hospedar o container:
+3. Selecionar o [Fargate](https://aws.amazon.com/pt/fargate/) para hospedar o container:
    ![](/mob/cloud/img/ecs2.png)
    
 4. Nomear o cluster:
@@ -45,7 +47,7 @@ Usaremos a imagem `josecastillolema/api` hospedada no [Docker Hub](https://hub.d
 12. Mostrar as informações do cluster:
    ![](/mob/cloud/img/ecs11.png)
 
-13. Na aba `Tasks`, mostrar a informação da única *task* (em este exemplo `39bb35ae-615...`:
+13. Na aba `Tasks`, mostrar a informação da única *task* (neste exemplo `39bb35ae-615...`:
    ![](/mob/cloud/img/ecs12.png)
 
 14. Conferir o IP público para acessar o container:

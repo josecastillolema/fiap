@@ -1,15 +1,18 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 6 - AWS Elastic Beanstalk
 
-Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
+Neste lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos importantes da camada de plataforma da AWS:
  - *Deploy* de aplicações
- - Plataformas/entornos de execução disponíveis
+ - Plataformas/ambientes de execução disponíveis
  - *Logging*
  - Monitoramento
 
 ## *Deploy* local
 
 1. Clonar o repositório:
-    ```
+
+    ```sh
     git clone https://github.com/josecastillolema/fiap
     ```
     
@@ -18,12 +21,14 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     - [**`requirements.txt`**](lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
 3. Instalar as dependências:
-    ```
+
+    ```sh
     pip3 install -r requirements.txt
     ```
     
 4. Executar a aplicação:
-    ```
+
+    ```sh
     $ python3 application.py
      * Serving Flask app "application" (lazy loading)
      * Environment: production
@@ -43,17 +48,20 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 2. Logar na VM
 
 3. Atualizar os repositorios:
-    ```
+
+    ```sh
     $ sudo apt update
     ```
     
 4. Instalar o pip3 (gestor de pacotes do python3):
-    ```
+
+    ```sh
     $ sudo apt install python3-pip -y
     ```
 
 5. Clonar o repositório:
-    ```
+
+    ```sh
     git clone https://github.com/josecastillolema/fiap
     ```
     
@@ -62,12 +70,14 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     - [**`requirements.txt`**](lab06-paas-eb/requirements.txt): As dependências da aplicação. Podem ser instaladas usando `pip`, o gestor de dependências do Python.
  
 7. Instalar as dependências:
-    ```
+
+    ```sh
     pip3 install -r requirements.txt
     ```
     
 8. Executar a aplicação:
-    ```
+
+    ```sh
     $ python3 application.py
      * Serving Flask app "application" (lazy loading)
      * Environment: production
@@ -78,12 +88,13 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
     ```
 
 9. Testar o acesso local:
-    ```
+
+    ```sh
     $ curl localhost:5000
     <h1>Hola FIAP!</h1>
     ```
 
-5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberacão da porta 5000 no *security group* da VM):
+5. Testar o acesso remoto pela IP pública da VM (lembrando que é necessária a liberação da porta 5000 no *security group* da VM):
 
    ![](/mob/cloud/img/eb10.png)
 
@@ -98,10 +109,10 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 3. A aplicação é um serviço web:
    ![](/mob/cloud/img/eb2.png)
    
-4. Configurar o nome da apliação:
+4. Configurar o nome da aplicação:
    ![](/mob/cloud/img/eb3.png)
 
-5. Escolher o entorno de execução:
+5. Escolher o ambiente de execução:
    ![](/mob/cloud/img/eb4.png)
    
 6. Fazer o *upload* da aplicação. O arquivo comprimido deve conter os [seguintes arquivos](lab06-paas-eb):
@@ -113,7 +124,7 @@ Em este lab sobre **Elastic Beanstalk (EB)** aprenderemos alguns conceitos impor
 7. Após uns minutos, conferir o estado da aplicação:
    ![](/mob/cloud/img/eb6.png)
 
-8. Accessar a URL da aplicação:
+8. Acessar a URL da aplicação:
    ![](/mob/cloud/img/eb7.png)
 
 ## *Logging* e monitoramento

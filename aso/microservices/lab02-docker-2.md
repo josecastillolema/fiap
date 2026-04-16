@@ -1,16 +1,19 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 2 - Docker - continuação
 
 Executando mysql server
 --------------
 Usaremos a imagem oficial `mysql` para aprender alguns conceitos importantes do Docker:
- - **variáveis de entorno**: `docker run -e`
+ - **variáveis de ambiente**: `docker run -e`
  - **mapeamento de portas**: `docker run -p`
  - **persistência de dados**: `docker run -v`
  
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Obtenção da imagem
-    ```
+
+    ```sh
     $ docker pull mysql
     Using default tag: latest
     latest: Pulling from library/mysql
@@ -32,7 +35,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 2. **[T1]** Primeira tentativa executando o servidor MySQL
-   ```
+
+   ```sh
    $ docker run mysql
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
    2020-04-05 12:45:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -46,8 +50,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     - Permitir uma senha de *root* vazia via `MYSQL_ALLOW_EMPTY_PASSWORD`
     - Criar uma senha de *root* aleatória via `MYSQL_RANDOM_ROOT_PASSWORD`
 
-    Vamos optar pela primeira opção. Para passar variáveis de entorno ao container usaremos a opção `-e`. É importante colocar todos os parâmetros opcionais do comando `docker run` **antes** do nome da imagem:
-    ```
+    Vamos optar pela primeira opção. Para passar variáveis de ambiente ao container usaremos a opção `-e`. É importante colocar todos os parâmetros opcionais do comando `docker run` **antes** do nome da imagem:
+
+    ```sh
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap mysql
     2020-04-05 12:50:57+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 12:50:57+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -86,7 +91,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 4. **[T2]** Conseguimos executar o container, vamos tentar acessar o banco desde o outro terminal. Para isso, precisamos instalar o cliente do MySQL:
-    ```
+
+    ```sh
     $ sudo apt install mysql-client -y
     Reading package lists... Done
     Building dependency tree       
@@ -136,14 +142,16 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     - *Hostname* do banco via `-h`
     - Usuario via `-u`
     - Senha via `-p`. A senha tem que ser digitada **sem espacos** depois do parametro.
-    ```
+
+    ```sh
     $ mysql -h 127.0.0.1 -u root -pfiap
     mysql: [Warning] Using a password on the command line interface can be insecure.
     ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (111)
     ```
 
 6. **[T2]** Listar o container em execução para entender a falta de conectividade. A coluna `PORTS` mostra que a porta 3306 do container (a padrão do MySQL) não está mapeada a nenhuma porta do *host*.
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                 NAMES
     66696bdd281f        mysql               "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        3306/tcp, 33060/tcp   funny_yonath
@@ -151,13 +159,14 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 7. **[T2]** Parar o container:
 
-    ```
+    ```sh
     $ docker stop 66696bdd281f
     66696bdd281f
     ```
 
-8. **[T1]** Vamos adicionar ao nosso comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, a onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container.
-   ```
+8. **[T1]** Vamos adicionar ao nosso comando `docker run` o parâmetro `-p`, responsável pelo mapeamento de portas. Recebe um argumento do tipo ***x:y***, onde ***x*** é a porta do lado do host e ***y*** a porta do lado do container.
+
+   ```sh
    $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 mysql
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
    2020-04-05 13:04:50+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -196,14 +205,16 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
    ```
 
 9. **[T2]** Conferir o mapeamento de portas:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
     38e202140601        mysql               "docker-entrypoint.s…"   11 seconds ago      Up 9 seconds        0.0.0.0:3306->3306/tcp, 33060/tcp   awesome_greider
     ```
 
 10. **[T2]** Tentar novamente o acesso ao banco de dados:
-    ```
+
+    ```sh
     $ mysql -h 127.0.0.1 -u root -pfiap 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
     Your MySQL connection id is 8
@@ -222,15 +233,17 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 11. **[T2]** Parar o container:
-    ```
+
+    ```sh
     $ docker stop 38e202140601
     38e202140601
     ```
 
 12. **[T1]** Conseguimos acessar ao banco. Porem, containers são efêmeros. Qualquer dado criado no banco será perdido após o termino do container.
 
-    Para conseguir persistência de dados, vamos adicionar ao comando `docker run` o parâmetro `-v`. Recebe um argumento do tipo ***x:y***, a onde ***x*** é o nome do volume e ***y*** a pasta a onde esse volume será mapeado dentro do container.
-    ```
+    Para conseguir persistência de dados, vamos adicionar ao comando `docker run` o parâmetro `-v`. Recebe um argumento do tipo ***x:y***, onde ***x*** é o nome do volume e ***y*** a pasta onde esse volume será mapeado dentro do container.
+
+    ```sh
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 13:19:02+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -269,7 +282,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
     
 13. **[T2]** Acessar o banco e criar um *database*:
-    ```
+
+    ```sh
     $ mysql -h 127.0.0.1 -u root -pfiap
     mysql: [Warning] Using a password on the command line interface can be insecure.
     Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -292,7 +306,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 14. **[T2]** Parar o container:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                               NAMES
     27a9ff19cbd0        mysql               "docker-entrypoint.s…"   5 minutes ago       Up 5 minutes        0.0.0.0:3306->3306/tcp, 33060/tcp   laughing_lovelace
@@ -301,14 +316,16 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 15. **[T2]** Confirmar que o volume persiste mesmo depois do término do container:
-    ```
+
+    ```sh
     $ docker volume ls
     DRIVER              VOLUME NAME
     local               voldb
     ```
 
 16. **[T1]** Executar novamente o container, para conferir que os dados foram persistidos:
-    ```
+
+    ```sh
     $ docker run -e MYSQL_ROOT_PASSWORD=fiap -p 3306:3306 -v voldb:/var/lib/mysql mysql
     2020-04-05 13:28:24+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.19-1debian10 started.
     2020-04-05 13:28:24+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -322,7 +339,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 17. **[T1]** Acessar o banco e confirmar que o *database* criado foi persistido:
-    ```
+
+    ```sh
     $ mysql -h 127.0.0.1 -u root -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.

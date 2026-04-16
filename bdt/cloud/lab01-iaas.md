@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 1 - AWS EC2
 
 ## Criando a instancia
@@ -9,7 +11,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 1. Acessar o serviço **EC2**:
    ![](/bdt/cloud/img/ec2-0.png)
 
-2. Lançar o assistente de criaçao de instancias:
+2. Lançar o assistente de criação de instancias:
    ![](/bdt/cloud/img/ec2-1.png)
 
 3. Escolher a **imagem** do `Amazon Linux 2 AMI`:
@@ -21,22 +23,23 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 5. Usaremos um *script* de **`cloud-init`** para customizar a instância:
    ![](/bdt/cloud/img/ec2-4.png)
 
-6. Confirmar criaçao da instância:
+6. Confirmar criação da instância:
    ![](/bdt/cloud/img/ec2-5.png)
    
-7. Criaçao da **chave** para poder acessar a instância via SSH de forma segura:
+7. Criação da **chave** para poder acessar a instância via SSH de forma segura:
    <img src="/bdt/cloud/img/ec2-6.png" width="465" height="342">
 
 8. Validar a criacao da instância:
    ![](/bdt/cloud/img/ec2-7.png)
 
-## Accessando à instancia
+## Acessando à instancia
 
 9. Seguiremos as próprias indicações do EC2:
    ![](/bdt/cloud/img/ec2-8.png)
    
 10. Em um terminal local:
-    ```
+
+    ```sh
     $ chmod 400 fiap.pem
     $ ssh -i "fiap.pem" ec2-user@ec2-52-91-146-116.compute-1.amazonaws.com
 
@@ -49,7 +52,8 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
     
 11. Confirmar que o script de **cloud-init** rodou com sucesso:
-   ```
+
+   ```sh
    $ ls /tmp/
    cloudInitFunciona
    ```
@@ -57,7 +61,8 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 ## Instalando um servidor web
 
 12. Instalar o pacote `httpd`:
-   ```
+
+   ```sh
    [ec2-user@ip-172-31-50-1 ~]$ sudo yum install -y httpd
    Failed to set locale, defaulting to C
    Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
@@ -156,20 +161,23 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ```
 
 13. Habilitar o serviço `httpd`:
-   ```
+
+   ```sh
    [ec2-user@ip-172-31-50-1 ~]$ sudo service httpd start  
    Redirecting to /bin/systemctl start httpd.service
    ```
    
 14. Criar um *site* de teste, no arquivo `/var/www/html/index.html`:
-   ```
+
+   ```html
    <h1>
       FIAP!!!
    </h1>
    ```
    
 15. Testar localmente o servidor web:
-   ```
+
+   ```sh
    [ec2-user@ip-172-31-50-1 ~]$ curl localhost
    <h1>
            FIAP!!!
@@ -179,7 +187,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 16. Obter o IP público da VM:
    ![](/bdt/cloud/img/ec2-9.png)
 
-17. Testar accesso pelo IP público:
+17. Testar acesso pelo IP público:
    ![](/bdt/cloud/img/ec2-10.png)
 
 18. Como era esperado, o acesso web não funcionou pois a porta HTTP (TCP/80) deve ser liberada nos *security groups*. Incluir uma liberação para esta porta no *security group* associado à instância:

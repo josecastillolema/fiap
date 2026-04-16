@@ -1,6 +1,8 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 13 - Amazon Lambda
 
-Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
+Neste lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos alguns conceitos do modulo de Function as a Service (FaaS) / *serverless* da plataforma da AWS:
  - Criação de funções Lambda
  - Teste de funções 
  - Criação de triggers (via API Gateway)
@@ -22,13 +24,14 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 2. Criar uma nova função:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda2.png)
    
-3. Criar uma primera função `getTemperatura` com Python como *runtime*:
+3. Criar uma primeira função `getTemperatura` com Python como *runtime*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda3.png)
 
 4. Nas contas da **AWS Academy** é necessário mudar o *execution role* por `LabRole`:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda3_2.png)
 
 5. Configurar o seguinte código para a função:
+
     ```python
     import json
     import boto3
@@ -41,7 +44,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
           'body': response['Items'][0]['temperatura']
        }
     ```
-    O código lee o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
+    O código lê o valor `temperatura` da tabela `Atmosfera` do DynamoDB.
     
     
 6. Fazer *deploy* do código:
@@ -50,7 +53,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 7. Vamos testar o código:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda5.png)
 
-8. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indeferente em este caso específico, pois a API não está lendo entrada:
+8. Criamos um evento de testes. A entrada do evento (o arquivo `json`) é indiferente neste caso específico, pois a API não está lendo entrada:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda6.png)
 
 9. Executar o evento de testes recém criado `testeGetTemperatura`:
@@ -66,7 +69,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 12. O *trigger* será um *endpoint* em uma nova API do API Gateway chamada `api-lambda`:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda15.png)
 
-13. Conferir que o *trigger* foi criado e asociado à função:
+13. Conferir que o *trigger* foi criado e associado à função:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda16.png)
 
 14. Nos detalhes do *trigger* podemos ver a URL do *endpoint*:
@@ -77,10 +80,11 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 
 ## Configuração do segundo *endpoint* usando a mesma API
 
-16. Repetir os pasos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
+16. Repetir os passos **2** e **3** para criar uma segunda função `getHumidade` com Python como *runtime*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda19.png)
  
 17. Configurar o seguinte código para a função e fazer *deploy* do mesmo:
+
     ```python
     import json
     import boto3
@@ -94,7 +98,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
        }
     ```
 
-    O código lee o valor `humidade` da tabela `Atmosfera` do DynamoDB.
+    O código lê o valor `humidade` da tabela `Atmosfera` do DynamoDB.
 
 18. Testar a nova função como mostrado nos passos **7**, **8** e **9**:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda21.png)
@@ -125,7 +129,7 @@ Em este lab sobre [**Lambda**](https://aws.amazon.com/pt/lambda/) aprenderemos a
 26. Estado final da *role*:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda12.png)
 
-27. Ejecutar de novo o teste, agora deberia funcionar:
+27. Executar de novo o teste, agora deveria funcionar:
     ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/lambda13.png)
 
 28. Continuar o laboratório normalmente a partir do passo **11**

@@ -1,8 +1,10 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 5 - AWS RDS
 
-Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/rds/) aprenderemos alguns conceitos importantes na criação de serviços de DBaaS NoSQL:
+Neste lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com/pt/rds/) aprenderemos alguns conceitos importantes na criação de serviços de DBaaS NoSQL:
  - Criação de instâncias RDS
- - Plataformas/entornos disponíveis
+ - Plataformas/ambientes disponíveis
  - *Logging*
  - Monitoramento
 
@@ -38,7 +40,8 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds09.png)
 
 10. Testemos a conectividade com a instância:
-    ```
+
+    ```sh
     $ telnet fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com 3306         
     Trying 18.210.97.78...
     telnet: connect to address 18.210.97.78: Operation timed out
@@ -60,11 +63,12 @@ Em este lab sobre [**Relational Database Service (RDS)**](https://aws.amazon.com
 15. Nos ajustes de conetividade, incluir o novo *security group*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds14.png)
 
-16. Aguardar a configuraçao ser aplicada na instância:
+16. Aguardar a configuração ser aplicada na instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/abd/dbaas/img/rds15.png)
 
 17. Testar novamente a conetividade:
-    ```
+
+    ```sh
     $ telnet fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com 3306
     Trying 18.210.97.78...
     Connected to ec2-18-210-97-78.compute-1.amazonaws.com.
@@ -85,7 +89,8 @@ Se não tiver os pre-reqs na máquina local pular para o [teste em uma VM no EC2
 ## Teste local
 
  1. Usar o cliente `mysql` para acessar ao banco:
-    ```
+
+    ```sh
     $ mysql -h fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com -u admin -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -120,12 +125,14 @@ Se tiver feito o deploy local pode pular esta seção.
 2. Logar na VM
 
 3. Instalar o cliente `mysql`:
-    ```
+
+    ```sh
     $ sudo yum install mariadb
     ```
 
 4. Usar o cliente `mysql` para acessar ao banco:
-    ```
+
+    ```sh
     $ mysql -h fiapdb.cpuzlc9blsa2.us-east-1.rds.amazonaws.com -u admin -p
     Enter password: 
     Welcome to the MySQL monitor.  Commands end with ; or \g.

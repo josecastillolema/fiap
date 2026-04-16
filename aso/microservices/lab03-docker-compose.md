@@ -1,9 +1,11 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 3 - Docker Compose
 
 Executando servicos
 --------------
 Docker Compose permite definir serviços (que a sua vez são formados por containers) e a comunicação entre os mesmos. Esta comunicação é implementada via DNS nos containers. Além disso, no arquivo de configuração do Docker Compose (***docker-compose.yml***) é possível definir:
- - **variáveis de entorno**: comando `environment`
+ - **variáveis de ambiente**: comando `environment`
  - **mapeamento de portas**: comando `ports`
  - **persistência de dados**: comando `volumes`
  - **dependências entre os serviços**: comandos `links` e `depends on`
@@ -11,7 +13,8 @@ Docker Compose permite definir serviços (que a sua vez são formados por contai
 Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 1. **[T1]** Instalação do Docker Compose:
-    ```
+
+    ```sh
     $ sudo apt  install docker-compose -y
     Reading package lists... Done
     Building dependency tree       
@@ -240,8 +243,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     Processing triggers for libc-bin (2.27-3ubuntu1) ...
     ```
 
-2. **[T1]** Navegar ate a pasta ***/fiap/aso/compose*** de este repositório *git*:
-    ```
+2. **[T1]** Navegar ate a pasta ***/fiap/aso/compose*** deste repositório *git*:
+
+    ```sh
     $ cd fiap/aso/compose/
     $ pwd
     /home/ubuntu/fiap/aso/compose
@@ -252,7 +256,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 3. **[T1]** Mostrar o conteúdo do arquivo ***docker-compose.yml***. São definidos dois serviços:
     - **api**: a API escrita em Python, que tem dependência (consulta) o serviço *mysql*
-    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de entorno
+    - **mysql**: o servidor MySQL, com mapeamento de portas (porta 3306), persistência de dados (pasta */var/lib/mysql*) e algumas variáveis de ambiente
+
     ```yaml
     $ cat docker-compose.yml 
     version: '2'
@@ -280,7 +285,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
   
 4. **[T1]** Criar os serviços definidos no arquivo ***docker-compose.yml***:
-    ```
+
+    ```sh
     $ docker-compose up
     Creating network "compose_default" with the default driver
     Building mysql
@@ -414,8 +420,9 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
 
 5. **[T1]** (Opcional / Alternativa ao passo 4)
 
-    O comando anterior pode ser executado com a opção **-d**. De esta forma os containers são executados no *background*, e não será necessário usar dois terminais. Porém, temos menos visibilidade no que está acontecendo nos containers:
-    ```
+    O comando anterior pode ser executado com a opção **-d**. Desta forma os containers são executados no *background*, e não será necessário usar dois terminais. Porém, temos menos visibilidade no que está acontecendo nos containers:
+
+    ```sh
     $ docker-compose up -d
     Creating network "compose_default" with the default driver
     Creating compose_mysql_1 ... 
@@ -425,7 +432,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 6. **[T2]** Em um segundo terminal, confirmar que os serviços do Docker Compose foram criados corretamente. E necessário navegar ate pasta que contém o arquivo ***docker-compose.yml***.
-    ```
+
+    ```sh
     $ cd fiap/aso/compose/
     $ pwd
     /home/ubuntu/fiap/aso/compose
@@ -437,7 +445,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 7. **[T2]** Confirmar que os containers foram criados corretamente:
-    ```
+
+    ```sh
     $ docker ps
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS                               NAMES
     6d7277694bc3        compose_api         "./api.py"               2 minutes ago       Up About a minute (healthy)   0.0.0.0:4000->5000/tcp              compose_api_1
@@ -445,19 +454,22 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```  
 
 8. **[T2]** Testar a API:
-    ``` 
+
+    ```sh
     $ curl localhost:4000
     Benvido a API FIAP!
     ``` 
 
 9. **[T2]** Testar a conexão da API com o banco de dados:
-    ``` 
+
+    ```sh
     $ curl localhost:4000/getDados
     [{"id": 1234, "name": "Jose Castillo Lema"}]
     ```
 
 10. **[T2]** Conferir a configuração de DNS, usando o ID do container *compose_api* obtido no passo 6:
-    ``` 
+
+    ```sh
     $ docker exec 6d7277694bc3 ping -c 3 mysql
     PING mysql (172.18.0.2) 56(84) bytes of data.
     64 bytes from compose_mysql_1.compose_default (172.18.0.2): icmp_seq=1 ttl=64 time=0.073 ms
@@ -470,7 +482,8 @@ Vamos trabalhar com dois terminais abertos (**T1** e **T2**).
     ```
 
 11. **[T2]** Remover os serviços (e os containers):
-    ```
+
+    ```sh
     $ docker-compose down
     Stopping compose_api_1   ... done
     Stopping compose_mysql_1 ... done

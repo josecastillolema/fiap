@@ -1,3 +1,5 @@
+<!-- cSpell:language en,pt-BR -->
+
 # Lab 9 - AWS Autoscaling
 
 Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importantes de [***autoscaling***](https://aws.amazon.com/pt/autoscaling/):
@@ -19,7 +21,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 4. Escolher o ***flavor*** `t2.micro`:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/ec2-3.png)
    
-5. Assignar um nome para o *launch template*:
+5. Atribuir um nome para o *launch template*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto1.png)
 
 6. Revisar e confirmar a criação do *lauch template*:
@@ -36,10 +38,10 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 9. Criar um novo *autoscaling group*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto5.png)
 
-10. Seleccionar o *launch template* criado anteriormente:
+10. Selecionar o *launch template* criado anteriormente:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto6.png)
 
-11. Assignar um nome e uma subrede para o *autoscaling group*:
+11. Atribuir um nome e uma subrede para o *autoscaling group*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto7.png)
 
 12. Definir a política de autoscaling:
@@ -60,7 +62,7 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 15. Conferir a criação do *autoscaling group*, a princípio só com uma instância:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto11.png)
 
-16. Conferir as instâncias que fazem parto do *autoscaling group*:
+16. Conferir as instâncias que fazem parte do *autoscaling group*:
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto12.png)
 
 16. Conferir a(s) instância(s) no EC2:
@@ -68,8 +70,9 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
 
 ## Testando o *autoscaling group*
 
-17. Accessar via SSH à instância:
-    ```
+17. Acessar via SSH à instância:
+
+    ```sh
     % ssh -i "fiap.pem" ec2-user@ec2-34-230-22-18.compute-1.amazonaws.com
 
            __|  __|_  )
@@ -81,7 +84,8 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
     
 18. Confirmar a baixa carga de CPU usando os comandos `uptime` e `top`:
-    ```
+
+    ```sh
     $ uptime
     10:01:32 up 7 min,  1 user,  load average: 0.00, 0.02, 0.00
     
@@ -94,13 +98,15 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
     ```
     
 19. Criar carga na CPU:
-    ```
+
+    ```sh
     $ yes > /dev/null &
     [1] 3533
     ```
     
 20. Confirmar a alta carga de CPU usando os comandos `uptime` e `top`:
-    ```
+
+    ```sh
     $ top
     top - 10:11:42 up 17 min,  1 user,  load average: 1.00, 0.86, 0.47
     Tasks:  85 total,   2 running,  47 sleeping,   0 stopped,   0 zombie
@@ -119,12 +125,14 @@ Usaremos a imagem oficial `Amazon Linux` para aprender alguns conceitos importan
    ![](https://raw.githubusercontent.com/josecastillolema/fiap/master/shift/multicloud/img/auto14.png)
 
 22. Parar o processo que consome CPU:
-    ```
+
+    ```sh
     $ killall yes
     ```
     
 23. Confirmar a baixa carga de CPU usando os comandos `uptime` e `top`:
-    ```
+
+    ```sh
     $ uptime
     10:01:32 up 7 min,  1 user,  load average: 0.00, 0.02, 0.00
     
